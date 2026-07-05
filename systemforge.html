@@ -1,607 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UX analysis and learnability work for System Forge, a SysML v2 modeling tool. Separating what the spec fixes from where design can teach.">
-    <title>System Forge · UX Analysis &amp; Learnability — Petra Kühnle</title>
-    <style>
-        :root{
-            --bg:#FBFAF7;
-            --bg-raised:#FFFFFF;
-            --bg-sunken:#F1EEE7;
-            --ink:#2A2824;
-            --ink-soft:#4A4641;
-            --ink-muted:#6E6A61;
-            --ink-faint:#9B968C;
-            --hairline:#DBD6CC;
-            --hairline-strong:#B8B1A4;
-            --accent-neutral:#7A756D;
-            --accent-positive:#6B8761;
-            --accent-positive-bg:#EEF2EC;
-            --accent-warn:#A67849;
-            --accent-warn-bg:#F5EEE3;
-            --accent-warn-ink:#6E5836;
-            --mono:'SF Mono',Menlo,Consolas,monospace;
-            --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
-        }
-        *{box-sizing:border-box;}
-        body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
-        ::selection{background:var(--ink);color:var(--bg);}
-        header,main,footer{max-width:880px;margin:0 auto;padding:0 24px;}
-        header{padding-top:52px;}
-        header h1{font-size:clamp(26px,4.5vw,36px);font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;line-height:1.15;}
-        header p{margin:0 0 8px;color:var(--ink-soft);max-width:46em;}
-        header .meta{font-family:var(--mono);font-size:0.78em;color:var(--ink-muted);}
-        main{padding-top:16px;padding-bottom:40px;}
-        section{margin:36px 0;}
-        .section-title{font-size:0.78em;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid var(--hairline);}
-        main > section > p{color:var(--ink-soft);max-width:46em;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="System Forge: UX analysis and learnability for a SysML v2 modeling tool. Separating what the spec fixes from where design can teach.">
+<title>System Forge — Petra Kühnle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sheet:#F4F4F1;--ink:#16191C;--graphite:#5A6068;--hairline:#C9CFD1;--grid:#E6E7E3;--accent:#2B3FC4;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--sheet);
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:30px 30px;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--ink);color:var(--sheet);}
+  a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .15s;}
+  a:hover{color:var(--ink);}
 
-        .case-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:20px 0;}
-        .psi{background:var(--bg-raised);padding:18px;}
-        .psi-label{font-family:var(--mono);font-size:0.7em;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:8px;}
-        .psi p{margin:0;font-size:0.9em;color:var(--ink-soft);line-height:1.5;}
-        .psi strong{color:var(--ink);font-weight:600;}
-        .psi.is-impact{background:var(--ink);}
-        .psi.is-impact .psi-label{color:var(--hairline-strong);}
-        .psi.is-impact p{color:#EDEAE3;}
-        .psi.is-impact strong{color:#fff;}
+  .sheet{max-width:880px;margin:0 auto;padding:clamp(20px,4vw,40px);position:relative;}
+  .frame{position:relative;border:1px solid var(--ink);padding:clamp(26px,5vw,56px) clamp(22px,5vw,56px) clamp(34px,5vw,56px);background:rgba(244,244,241,.72);}
+  .tick{position:absolute;width:13px;height:13px;pointer-events:none;opacity:0;animation:tk .5s ease forwards;}
+  .tick-tl{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
+  .tick-tr{top:-1px;right:-1px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);}
+  .tick-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--ink);border-left:2px solid var(--ink);}
+  .tick-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink);}
+  @keyframes tk{to{opacity:1;}}
 
-        .role-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:16px 0;padding:16px;background:var(--bg-sunken);border-left:3px solid var(--accent-neutral);}
-        .role-item strong{font-size:0.72em;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink-muted);display:block;margin-bottom:4px;}
-        .role-item span{font-size:0.88em;color:var(--ink);}
+  .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);}
+  .strip{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:18px;margin-bottom:clamp(24px,4vw,38px);border-bottom:1px solid var(--hairline);}
 
-        .why-card{border:1px solid var(--ink);background:var(--bg-raised);padding:20px 24px;margin:16px 0;}
-        .why-card-label{font-family:var(--mono);font-size:0.7em;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);margin-bottom:12px;display:block;}
-        .why-card ol{margin:0;padding-left:20px;list-style:decimal;}
-        .why-card ol li{font-size:0.92em;margin-bottom:6px;padding-left:4px;color:var(--ink-soft);line-height:1.5;}
-        .why-card ol li strong{color:var(--ink);font-weight:600;}
+  header h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,8.5vw,78px);line-height:.96;letter-spacing:-.025em;margin:0 0 16px;}
+  .role{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--ink);margin:0 0 20px;}
+  .thesis{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.5vw,23px);line-height:1.42;max-width:26em;margin:0;color:var(--ink);}
 
-        .design-space-visual{margin:18px 0 8px;padding:24px 20px 16px;background:var(--bg-sunken);border:1px solid var(--hairline);}
-        .design-space-visual svg{display:block;width:100%;height:auto;max-width:720px;margin:0 auto;}
-        .design-space-caption{text-align:center;font-size:0.82em;color:var(--ink-muted);margin:14px auto 0;max-width:560px;line-height:1.5;}
-        .design-space-caption strong{color:var(--accent-positive);font-weight:600;}
+  .titleblock{margin:clamp(30px,5vw,44px) 0;border:1px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr);}
+  .tb{padding:13px 15px;border-right:1px solid var(--hairline);border-top:1px solid var(--hairline);}
+  .tb:nth-child(-n+4){border-top:none;}
+  .tb:nth-child(4n){border-right:none;}
+  .tb .k{display:block;margin-bottom:5px;}
+  .tb .v{font-family:var(--display);font-size:14px;font-weight:500;letter-spacing:-.01em;line-height:1.3;}
 
-        .flow-diagram{background:#fff;border:1px solid var(--hairline);padding:28px 20px;margin:18px 0;}
-        .flow-diagram svg{display:block;width:100%;height:auto;max-width:920px;margin:0 auto;}
-        .flow-diagram svg text{font-family:var(--sans);}
-        .flow-diagram svg .mono{font-family:var(--mono);}
-        .flow-caption{text-align:center;font-size:0.82em;color:var(--ink-muted);margin-top:14px;font-style:italic;}
+  section{margin-top:clamp(40px,6vw,60px);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;margin-bottom:22px;border-bottom:1px solid var(--ink);}
+  .sec-head .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:var(--accent);}
+  .sec-head h2{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;margin:0;color:var(--ink);}
+  .lede{max-width:42em;margin:0 0 4px;color:var(--ink);}
 
-        .learnability-goal{background:var(--accent-positive-bg);border:1px solid var(--hairline);border-left:3px solid var(--accent-positive);padding:20px;margin:16px 0;}
-        .learnability-goal h3{font-size:0.9em;font-weight:600;color:var(--accent-positive);margin:0 0 12px;}
-        .user-types{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-        .user-type{background:var(--bg-raised);padding:14px;border-left:3px solid var(--accent-positive);}
-        .user-type strong{font-size:0.85em;display:block;margin-bottom:4px;color:var(--ink);}
-        .user-type p{font-size:0.8em;color:var(--ink-soft);margin:0;line-height:1.5;}
+  .graph{border:1px solid var(--ink);background:#fff;padding:24px 18px;margin:18px 0 6px;}
+  .graph svg{display:block;width:100%;height:auto;margin:0 auto;}
+  .graph svg text{font-family:var(--body);}
+  .graph svg .mono{font-family:var(--mono);}
+  .graph-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--graphite);text-transform:uppercase;text-align:center;margin:14px auto 0;max-width:44em;line-height:1.7;}
+  .graph-cap b{color:var(--accent);font-weight:500;}
+  .dz svg{max-width:720px;}
+  .fz svg{max-width:900px;}
 
-        .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:16px 0;}
-        .process-step{padding:14px;background:var(--bg-raised);border-top:3px solid var(--hairline);text-align:center;}
-        .process-step.complete{border-top-color:var(--accent-positive);}
-        .process-step .num{font-family:var(--mono);font-size:0.7em;font-weight:600;color:var(--ink-faint);display:block;margin-bottom:4px;}
-        .process-step strong{font-size:0.85em;display:block;margin-bottom:4px;color:var(--ink);}
-        .process-step p{font-size:0.75em;color:var(--ink-muted);margin:0;line-height:1.4;}
+  .tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:6px 0;}
+  .tile{background:var(--sheet);padding:12px 13px;}
+  .tile.learn{box-shadow:inset 0 3px 0 var(--accent);}
+  .tile b{display:block;font-family:var(--display);font-size:13.5px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin-bottom:3px;line-height:1.2;}
+  .tile span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--graphite);line-height:1.4;text-transform:none;}
+  .legend{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--graphite);margin-top:10px;}
+  .legend b{color:var(--accent);font-weight:500;}
 
-        .principles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0;}
-        .principle-card{display:flex;gap:10px;padding:12px;background:var(--bg-raised);border-left:3px solid var(--accent-neutral);}
-        .principle-card.learnability{border-left-color:var(--accent-positive);}
-        .principle-num{font-family:var(--mono);font-size:0.75em;font-weight:600;color:var(--ink-faint);min-width:20px;}
-        .principle-content strong{font-size:0.85em;color:var(--ink);display:block;margin-bottom:2px;}
-        .principle-content p{font-size:0.75em;color:var(--ink-soft);line-height:1.45;margin:0;}
-        .principle-source{font-size:0.9em;color:var(--ink-faint);}
+  .annos{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:6px 0;}
+  .anno{background:var(--sheet);padding:14px 16px;}
+  .anno .t{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;color:var(--graphite);}
+  .anno.keep .t{color:var(--accent);}
+  .anno p{margin:0;font-size:14px;line-height:1.45;color:var(--ink);}
 
-        .sources-strip{background:var(--bg-sunken);border:1px solid var(--hairline);border-left:3px solid var(--accent-neutral);padding:14px 16px;margin:16px 0;}
-        .sources-strip-label{font-family:var(--mono);font-size:0.7em;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-neutral);margin-bottom:8px;}
-        .sources-strip-content{font-size:0.82em;color:var(--ink-soft);line-height:1.6;}
-        .sources-strip-content strong{color:var(--ink);font-weight:600;}
+  .reclist{list-style:none;margin:4px 0 0;padding:0;}
+  .reclist li{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--hairline);}
+  .reclist li:first-child{border-top:none;padding-top:2px;}
+  .reclist .n{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--accent);padding-top:2px;white-space:nowrap;}
+  .reclist .t{font-size:15px;line-height:1.5;color:var(--ink);}
+  .reclist .t b{font-family:var(--display);font-weight:500;}
 
-        .constraint-detail{margin:20px 0;}
-        .constraint-detail-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-        .constraint-detail-header .label{font-family:var(--mono);font-size:0.68em;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;padding:4px 10px;}
-        .constraint-detail-header .label.fixed{background:var(--bg-sunken);color:var(--ink-muted);}
-        .constraint-detail-header .label.flexible{background:var(--accent-positive-bg);color:var(--accent-positive);}
-        .constraint-detail-header h4{font-size:0.9em;font-weight:600;color:var(--ink);margin:0;}
-        .constraint-table{width:100%;border-collapse:collapse;font-size:0.82em;border:1px solid var(--hairline);}
-        .constraint-table thead{background:var(--bg-sunken);}
-        .constraint-table.flexible thead{background:var(--accent-positive-bg);}
-        .constraint-table th{text-align:left;padding:10px 12px;font-size:0.75em;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--ink-muted);border-bottom:1px solid var(--hairline);}
-        .constraint-table.flexible th{color:var(--accent-positive);}
-        .constraint-table td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top;}
-        .constraint-table tr:last-child td{border-bottom:none;}
-        .constraint-table td:first-child{font-weight:500;color:var(--ink);width:35%;}
-        .constraint-boundary-note{background:var(--accent-warn-bg);border-left:3px solid var(--accent-warn);padding:12px 14px;margin:16px 0;font-size:0.85em;color:var(--accent-warn-ink);line-height:1.55;}
-        .constraint-boundary-note strong{color:var(--accent-warn);}
+  .ainote{padding:15px 0;border-top:1px solid var(--hairline);}
+  .ainote:first-child{border-top:none;padding-top:2px;}
+  .ainote p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink);}
+  .ainote b{font-family:var(--display);font-weight:500;}
 
-        .screenshot-annotation{border:1px solid var(--hairline);margin:20px 0;background:var(--bg-raised);}
-        .screenshot-header{padding:12px 16px;background:var(--bg-sunken);border-bottom:1px solid var(--hairline);font-size:0.85em;font-weight:600;color:var(--ink);}
-        .screenshot-body{padding:20px;}
-        .screenshot-image{margin-bottom:16px;text-align:center;}
-        .screenshot-image img{max-width:100%;border:1px solid var(--hairline);border-radius:4px;}
-        .annotation-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-        .annotation-item{padding:12px;background:var(--bg-raised);border-left:3px solid var(--accent-neutral);}
-        .annotation-item.strength{border-left-color:var(--accent-positive);}
-        .annotation-item.consideration{border-left-color:var(--accent-warn);}
-        .annotation-item strong{font-size:0.8em;display:block;margin-bottom:4px;color:var(--ink);}
-        .annotation-item p{font-size:0.78em;color:var(--ink-soft);margin:0;line-height:1.5;}
-        .annotation-item .tag{display:inline-block;font-family:var(--mono);font-size:0.68em;padding:2px 6px;background:var(--bg-sunken);color:var(--ink-muted);margin-top:6px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);border:1px solid var(--hairline);padding:5px 10px;background:rgba(244,244,241,.6);}
 
-        .recommendations-box{margin:8px 0 0;padding:20px 22px;background:var(--accent-positive-bg);border:1px solid var(--hairline);border-left:3px solid var(--accent-positive);}
-        .recommendations-box h3{font-size:0.95em;font-weight:600;color:var(--accent-positive);margin:0 0 6px;}
-        .recommendations-intro{font-size:0.85em;color:var(--ink-soft);margin-bottom:14px;}
-        .recommendations-list{margin:0;padding-left:20px;list-style:decimal;}
-        .recommendations-list li{font-size:0.85em;color:var(--ink-soft);line-height:1.55;margin-bottom:10px;}
-        .recommendations-list li strong{color:var(--ink);font-weight:600;}
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:clamp(40px,6vw,60px);padding-top:16px;border-top:1px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;}
+  footer{margin-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 
-        .ai-notes{display:grid;gap:12px;margin:16px 0;}
-        .ai-note{background:var(--bg-raised);border:1px solid var(--hairline);border-left:3px solid var(--accent-neutral);padding:16px 18px;}
-        .ai-note strong{color:var(--ink);font-weight:600;}
-        .ai-note p{margin:0;font-size:0.88em;color:var(--ink-soft);line-height:1.55;}
-
-        .reflection{background:var(--bg-sunken);border:1px solid var(--hairline);padding:16px;margin:12px 0;}
-        .reflection p{margin:0;font-size:0.87em;color:var(--ink-soft);line-height:1.55;}
-        .reflection strong{color:var(--ink);}
-
-        .resources-list{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--hairline);}
-        .resources-list li{display:flex;gap:16px;padding:11px 2px;border-bottom:1px solid var(--hairline);font-size:0.86em;}
-        .resources-list .r-name{font-weight:600;color:var(--ink);min-width:170px;}
-        .resources-list .r-desc{color:var(--ink-soft);}
-
-        .tech-list{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
-        .tech-tag{font-family:var(--mono);font-size:0.75em;padding:5px 11px;background:var(--bg-sunken);border:1px solid var(--hairline);color:var(--ink-muted);}
-
-        nav{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--hairline);padding-top:20px;margin-top:36px;}
-        nav a{font-family:var(--mono);font-size:0.82em;color:var(--ink-muted);text-decoration:none;}
-        nav a:hover{color:var(--ink);}
-        footer{border-top:1px solid var(--hairline);padding-top:18px;padding-bottom:40px;color:var(--ink-faint);font-size:0.8em;}
-
-        @media (max-width:768px){
-            .case-summary{grid-template-columns:1fr;}
-            .role-summary{grid-template-columns:1fr 1fr;}
-            .principles-grid{grid-template-columns:1fr;}
-            .process-steps{grid-template-columns:repeat(2,1fr);}
-            .user-types{grid-template-columns:1fr;}
-            .annotation-list{grid-template-columns:1fr;}
-            .constraint-table{font-size:0.78em;}
-            .constraint-table td,.constraint-table th{padding:8px 10px;}
-            .resources-list li{flex-direction:column;gap:2px;}
-            .resources-list .r-name{min-width:0;}
-        }
-    </style>
+  @media (max-width:620px){
+    body{font-size:16px;background-size:24px 24px;}
+    .titleblock{grid-template-columns:repeat(2,1fr);}
+    .tb:nth-child(-n+2){border-top:none;}
+    .tb:nth-child(n+3){border-top:1px solid var(--hairline);}
+    .tb:nth-child(2n){border-right:none;}
+    .tb:nth-child(3){border-right:1px solid var(--hairline);}
+    .tiles{grid-template-columns:repeat(2,1fr);}
+    .annos{grid-template-columns:1fr;}
+  }
+</style>
 </head>
-<body class="project wide">
+<body>
+<div class="sheet">
+  <div class="frame">
+    <span class="tick tick-tl" style="animation-delay:.05s"></span>
+    <span class="tick tick-tr" style="animation-delay:.15s"></span>
+    <span class="tick tick-bl" style="animation-delay:.25s"></span>
+    <span class="tick tick-br" style="animation-delay:.35s"></span>
+
+    <div class="strip mono">
+      <span>Case Study · UX / Learnability</span>
+      <span>SysML v2</span>
+    </div>
+
     <header>
-        <h1>⬠ System Forge · UX Analysis &amp; Learnability</h1>
-        <p>Making SysML v2 learnable through UX.</p>
-        <p class="meta">2026 · UX input for a side project by Cauê Napier, Systems Engineer at Swedish Space Corporation</p>
+      <h1>System<br>Forge</h1>
+      <p class="role">UX Analysis · Learnability</p>
+      <p class="thesis">Making a SysML v2 modeling tool learnable through the interface, without a course first.</p>
     </header>
-    <main>
 
-        <section class="case-summary">
-            <div class="psi">
-                <span class="psi-label">Problem</span>
-                <p>SysML v2 is powerful but hard to learn without taking a course first. The spec hands every presentation and interaction choice to the tool.</p>
-            </div>
-            <div class="psi">
-                <span class="psi-label">Solution</span>
-                <p>The brief was to review the screens. I widened it into a learnability foundation: ten design principles, a map of what the spec fixes versus what the tool controls, and an interface audit with a ranked roadmap.</p>
-            </div>
-            <div class="psi is-impact">
-                <span class="psi-label">Impact</span>
-                <p>Principles, an audit, and a roadmap ranked by leverage. <strong>Foundations that outlast any single screen</strong>, ordered so the most downstream work gets unblocked first. Ongoing.</p>
-            </div>
-        </section>
+    <div class="titleblock" aria-label="Summary">
+      <div class="tb"><span class="k mono">Role</span><span class="v">UX analysis · principles</span></div>
+      <div class="tb"><span class="k mono">Duration</span><span class="v">Ongoing · 2026</span></div>
+      <div class="tb"><span class="k mono">Field</span><span class="v">SysML v2 · MBSE</span></div>
+      <div class="tb"><span class="k mono">With</span><span class="v">Cauê Napier, Systems Engineer</span></div>
+    </div>
 
-        <section>
-            <div class="role-summary">
-                <div class="role-item">
-                    <strong>Role</strong>
-                    <span>UX analysis · design principles · solution sketches</span>
-                </div>
-                <div class="role-item">
-                    <strong>Duration</strong>
-                    <span>Ongoing, 2026 to present</span>
-                </div>
-                <div class="role-item">
-                    <strong>Deliverables</strong>
-                    <span>Analysis · principles · learnability recommendations</span>
-                </div>
-                <div class="role-item">
-                    <strong>Context</strong>
-                    <span>SysML v2 released in 2025. It adds textual and graphic notation.</span>
-                </div>
-            </div>
-        </section>
+    <section>
+      <div class="sec-head"><span class="no">01</span><h2>Problem</h2></div>
+      <p class="lede">The spec fixes semantics and notation. Everything about presentation is left to the tool, so every choice sits on one side of a line.</p>
+      <div class="graph dz">
+        <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SysML v2 specification fixes element types, relationships, notation, diagram types and syntax on the left. Color, layout, navigation, tooltips, filtering, search, edge routing, labels and animation are open to design on the right.">
+          <rect x="20" y="30" width="300" height="200" rx="4" fill="#ECECE7" stroke="#C9CFD1" stroke-width="1.5"/>
+          <text x="170" y="55" text-anchor="middle" font-size="10" font-weight="600" letter-spacing="1.2" fill="#5A6068">FIXED BY SPECIFICATION</text>
+          <text x="170" y="72" text-anchor="middle" font-size="12" font-weight="500" fill="#16191C">SysML v2 semantics</text>
+          <g font-size="10" fill="#16191C">
+            <rect x="40" y="95" width="100" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="90" y="111" text-anchor="middle">Element types</text>
+            <rect x="150" y="95" width="150" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="225" y="111" text-anchor="middle">Relationship semantics</text>
+            <rect x="40" y="130" width="120" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="100" y="146" text-anchor="middle">Notation shapes</text>
+            <rect x="170" y="130" width="130" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="235" y="146" text-anchor="middle">Compartment rules</text>
+            <rect x="40" y="165" width="110" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="95" y="181" text-anchor="middle">Diagram types</text>
+            <rect x="160" y="165" width="130" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="225" y="181" text-anchor="middle">Textual syntax</text>
+          </g>
+          <text x="170" y="215" text-anchor="middle" font-size="10" font-style="italic" fill="#5A6068">Interoperable across tools</text>
+          <line x1="340" y1="50" x2="340" y2="230" stroke="#2B3FC4" stroke-width="2" stroke-dasharray="4,4"/>
+          <text x="340" y="22" text-anchor="middle" font-size="9" font-weight="600" fill="#2B3FC4">boundary</text>
+          <rect x="360" y="30" width="340" height="200" rx="4" fill="#ECEEF9" stroke="#C9CFD1" stroke-width="1.5"/>
+          <text x="530" y="55" text-anchor="middle" font-size="10" font-weight="600" letter-spacing="1.2" fill="#2B3FC4">OPEN TO DESIGN</text>
+          <text x="530" y="72" text-anchor="middle" font-size="12" font-weight="500" fill="#16191C">Tool presentation &amp; interaction</text>
+          <g font-size="10" fill="#2B3FC4">
+            <rect x="380" y="95" width="70" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="415" y="111" text-anchor="middle">Color</text>
+            <rect x="460" y="95" width="70" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="495" y="111" text-anchor="middle">Layout</text>
+            <rect x="540" y="95" width="90" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="585" y="111" text-anchor="middle">Navigation</text>
+            <rect x="380" y="130" width="80" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="420" y="146" text-anchor="middle">Tooltips</text>
+            <rect x="470" y="130" width="90" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="515" y="146" text-anchor="middle">Filtering</text>
+            <rect x="570" y="130" width="80" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="610" y="146" text-anchor="middle">Search</text>
+            <rect x="380" y="165" width="100" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="430" y="181" text-anchor="middle">Edge routing</text>
+            <rect x="490" y="165" width="80" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="530" y="181" text-anchor="middle">Labels</text>
+            <rect x="580" y="165" width="90" height="24" rx="12" fill="#F4F4F1" stroke="#C9CFD1" stroke-width="1"/><text x="625" y="181" text-anchor="middle">Animation</text>
+          </g>
+          <text x="530" y="215" text-anchor="middle" font-size="10" font-style="italic" fill="#5A6068">Where learnability is designed in</text>
+        </svg>
+        <p class="graph-cap">Shape and semantics are fixed. Color, size and layout are the <b>design space</b>.</p>
+      </div>
+    </section>
 
-        <section>
-            <h2 class="section-title">Why this case matters</h2>
-            <div class="why-card">
-                <span class="why-card-label">Design-engineering signal</span>
-                <ol>
-                    <li><strong>Widened the scope.</strong> The brief was to review the screens. The outcome was principles, an audit, and a roadmap. Principles outlast screens.</li>
-                    <li><strong>Designed inside a specification.</strong> I separated what SysML v2 fixes from what the tooling can change. That is a rare skill in enterprise software.</li>
-                    <li><strong>Domain literacy in MBSE.</strong> SysML v2, systems-of-systems, and expert workflows, rather than generic frontend work.</li>
-                </ol>
-            </div>
-        </section>
+    <section>
+      <div class="sec-head"><span class="no">02</span><h2>The reframe</h2></div>
+      <div class="graph fz">
+        <svg viewBox="0 0 920 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reframe flow from the original brief to the reframe to the outcome.">
+          <text x="155" y="32" text-anchor="middle" font-size="9" fill="#5A6068" class="mono" letter-spacing="1.5">01 · BRIEF</text>
+          <text x="460" y="32" text-anchor="middle" font-size="9" fill="#5A6068" class="mono" letter-spacing="1.5">02 · REFRAME</text>
+          <text x="765" y="32" text-anchor="middle" font-size="9" fill="#5A6068" class="mono" letter-spacing="1.5">03 · OUTCOME</text>
 
-        <section>
-            <h2 class="section-title">Problem</h2>
-            <p>The goal is to make SysML v2 modeling learnable without a course first. The spec fixes element semantics and notation. Presentation and interaction are left to each tool. So every decision sits on one side of a line. Either the standard requires it, or the tool can change it.</p>
+          <rect x="20" y="50" width="270" height="86" fill="#fff" stroke="#16191C" stroke-width="1.2"/>
+          <text x="155" y="82" text-anchor="middle" font-size="13" font-weight="500" fill="#16191C">"Review screens.</text>
+          <text x="155" y="100" text-anchor="middle" font-size="13" font-weight="500" fill="#16191C">Improve layouts."</text>
+          <text x="155" y="122" text-anchor="middle" font-size="10" fill="#5A6068" font-style="italic">Original ask</text>
 
-            <div class="design-space-visual">
-                <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing SysML v2 specification on the left (element types, relationships, notation, diagram types, syntax) and the tool design space on the right (color, layout, navigation, tooltips, filtering, search, edge routing, labels, animation).">
-                    <rect x="20" y="30" width="300" height="200" rx="4" fill="#efece5" stroke="#d9d4ca" stroke-width="1.5"/>
-                    <text x="170" y="55" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.2" fill="#7a756d">FIXED BY SPECIFICATION</text>
-                    <text x="170" y="72" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#2a2824">SysML v2 semantics</text>
-                    <g font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="10" fill="#4a4641">
-                        <rect x="40" y="95" width="100" height="24" rx="12" fill="#fbfaf7" stroke="#d9d4ca" stroke-width="1"/>
-                        <text x="90" y="111" text-anchor="middle">Element types</text>
-                        <rect x="150" y="95" width="150" height="24" rx="12" fill="#fbfaf7" stroke="#d9d4ca" stroke-width="1"/>
-                        <text x="225" y="111" text-anchor="middle">Relationship semantics</text>
-                        <rect x="40" y="130" width="120" height="24" rx="12" fill="#fbfaf7" stroke="#d9d4ca" stroke-width="1"/>
-                        <text x="100" y="146" text-anchor="middle">Notation shapes</text>
-                        <rect x="170" y="130" width="130" height="24" rx="12" fill="#fbfaf7" stroke="#d9d4ca" stroke-width="1"/>
-                        <text x="235" y="146" text-anchor="middle">Compartment rules</text>
-                        <rect x="40" y="165" width="110" height="24" rx="12" fill="#fbfaf7" stroke="#d9d4ca" stroke-width="1"/>
-                        <text x="95" y="181" text-anchor="middle">Diagram types</text>
-                        <rect x="160" y="165" width="130" height="24" rx="12" fill="#fbfaf7" stroke="#d9d4ca" stroke-width="1"/>
-                        <text x="225" y="181" text-anchor="middle">Textual syntax</text>
-                    </g>
-                    <text x="170" y="215" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="10" font-style="italic" fill="#7a756d">Interoperable across tools</text>
-                    <line x1="340" y1="50" x2="340" y2="230" stroke="#a67849" stroke-width="2" stroke-dasharray="4,4"/>
-                    <text x="340" y="22" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="9" font-weight="600" fill="#a67849">boundary</text>
-                    <rect x="360" y="30" width="340" height="200" rx="4" fill="#eef2ec" stroke="#b8b1a4" stroke-width="1.5"/>
-                    <text x="530" y="55" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.2" fill="#6b8761">OPEN TO DESIGN</text>
-                    <text x="530" y="72" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#2a2824">Tool presentation &amp; interaction</text>
-                    <g font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="10" fill="#6b8761">
-                        <rect x="380" y="95" width="70" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="415" y="111" text-anchor="middle">Color</text>
-                        <rect x="460" y="95" width="70" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="495" y="111" text-anchor="middle">Layout</text>
-                        <rect x="540" y="95" width="90" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="585" y="111" text-anchor="middle">Navigation</text>
-                        <rect x="380" y="130" width="80" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="420" y="146" text-anchor="middle">Tooltips</text>
-                        <rect x="470" y="130" width="90" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="515" y="146" text-anchor="middle">Filtering</text>
-                        <rect x="570" y="130" width="80" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="610" y="146" text-anchor="middle">Search</text>
-                        <rect x="380" y="165" width="100" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="430" y="181" text-anchor="middle">Edge routing</text>
-                        <rect x="490" y="165" width="80" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="530" y="181" text-anchor="middle">Labels</text>
-                        <rect x="580" y="165" width="90" height="24" rx="12" fill="#fbfaf7" stroke="#b8b1a4" stroke-width="1"/>
-                        <text x="625" y="181" text-anchor="middle">Animation</text>
-                    </g>
-                    <text x="530" y="215" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="10" font-style="italic" fill="#4a4641">Where learnability is designed in</text>
-                </svg>
-                <p class="design-space-caption">The standard fixes the semantics. Everything else is the <strong>tool design space</strong>.</p>
-            </div>
-        </section>
+          <line x1="295" y1="93" x2="322" y2="93" stroke="#16191C" stroke-width="1.2"/><polygon points="322,88 332,93 322,98" fill="#16191C"/>
 
-        <section>
-            <h2 class="section-title">Framing &amp; reframing</h2>
-            <div class="flow-diagram">
-                <svg viewBox="0 0 920 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reframe flow: initial brief to reframe to outcome">
-                    <text x="155" y="32" text-anchor="middle" font-size="9" fill="#999" class="mono" letter-spacing="1.5">01 — BRIEF</text>
-                    <text x="460" y="32" text-anchor="middle" font-size="9" fill="#999" class="mono" letter-spacing="1.5">02 — REFRAME</text>
-                    <text x="765" y="32" text-anchor="middle" font-size="9" fill="#999" class="mono" letter-spacing="1.5">03 — OUTCOME</text>
+          <rect x="335" y="50" width="250" height="86" fill="#fff" stroke="#16191C" stroke-width="1.2"/>
+          <text x="460" y="80" text-anchor="middle" font-size="12" font-weight="500" fill="#16191C">Define principles first.</text>
+          <text x="460" y="98" text-anchor="middle" font-size="12" font-weight="500" fill="#16191C">Learnability as the lens.</text>
+          <text x="460" y="122" text-anchor="middle" font-size="10" fill="#5A6068" font-style="italic">Presentation teaches.</text>
 
-                    <rect x="20" y="50" width="270" height="86" fill="#fff" stroke="#000" stroke-width="1.2"/>
-                    <text x="155" y="80" text-anchor="middle" font-size="13" font-weight="500" fill="#000">"Review screens.</text>
-                    <text x="155" y="98" text-anchor="middle" font-size="13" font-weight="500" fill="#000">Improve layouts."</text>
-                    <text x="155" y="120" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Original ask</text>
+          <line x1="590" y1="93" x2="617" y2="93" stroke="#16191C" stroke-width="1.2"/><polygon points="617,88 627,93 617,98" fill="#16191C"/>
 
-                    <line x1="295" y1="93" x2="320" y2="93" stroke="#000" stroke-width="1.2"/>
-                    <polygon points="320,88 330,93 320,98" fill="#000"/>
+          <rect x="630" y="50" width="270" height="86" fill="#16191C" stroke="#16191C" stroke-width="1.2"/>
+          <text x="765" y="80" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">Principles · audit · roadmap.</text>
+          <text x="765" y="98" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">Foundations before fixes.</text>
+          <text x="765" y="122" text-anchor="middle" font-size="10" fill="#9BA0A6" font-style="italic">Outlives any single screen.</text>
+        </svg>
+        <p class="graph-cap">The most consequential decision in the project.</p>
+      </div>
+    </section>
 
-                    <rect x="335" y="50" width="250" height="86" fill="#fff" stroke="#000" stroke-width="1.2"/>
-                    <text x="460" y="78" text-anchor="middle" font-size="12" font-weight="500" fill="#000">Define principles first.</text>
-                    <text x="460" y="96" text-anchor="middle" font-size="12" font-weight="500" fill="#000">Learnability as the lens.</text>
-                    <text x="460" y="120" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Spec fixes meaning; presentation teaches.</text>
+    <section>
+      <div class="sec-head"><span class="no">03</span><h2>Design principles</h2></div>
+      <div class="tiles">
+        <div class="tile"><b>One model, many views</b><span>Views stay in sync</span></div>
+        <div class="tile learn"><b>Consistent grammar</b><span>Same meaning, same look</span></div>
+        <div class="tile learn"><b>Progressive disclosure</b><span>Show what the task needs</span></div>
+        <div class="tile"><b>Click anywhere</b><span>Selection syncs across views</span></div>
+        <div class="tile learn"><b>Context preservation</b><span>Zoom without losing place</span></div>
+        <div class="tile"><b>Type-first order</b><span>Group by element type</span></div>
+        <div class="tile"><b>Edge density</b><span>Keep diagrams readable</span></div>
+        <div class="tile"><b>Validation timing</b><span>Real time or on demand</span></div>
+        <div class="tile learn"><b>Safe exploration</b><span>Generous undo</span></div>
+        <div class="tile learn"><b>Familiar patterns</b><span>Build on IDE and CAD habits</span></div>
+      </div>
+      <p class="legend"><b>Blue</b> marks the principles that directly support learnability.</p>
+    </section>
 
-                    <line x1="590" y1="93" x2="615" y2="93" stroke="#000" stroke-width="1.2"/>
-                    <polygon points="615,88 625,93 615,98" fill="#000"/>
+    <section>
+      <div class="sec-head"><span class="no">04</span><h2>Interface findings</h2></div>
+      <div class="annos">
+        <div class="anno"><span class="t">Strength</span><p>Palette grouped by category, not one flat list.</p></div>
+        <div class="anno"><span class="t">Strength</span><p>Tooltips explain each element where users meet it.</p></div>
+        <div class="anno"><span class="t">Strength</span><p>Beginners browse, experts search, in one palette.</p></div>
+        <div class="anno keep"><span class="t">To add</span><p>Search "Block" should surface "Part" with the old name shown.</p></div>
+      </div>
+    </section>
 
-                    <rect x="630" y="50" width="270" height="86" fill="#000" stroke="#000" stroke-width="1.2"/>
-                    <text x="765" y="78" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">Principles · audit · roadmap.</text>
-                    <text x="765" y="96" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">Foundations before fixes.</text>
-                    <text x="765" y="120" text-anchor="middle" font-size="10" fill="#ccc" font-style="italic">Outlives any individual screen.</text>
-                </svg>
-                <p class="flow-caption">The reframe was the most consequential decision in the project.</p>
-            </div>
-        </section>
+    <section>
+      <div class="sec-head"><span class="no">05</span><h2>Recommendations</h2></div>
+      <ol class="reclist">
+        <li><span class="n">01</span><span class="t"><b>Resolve Model vs File Explorer.</b> The biggest IA decision. It gates the sidebar and default view.</span></li>
+        <li><span class="n">02</span><span class="t"><b>Bridge v1 and v2 in search.</b> Small to build, high in value.</span></li>
+        <li><span class="n">03</span><span class="t"><b>Standardize icon style.</b> Mixed flat and filled icons weaken the grammar.</span></li>
+        <li><span class="n">04</span><span class="t"><b>Map the core workflows.</b> Create, connect, review. Surfaces gaps a static audit misses.</span></li>
+        <li><span class="n">05</span><span class="t"><b>Extend the teaching tooltips.</b> The strongest lever for learning through use.</span></li>
+      </ol>
+    </section>
 
-        <section>
-            <h2 class="section-title">Two audiences, one interface</h2>
-            <p>The interface has to teach two learning paths at once.</p>
-            <div class="learnability-goal">
-                <h3>Designing for learnability</h3>
-                <div class="user-types">
-                    <div class="user-type">
-                        <strong>New to SysML</strong>
-                        <p>Engineers who need MBSE but have not used SysML. The tool teaches them through use, with progressive disclosure, clear feedback, and room to explore safely.</p>
-                    </div>
-                    <div class="user-type">
-                        <strong>v1 to v2 transition</strong>
-                        <p>Experienced users adjusting to v2 terminology. Show the familiar names next to their v2 equivalents.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section>
+      <div class="sec-head"><span class="no">06</span><h2>Working with AI</h2></div>
+      <div class="ainote"><p><b>AI synthesizes frameworks, the knowledge is not from AI.</b> To use Miller's Law well, I read the source, not the summary.</p></div>
+      <div class="ainote"><p><b>AI gives basics faster, experts hold the real detail.</b> SysML basics from AI. How an engineer works from Cauê.</p></div>
+      <div class="ainote"><p><b>AI expands scope fast, and differently per person.</b> Clear problem, role and scope keep the output in bounds.</p></div>
+    </section>
 
-        <section>
-            <h2 class="section-title">Process</h2>
-            <div class="process-steps">
-                <div class="process-step complete">
-                    <span class="num">01</span><strong>Principles</strong>
-                    <p>Values &amp; decision criteria</p>
-                </div>
-                <div class="process-step complete">
-                    <span class="num">02</span><strong>Interface analysis</strong>
-                    <p>Current state audit</p>
-                </div>
-                <div class="process-step">
-                    <span class="num">03</span><strong>IA</strong>
-                    <p>Content hierarchy</p>
-                </div>
-                <div class="process-step">
-                    <span class="num">04</span><strong>Onboarding</strong>
-                    <p>First-run experience</p>
-                </div>
-                <div class="process-step">
-                    <span class="num">05</span><strong>Design foundations</strong>
-                    <p>Tokens &amp; patterns</p>
-                </div>
-            </div>
-            <p>The order matters. Principles make the decisions defensible. The analysis shows where they hold and where the gaps are. IA settles where things live. The design system comes last, because tokens are expensive to change once they are in production.</p>
-        </section>
+    <section>
+      <div class="sec-head"><span class="no">07</span><h2>Frameworks &amp; tools</h2></div>
+      <div class="chips">
+        <span class="chip">Tufte</span><span class="chip">Bertin</span><span class="chip">Nielsen</span><span class="chip">Norman</span><span class="chip">Sweller &amp; Miller</span><span class="chip">Jakob's Law</span><span class="chip">SysML v2 spec</span>
+      </div>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip">Pen &amp; paper</span><span class="chip">Figma · Gimp · Preview</span><span class="chip">Heuristic evaluation</span><span class="chip">Workflow analysis</span><span class="chip">Claude AI</span><span class="chip">Obsidian</span>
+      </div>
+    </section>
 
-        <section>
-            <h2 class="section-title">Design principles</h2>
-            <p>Ten principles drawn from UX and information design, then checked with Cauê against how systems engineers actually work. Green marks the ones that directly support learnability.</p>
-            <div class="sources-strip">
-                <div class="sources-strip-label">Synthesized from</div>
-                <div class="sources-strip-content">
-                    <strong>Tufte</strong> (data-ink, layering, small multiples) · <strong>Bertin</strong> (visual variables) · <strong>Nielsen</strong> (heuristics) · <strong>Shneiderman</strong> (overview and detail, linked views) · <strong>Norman</strong> (affordances, safe exploration) · <strong>Cognitive load</strong> (Sweller, Miller) · <strong>SysML v2 specification</strong> · domain review with a practicing systems engineer.
-                </div>
-            </div>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <div class="principle-num">01</div>
-                    <div class="principle-content">
-                        <strong>One model, many views</strong>
-                        <p>One source of truth. Diagram, tree, table, and text stay in sync. <span class="principle-source">Shneiderman; linked views</span></p>
-                    </div>
-                </div>
-                <div class="principle-card learnability">
-                    <div class="principle-num">02</div>
-                    <div class="principle-content">
-                        <strong>Consistent visual grammar</strong>
-                        <p>The same meaning gets the same appearance, so patterns become easy to spot. <span class="principle-source">Bertin; Tufte</span></p>
-                    </div>
-                </div>
-                <div class="principle-card learnability">
-                    <div class="principle-num">03</div>
-                    <div class="principle-content">
-                        <strong>Progressive disclosure</strong>
-                        <p>Show what the task needs and keep the rest out of the way. <span class="principle-source">Miller's Law; NNGroup</span></p>
-                    </div>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-num">04</div>
-                    <div class="principle-content">
-                        <strong>Click anywhere, land everywhere</strong>
-                        <p>A selection syncs across every view at once. <span class="principle-source">Linked views</span></p>
-                    </div>
-                </div>
-                <div class="principle-card learnability">
-                    <div class="principle-num">05</div>
-                    <div class="principle-content">
-                        <strong>Context preservation</strong>
-                        <p>Zoom in without losing your place. Orientation supports learning. <span class="principle-source">Shneiderman's mantra</span></p>
-                    </div>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-num">06</div>
-                    <div class="principle-content">
-                        <strong>Type-first organization</strong>
-                        <p>Group by element type rather than by creation order. <span class="principle-source">IA</span></p>
-                    </div>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-num">07</div>
-                    <div class="principle-content">
-                        <strong>Edge density management</strong>
-                        <p>Filter or limit edges so the diagram stays readable. <span class="principle-source">Tufte: layering and separation</span></p>
-                    </div>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-num">08</div>
-                    <div class="principle-content">
-                        <strong>Validation timing</strong>
-                        <p>Let the user choose real-time or on-demand checks. <span class="principle-source">B2B expert workflows</span></p>
-                    </div>
-                </div>
-                <div class="principle-card learnability">
-                    <div class="principle-num">09</div>
-                    <div class="principle-content">
-                        <strong>Safe exploration</strong>
-                        <p>Generous undo and non-destructive defaults, so mistakes stay cheap. <span class="principle-source">Norman</span></p>
-                    </div>
-                </div>
-                <div class="principle-card learnability">
-                    <div class="principle-num">10</div>
-                    <div class="principle-content">
-                        <strong>Leverage familiar patterns</strong>
-                        <p>Build on IDE and CAD conventions people already know. <span class="principle-source">Jakob's Law</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">SysML v2 constraint map</h2>
-            <p>Where the spec constrains design, and where it does not. Shape and semantics are fixed. Presentation is where learnability happens.</p>
-            <div class="constraint-detail">
-                <div class="constraint-detail-header">
-                    <span class="label fixed">Fixed</span>
-                    <h4>Set by the SysML v2 specification</h4>
-                </div>
-                <table class="constraint-table fixed">
-                    <thead>
-                        <tr><th>Element</th><th>Standard representation</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Part def / Part usage</td><td>Rectangle with «part def» / «part» keyword</td></tr>
-                        <tr><td>Composition</td><td>Filled diamond on the parent end</td></tr>
-                        <tr><td>Port / Connector</td><td>Small square on the block edge, line between ports</td></tr>
-                        <tr><td>Requirement</td><td>Rectangle with «requirement» and an id field</td></tr>
-                        <tr><td>State / Transition</td><td>Rounded rectangle, arrow with a trigger label</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="constraint-detail">
-                <div class="constraint-detail-header">
-                    <span class="label flexible">Flexible</span>
-                    <h4>Open to design</h4>
-                </div>
-                <table class="constraint-table flexible">
-                    <thead>
-                        <tr><th>Aspect</th><th>Design freedom</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Color</td><td>Unspecified. Can encode type, subsystem, status, or health.</td></tr>
-                        <tr><td>Size</td><td>Can encode information, such as child count or criticality.</td></tr>
-                        <tr><td>Layout and edge routing</td><td>Auto-layout, spacing, alignment, orthogonal or curved, bundling.</td></tr>
-                        <tr><td>Hierarchy display</td><td>Containment or separate diagrams.</td></tr>
-                        <tr><td>Labels, filtering, animation</td><td>Defaults, truncation, hover expansion, visibility, zoom transitions.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="constraint-boundary-note">
-                <strong>Why the boundary matters:</strong> shape is fixed, while color, size, and layout are presentation. If you keep the layers separate, so that shape means type, color means status, and size means magnitude, each one stays readable on its own.
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Interface analysis</h2>
-            <p>The audit covered first impressions and the key workflow moments.</p>
-
-
-<!--
-
-            <div class="screenshot-annotation">
-                <div class="screenshot-header">Add Element Palette</div>
-                <div class="screenshot-body">
-                    <div class="screenshot-image">
-                        <img src="sf-element-palette.webp" alt="System Forge element palette with category groups and a tooltip">
-                    </div>
-
--->
-
-                    <div class="annotation-list">
-                        <div class="annotation-item strength">
-                            <strong>✓ Grouped by category</strong>
-                            <p>Structure, Behavior, Requirements, Connections, Organization, and Documentation, rather than one flat list.</p>
-                            <span class="tag">Supports: #06</span>
-                        </div>
-                        <div class="annotation-item strength">
-                            <strong>✓ Tooltips teach in context</strong>
-                            <p>Hovering Part shows "Create an instance of a part." Concepts are explained where users meet them.</p>
-                            <span class="tag">Supports: #03</span>
-                        </div>
-                        <div class="annotation-item strength">
-                            <strong>✓ Browse and expert search</strong>
-                            <p>Beginners can browse and experts can search, in one palette.</p>
-                            <span class="tag">Supports: flexibility</span>
-                        </div>
-                        <div class="annotation-item consideration">
-                            <strong>→ v1 terminology in search</strong>
-                            <p>Searching "Block" (v1) should surface "Part" (v2) with the old name shown. This helps users who are transitioning.</p>
-                            <span class="tag">Learnability: v1 to v2</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="recommendations-box">
-                <h3>Concrete recommendations</h3>
-                <p class="recommendations-intro">Near-term moves, ordered by how much downstream work each one unblocks.</p>
-                <ol class="recommendations-list">
-                    <li><strong>Resolve Model Explorer versus File Explorer.</strong> This is the biggest IA decision. It gates the sidebar hierarchy, the icon weight, and the default view.</li>
-                    <li><strong>Bridge v1 and v2 in search.</strong> Typing "Block" should surface "Part" with the v1 label still visible. Small to build, high in value.</li>
-                    <li><strong>Standardize icon style and hover behavior.</strong> Mixed flat and filled icons weaken the visual grammar. Clean this up in one pass before the IA hardens.</li>
-                    <li><strong>Map the core workflows end to end.</strong> Create, add parts, connect, then review and validate. This surfaces gaps that a static audit misses.</li>
-                    <li><strong>Extend the teaching tooltips.</strong> Grow the Part tooltip pattern across the palette. This is the strongest lever for learning through use.</li>
-                </ol>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Working with AI</h2>
-            <p>A few things I learned about using AI on this project.</p>
-            <div class="ai-notes">
-                <div class="ai-note">
-                    <p><strong>AI is good at synthesizing frameworks, but the knowledge does not come from AI.</strong> It pulled the ten principles together quickly. The frameworks themselves come from people like Tufte, Bertin, and Norman. To know that Miller's Law is the reason for progressive disclosure, I had to read the source, not the summary.</p>
-                </div>
-                <div class="ai-note">
-                    <p><strong>AI gets you basic knowledge faster, but experts and real users hold the real-world detail.</strong> It brought me up to speed on SysML v2. How a systems engineer actually works, and where they stall, came from Cauê, not from a model.</p>
-                </div>
-                <div class="ai-note">
-                    <p><strong>AI expands scope quickly, and it does so differently for different people.</strong> It does not weigh the consequences for a team unless you ask it to. Different roles and experts set boundaries in different ways. So the problem, the role, and the scope have to be defined clearly. Those definitions are what keep the output inside what the work actually needs.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Reflection</h2>
-            <div class="reflection">
-                <p><strong>A limit I could not resolve:</strong> learnability can only be tested with real users in the middle of a task. Until that happens, every principle here is a hypothesis. The recommendations are ranked by leverage, not by evidence.</p>
-            </div>
-            <div class="reflection">
-                <p>Most MBSE tools assume training. System Forge asks what happens if the interface teaches instead. Every tooltip, cue, and error message becomes a chance to help someone learn the language while they use it.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Resources &amp; frameworks</h2>
-            <p>The theoretical frameworks behind the principles, plus the reference material for what the spec fixes.</p>
-            <ul class="resources-list">
-                <li><span class="r-name">Tufte</span><span class="r-desc">Data-ink, layering and separation, small multiples.</span></li>
-                <li><span class="r-name">Bertin</span><span class="r-desc">Visual variables and how they encode meaning.</span></li>
-                <li><span class="r-name">Nielsen</span><span class="r-desc">Usability heuristics for evaluating the interface.</span></li>
-                <li><span class="r-name">Shneiderman</span><span class="r-desc">Overview first, then detail. Linked views.</span></li>
-                <li><span class="r-name">Norman</span><span class="r-desc">Affordances and safe exploration.</span></li>
-                <li><span class="r-name">Sweller &amp; Miller</span><span class="r-desc">Cognitive load and working-memory limits.</span></li>
-                <li><span class="r-name">Jakob's Law</span><span class="r-desc">People carry expectations from tools they already use.</span></li>
-                <li><span class="r-name">SysML v2 specification</span><span class="r-desc">The standard itself, used as the reference for what is fixed.</span></li>
-                <li><span class="r-name">Domain review</span><span class="r-desc">Sessions with Cauê Napier, a practicing systems engineer.</span></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">Tools &amp; methods</h2>
-            <div class="tech-list">
-                <span class="tech-tag">Pen &amp; paper</span>
-                <span class="tech-tag">Figma, Gimp, Preview</span>
-                <span class="tech-tag">Heuristic evaluation</span>
-                <span class="tech-tag">Workflow analysis</span>
-                <span class="tech-tag">Claude AI</span>
-                <span class="tech-tag">Obsidian</span>
-            </div>
-        </section>
-
-        <nav>
-            <a href="valispace.html">← Valispace</a>
-            <a href="navigator.html">Navigator →</a>
-        </nav>
-    </main>
-    <footer>
-        <p>© 2026 Petra Kühnle</p>
+    <div class="pager">
+      <a href="valispace.html">← Valispace</a>
+      <a href="navigator.html">Navigator →</a>
+    </div>
+    <footer class="mono">
+      <span>Petra Kühnle · Product &amp; UX Design</span>
+      <span>Berlin</span>
     </footer>
+  </div>
+</div>
 </body>
 </html>
