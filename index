@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petra Kühnle — Product &amp; UX Design</title>
+<meta name="description" content="Petra Kühnle, product designer for complex, technical software. First designer at Valispace; work ships in Altium 365.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sheet:#F4F4F1;
+    --ink:#16191C;
+    --graphite:#5A6068;
+    --hairline:#C9CFD1;
+    --grid:#E6E7E3;
+    --accent:#2B3FC4;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--sheet);
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:30px 30px;
+    color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ink);color:var(--sheet);}
+
+  .sheet{max-width:880px;margin:0 auto;padding:clamp(20px,4vw,40px);position:relative;}
+  .frame{position:relative;border:1px solid var(--ink);
+    padding:clamp(26px,5vw,56px) clamp(22px,5vw,56px) clamp(34px,5vw,56px);
+    background:rgba(244,244,241,.72);}
+  .tick{position:absolute;width:13px;height:13px;pointer-events:none;}
+  .tick-tl{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
+  .tick-tr{top:-1px;right:-1px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);}
+  .tick-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--ink);border-left:2px solid var(--ink);}
+  .tick-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink);}
+
+  .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);}
+
+  .strip{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding-bottom:18px;margin-bottom:clamp(28px,5vw,46px);border-bottom:1px solid var(--hairline);}
+
+  header h1{font-family:var(--display);font-weight:500;
+    font-size:clamp(40px,8.5vw,82px);line-height:.96;letter-spacing:-.025em;margin:0 0 18px;}
+  .role{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--ink);margin:0 0 26px;}
+  .thesis{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.5vw,23px);
+    line-height:1.42;max-width:28em;margin:0 0 22px;color:var(--ink);}
+  .intro{max-width:36em;color:var(--ink);margin:0;}
+  .intro p{margin:0;}
+  a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .15s;}
+  a:hover{color:var(--ink);}
+
+  .titleblock{margin:clamp(34px,5vw,48px) 0;border:1px solid var(--ink);
+    display:grid;grid-template-columns:repeat(4,1fr);}
+  .tb{padding:13px 15px;border-right:1px solid var(--hairline);border-top:1px solid var(--hairline);}
+  .tb:nth-child(-n+4){border-top:none;}
+  .tb:nth-child(4n){border-right:none;}
+  .tb .k{display:block;margin-bottom:5px;}
+  .tb .v{font-family:var(--display);font-size:15px;font-weight:500;letter-spacing:-.01em;}
+
+  section{margin-top:clamp(46px,7vw,72px);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;
+    padding-bottom:12px;margin-bottom:26px;border-bottom:1px solid var(--ink);}
+  .sec-head .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:var(--accent);}
+  .sec-head h2{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.15em;
+    text-transform:uppercase;margin:0;color:var(--ink);}
+  .lede{max-width:42em;margin:0 0 28px;color:var(--ink);}
+
+  .feat{display:grid;grid-template-columns:1fr;gap:4px;padding:20px 0;border-top:1px solid var(--hairline);}
+  .feat:first-of-type{border-top:none;padding-top:2px;}
+  .feat .ft{font-family:var(--display);font-size:20px;font-weight:500;letter-spacing:-.01em;color:var(--ink);}
+  .feat .fd{font-size:15px;color:var(--graphite);line-height:1.5;max-width:44em;}
+  .note{font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--graphite);margin:14px 0 0;letter-spacing:.02em;}
+
+  .item{padding:24px 0;border-top:1px solid var(--hairline);}
+  .item:first-of-type{border-top:none;padding-top:2px;}
+  .cap-tag{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:9px;}
+  .item-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:4px;}
+  .item h3{font-family:var(--display);font-weight:500;font-size:21px;letter-spacing:-.01em;margin:0;}
+  .pid{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--graphite);white-space:nowrap;}
+  .item .meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--graphite);margin:0 0 12px;text-transform:uppercase;}
+  .body-txt{max-width:44em;color:var(--ink);margin:0;}
+  .mini-link{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    margin-left:2px;}
+
+  .recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;}
+  .recs figure{margin:0;}
+  .recs blockquote{font-family:var(--display);font-weight:400;font-size:18px;line-height:1.45;
+    letter-spacing:-.01em;color:var(--ink);margin:0 0 18px;}
+  .recs figcaption{border-top:1px solid var(--hairline);padding-top:13px;}
+  .recs .who{font-size:14px;color:var(--ink);}
+  .recs .rr{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--graphite);margin-top:5px;}
+
+  .roles{list-style:none;margin:18px 0 0;padding:0;}
+  .roles li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:11px 0;border-top:1px solid var(--hairline);font-size:15px;}
+  .roles .yr{font-family:var(--mono);font-size:11px;color:var(--graphite);white-space:nowrap;}
+  .roles .award{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--accent);margin-top:5px;}
+  strong{font-weight:500;color:var(--ink);}
+
+  .bg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px 40px;margin-top:30px;}
+  .bg-grid .k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:9px;}
+  .bg-grid .v{font-size:15px;color:var(--ink);line-height:1.5;}
+  .bg-grid .v .s{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--graphite);margin-top:3px;}
+  .skills{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);
+    line-height:2;margin:30px 0 0;padding-top:18px;border-top:1px solid var(--hairline);}
+  .skills .skills-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);line-height:1.4;margin-bottom:9px;}
+  .deepening{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);margin:8px 0 0;}
+
+  .avail{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--graphite);margin:0 0 18px;}
+  .contact{display:flex;flex-wrap:wrap;gap:8px 30px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;margin-top:4px;}
+  footer{margin-top:clamp(46px,7vw,70px);padding-top:18px;border-top:1px solid var(--ink);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+
+  .fade{opacity:0;transform:translateY(10px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  .tick{opacity:0;animation:tk .5s ease forwards;}
+  @keyframes tk{to{opacity:1;}}
+
+  @media (max-width:620px){
+    body{font-size:16px;background-size:24px 24px;}
+    .titleblock{grid-template-columns:repeat(2,1fr);}
+    .tb:nth-child(-n+2){border-top:none;}
+    .tb:nth-child(n+3){border-top:1px solid var(--hairline);}
+    .tb:nth-child(2n){border-right:none;}
+    .tb:nth-child(3){border-right:1px solid var(--hairline);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .fade,.tick{animation:none;opacity:1;transform:none;}
+    body{background-image:none;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="frame">
+    <span class="tick tick-tl" style="animation-delay:.05s"></span>
+    <span class="tick tick-tr" style="animation-delay:.15s"></span>
+    <span class="tick tick-bl" style="animation-delay:.25s"></span>
+    <span class="tick tick-br" style="animation-delay:.35s"></span>
+
+    <div class="strip mono fade" style="animation-delay:.05s">
+      <span>Product &amp; UX Design</span>
+      <span>Berlin</span>
+    </div>
+
+    <header>
+      <h1 class="fade" style="animation-delay:.12s">Petra<br>Kühnle</h1>
+      <p class="role fade" style="animation-delay:.2s">Product / UX Designer</p>
+      <p class="thesis fade" style="animation-delay:.28s">I work on complex, technical software, mostly in engineering domains. I learn the field before I design for it.</p>
+      <div class="intro fade" style="animation-delay:.36s">
+        <p>I was the first designer at Valispace, an aerospace systems engineering company that had shipped for six years without one. The job was to learn the field, earn the engineers' trust, and make their tools usable. That work ships today in Altium 365.</p>
+      </div>
+    </header>
+
+    <div class="titleblock fade" style="animation-delay:.44s" aria-label="Summary">
+      <div class="tb"><span class="k mono">Role</span><span class="v">Product / UX Designer</span></div>
+      <div class="tb"><span class="k mono">Based</span><span class="v">Berlin, DE</span></div>
+      <div class="tb"><span class="k mono">Focus</span><span class="v">Complex / technical UX</span></div>
+      <div class="tb"><span class="k mono">Status</span><span class="v">Open to senior roles</span></div>
+    </div>
+
+    <!-- 01 · SHIPPED -->
+    <section class="fade" style="animation-delay:.1s">
+      <div class="sec-head"><span class="no">01</span><h2>Shipped in Altium 365</h2></div>
+      <p class="lede">I designed these as Valispace's first and only designer. They ship today in the Altium 365 Requirements &amp; Systems Portal, the product Valispace became after Altium acquired it in 2024. The work helped win a six-figure development contract with an aerospace client.</p>
+
+      <div class="feat">
+        <span class="ft">Master-Follower</span>
+        <span class="fd">Propagates linked requirements across a system hierarchy. Every connection carries state, so engineers see what a change affects downstream. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Docs ↗</a></span>
+      </div>
+      <div class="feat">
+        <span class="ft">Verification &amp; Validation Matrix</span>
+        <span class="fd">Traceability between each requirement and the activity that verifies it. Built for projects with hundreds of engineers running over many years. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-portal/verification-validation-module" target="_blank" rel="noopener">Docs ↗</a></span>
+      </div>
+      <div class="feat">
+        <span class="ft">Review Center</span>
+        <span class="fd">Review workflows with clear state, so distributed teams reach decisions in one place.<!-- ADD WHEN VERIFIED: <a class="mini-link" href="REVIEW_CENTER_DOC_URL" target="_blank" rel="noopener">Docs ↗</a> --></span>
+      </div>
+
+      <p class="note">Links go to Altium's public product documentation.</p>
+    </section>
+
+    <!-- 02 · HIGHLIGHTS -->
+    <section class="fade" style="animation-delay:.1s">
+      <div class="sec-head"><span class="no">02</span><h2>Highlights</h2></div>
+
+      <div class="item">
+        <span class="cap-tag">Complex, data-rich UX</span>
+        <div class="item-top">
+          <h3>Making systems data usable for teams of hundreds</h3>
+          <span class="pid">VALISPACE</span>
+        </div>
+        <p class="meta">Sole designer · MBSE / traceability</p>
+        <p class="body-txt">I designed a verification matrix and traceability workflows for engineering projects with hundreds of contributors. I owned them from pencil sketch to shipped UI. They run in Altium 365 today.</p>
+      </div>
+
+      <div class="item">
+        <span class="cap-tag">Working with engineers</span>
+        <div class="item-top">
+          <h3>Designing the logic, not just the screens</h3>
+          <span class="pid">VALISPACE</span>
+        </div>
+        <p class="meta">With the CPO, engineers, and clients</p>
+        <p class="body-txt">I designed complex features in Figma in enough detail to settle how they were built. Working that closely once let me catch a spec miscommunication between product and backend before it caused a rebuild.</p>
+      </div>
+
+      <div class="item">
+        <span class="cap-tag">User research</span>
+        <div class="item-top">
+          <h3>Research and validation as the first designer</h3>
+          <span class="pid">VALISPACE</span>
+        </div>
+        <p class="meta">User interviews · usability testing</p>
+        <p class="body-txt">I learned the real problems from expert users and tested prototypes with them most weeks. I checked my findings with in-house specialists and iterated over several months.</p>
+      </div>
+
+      <div class="item">
+        <span class="cap-tag">Founding design</span>
+        <div class="item-top">
+          <h3>Introducing UX to an engineering-led startup</h3>
+          <span class="pid">VALISPACE</span>
+        </div>
+        <p class="meta">Founding designer · 0 to 1</p>
+        <p class="body-txt">I built the design function from zero, in a product that had shipped for six years without one. I started a UX guild with the engineers, hired the senior designer who still runs the work today, and joined the product team.</p>
+      </div>
+
+      <!-- =====================================================================
+           DETAILED WRITE-UP, NOT SHOWN YET.
+           To publish: move this block outside the comment and fill the TODOs.
+           Keep it factual and general. The public Altium links are the proof.
+      ========================================================================
+      <div class="item">
+        <span class="cap-tag">Complex, data-rich UX</span>
+        <div class="item-top">
+          <h3>Master-Follower, propagating requirements with state</h3>
+          <span class="pid">WRITE-UP · 01</span>
+        </div>
+        <p class="meta">Valispace · Sole designer</p>
+        <p class="body-txt">
+          Context. [TODO: who the users were and what they were doing.]
+          Problem. [TODO: the breakdown before the design existed.]
+          Approach. Domain interviews, then user stories, then high-fidelity prototypes, then weekly iteration with engineers and users.
+          Decisions. [TODO: two or three concrete design calls and why.]
+          Outcome. Shipped; live in Altium 365 today. [TODO: a result you can state plainly.]
+        </p>
+      </div>
+      ===================================================================== -->
+    </section>
+
+    <!-- 03 · PROJECTS -->
+    <section class="fade" style="animation-delay:.1s">
+      <div class="sec-head"><span class="no">03</span><h2>Projects</h2></div>
+
+      <div class="item">
+        <div class="item-top">
+          <h3>System Forge</h3>
+          <span class="pid">SELF · SYSML</span>
+        </div>
+        <p class="meta">Self-initiated · SysML v2 / MBSE</p>
+        <p class="body-txt">A side project on design and UX improvements for SysML v2, the next-generation systems modeling language for model-based systems engineering. I build it hands on with LLMs and the terminal.</p>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <h3>Navigator</h3>
+          <span class="pid">SELF · NAV</span>
+        </div>
+        <p class="meta">Self-initiated · AI law tracker for musicians</p>
+        <p class="body-txt">An AI-assisted tracker for legal changes that affect working musicians. Built out of curiosity about the tooling. It advanced past the first round of <strong>Mozilla Fellowship nominations</strong>.</p>
+      </div>
+
+      <!-- ADD WHEN READY — data-visualisation project:
+      <div class="item">
+        <div class="item-top">
+          <h3>Data-visualisation project</h3>
+          <span class="pid">SELF · DV</span>
+        </div>
+        <p class="meta">Self-initiated · Python · Matplotlib / Plotly</p>
+        <p class="body-txt">[TODO: short description, link to the repo, and open-source contributions to geospatial-data and design-system libraries.]</p>
+      </div>
+      -->
+    </section>
+
+    <!-- 04 · RECOMMENDATIONS -->
+    <section class="fade" style="animation-delay:.1s">
+      <div class="sec-head"><span class="no">04</span><h2>Recommendations</h2></div>
+      <div class="recs">
+        <figure>
+          <blockquote>“She took the initiative to start a UX guild that brought designers and developers together to improve the overall user experience.”</blockquote>
+          <figcaption>
+            <div class="who">Louise Lindblad</div>
+            <div class="rr">Co-founder · Valispace (now Altium)</div>
+          </figcaption>
+        </figure>
+        <figure>
+          <blockquote>“In a very short time she learned a previously unknown field by talking to users and iterating fast with them on mockups and prototypes.”</blockquote>
+          <figcaption>
+            <div class="who">Florian Reger</div>
+            <div class="rr">Solution Management · Valispace (now Altium)</div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 05 · BACKGROUND -->
+    <section class="fade" style="animation-delay:.1s">
+      <div class="sec-head"><span class="no">05</span><h2>Background</h2></div>
+      <p class="body-txt">Four years at Apple, supporting users of its creative and productivity apps: music production (Logic Pro, GarageBand), video editing (Final Cut Pro, iMovie), presentations (Keynote), spreadsheets (Numbers), and word processing (Pages). I learned how expert tools fail in real use, and later carried good patterns into engineering software that lacked them.</p>
+      <ul class="roles">
+        <li><span>Pro Apps Specialist (T4) · Apple</span><span class="yr">2019–2020</span></li>
+        <li><span>Senior Advisor, Media Products · Apple</span><span class="yr">2018–2019</span></li>
+        <li><span>Media App Advisor · Apple<span class="award">AppleCare Excellence Award · 2018</span></span><span class="yr">2016–2018</span></li>
+      </ul>
+
+      <div class="bg-grid">
+        <div>
+          <span class="k">Education</span>
+          <span class="v">BFA, Audio-Visual Media<span class="s">Specialism in audio-visual data</span></span>
+        </div>
+        <div>
+          <span class="k">Languages</span>
+          <span class="v">German (native)<span class="s">English (fluent), Dutch (fluent)</span></span>
+        </div>
+      </div>
+
+      <p class="skills"><span class="skills-k">Skills</span>UX/UI · interaction design · design systems · rapid prototyping · accessibility · visual design · Figma (auto-layout, components) · HTML / CSS / JS · AI-native practice · Python · data analysis</p>
+      <!-- ADD WHEN READY: open-source contributions to geospatial-data and design-system libraries -->
+    </section>
+
+    <!-- 06 · CONTACT -->
+    <section class="fade" style="animation-delay:.1s">
+      <div class="sec-head"><span class="no">06</span><h2>Contact</h2></div>
+      <p class="avail">Open to senior product roles. Berlin or remote.</p>
+      <div class="contact">
+        <a href="mailto:petra.kuehnle@gmail.com">EMAIL →</a>
+        <a href="https://www.linkedin.com/in/petrakuhnle" target="_blank" rel="noopener">LINKEDIN →</a>
+      </div>
+    </section>
+
+    <footer class="mono">
+      <span>Petra Kühnle · Product &amp; UX Design</span>
+      <span>Berlin</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
