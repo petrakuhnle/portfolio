@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petra Kühnle — Product &amp; UX Design</title>
-<title><a href=#background>Background </a> <a href=#contact>Contact</a></title>
-
-<meta name="description" content="Petra Kühnle, product designer for complex, technical software. First designer at Valispace; work ships in Altium 365.">
+<title>Petra Kühnle — Product Design</title>
+<meta name="description" content="Petra Kühnle, senior product designer for complex, data-rich B2B and engineering tools. First designer at Valispace; work ships in Altium 365.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,6 +19,12 @@
     --display:"Space Grotesk",system-ui,sans-serif;
     --body:"IBM Plex Sans",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --frame-pad-x:clamp(22px,5vw,56px);
+    /* quiet, cool-grey tint for the "record / evidence" chapters —
+       shipped work, testimonials, and the verifiable CV background.
+       Narrative chapters (identity, present work, contact) stay on
+       the plain sheet, so the tone itself carries the distinction. */
+    --chapter-tint: oklch(93.8% 0.007 250 / 0.6);
   }
 
   *{box-sizing:border-box;}
@@ -38,7 +42,7 @@
 
   .sheet{max-width:880px;margin:0 auto;padding:clamp(20px,4vw,40px);position:relative;}
   .frame{position:relative;border:1px solid var(--ink);
-    padding:clamp(26px,5vw,56px) clamp(22px,5vw,56px) clamp(34px,5vw,56px);
+    padding:clamp(26px,5vw,56px) var(--frame-pad-x) clamp(34px,5vw,56px);
     background:rgba(244,244,241,.72);}
   .tick{position:absolute;width:13px;height:13px;pointer-events:none;}
   .tick-tl{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
@@ -70,6 +74,14 @@
   .tb .v{font-family:var(--display);font-size:15px;font-weight:500;letter-spacing:-.01em;}
 
   section{margin-top:clamp(46px,7vw,72px);}
+  /* chapter bands: bleed to the frame's own edges so the tint reads as a
+     deliberate print/poster band, not a UI card — no other geometry changes. */
+  section.chapter{
+    padding:26px var(--frame-pad-x) 30px;
+    margin-left:calc(-1 * var(--frame-pad-x));
+    margin-right:calc(-1 * var(--frame-pad-x));
+    background:var(--chapter-tint);
+  }
   .sec-head{display:flex;align-items:baseline;gap:14px;
     padding-bottom:12px;margin-bottom:26px;border-bottom:1px solid var(--ink);}
   .sec-head .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:var(--accent);}
@@ -116,7 +128,6 @@
   .skills{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);
     line-height:2;margin:30px 0 0;padding-top:18px;border-top:1px solid var(--hairline);}
   .skills .skills-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);line-height:1.4;margin-bottom:9px;}
-  .deepening{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);margin:8px 0 0;}
 
   .avail{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--graphite);margin:0 0 18px;}
   .contact{display:flex;flex-wrap:wrap;gap:8px 30px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;margin-top:4px;}
@@ -151,30 +162,30 @@
     <span class="tick tick-br" style="animation-delay:.35s"></span>
 
     <div class="strip mono fade" style="animation-delay:.05s">
-      <span>Product &amp; UX Design</span>
+      <span>Senior Product Designer</span>
       <span>Berlin</span>
     </div>
 
     <header>
       <h1 class="fade" style="animation-delay:.12s">Petra<br>Kühnle</h1>
-      <p class="role fade" style="animation-delay:.2s">Product / UX Designer</p>
-      <p class="thesis fade" style="animation-delay:.28s">I work on complex, technical software, mostly in engineering domains.</p>
+      <p class="role fade" style="animation-delay:.2s">Senior Product Designer · Complex, data-rich tools</p>
+      <p class="thesis fade" style="animation-delay:.28s">I design complex, data-rich B2B tools, mostly for engineering and technical teams.</p>
       <div class="intro fade" style="animation-delay:.36s">
-        <p>I was the first designer at Valispace, an (aerospace) systems and requirements engineering startup that had shipped for six years without one. The job was to use realistic high-fidelity interactive design prototypes to align expert users, internal experts and deverlopers to manage the trade-off of usability and complexity. That work ships today in <a href="https://www.altium.com">Altium 365</a>, used by electronics and systems engineers.</p>
+        <p>First designer at Valispace, an aerospace systems and requirements engineering company that had shipped for six years without one. I built the design practice while learning a precise new domain, and drafted the prototypes that helped win a six-figure contract. That work ships today in <a href="https://www.altium.com">Altium 365</a>, used by electronics and systems engineers.</p>
       </div>
     </header>
 
     <div class="titleblock fade" style="animation-delay:.44s" aria-label="Summary">
-      <div class="tb"><span class="k mono">Role</span><span class="v">Product / UX Designer</span></div>
+      <div class="tb"><span class="k mono">Role</span><span class="v">Senior Product Designer</span></div>
       <div class="tb"><span class="k mono">Based</span><span class="v">Berlin, DE</span></div>
-      <div class="tb"><span class="k mono">Focus</span><span class="v">Complex / technical UX</span></div>
+      <div class="tb"><span class="k mono">Focus</span><span class="v">Complex, data-rich tools</span></div>
       <div class="tb"><span class="k mono">Status</span><span class="v">Open to senior roles</span></div>
     </div>
 
     <!-- 01 · SHIPPED -->
-    <section class="fade" style="animation-delay:.1s">
+    <section class="chapter fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">01</span><h2>Shipped in Altium 365</h2></div>
-      <p class="lede">I designed these as Valispace's first and only designer. They ship today in the Altium 365 Requirements &amp; Systems Portal, the product Valispace became after <a href = "https://en.wikipedia.org/wiki/Altium">Altium acquired it december 2023</a>. The work helped win a six-figure development contract with an aerospace client at the time of design at Valispace.</p>
+      <p class="lede">I designed these as Valispace's first and only designer. They ship today in the Altium 365 Requirements &amp; Systems Portal, the product Valispace became after <a href="https://en.wikipedia.org/wiki/Altium">Altium acquired it in December 2023</a>. The work helped win a six-figure development contract with an aerospace client.</p>
 
       <div class="feat">
         <span class="ft">Master-Follower (2021)</span>
@@ -186,59 +197,37 @@
       </div>
       <div class="feat">
         <span class="ft">Review Center (2021)</span>
-        <span class="fd">Review workflows with clear state, so distributed teams reach decisions in one place. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Docs ↗</a> --></span>
+        <span class="fd">Review workflows with clear state, so distributed teams reach decisions in one place. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Docs ↗</a></span>
       </div>
 
       <p class="note">Links go to Altium's public product documentation.</p>
     </section>
 
-    <!-- 02 · HIGHLIGHTS -->
+    <!-- 02 · THE FOUNDING WORK -->
     <section class="fade" style="animation-delay:.1s">
-      <div class="sec-head"><span class="no">02</span><h2>Highlights</h2></div>
+      <div class="sec-head"><span class="no">02</span><h2>The founding work</h2></div>
 
       <div class="item">
-        <span class="cap-tag">Complex, data-rich UX</span>
+        <span class="cap-tag">Founding design · 0 to 1</span>
         <div class="item-top">
-          <h3>Making systems data usable for teams of hundreds</h3>
+          <h3>First designer, six years in</h3>
           <span class="pid">VALISPACE</span>
         </div>
-        <p class="meta">Sole designer · MBSE / traceability</p>
-        <p class="body-txt">I designed a verification matrix and traceability workflows for engineering projects with hundreds of contributors. I owned them from pencil sketch to shipped UI. They run in Altium 365 today.</p>
+        <p class="body-txt">I built the design practice from zero in an engineering-led company. I started a cross-functional UX guild with engineering, then created and hired the senior design role that still owns the work at Altium three and a half years on.</p>
       </div>
 
       <div class="item">
-        <span class="cap-tag">Working with engineers</span>
+        <span class="cap-tag">Domain fluency</span>
         <div class="item-top">
-          <h3>Designing the logic, not just the screens</h3>
+          <h3>Fluent in a precise new field, fast</h3>
           <span class="pid">VALISPACE</span>
         </div>
-        <p class="meta">With the CPO, engineers, and clients</p>
-        <p class="body-txt">I designed complex features in Figma in enough detail to settle how they were built. Working that closely once let me catch a spec miscommunication between product and backend before it caused a rebuild.</p>
-      </div>
-
-      <div class="item">
-        <span class="cap-tag">User research</span>
-        <div class="item-top">
-          <h3>Research and validation as the first designer</h3>
-          <span class="pid">VALISPACE</span>
-        </div>
-        <p class="meta">User interviews · usability testing</p>
-        <p class="body-txt">I learned the real problems from expert users and tested prototypes with them most weeks. I checked my findings with in-house specialists and iterated over several months.</p>
-      </div>
-
-      <div class="item">
-        <span class="cap-tag">Founding design</span>
-        <div class="item-top">
-          <h3>Introducing UX to an engineering-led startup</h3>
-          <span class="pid">VALISPACE</span>
-        </div>
-        <p class="meta">Founding designer · 0 to 1</p>
-        <p class="body-txt">I built the design function from zero, in a product that had shipped for six years without one. I started a UX guild with the engineers, hired the senior designer who still runs the work today, and joined the product team.</p>
+        <p class="body-txt">I wrote requirements to the platform's own testable, traceable standard and drafted high-fidelity prototypes with engineers that won a six-figure contract. I closed the research, prototype and validate loop inside my first year in the industry.</p>
       </div>
     </section>
 
     <!-- 03 · RECOMMENDATIONS -->
-    <section class="fade" style="animation-delay:.1s">
+    <section class="chapter fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">03</span><h2>Recommendations</h2></div>
       <div class="recs">
         <figure>
@@ -257,56 +246,52 @@
         </figure>
       </div>
     </section>
-    
-    <!-- 04 ·Recent PROJECTS -->
+
+    <!-- 04 · RECENT PROJECTS -->
     <section class="fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">04</span><h2>Recent Projects</h2></div>
 
       <div class="item">
         <div class="item-top">
           <h3>System Forge (2026)</h3>
-          <span class="pid">Side Project Space Engineer Collaboration · SYSML</span>
+          <span class="pid">SYSML v2 · MBSE</span>
         </div>
-        <p class="meta">Self-initiated · SysML v2 / MBSE</p>
-        <p class="body-txt">A side project on design opportunities SysML v2, the next-generation systems modeling language for model-based systems engineering. Outlining design standards that are defined vs. design opportunities that improve learnability.</p>
-        <a href="https://petrakuhnle.github.io/portfolio/systemforge.html">Read Case Study</a>
+        <p class="meta">UX contributor · with a systems engineer</p>
+        <p class="body-txt">UX work on a SysML v2 graph-modeling tool. I extracted design principles, mapped what the spec fixes against what the tool can change, and evaluated learnability for systems engineers against industry standards.</p>
+        <a href="https://petrakuhnle.github.io/portfolio/systemforge.html">Read case study</a>
       </div>
 
       <div class="item">
         <div class="item-top">
           <h3>Navigator (2026)</h3>
-          <span class="pid">SELF · NAV</span>
+          <span class="pid">AI · COMPLIANCE</span>
         </div>
-        <p class="meta">Self-initiated and later collaboration with Python Developers · AI law tracker for musicians</p>
-        <p class="body-txt">An AI-assisted tracker for legal changes that affect working musicians. Built out of curiosity about AI as topic and as tool. It advanced past the first round of <strong>Mozilla Fellowship nominations</strong>.</p>
-         <a href="https://petrakuhnle.github.io/portfolio/navigator.html">Read Case Study</a>
+        <p class="meta">Self-initiated · my first coded prototype, with AI</p>
+        <p class="body-txt">An EU AI Act and GDPR compliance tool for musicians, turning dense law into steps a creator can follow. Built with AI as both the subject and the tool. Shortlisted at the <strong>Mozilla Fellowship 2026</strong>, passed the first round.</p>
+        <a href="https://petrakuhnle.github.io/portfolio/navigator.html">Read case study</a>
       </div>
-      
     </section>
 
-
     <!-- 05 · BACKGROUND -->
-
-    <section class="fade" style="animation-delay:.1s">
+    <section class="chapter fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">05</span><h2>Background</h2></div>
-      <p class="body-txt">Four years at Apple, supporting users of its creative and productivity apps: music production (Logic Pro, GarageBand), video editing (Final Cut Pro, iMovie), presentations (Keynote), spreadsheets (Numbers), and word processing (Pages). I learned how expert tools fail in real use, and later carried good patterns into engineering software that lacked them.</p>
-      
-      <section id="background">      
+      <p class="body-txt">My through-line is how experts actually work. Four years at Apple supporting professional creative tools (Logic Pro, Final Cut Pro) showed me where expert software fails in real use. A psychology degree in perception trained me to read behaviour before screens. Since then I have moved into technical fields and learned each one fast, from primary sources and the people who live in them.</p>
+
+      <section id="background">
         <ul class="roles">
-          <li><span>Technology Accessibility Facilitator · Autismus Leben Berlin ALB gGmbH</span><span class="yr">2024-25</span></li>
-          <li><span>UX Researcher | Data Analyst · EIGENSONNE GmbH</span><span class="yr">2023</span></li>
-          <li><span>UX / Product Designer · Valispace</span><span class="yr">2021-2023</span></li>
-          <li><span>Pro Apps Specialist (T4) · Apple</span><span class="yr">2019–2020</span></li>
-          <li><span>Senior Advisor, Media Products · Apple</span><span class="yr">2018–2019</span></li>
-          <li><span>Media App Advisor · Apple<span class="award">AppleCare Excellence Award · 2018</span></span><span class="yr">2016–2018</span></li>
+          <li><span>Product Designer · Independent<span class="award">System Forge · Navigator</span></span><span class="yr">2025–</span></li>
+          <li><span>Accessibility Facilitator · ALB gGmbH</span><span class="yr">2024–25</span></li>
+          <li><span>UX Researcher · Eigensonne</span><span class="yr">2023</span></li>
+          <li><span>Product / UX Designer · Valispace (→ Altium)</span><span class="yr">2021–23</span></li>
+          <li><span>Media &amp; Pro Apps (Logic Pro, Final Cut Pro) · Apple<span class="award">Promoted across three tiers · AppleCare Excellence Award 2018</span></span><span class="yr">2016–20</span></li>
         </ul>
-      </section>  
-        
+      </section>
+
       <div class="bg-grid">
         <div>
           <span class="k">Education</span>
-          <span class="v">BFA, Audio-Visual Media<span class="s">Specialism in audio-visual data</span></span>
-          <span class="v">BA, Psychology of Creativity & Perception<span class="s">Specialism Non-verbal communication</span></span>
+          <span class="v">BFA, Audio-Visual Media<span class="s">Human perception</span></span>
+          <span class="v">BA, Psychology of Creativity &amp; Perception<span class="s">Non-verbal communication</span></span>
         </div>
         <div>
           <span class="k">Languages</span>
@@ -314,23 +299,25 @@
         </div>
       </div>
 
-      <p class="skills"><span class="skills-k">Skills</span>UX/UI · interaction design · design systems · rapid prototyping · accessibility · Figma (auto-layout, components) · HTML / CSS / JS · AI-native practice · Python · data analysis</p>
+      <p class="skills"><span class="skills-k">Honors</span>AppleCare Excellence Award 2018 (won) · Best Innovative App Concept, Hack&amp;Con (won) · Mozilla Fellowship 2026 (shortlisted) · George Verberg art grant (nominee, €10,000)</p>
+
+      <p class="skills"><span class="skills-k">Skills</span>Complex / technical UX · UX research (interviews, usability testing) · systems &amp; requirements design · interaction &amp; information design · rapid prototyping · design systems · accessibility · Figma (auto-layout, components) · HTML / CSS / JS · React · Python · data analysis · AI-native practice</p>
     </section>
 
     <!-- 06 · CONTACT -->
     <section class="fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">06</span><h2>Contact</h2></div>
       <p class="avail">Open to senior product roles. Berlin or remote.</p>
-        <section id="Contact">
-          <div class="contact">
-            <a href="mailto:petra.kuehnle@gmail.com">EMAIL →</a>
-            <a href="https://www.linkedin.com/in/petrakuhnle" target="_blank" rel="noopener">LINKEDIN →</a>
-          </div>
-        </section>
+      <section id="contact">
+        <div class="contact">
+          <a href="mailto:petra.kuehnle@gmail.com">EMAIL →</a>
+          <a href="https://www.linkedin.com/in/petrakuhnle" target="_blank" rel="noopener">LINKEDIN →</a>
+        </div>
+      </section>
     </section>
 
     <footer class="mono">
-      <span>Petra Kühnle · Product &amp; UX Designer</span>
+      <span>Petra Kühnle · Senior Product Designer</span>
       <span>Berlin</span>
     </footer>
   </div>
