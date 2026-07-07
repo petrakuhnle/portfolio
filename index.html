@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petra Kühnle — Product Design</title>
+<title>Petra Kühnle · Product Design</title>
 <meta name="description" content="Petra Kühnle, senior product designer for complex, data-rich B2B and engineering tools. First designer at Valispace; work ships in Altium 365.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,36 +14,28 @@
     --ink:#16191C;
     --graphite:#5A6068;
     --hairline:#C9CFD1;
-    --grid:#E6E7E3;
     --accent:#16357C;
     --display:"Space Grotesk",system-ui,sans-serif;
     --body:"IBM Plex Sans",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,monospace;
     --frame-pad-x:clamp(22px,5vw,56px);
-    /* quiet, cool-grey tint for the "record / evidence" chapters —
-       shipped work, testimonials, and the verifiable CV background.
-       Narrative chapters (identity, present work, contact) stay on
-       the plain sheet, so the tone itself carries the distinction. */
-    --chapter-tint: oklch(93.8% 0.007 250 / 0.6);
   }
 
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
+  /* quieter: the dotted engineering grid is gone. whitespace does the
+     structuring now — the page reads top-to-bottom with one obvious path. */
   body{
     margin:0;background:var(--sheet);
-    background-image:
-      linear-gradient(var(--grid) 1px,transparent 1px),
-      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:30px 30px;
-    color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;
+    color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   ::selection{background:var(--ink);color:var(--sheet);}
 
   .sheet{max-width:880px;margin:0 auto;padding:clamp(20px,4vw,40px);position:relative;}
   .frame{position:relative;border:1px solid var(--ink);
-    padding:clamp(26px,5vw,56px) var(--frame-pad-x) clamp(34px,5vw,56px);
-    background:rgba(244,244,241,.72);}
+    padding:clamp(30px,5vw,60px) var(--frame-pad-x) clamp(40px,5vw,60px);
+    background:var(--sheet);}
   .tick{position:absolute;width:13px;height:13px;pointer-events:none;}
   .tick-tl{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
   .tick-tr{top:-1px;right:-1px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);}
@@ -53,19 +45,26 @@
   .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);}
 
   .strip{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-    padding-bottom:18px;margin-bottom:clamp(28px,5vw,46px);border-bottom:1px solid var(--hairline);}
+    padding-bottom:16px;margin-bottom:clamp(34px,6vw,54px);border-bottom:1px solid var(--hairline);}
 
+  /* ---- upper third: name scaled down, more air, drawing carries the top ---- */
   header h1{font-family:var(--display);font-weight:500;
-    font-size:clamp(40px,8.5vw,82px);line-height:.96;letter-spacing:-.025em;margin:0 0 18px;}
-  .role{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--ink);margin:0 0 26px;}
-  .thesis{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.5vw,23px);
-    line-height:1.42;max-width:28em;margin:0 0 22px;color:var(--ink);}
-  .intro{max-width:36em;color:var(--ink);margin:0;}
+    font-size:clamp(30px,5.2vw,52px);line-height:1;letter-spacing:-.02em;margin:0 0 16px;}
+  .role{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--ink);margin:0 0 24px;}
+  .thesis{font-family:var(--display);font-weight:400;font-size:clamp(18px,2.3vw,22px);
+    line-height:1.42;max-width:26em;margin:0 0 20px;color:var(--ink);}
+  .intro{max-width:34em;color:var(--ink);margin:0;}
   .intro p{margin:0;}
   a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .15s;}
   a:hover{color:var(--ink);}
 
-  .titleblock{margin:clamp(34px,5vw,48px) 0;border:1px solid var(--ink);
+  /* ---- line drawing wrappers ---- */
+  .mark{margin:clamp(30px,5vw,46px) 0 0;}
+  .mark svg{display:block;width:100%;height:auto;}
+  .mark .cap{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--graphite);margin:12px 0 0;}
+
+  .titleblock{margin:clamp(34px,5vw,48px) 0 0;border:1px solid var(--ink);
     display:grid;grid-template-columns:repeat(4,1fr);}
   .tb{padding:13px 15px;border-right:1px solid var(--hairline);border-top:1px solid var(--hairline);}
   .tb:nth-child(-n+4){border-top:none;}
@@ -73,30 +72,31 @@
   .tb .k{display:block;margin-bottom:5px;}
   .tb .v{font-family:var(--display);font-size:15px;font-weight:500;letter-spacing:-.01em;}
 
-  section{margin-top:clamp(46px,7vw,72px);}
-  /* chapter bands: bleed to the frame's own edges so the tint reads as a
-     deliberate print/poster band, not a UI card — no other geometry changes. */
-  section.chapter{
-    padding:26px var(--frame-pad-x) 30px;
-    margin-left:calc(-1 * var(--frame-pad-x));
-    margin-right:calc(-1 * var(--frame-pad-x));
-    background:var(--chapter-tint);
-  }
+  section{margin-top:clamp(56px,8vw,84px);}
   .sec-head{display:flex;align-items:baseline;gap:14px;
     padding-bottom:12px;margin-bottom:26px;border-bottom:1px solid var(--ink);}
   .sec-head .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:var(--accent);}
   .sec-head h2{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.15em;
     text-transform:uppercase;margin:0;color:var(--ink);}
-  .lede{max-width:42em;margin:0 0 28px;color:var(--ink);}
+  .lede{max-width:44em;margin:0 0 30px;color:var(--ink);}
 
-  .feat{display:grid;grid-template-columns:1fr;gap:4px;padding:20px 0;border-top:1px solid var(--hairline);}
-  .feat:first-of-type{border-top:none;padding-top:2px;}
-  .feat .ft{font-family:var(--display);font-size:20px;font-weight:500;letter-spacing:-.01em;color:var(--ink);}
-  .feat .fd{font-size:15px;color:var(--graphite);line-height:1.5;max-width:44em;}
-  .note{font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--graphite);margin:14px 0 0;letter-spacing:.02em;}
+  /* ---- 01 · case blocks: feature name leads, case title follows ---- */
+  .case{padding:26px 0;border-top:1px solid var(--hairline);}
+  .case:first-of-type{border-top:none;padding-top:4px;}
+  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 10px;}
+  /* when ready: wrap .case-title text in <a href="…"> — styling already fits */
+  .case-title{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.3vw,23px);
+    line-height:1.28;letter-spacing:-.01em;margin:0;color:var(--ink);max-width:24em;}
+  .case-desc{font-size:14.5px;color:var(--graphite);line-height:1.5;max-width:42em;margin:12px 0 0;}
+  .mini-link{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-left:4px;}
+  .note{font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--graphite);margin:24px 0 0;letter-spacing:.02em;}
+  .case-vis{margin:18px 0 2px;max-width:430px;}
+  .case-vis svg{display:block;width:100%;height:auto;}
+  .case-vis .vcap{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--graphite);margin:9px 0 0;}
 
   .item{padding:24px 0;border-top:1px solid var(--hairline);}
-  .item:first-of-type{border-top:none;padding-top:2px;}
+  .item:first-of-type{border-top:none;padding-top:4px;}
   .cap-tag{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
     text-transform:uppercase;color:var(--accent);margin-bottom:9px;}
   .item-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:4px;}
@@ -104,8 +104,6 @@
   .pid{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--graphite);white-space:nowrap;}
   .item .meta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--graphite);margin:0 0 12px;text-transform:uppercase;}
   .body-txt{max-width:44em;color:var(--ink);margin:0;}
-  .mini-link{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    margin-left:2px;}
 
   .recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;}
   .recs figure{margin:0;}
@@ -115,8 +113,9 @@
   .recs .who{font-size:14px;color:var(--ink);}
   .recs .rr{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--graphite);margin-top:5px;}
 
-  .roles{list-style:none;margin:18px 0 0;padding:0;}
+  .roles{list-style:none;margin:0;padding:0;}
   .roles li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:11px 0;border-top:1px solid var(--hairline);font-size:15px;}
+  .roles li:first-child{border-top:none;}
   .roles .yr{font-family:var(--mono);font-size:11px;color:var(--graphite);white-space:nowrap;}
   .roles .award{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--accent);margin-top:5px;}
   strong{font-weight:500;color:var(--ink);}
@@ -131,7 +130,7 @@
 
   .avail{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--graphite);margin:0 0 18px;}
   .contact{display:flex;flex-wrap:wrap;gap:8px 30px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;margin-top:4px;}
-  footer{margin-top:clamp(46px,7vw,70px);padding-top:18px;border-top:1px solid var(--ink);
+  footer{margin-top:clamp(56px,8vw,80px);padding-top:18px;border-top:1px solid var(--ink);
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 
   .fade{opacity:0;transform:translateY(10px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
@@ -140,7 +139,7 @@
   @keyframes tk{to{opacity:1;}}
 
   @media (max-width:620px){
-    body{font-size:16px;background-size:24px 24px;}
+    body{font-size:16px;}
     .titleblock{grid-template-columns:repeat(2,1fr);}
     .tb:nth-child(-n+2){border-top:none;}
     .tb:nth-child(n+3){border-top:1px solid var(--hairline);}
@@ -149,7 +148,6 @@
   }
   @media (prefers-reduced-motion:reduce){
     .fade,.tick{animation:none;opacity:1;transform:none;}
-    body{background-image:none;}
   }
 </style>
 </head>
@@ -167,15 +165,38 @@
     </div>
 
     <header>
-      <h1 class="fade" style="animation-delay:.12s">Petra<br>Kühnle</h1>
+      <h1 class="fade" style="animation-delay:.12s">Petra Kühnle</h1>
       <p class="role fade" style="animation-delay:.2s">Senior Product Designer · Complex, data-rich tools</p>
       <p class="thesis fade" style="animation-delay:.28s">I design complex, data-rich B2B tools, mostly for engineering and technical teams.</p>
       <div class="intro fade" style="animation-delay:.36s">
-        <p>First designer at Valispace, an aerospace systems and requirements engineering company that had shipped for six years without one. I built the design practice while learning a precise new domain, and drafted the prototypes that helped win a six-figure contract. That work ships today in <a href="https://www.altium.com">Altium 365</a>, used by electronics and systems engineers.</p>
+        <p>First designer at Valispace, an aerospace requirements-engineering company that had shipped for six years without one. I built the practice and drafted the prototypes that won a six-figure contract. Now shipping in <a href="https://www.altium.com">Altium 365</a>.</p>
+      </div>
+
+      <!-- DRAWING 1 · propagation line (the essence of the first case) -->
+      <div class="mark fade" style="animation-delay:.44s" aria-label="Diagram: a change at one master requirement propagates state to its followers">
+        <svg viewBox="0 0 700 78" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C">
+          <!-- master (edited) -->
+          <rect x="8" y="26" width="112" height="30" fill="#16191C" stroke="none"/>
+          <text x="64" y="45" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#F4F4F1" letter-spacing="0.5">MASTER</text>
+          <!-- followers -->
+          <rect x="300" y="6" width="104" height="26" stroke-width="1.2"/>
+          <text x="352" y="23" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#16191C">follower</text>
+          <rect x="300" y="50" width="104" height="26" stroke-width="1.2"/>
+          <text x="352" y="67" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#16191C">follower</text>
+          <!-- sub-followers -->
+          <rect x="560" y="0" width="132" height="22" stroke-width="1"/>
+          <rect x="560" y="30" width="132" height="22" stroke-width="1"/>
+          <!-- links (dashed = state carried downstream) -->
+          <path d="M120 38 L300 19" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <path d="M120 44 L300 63" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <path d="M404 16 L560 11" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M404 22 L560 41" stroke-width="1" stroke-dasharray="4 3"/>
+        </svg>
+        <p class="cap">Requirement propagation. One master, state carried downstream</p>
       </div>
     </header>
 
-    <div class="titleblock fade" style="animation-delay:.44s" aria-label="Summary">
+    <div class="titleblock fade" style="animation-delay:.5s" aria-label="Summary">
       <div class="tb"><span class="k mono">Role</span><span class="v">Senior Product Designer</span></div>
       <div class="tb"><span class="k mono">Based</span><span class="v">Berlin, DE</span></div>
       <div class="tb"><span class="k mono">Focus</span><span class="v">Complex, data-rich tools</span></div>
@@ -183,21 +204,147 @@
     </div>
 
     <!-- 01 · SHIPPED -->
-    <section class="chapter fade" style="animation-delay:.1s">
+    <section class="fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">01</span><h2>Shipped in Altium 365</h2></div>
-      <p class="lede">I designed these as Valispace's first and only designer. They ship today in the Altium 365 Requirements &amp; Systems Portal, the product Valispace became after <a href="https://en.wikipedia.org/wiki/Altium">Altium acquired it in December 2023</a>. The work helped win a six-figure development contract.</p>
+      <p class="lede">As Valispace's first and only designer. Now shipping in the <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal">Altium 365 Requirements &amp; Systems Portal</a>. The product Valispace became after <a href="https://en.wikipedia.org/wiki/Altium">Altium's 2023 acquisition</a>. Part of the work that won a six-figure contract.</p>
 
-      <div class="feat">
-        <span class="ft">'Master-Follower' (2021)</span>
-        <span class="fd">Propagates linked requirements across a system hierarchy. Every connection carries state, so engineers see what a change affects downstream. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Docs ↗</a></span>
+      <!-- DRAWING 2 · three contexts / one thread -->
+      <div class="mark" style="margin-top:0;margin-bottom:34px" aria-label="Diagram: three scopes, one requirement, one requirement with many methods, and the whole system">
+        <svg viewBox="0 0 700 176" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C">
+          <text x="0" y="12" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.4" fill="#5A6068">SCOPE →</text>
+          <line x1="233" y1="24" x2="233" y2="150" stroke="#C9CFD1" stroke-width="1"/>
+          <line x1="466" y1="24" x2="466" y2="150" stroke="#C9CFD1" stroke-width="1"/>
+
+          <!-- col 1 · one requirement (decision + review) -->
+          <rect x="70" y="52" width="92" height="26" stroke-width="1.3"/>
+          <path d="M116 78 L116 104" stroke-width="1.2"/>
+          <rect x="70" y="104" width="42" height="18" stroke-width="1"/>
+          <rect x="120" y="104" width="42" height="18" stroke-width="1"/>
+          <text x="116" y="146" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#16191C">one requirement</text>
+          <text x="116" y="162" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#5A6068">decide &amp; review</text>
+
+          <!-- col 2 · one requirement, many methods -->
+          <rect x="303" y="46" width="92" height="26" stroke-width="1.3"/>
+          <path d="M349 72 L305 104" stroke-width="1"/>
+          <path d="M349 72 L349 104" stroke-width="1"/>
+          <path d="M349 72 L393 104" stroke-width="1"/>
+          <circle cx="305" cy="110" r="5" stroke-width="1"/>
+          <circle cx="349" cy="110" r="5" stroke-width="1"/>
+          <circle cx="393" cy="110" r="5" stroke-width="1"/>
+          <text x="349" y="146" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#16191C">one req · many methods</text>
+          <text x="349" y="162" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#5A6068">assign verification</text>
+
+          <!-- col 3 · the whole system (overview + states) -->
+          <rect x="536" y="46" width="128" height="14" stroke-width="1"/>
+          <rect x="536" y="64" width="128" height="14" stroke-width="1"/>
+          <rect x="536" y="82" width="128" height="14" stroke-width="1"/>
+          <rect x="536" y="100" width="128" height="14" stroke-width="1"/>
+          <line x1="648" y1="53" x2="656" y2="53" stroke-width="2"/>
+          <line x1="648" y1="71" x2="656" y2="71" stroke-width="2"/>
+          <line x1="648" y1="89" x2="656" y2="89" stroke-width="2"/>
+          <line x1="648" y1="107" x2="656" y2="107" stroke-width="2"/>
+          <text x="600" y="146" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#16191C">the whole system</text>
+          <text x="600" y="162" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#5A6068">overview &amp; states</text>
+        </svg>
+        <p class="cap">Three contexts, one thread. Less cognitive load, the right information at each scope</p>
       </div>
-      <div class="feat">
-        <span class="ft">'Verification assignment matrix' (2021)</span>
-        <span class="fd">Traceability between each requirement and the activity that verifies it. Built for projects with hundreds of engineers running over many years. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Docs ↗</a></span>
+
+      <div class="case">
+        <p class="eyebrow">Master-Follower · 2021 · Altium 365</p>
+        <h3 class="case-title">Aligning internal and external experts on how requirement decisions propagate</h3>
+        <p class="case-desc">Linked requirements carry state across the hierarchy, so downstream effects stay visible when one changes. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Docs ↗</a></p>
+        <div class="case-vis" aria-label="Diagram: editing a master requirement flags its followers as needing review">
+          <svg viewBox="0 0 430 96" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C">
+            <rect x="6" y="34" width="128" height="30" fill="#16191C" stroke="none"/>
+            <text x="70" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#F4F4F1">master</text>
+            <text x="70" y="59" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" fill="#F4F4F1">edited</text>
+            <rect x="270" y="8" width="154" height="30" stroke-width="1.2"/>
+            <text x="347" y="22" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#16191C">follower</text>
+            <text x="347" y="33" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" fill="#5A6068">needs review</text>
+            <rect x="270" y="58" width="154" height="30" stroke-width="1.2"/>
+            <text x="347" y="72" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#16191C">follower</text>
+            <text x="347" y="83" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" fill="#5A6068">needs review</text>
+            <path d="M134 46 L270 23" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <path d="M134 52 L270 73" stroke-width="1.2" stroke-dasharray="4 3"/>
+          </svg>
+          <p class="vcap">Edit one, linked requirements flag for review. Never drift silently</p>
+        </div>
       </div>
-      <div class="feat">
-        <span class="ft">'Review Center' (2021)</span>
-        <span class="fd">Review workflows with clear state, so distributed teams reach decisions in one place. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Docs ↗</a></span>
+
+      <div class="case">
+        <p class="eyebrow">Verification Assignment Matrix · 2021 · Altium 365</p>
+        <h3 class="case-title">An overview for assigning several verification methods at once</h3>
+        <p class="case-desc">Traceability between each requirement and the activities that verify it, across methods run by different specialists. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Docs ↗</a></p>
+        <div class="case-vis" aria-label="Diagram: a matrix of requirements by verification methods, cells marked where a method is assigned">
+          <svg viewBox="0 0 430 132" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C" font-family="IBM Plex Mono, monospace">
+            <!-- column headers (standard V&V methods) -->
+            <text x="150" y="18" font-size="8.5" fill="#5A6068">Test</text>
+            <text x="222" y="18" font-size="8.5" fill="#5A6068">Analysis</text>
+            <text x="306" y="18" font-size="8.5" fill="#5A6068">Insp.</text>
+            <text x="374" y="18" font-size="8.5" fill="#5A6068">Demo</text>
+            <!-- grid -->
+            <g stroke="#C9CFD1" stroke-width="1">
+              <line x1="130" y1="26" x2="424" y2="26"/>
+              <line x1="130" y1="60" x2="424" y2="60"/>
+              <line x1="130" y1="94" x2="424" y2="94"/>
+              <line x1="130" y1="128" x2="424" y2="128"/>
+              <line x1="130" y1="26" x2="130" y2="128"/>
+              <line x1="204" y1="26" x2="204" y2="128"/>
+              <line x1="278" y1="26" x2="278" y2="128"/>
+              <line x1="352" y1="26" x2="352" y2="128"/>
+              <line x1="424" y1="26" x2="424" y2="128"/>
+            </g>
+            <!-- row labels (requirements) -->
+            <text x="6" y="47" font-size="9" fill="#16191C">REQ-01</text>
+            <text x="6" y="81" font-size="9" fill="#16191C">REQ-02</text>
+            <text x="6" y="115" font-size="9" fill="#16191C">REQ-03</text>
+            <!-- assignment marks -->
+            <rect x="158" y="35" width="18" height="18" fill="#16191C" stroke="none"/>
+            <rect x="306" y="35" width="18" height="18" fill="#16191C" stroke="none"/>
+            <rect x="232" y="69" width="18" height="18" fill="#16191C" stroke="none"/>
+            <rect x="158" y="103" width="18" height="18" fill="#16191C" stroke="none"/>
+            <rect x="232" y="103" width="18" height="18" fill="#16191C" stroke="none"/>
+            <rect x="380" y="103" width="18" height="18" fill="#16191C" stroke="none"/>
+          </svg>
+          <p class="vcap">Requirements × verification methods. Assignments visible at once (schematic)</p>
+        </div>
+      </div>
+
+      <div class="case">
+        <p class="eyebrow">Review Center · 2021 · Altium 365</p>
+        <h3 class="case-title">High-level overview and traceability per role, in a regulated industry</h3>
+        <p class="case-desc">A global view with filtering and clear state, so distributed teams reach decisions in one place. Objects move through moderator, reviewer and approver, each rating logged for full traceability. <a class="mini-link" href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Docs ↗</a></p>
+        <div class="case-vis" aria-label="Diagram: review objects rated per role, flowing from moderator to reviewer to approver">
+          <svg viewBox="0 0 430 138" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C" font-family="IBM Plex Mono, monospace">
+            <!-- role flow -->
+            <text x="6" y="14" font-size="8.5" fill="#5A6068">Moderator</text>
+            <text x="150" y="14" font-size="8.5" fill="#5A6068">Reviewer</text>
+            <text x="300" y="14" font-size="8.5" fill="#5A6068">Approver</text>
+            <path d="M78 10 L142 10" stroke-width="1" marker-end="url(#rc)"/>
+            <path d="M212 10 L292 10" stroke-width="1" marker-end="url(#rc)"/>
+            <defs><marker id="rc" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 1 L6 4 L0 7" fill="none" stroke="#16191C" stroke-width="1"/></marker></defs>
+            <!-- review object rows with rating states -->
+            <g stroke-width="1.2">
+              <rect x="6" y="28" width="418" height="30"/>
+              <rect x="6" y="64" width="418" height="30"/>
+              <rect x="6" y="100" width="418" height="30"/>
+            </g>
+            <text x="18" y="47" font-size="9" fill="#16191C">REQ-01</text>
+            <text x="18" y="83" font-size="9" fill="#16191C">REQ-02</text>
+            <text x="18" y="119" font-size="9" fill="#16191C">REQ-03</text>
+            <!-- state: approved (check) -->
+            <path d="M330 44 l6 6 l12 -14" stroke-width="1.6"/>
+            <text x="356" y="47" font-size="8" fill="#5A6068">approved</text>
+            <!-- state: needs work (half) -->
+            <circle cx="337" cy="79" r="7" stroke-width="1.4"/>
+            <path d="M337 72 a7 7 0 0 1 0 14 z" fill="#16191C" stroke="none"/>
+            <text x="356" y="83" font-size="8" fill="#5A6068">needs work</text>
+            <!-- state: rejected (cross) -->
+            <path d="M330 112 l14 14 M344 112 l-14 14" stroke-width="1.6"/>
+            <text x="356" y="119" font-size="8" fill="#5A6068">rejected</text>
+          </svg>
+          <p class="vcap">Per-object ratings logged across roles. Approved · needs work · rejected</p>
+        </div>
       </div>
 
       <p class="note">Links go to Altium's public product documentation.</p>
@@ -209,36 +356,30 @@
 
       <div class="item">
         <span class="cap-tag">Founding design · 0 to 1</span>
-        <div class="item-top">
-          <h3>First designer, six years in</h3>
-          <span class="pid">VALISPACE</span>
-        </div>
-        <p class="body-txt">I built the design practice from zero in an engineering-led company. I started a cross-functional UX guild with engineering, then created and hired the senior design role that still owns the work at Altium three and a half years on.</p>
+        <div class="item-top"><h3>First designer, six years in</h3><span class="pid">VALISPACE</span></div>
+        <p class="body-txt">Built the design practice from zero in an engineering-led company. Started a cross-functional UX guild, then created and hired the senior role that still owns the work at Altium three and a half years on.</p>
       </div>
 
       <div class="item">
         <span class="cap-tag">Domain fluency</span>
-        <div class="item-top">
-          <h3>Fluent in a precise new field, fast</h3>
-          <span class="pid">VALISPACE</span>
-        </div>
-        <p class="body-txt">I wrote requirements to the platform's own testable, traceable standard and drafted high-fidelity prototypes with engineers that won a six-figure contract. I closed the research, prototype and validate loop inside my first year in the industry.</p>
+        <div class="item-top"><h3>Fluent in a precise new field, fast</h3><span class="pid">VALISPACE</span></div>
+        <p class="body-txt">Wrote requirements to the platform's own testable, traceable standard and drafted the prototypes that won a six-figure contract, closing the research, prototype and validate loop in my first year in the industry.</p>
       </div>
     </section>
 
     <!-- 03 · RECOMMENDATIONS -->
-    <section class="chapter fade" style="animation-delay:.1s">
+    <section class="fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">03</span><h2>Recommendations</h2></div>
       <div class="recs">
         <figure>
-          <blockquote>“She took the initiative to start a UX guild that brought designers and developers together to improve the overall user experience.”</blockquote>
+          <blockquote>“She took the initiative to <strong>start a UX guild that brought designers and developers together</strong> to improve the overall user experience.”</blockquote>
           <figcaption>
             <div class="who">Louise Lindblad</div>
             <div class="rr">Co-founder · Valispace (now Altium)</div>
           </figcaption>
         </figure>
         <figure>
-          <blockquote>“In a very short time she learned a previously unknown field by talking to users and iterating fast with them on mockups and prototypes.”</blockquote>
+          <blockquote>“In a very short time she <strong>learned a previously unknown field</strong> by talking to users and <strong>iterating fast with them on mockups and prototypes</strong>.”</blockquote>
           <figcaption>
             <div class="who">Florian Reger</div>
             <div class="rr">Solution Management · Valispace (now Altium)</div>
@@ -251,49 +392,79 @@
     <section class="fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">04</span><h2>Recent Projects</h2></div>
 
-      <div class="item">
-        <div class="item-top">
-          <h3>Navigator (2026)</h3>
-          <span class="pid">AI · COMPLIANCE</span>
+      <div class="case">
+        <p class="eyebrow">Product · Navigator · 2026</p>
+        <h3 class="case-title">Turning dense AI law into steps a musician can follow</h3>
+        <p class="case-desc">A self-initiated EU AI Act and GDPR compliance tool, and my first coded prototype. <strong>Shortlisted, Mozilla Fellowship 2026</strong> (passed the first round). <a class="mini-link" href="https://petrakuhnle.github.io/portfolio/navigator.html">Case study ↗</a></p>
+        <div class="case-vis" aria-label="Diagram: a use case is matched to the rules, returning the steps that apply">
+          <svg viewBox="0 0 430 66" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C" font-family="IBM Plex Mono, monospace">
+            <rect x="4" y="20" width="112" height="30" stroke-width="1.2"/>
+            <text x="60" y="38" text-anchor="middle" font-size="9" fill="#16191C">your use case</text>
+            <rect x="159" y="20" width="112" height="30" stroke-width="1.2"/>
+            <text x="215" y="34" text-anchor="middle" font-size="8.5" fill="#16191C">match to rules</text>
+            <text x="215" y="45" text-anchor="middle" font-size="7" fill="#5A6068">AI Act · GDPR · EAA</text>
+            <rect x="314" y="20" width="112" height="30" fill="#16191C" stroke="none"/>
+            <text x="370" y="34" text-anchor="middle" font-size="8.5" fill="#F4F4F1">what applies</text>
+            <text x="370" y="45" text-anchor="middle" font-size="7" fill="#9BA0A6">risks · next steps</text>
+            <path d="M116 35 L157 35" stroke-width="1.1" marker-end="url(#nv)"/>
+            <path d="M271 35 L312 35" stroke-width="1.1" marker-end="url(#nv)"/>
+            <defs><marker id="nv" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 1 L6 4 L0 7" fill="none" stroke="#16191C" stroke-width="1.1"/></marker></defs>
+          </svg>
+          <p class="vcap">One use case in → the obligations and steps that apply come out</p>
         </div>
-        <p class="meta">Self-initiated · my first coded prototype, with AI</p>
-        <p class="body-txt">An EU AI Act and GDPR compliance tool for musicians, turning dense law into steps a creator can follow. Built with AI as both the subject and the tool. Shortlisted at the <strong>Mozilla Fellowship 2026</strong>, passed the first round.</p>
         <a href="https://petrakuhnle.github.io/portfolio/navigator.html">Read case study</a>
       </div>
-      
-      <div class="item">
-        <div class="item-top">
-          <h3>System Forge (2026)</h3>
-          <span class="pid">SYSML v2 · MBSE</span>
+
+      <div class="case">
+        <p class="eyebrow">UX · System Forge · 2026</p>
+        <h3 class="case-title">Making a SysML v2 modeling tool learnable through the interface</h3>
+        <p class="case-desc">UX contributor with a systems engineer: separated what the spec fixes from what design can change, and evaluated learnability against industry standards. <a class="mini-link" href="https://petrakuhnle.github.io/portfolio/systemforge.html">Case study ↗</a></p>
+        <div class="case-vis" aria-label="Diagram: the spec fixes semantics and notation; presentation is open to design">
+          <svg viewBox="0 0 430 96" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#16191C" font-family="IBM Plex Mono, monospace">
+            <text x="8" y="14" font-size="8" letter-spacing="0.8" fill="#5A6068">FIXED BY THE SPEC</text>
+            <text x="242" y="14" font-size="8" letter-spacing="0.8" fill="#16357C">OPEN TO DESIGN</text>
+            <line x1="212" y1="22" x2="212" y2="92" stroke="#16357C" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <g font-size="9" fill="#16191C">
+              <text x="8" y="40">semantics</text>
+              <text x="8" y="58">notation &amp; shapes</text>
+              <text x="8" y="76">diagram types</text>
+            </g>
+            <g font-size="9" fill="#16191C">
+              <text x="242" y="40">layout · color</text>
+              <text x="242" y="58">navigation · search</text>
+              <text x="242" y="76">tooltips · filtering</text>
+            </g>
+            <line x1="8" y1="46" x2="190" y2="46" stroke="#C9CFD1" stroke-width="1"/>
+            <line x1="8" y1="64" x2="190" y2="64" stroke="#C9CFD1" stroke-width="1"/>
+            <line x1="242" y1="46" x2="422" y2="46" stroke="#C9CFD1" stroke-width="1"/>
+            <line x1="242" y1="64" x2="422" y2="64" stroke="#C9CFD1" stroke-width="1"/>
+          </svg>
+          <p class="vcap">Shape and semantics are fixed. Layout, color and flow are the design space</p>
         </div>
-        <p class="meta">UX contributor · with a systems engineer</p>
-        <p class="body-txt">UX work on a SysML v2 graph-modeling tool. I extracted design principles, mapped what the spec fixes against what the tool can change, and evaluated learnability for systems engineers against industry standards.</p>
         <a href="https://petrakuhnle.github.io/portfolio/systemforge.html">Read case study</a>
       </div>
-      
     </section>
 
     <!-- 05 · BACKGROUND -->
-    <section class="chapter fade" style="animation-delay:.1s">
+    <section class="fade" style="animation-delay:.1s">
       <div class="sec-head"><span class="no">05</span><h2>Background</h2></div>
-      <p class="body-txt">My through-line is curiosity about the interaction between humans and their environment. Four years at Apple supporting professional creative tools (Logic Pro, Final Cut Pro) showed me where expert software fails in real use. A psychology degree in perception trained me to read behaviour before screens. My interest is in how the brain works, how language versus non-language works in communication, and how we interact with the world around us. Technology changes; human complexity remains part of the design process. My work is focussed on understanding in depth, asking good questions, designing with precision, and staying open to the gap between plan, expectations, and real-world users — curious about where it breaks.</p>
+      <p class="body-txt">My through-line is curiosity about how humans interact with their environment. Four years at Apple supporting professional creative tools (Logic Pro, Final Cut Pro) showed me where expert software fails in real use; a psychology degree in perception trained me to read behaviour before screens. Technology changes; human complexity stays part of the design process.</p>
 
       <section id="background">
         <ul class="roles">
-          <li><span>Product Designer · Independent<span class="award">System Forge · Navigator</span></span><span class="award">Code Prototype and concept of 'Navigator' passed 1st round Mozilla Fellowship nomination.</span><span class="yr">2025–</span></li>
-          <li><span>Accessibility Facilitator · ALB gGmbH</span><span class="award">Developed program that led ot invitation to workshop delivery at Alice Salamon University</span><span class="yr">2024–25</span></li>
-          <li><span>UX Researcher · Eigensonne</span><span class="award"></span><span class="yr">2023</span></li>
-          <li><span>Product / UX Designer · Valispace (→ Altium)</span><span class="award">Promoted to Product Team with CTO, CPO, PM and Dev leadership</span><span class="yr">2021–23</span></li>
-          <li><span>Media &amp; Pro Apps · Apple<span class="award">Promoted across three tiers · AppleCare Excellence Award 2018</span></span><span class="yr">2016–20</span></li>
+          <li><span>Product Designer · Independent<span class="award">System Forge · Navigator</span></span><span class="yr">2025–</span></li>
+          <li><span>Accessibility Facilitator · ALB gGmbH</span><span class="yr">2024–25</span></li>
+          <li><span>UX Researcher · Eigensonne</span><span class="yr">2023</span></li>
+          <li><span>Product / UX Designer · Valispace (→ Altium)</span><span class="yr">2021–23</span></li>
+          <li><span>Media &amp; Pro Apps (Logic Pro, Final Cut Pro) · Apple<span class="award">Promoted across three tiers · AppleCare Excellence Award 2018</span></span><span class="yr">2016–20</span></li>
         </ul>
       </section>
 
       <div class="bg-grid">
         <div>
           <span class="k">Education</span>
-          <span class="v">Certificate Media Design & Development (CIT, Cork, IRE)</span>
-          <span class="v">BFA, Audio-Visual Media (Academy Minerva, Hanze University, Groningen, NL<span class="s">Human perception</span></span>
-          <span class="v">BA, Psychology of Creativity &amp; Perception (HAN, Nijmegen, NL)<span class="s">Visual and Non-verbal vs. verbal communication</span></span>
+          <span class="v">BFA, Audio-Visual Media<span class="s">Human perception</span></span>
+          <span class="v">BA, Psychology of Creativity &amp; Perception<span class="s">Non-verbal communication</span></span>
         </div>
         <div>
           <span class="k">Languages</span>
@@ -303,7 +474,7 @@
 
       <p class="skills"><span class="skills-k">Honors</span>AppleCare Excellence Award 2018 (won) · Best Innovative App Concept, Hack&amp;Con (won) · Mozilla Fellowship 2026 (shortlisted) · George Verberg art grant (nominee, €10,000)</p>
 
-      <p class="skills"><span class="skills-k">Skills</span>Complex / technical UX · UX research (interviews, usability testing) · systems &amp; requirements design · interaction &amp; information design · rapid prototyping · design systems · accessibility · Figma (auto-layout, components) · HTML / CSS / JS · React · Python · data analysis · AI-native practice</p>
+      <p class="skills"><span class="skills-k">Skills</span>Complex / technical UX · UX research (interviews, usability testing) · systems &amp; requirements design knowledge (MBSE, V&amp;V, SysML v2 exploration) · interaction &amp; information design · diagramming · rapid prototyping · accessibility · data analysis · data visualization (matplotlib, seaborn) · Figma · AI (Claude, Claude Design, Figma Make) · HTML / CSS / JS · React · Python</p>
     </section>
 
     <!-- 06 · CONTACT -->
