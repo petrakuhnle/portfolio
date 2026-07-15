@@ -22,9 +22,10 @@
   <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 24px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case · Valispace, 2021</p>
 
   <!-- HEADER: feature name + one-line value -->
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 8px;">[Feature Name, e.g. Master-Follower]</p>
-  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">[Outcome-first title: what this design makes possible]</h1>
-  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:38em;">[One sentence: the problem in the users' world, and what shipped.]</p>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 8px;">Feature: Master-Follower</p>
+  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">Probagating 
+  decisions to dependant requirements across 1000s of requirements with 100s of shared responsibiilities.</h1>
+  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:38em;">Between meetings, documents and emails decision makers and engineers can loose track of decisions that are ciritcal. A change in a master requirement propagates information automatically to Follower requirements.</p>
   <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:48px;">
     <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#F4F7FA;padding:4px 10px;border-radius:3px;background:#12181F;">[Feature Tag]</span>
     <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Valispace → Altium 365</span>
@@ -34,7 +35,7 @@
   <!-- 01 CONTEXT: regulated industry + roles (Branchenerfahrung / users) -->
   <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">01 · Context</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">[2–3 sentences: the regulated engineering environment, which roles depend on this workflow, and what broke without it. Name the roles: requirements engineer, verification engineer, systems engineer, manager.]</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">Managers, requirements engineer, verification engineer, and systems engineer work on the same projects and decisions go from changing legal requirements the engineer needs to know about to a manager signing off on all verification methods being completed. The interdependencies can slow down the process and interfere with tasks at hand. The engineering industry has moved from documents and meetings to software solutions, but is fundamentally different from software due to the costly consequence, physical constraints and more legal constraints. Decisions and reviews are more often mission-critical and need to be accountable and transparent compared to software development collaboration for example. The Master-Follower is aimed at defining high impact requirements (Master) and their dependant requirements (Follower).</p>
     <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:24px;">
       <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6E7F8D;margin:0 0 12px;">[Diagram: the roles and the shared object — reuse SVG style from index]</p>
       <div style="height:120px;display:flex;align-items:center;justify-content:center;border:1px dashed #8DA9C4;color:#6E7F8D;font-size:13px;">[ SVG placeholder ]</div>
@@ -44,7 +45,13 @@
   <!-- 02 REQUIREMENTS → DESIGN (Anforderungs- & Workflow-Management) -->
   <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">02 · From requirements to design</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">[How written user requirements and acceptance criteria became design decisions: introduced user stories, checked designs against requirements and vice versa. 2–3 sentences, concrete.]</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">For a design from scratch without existing written requirements, I start with formal and informal interviews. To anchor my understand and organize importance. If it is an unknown domain, the anchors are especially important. What is the biggest frustration? What is the day to day reality right now? Can you show me? What would you need to know first? As a first time designer without any previous exposure to systems or requirements engineering, I relied on my listening, interviewing and visualization skills that I had forged through my career. </p>
+    <br>
+    <p>I started writing down notes, later drafting user stories. Prototyping logic, wireframes and interactive prototypes in Figma. Since I had expert users and internal Subject Matter Experts as my users to ask and test with, I anchored into what they already knew and were comfortable with - realistic looking interactive designs. High fidelity interactive Figma prototypes. Asking specific questions and having people share their screens and go through short interactions at a time, iterating weekly. I started out with who was in front of me, expanding to people in the company with the relevant work experience to qualify as stand-in for an expert users of the software. Working with what I have and expanding from there.</p>
+      <br>
+    <p>At the start of my first systems-in-systems feature I drafted text and visuals in parallel, clearly separating the requirements (written user stories) from designs. Translating from written requirements to design requirements by breaking down further into smaller pieces, individual UI behaviours. 
+    
+    </p>
   </div>
 
   <!-- 03 PROCESS: journey → wireframe → prototype → test (Konzeption & Prototyping / UX-Expertise) -->
@@ -53,7 +60,7 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
       <div>
         <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">01 · User journeys</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">[Interviews with each role; journey of the current workflow.]</p>
+        <p style="font-size:13.5px;color:#46586A;margin:0;">User groups: Management, Systems Engineer, Requirements Engineer.<br> </p>
       </div>
       <div>
         <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">02 · Wireframes &amp; user flows</span>
@@ -73,7 +80,7 @@
   <!-- 04 KEY DECISION incl. accessibility (Barrierefreie Bedienkonzepte) -->
   <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">04 · Key design decision</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">[The one decision worth explaining. For Master-Follower: red-green color-blind engineer couldn't read status → paired color with shape and label. For others: pick the accessibility or cognitive-load decision.]</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">A key decision of this feature was to ensure that at the moment of popagation of the decision on the master requirement to ensure that there is clarity around the propagation. My focus on User Experience enabled me to switch into different user roles for the questioning. I didn't need to know what an engineer needs to do in detail, I had to ask what an engineer who gets the notification of the propagation might want to know or decide at that moment. Perspective taking : Considering different types of users and asking about frustrations, edge cases and needs helped us design the feature in a way that wouldn't be aimed at satisfying one user but frustrating another. </p>
     <div style="display:flex;gap:20px;flex-wrap:wrap;background:#E7EEF3;border:1px solid #CBD8E0;padding:20px;">
       <div style="flex:1;min-width:180px;">
         <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">Before</span>
@@ -89,13 +96,22 @@
   <!-- 05 ALIGNMENT: bridge users ↔ dev ↔ leadership (Schnittstellenfunktion / Soft Skills) -->
   <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">05 · Alignment across roles</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">[Who had to agree and how the prototype got them there: frontend/backend developers on feasibility, CPO/CTO on scope, expert users on the workflow. Include the concrete moment — e.g. caught a backend/CPO misunderstanding that would have cost months of rework.]</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">The alignment happened with weekly meetings, feedback-sessions, presentations adn e-mails that were partially planned and partially self-initiated to keep everyone aligned and integrate feedback. CPO, CTO, Solution management, Subject Matter Experts where involved in the main decision making. I was responsible for getting the information I needed, designing, iterating and updating everyone. I wasn't in charge of timelines and decising who else was involved in the project. The main challange was to make the feature complex enough to be useful in the highly specialized work context and simple enough to make it feasible. This was and is a specific and ongoing challenge for complex B2B software.</p>
   </div>
+
+  
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">06 · Lessons Learned</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">Since I designed this complex systems-in-systems feature in my first product design jobs only a few months in, I was still learning while having to create designs. My modesty caused me to design a feature that was too complex thinking that it must be me who can hardly handle the complexity of a systems engineering logic in a an interactive Figma prototype. It was feasible, but less feasible as anticipated. But at the same time, a more feasible and less complex feature may not have been as useful to complex engineering projects. Learning from this project, I asked for user story collaboration and offical agreement on most crucial user requirements fromt he beginning, pushed more confidently and created a more limited yet complex feature where we spend significantly less time for development and design. -> See Case Study 2: Verification Assignment Feature</p>
+
+  <p>Disclaimer: This work description explains my individual learnings and not the companies process. Client names and specific information is not mentioned. The features are released and publically documented in detail. This use case was created for Portfolio purposes only and is not distributed outside of my job application process.</p>
+  </div>
+
 
   <!-- 06 OUTCOME -->
   <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 48px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">06 · Outcome</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 14px;">[Shipped at Valispace 2021; migrated and still live in Altium 365 (2026). Plus feature-specific result — e.g. designs signed off by users, funding secured.]</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 14px;">Shipped at Valispace 2021; migrated and still live in Altium 365 (2026). Plus feature-specific result — e.g. designs signed off by users, funding secured.</p>
     <a href="[altium docs url]" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Docs ↗</a>
   </div>
 
