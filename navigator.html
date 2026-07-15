@@ -7,13 +7,13 @@
 <title>Navigator — Petra Kühnle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sheet:#F4F4F1;--ink:#16191C;--graphite:#5A6068;--hairline:#C9CFD1;--grid:#E6E7E3;--accent:#16357C;
-    --display:"Space Grotesk",system-ui,sans-serif;
+    --sheet:#F4F7FA;--ink:#1B2A38;--graphite:#6E7F8D;--hairline:#CBD8E0;--grid:#E7EEF3;--accent:#1B2A38;
+    --display:"IBM Plex Sans",system-ui,sans-serif;
     --body:"IBM Plex Sans",system-ui,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
@@ -25,7 +25,7 @@
   a:hover{color:var(--ink);}
 
   .sheet{max-width:880px;margin:0 auto;padding:clamp(20px,4vw,40px);position:relative;}
-  .frame{position:relative;border:1px solid var(--ink);padding:clamp(26px,5vw,56px) clamp(22px,5vw,56px) clamp(34px,5vw,56px);background:rgba(244,244,241,.72);}
+  .frame{position:relative;border:1px solid var(--ink);padding:clamp(26px,5vw,56px) clamp(22px,5vw,56px) clamp(34px,5vw,56px);background:rgba(244,247,250,.72);}
   .tick{position:absolute;width:13px;height:13px;pointer-events:none;opacity:0;animation:tk .5s ease forwards;}
   .tick-tl{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
   .tick-tr{top:-1px;right:-1px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);}
@@ -36,7 +36,7 @@
   .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);}
   .strip{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:18px;margin-bottom:clamp(24px,4vw,38px);border-bottom:1px solid var(--hairline);}
 
-  header h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,8.5vw,78px);line-height:.96;letter-spacing:-.025em;margin:0 0 16px;}
+  header h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,8.5vw,78px);line-height:.96;letter-spacing:-.025em;margin:0 0 16px;}
   .role{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--ink);margin:0 0 20px;}
   .thesis{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.5vw,23px);line-height:1.42;max-width:26em;margin:0;color:var(--ink);}
 
@@ -71,16 +71,16 @@
   .phase{background:var(--sheet);padding:13px 14px;}
   .phase.now{background:var(--ink);}
   .phase .n{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--graphite);display:block;margin-bottom:6px;}
-  .phase.now .n{color:#9BA0A6;}
+  .phase.now .n{color:#CBD8E0;}
   .phase b{display:block;font-family:var(--display);font-size:14px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin-bottom:2px;}
   .phase.now b{color:#fff;}
   .phase span{font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--graphite);text-transform:none;line-height:1.4;}
-  .phase.now span{color:#9BA0A6;}
+  .phase.now span{color:#CBD8E0;}
 
   .delivs{display:grid;grid-template-columns:1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:6px 0;}
   .deliv{background:var(--sheet);padding:18px 18px 16px;}
   .deliv .t{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px;}
-  .deliv b{font-family:var(--display);font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);display:block;margin-bottom:6px;}
+  .deliv b{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--ink);display:block;margin-bottom:6px;}
   .deliv p{margin:0 0 14px;font-size:14px;line-height:1.45;color:var(--graphite);}
   .deliv .links{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
 
@@ -96,7 +96,7 @@
   .note b{font-family:var(--display);font-weight:500;}
 
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
-  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);border:1px solid var(--hairline);padding:5px 10px;background:rgba(244,244,241,.6);}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);border:1px solid var(--hairline);padding:5px 10px;background:rgba(244,247,250,.6);}
 
   .ledger{list-style:none;margin:6px 0;padding:0;border:1px solid var(--hairline);background:#fff;}
   .ledger li{position:relative;padding:15px 18px 15px 40px;border-top:1px solid var(--hairline);}
@@ -104,7 +104,6 @@
   .ledger li::before{content:"";position:absolute;left:18px;top:21px;width:8px;height:8px;background:var(--accent);}
   .ledger.future li::before{background:none;border:1.5px solid var(--accent);}
   .ledger p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink);}
-  .ledger .tag{display:inline-block;margin-left:8px;vertical-align:middle;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;background:var(--ink);color:#fff;}
 
   .pager{display:flex;justify-content:space-between;gap:12px;margin-top:clamp(40px,6vw,60px);padding-top:16px;border-top:1px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;}
   footer{margin-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
@@ -131,7 +130,7 @@
 
     <div class="strip mono">
       <span>Case Study · Product / AI</span>
-      <span>2025 to 2026</span>
+      <span>2025–26</span>
     </div>
 
     <header>
@@ -142,14 +141,14 @@
 
     <div class="titleblock" aria-label="Summary">
       <div class="tb"><span class="k mono">Role</span><span class="v">Designer · prototyper</span></div>
-      <div class="tb"><span class="k mono">Duration</span><span class="v">2026 · ongoing</span></div>
+      <div class="tb"><span class="k mono">Duration</span><span class="v">2025–26 · ongoing</span></div>
       <div class="tb"><span class="k mono">Scope</span><span class="v">EU AI Act · GDPR · EAA</span></div>
       <div class="tb"><span class="k mono">Status</span><span class="v">V1 live · V2 in dev</span></div>
     </div>
 
     <div class="impact">
       <span class="k mono">Impact</span>
-      <span class="v">V1 live on GitHub Pages · passed Mozilla Fellowship round 1 · 2 engineers joined for V2</span>
+      <span class="v">V1 live on GitHub Pages · Mozilla Fellowship nominee, passed round 1 · 2 engineers joined for V2</span>
     </div>
 
     <section>
@@ -161,42 +160,42 @@
       <div class="sec-head"><span class="no">02</span><h2>How it works</h2></div>
       <div class="graph">
         <svg viewBox="0 0 860 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A use case is entered, the app asks about AI involvement, personal data and distribution, then returns tailored requirements and action steps.">
-          <text x="120" y="28" text-anchor="middle" font-size="9" fill="#5A6068" class="mono" letter-spacing="1.5">INPUT</text>
-          <text x="430" y="28" text-anchor="middle" font-size="9" fill="#5A6068" class="mono" letter-spacing="1.5">DECISION TREE</text>
-          <text x="740" y="28" text-anchor="middle" font-size="9" fill="#5A6068" class="mono" letter-spacing="1.5">OUTPUT</text>
+          <text x="120" y="28" text-anchor="middle" font-size="9" fill="#6E7F8D" class="mono" letter-spacing="1.5">INPUT</text>
+          <text x="430" y="28" text-anchor="middle" font-size="9" fill="#6E7F8D" class="mono" letter-spacing="1.5">DECISION TREE</text>
+          <text x="740" y="28" text-anchor="middle" font-size="9" fill="#6E7F8D" class="mono" letter-spacing="1.5">OUTPUT</text>
 
-          <rect x="20" y="90" width="200" height="60" fill="#fff" stroke="#16191C" stroke-width="1.2"/>
-          <text x="120" y="116" text-anchor="middle" font-size="12" font-weight="500" fill="#16191C">Select your use case</text>
-          <text x="120" y="134" text-anchor="middle" font-size="10" fill="#5A6068" font-style="italic">or one you want to know about</text>
+          <rect x="20" y="90" width="200" height="60" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="120" y="116" text-anchor="middle" font-size="12" font-weight="500" fill="#1B2A38">Select your use case</text>
+          <text x="120" y="134" text-anchor="middle" font-size="10" fill="#6E7F8D" font-style="italic">or one you want to know about</text>
 
-          <line x1="222" y1="120" x2="252" y2="120" stroke="#16191C" stroke-width="1.2"/><polygon points="252,115 262,120 252,125" fill="#16191C"/>
+          <line x1="222" y1="120" x2="252" y2="120" stroke="#1B2A38" stroke-width="1.2"/><polygon points="252,115 262,120 252,125" fill="#1B2A38"/>
 
-          <rect x="270" y="50" width="140" height="46" fill="#fff" stroke="#16191C" stroke-width="1.2"/>
-          <text x="340" y="70" text-anchor="middle" font-size="11" fill="#16191C">AI involved?</text>
-          <text x="340" y="86" text-anchor="middle" font-size="9" fill="#5A6068">training / generation</text>
+          <rect x="270" y="50" width="140" height="46" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="340" y="70" text-anchor="middle" font-size="11" fill="#1B2A38">AI involved?</text>
+          <text x="340" y="86" text-anchor="middle" font-size="9" fill="#6E7F8D">training / generation</text>
 
-          <rect x="270" y="105" width="140" height="46" fill="#fff" stroke="#16191C" stroke-width="1.2"/>
-          <text x="340" y="125" text-anchor="middle" font-size="11" fill="#16191C">Personal data?</text>
-          <text x="340" y="141" text-anchor="middle" font-size="9" fill="#5A6068">voices / listeners</text>
+          <rect x="270" y="105" width="140" height="46" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="340" y="125" text-anchor="middle" font-size="11" fill="#1B2A38">Personal data?</text>
+          <text x="340" y="141" text-anchor="middle" font-size="9" fill="#6E7F8D">voices / listeners</text>
 
-          <rect x="270" y="160" width="140" height="46" fill="#fff" stroke="#16191C" stroke-width="1.2"/>
-          <text x="340" y="180" text-anchor="middle" font-size="11" fill="#16191C">Distribution?</text>
-          <text x="340" y="196" text-anchor="middle" font-size="9" fill="#5A6068">EU market reach</text>
+          <rect x="270" y="160" width="140" height="46" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="340" y="180" text-anchor="middle" font-size="11" fill="#1B2A38">Distribution?</text>
+          <text x="340" y="196" text-anchor="middle" font-size="9" fill="#6E7F8D">EU market reach</text>
 
-          <line x1="412" y1="73" x2="450" y2="100" stroke="#C9CFD1" stroke-width="1"/>
-          <line x1="412" y1="128" x2="450" y2="120" stroke="#C9CFD1" stroke-width="1"/>
-          <line x1="412" y1="183" x2="450" y2="140" stroke="#C9CFD1" stroke-width="1"/>
+          <line x1="412" y1="73" x2="450" y2="100" stroke="#CBD8E0" stroke-width="1"/>
+          <line x1="412" y1="128" x2="450" y2="120" stroke="#CBD8E0" stroke-width="1"/>
+          <line x1="412" y1="183" x2="450" y2="140" stroke="#CBD8E0" stroke-width="1"/>
 
-          <rect x="452" y="95" width="150" height="50" fill="#ECEEF9" stroke="#16191C" stroke-width="1.2"/>
-          <text x="527" y="118" text-anchor="middle" font-size="11" font-weight="500" fill="#16191C">Match to rules</text>
-          <text x="527" y="134" text-anchor="middle" font-size="9" fill="#5A6068">AI Act · GDPR · EAA</text>
+          <rect x="452" y="95" width="150" height="50" fill="#E7EEF3" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="527" y="118" text-anchor="middle" font-size="11" font-weight="500" fill="#1B2A38">Match to rules</text>
+          <text x="527" y="134" text-anchor="middle" font-size="9" fill="#6E7F8D">AI Act · GDPR · EAA</text>
 
-          <line x1="604" y1="120" x2="634" y2="120" stroke="#16191C" stroke-width="1.2"/><polygon points="634,115 644,120 634,125" fill="#16191C"/>
+          <line x1="604" y1="120" x2="634" y2="120" stroke="#1B2A38" stroke-width="1.2"/><polygon points="634,115 644,120 634,125" fill="#1B2A38"/>
 
-          <rect x="650" y="80" width="190" height="80" fill="#16191C" stroke="#16191C" stroke-width="1.2"/>
+          <rect x="650" y="80" width="190" height="80" fill="#1B2A38" stroke="#1B2A38" stroke-width="1.2"/>
           <text x="745" y="106" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">Your requirements</text>
-          <text x="745" y="124" text-anchor="middle" font-size="10" fill="#9BA0A6">Risks and obligations</text>
-          <text x="745" y="142" text-anchor="middle" font-size="10" fill="#9BA0A6">Next action steps</text>
+          <text x="745" y="124" text-anchor="middle" font-size="10" fill="#CBD8E0">Risks and obligations</text>
+          <text x="745" y="142" text-anchor="middle" font-size="10" fill="#CBD8E0">Next action steps</text>
         </svg>
         <p class="graph-cap">One use case in. The obligations and steps that apply come out.</p>
       </div>
@@ -205,10 +204,11 @@
     <section>
       <div class="sec-head"><span class="no">03</span><h2>Interface</h2></div>
       <div class="video">
-        <video controls preload="metadata">
+        <video controls preload="metadata" playsinline>
+          <source src="navigator_screenrecording.mp4" type="video/mp4">
           <source src="navigator_screenrecording.mov" type="video/quicktime">
         </video>
-        <div class="fallback">Screen recording. If it does not play, use the live app links below.</div>
+        <div class="fallback">Screen recording. If it does not play, use the live app link below.</div>
       </div>
     </section>
 
@@ -218,8 +218,8 @@
         <div class="phase"><span class="n">01</span><b>Research</b><span>Primary regulations</span></div>
         <div class="phase"><span class="n">02</span><b>Structure</b><span>Rules to cases</span></div>
         <div class="phase"><span class="n">03</span><b>Verify</b><span>Check sources</span></div>
-        <div class="phase"><span class="n">04</span><b>Build</b><span>Prototype with Design tools &amp; Code</span></div>
-        <div class="phase now"><span class="n">05</span><b>Publish</b><span>Share Online</span></div>
+        <div class="phase"><span class="n">04</span><b>Build</b><span>Prototype with design tools &amp; code</span></div>
+        <div class="phase now"><span class="n">05</span><b>Publish</b><span>Share online</span></div>
       </div>
     </section>
 
@@ -275,7 +275,7 @@
     <section>
       <div class="sec-head"><span class="no">08</span><h2>Addressed</h2></div>
       <ul class="ledger">
-        <li><p>Saves non-legal people the time and confusion of searching the open web. The decision tree gives a first orientation on what might apply — so you are not left wondering whether protection is needed for cases that do not need it.<span class="tag">Done</span></p></li>
+        <li><p>Saves non-legal people the time and confusion of searching the open web. The decision tree gives a first orientation on what might apply — so you are not left wondering whether protection is needed for cases that do not need it.</p></li>
         <li><p>Puts UX and accessibility first, so getting to the information feels lighter from the start — the aim is to ease friction, not stack more legal and technical hurdles on top of an already dense topic.</p></li>
         <li><p>Does not make the decision for you. It lays out the relevant information transparently and accurately, and leaves the call in your hands.</p></li>
         <li><p>Covers the main use cases, so anyone — facing a specific situation or just curious — can build a sense of how the law, the technology, and AI fit together.</p></li>
