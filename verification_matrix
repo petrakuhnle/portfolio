@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Case Template · Valispace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
+  a:hover{color:#1B2A38;}
+  ::selection{background:#1B2A38;color:#F4F7FA;}
+</style>
+</head>
+<body>
+
+<div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;font-size:16px;line-height:1.6;">
+
+  <!-- BREADCRUMB -->
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 24px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case · Valispace, 2021</p>
+
+  <!-- HEADER: feature name + one-line value -->
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 8px;">[Feature Name, e.g. Master-Follower]</p>
+  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">[Outcome-first title: what this design makes possible]</h1>
+  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:38em;">[One sentence: the problem in the users' world, and what shipped.]</p>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:48px;">
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#F4F7FA;padding:4px 10px;border-radius:3px;background:#12181F;">[Feature Tag]</span>
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Valispace → Altium 365</span>
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Designed 2021 · Live 2026</span>
+  </div>
+
+  <!-- 01 CONTEXT: regulated industry + roles (Branchenerfahrung / users) -->
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">01 · Context</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">[2–3 sentences: the regulated engineering environment, which roles depend on this workflow, and what broke without it. Name the roles: requirements engineer, verification engineer, systems engineer, manager.]</p>
+    <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:24px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6E7F8D;margin:0 0 12px;">[Diagram: the roles and the shared object — reuse SVG style from index]</p>
+      <div style="height:120px;display:flex;align-items:center;justify-content:center;border:1px dashed #8DA9C4;color:#6E7F8D;font-size:13px;">[ SVG placeholder ]</div>
+    </div>
+  </div>
+
+  <!-- 02 REQUIREMENTS → DESIGN (Anforderungs- & Workflow-Management) -->
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">02 · From requirements to design</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">[How written user requirements and acceptance criteria became design decisions: introduced user stories, checked designs against requirements and vice versa. 2–3 sentences, concrete.]</p>
+  </div>
+
+  <!-- 03 PROCESS: journey → wireframe → prototype → test (Konzeption & Prototyping / UX-Expertise) -->
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 14px;">03 · Process</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+      <div>
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">01 · User journeys</span>
+        <p style="font-size:13.5px;color:#46586A;margin:0;">[Interviews with each role; journey of the current workflow.]</p>
+      </div>
+      <div>
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">02 · Wireframes &amp; user flows</span>
+        <p style="font-size:13.5px;color:#46586A;margin:0;">[Concept flow broken into realistic mini-interactions.]</p>
+      </div>
+      <div>
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">03 · Interactive prototype</span>
+        <p style="font-size:13.5px;color:#46586A;margin:0;">[Hi-fidelity Figma prototype, functional per sub-feature.]</p>
+      </div>
+      <div>
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">04 · Test &amp; iterate</span>
+        <p style="font-size:13.5px;color:#46586A;margin:0;">[Testing with expert users; iterations from their feedback.]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 KEY DECISION incl. accessibility (Barrierefreie Bedienkonzepte) -->
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">04 · Key design decision</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">[The one decision worth explaining. For Master-Follower: red-green color-blind engineer couldn't read status → paired color with shape and label. For others: pick the accessibility or cognitive-load decision.]</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;background:#E7EEF3;border:1px solid #CBD8E0;padding:20px;">
+      <div style="flex:1;min-width:180px;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">Before</span>
+        <p style="font-size:13px;color:#46586A;margin:0;">[state]</p>
+      </div>
+      <div style="flex:1;min-width:180px;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">After</span>
+        <p style="font-size:13px;color:#46586A;margin:0;">[state]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 ALIGNMENT: bridge users ↔ dev ↔ leadership (Schnittstellenfunktion / Soft Skills) -->
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">05 · Alignment across roles</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">[Who had to agree and how the prototype got them there: frontend/backend developers on feasibility, CPO/CTO on scope, expert users on the workflow. Include the concrete moment — e.g. caught a backend/CPO misunderstanding that would have cost months of rework.]</p>
+  </div>
+
+  <!-- 06 OUTCOME -->
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 48px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">06 · Outcome</p>
+    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 14px;">[Shipped at Valispace 2021; migrated and still live in Altium 365 (2026). Plus feature-specific result — e.g. designs signed off by users, funding secured.]</p>
+    <a href="[altium docs url]" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Docs ↗</a>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;border-top:1px solid #1B2A38;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
+    <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>
