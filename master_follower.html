@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use Case Template · Valispace</title>
+<title>Use Case · Master-Follower · Petra Kühnle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,102 +18,135 @@
 
 <div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;font-size:16px;line-height:1.6;">
 
-  <!-- BREADCRUMB -->
   <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 24px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case · Valispace, 2021</p>
 
-  <!-- HEADER: feature name + one-line value -->
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 8px;">Feature: Master-Follower</p>
-  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">Probagating 
-  decisions to dependant requirements across 1000s of requirements with 100s of shared responsibiilities.</h1>
-  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:38em;">Between meetings, documents and emails decision makers and engineers can loose track of decisions that are ciritcal. A change in a master requirement propagates information automatically to Follower requirements.</p>
-  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:48px;">
-    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#F4F7FA;padding:4px 10px;border-radius:3px;background:#12181F;">[Feature Tag]</span>
-    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Valispace → Altium 365</span>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;margin:0 0 8px;">01 Shipped Work · Example 1</p>
+  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">Propagating decisions to dependent requirements, across 1000s of requirements</h1>
+  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:36em;">Between meetings, documents and emails, decision makers and engineers can lose track of decisions that are critical. A change in a Master requirement propagates automatically to its Follower requirements.</p>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:32px;">
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#F4F7FA;padding:4px 10px;border-radius:3px;background:#1B2A38;">Feature: Master-Follower</span>
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#8DA9C4;">Valispace → Altium 365</span>
     <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Designed 2021 · Live 2026</span>
   </div>
 
-  <!-- 01 CONTEXT: regulated industry + roles (Branchenerfahrung / users) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+  <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:36px 36px 28px;margin:0 0 48px;">
+    <svg viewBox="0 0 500 96" style="display:block;width:100%;height:auto" fill="none">
+      <circle cx="20" cy="46" r="8" fill="#1B2A38"></circle>
+      <text x="40" y="42" font-family="IBM Plex Sans" font-size="14" fill="#1B2A38">Master</text>
+      <text x="40" y="59" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">edited once</text>
+      <line x1="150" y1="46" x2="264.1" y2="21.3" stroke="#1B2A38" stroke-width="1.8"></line>
+      <line x1="150" y1="46" x2="264.1" y2="70.7" stroke="#1B2A38" stroke-width="1.8"></line>
+      <circle cx="270" cy="20" r="6" fill="none" stroke="#1B2A38" stroke-width="1.8"></circle>
+      <text x="286" y="24" font-family="IBM Plex Sans" font-size="13" fill="#1B2A38">Follower</text>
+      <text x="286" y="38" font-family="JetBrains Mono" font-size="10" fill="#6E7F8D">flagged, needs review</text>
+      <circle cx="270" cy="72" r="6" fill="none" stroke="#1B2A38" stroke-width="1.8"></circle>
+      <text x="286" y="76" font-family="IBM Plex Sans" font-size="13" fill="#1B2A38">Follower</text>
+      <text x="286" y="90" font-family="JetBrains Mono" font-size="10" fill="#6E7F8D">owner applies or rejects</text>
+    </svg>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:20px 0 0;">One change on the Master. Every Follower flagged. Nothing updates silently.</p>
+  </div>
+
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">01 · Context</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">Managers, requirements engineer, verification engineer, and systems engineer work on the same projects and decisions go from changing legal requirements the engineer needs to know about to a manager signing off on all verification methods being completed. The interdependencies can slow down the process and interfere with tasks at hand. The engineering industry has moved from documents and meetings to software solutions, but is fundamentally different from software due to the costly consequence, physical constraints and more legal constraints. Decisions and reviews are more often mission-critical and need to be accountable and transparent compared to software development collaboration for example. The Master-Follower is aimed at defining high impact requirements (Master) and their dependant requirements (Follower).</p>
-    <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:24px;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6E7F8D;margin:0 0 12px;">[Diagram: the roles and the shared object — reuse SVG style from index]</p>
-      <div style="height:120px;display:flex;align-items:center;justify-content:center;border:1px dashed #8DA9C4;color:#6E7F8D;font-size:13px;">[ SVG placeholder ]</div>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Four roles depend on the same requirement. A decision by one is critical to the others.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;margin:0 0 20px;">Engineering consequences are costly, constraints are physical and legal, so decisions and reviews need to be accountable and transparent. Master-Follower defines high impact requirements (Master) and their dependent requirements (Follower).</p>
+    <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:28px 28px 20px;">
+      <svg viewBox="0 0 500 150" style="display:block;width:100%;height:auto" fill="none">
+        <text x="0" y="22" font-family="JetBrains Mono" font-size="10.5" fill="#46586A">MANAGEMENT</text>
+        <text x="0" y="58" font-family="JetBrains Mono" font-size="10.5" fill="#46586A">SYSTEMS ENGINEER</text>
+        <text x="0" y="94" font-family="JetBrains Mono" font-size="10.5" fill="#46586A">REQUIREMENTS ENGINEER</text>
+        <text x="0" y="130" font-family="JetBrains Mono" font-size="10.5" fill="#46586A">VERIFICATION ENGINEER</text>
+        <g stroke="#1B2A38" stroke-width="1.4">
+          <line x1="196" y1="18" x2="318" y2="66"></line>
+          <line x1="196" y1="54" x2="318" y2="72"></line>
+          <line x1="196" y1="90" x2="318" y2="78"></line>
+          <line x1="196" y1="126" x2="318" y2="84"></line>
+        </g>
+        <rect x="318" y="48" width="176" height="54" fill="#F4F7FA" stroke="#1B2A38" stroke-width="1.4"></rect>
+        <text x="406" y="71" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#1B2A38">One requirement</text>
+        <text x="406" y="89" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#6E7F8D">shared responsibility</text>
+      </svg>
     </div>
   </div>
 
-  <!-- 02 REQUIREMENTS → DESIGN (Anforderungs- & Workflow-Management) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">02 · From requirements to design</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">For a design from scratch without existing written requirements, I start with formal and informal interviews. To anchor my understand and organize importance. If it is an unknown domain, the anchors are especially important. What is the biggest frustration? What is the day to day reality right now? Can you show me? What would you need to know first? As a first time designer without any previous exposure to systems or requirements engineering, I relied on my listening, interviewing and visualization skills that I had forged through my career. </p>
-    <br>
-    <p>I started writing down notes, later drafting user stories. Prototyping logic, wireframes and interactive prototypes in Figma. Since I had expert users and internal Subject Matter Experts as my users to ask and test with, I anchored into what they already knew and were comfortable with - realistic looking interactive designs. High fidelity interactive Figma prototypes. Asking specific questions and having people share their screens and go through short interactions at a time, iterating weekly. I started out with who was in front of me, expanding to people in the company with the relevant work experience to qualify as stand-in for an expert users of the software. Working with what I have and expanding from there.</p>
-      <br>
-    <p>At the start of my first systems-in-systems feature I drafted text and visuals in parallel, clearly separating the requirements (written user stories) from designs. Translating from written requirements to design requirements by breaking down further into smaller pieces, individual UI behaviours. 
-    
-    </p>
-  </div>
-
-  <!-- 03 PROCESS: journey → wireframe → prototype → test (Konzeption & Prototyping / UX-Expertise) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 14px;">03 · Process</p>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">02 · My role</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Before a PM was hired, the translation of the spoken word into writing and design was solely my job.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;margin:0 0 24px;">Collaboration was direct with users, Subject Matter Experts, CPO and CTO. I anchored an unknown domain through interviews: what is the biggest frustration, what is the day to day reality, can you show me? I wrote user stories, then translated them into design requirements: smaller pieces, individual UI behaviours.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
       <div>
         <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">01 · User journeys</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">User groups: Management, Systems Engineer, Requirements Engineer.<br> </p>
+        <p style="font-size:13px;color:#46586A;margin:0;">Interviews per role: Management, Systems Engineer, Requirements Engineer.</p>
       </div>
       <div>
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">02 · Wireframes &amp; user flows</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">[Concept flow broken into realistic mini-interactions.]</p>
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">02 · Wireframes & flows</span>
+        <p style="font-size:13px;color:#46586A;margin:0;">Concept flow broken into realistic mini interactions.</p>
       </div>
       <div>
         <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">03 · Interactive prototype</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">[Hi-fidelity Figma prototype, functional per sub-feature.]</p>
+        <p style="font-size:13px;color:#46586A;margin:0;">High fidelity Figma prototype, functional per sub feature.</p>
       </div>
       <div>
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">04 · Test &amp; iterate</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">[Testing with expert users; iterations from their feedback.]</p>
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">04 · Test & iterate</span>
+        <p style="font-size:13px;color:#46586A;margin:0;">Weekly sessions with expert users, iterating on their feedback.</p>
       </div>
     </div>
   </div>
 
-  <!-- 04 KEY DECISION incl. accessibility (Barrierefreie Bedienkonzepte) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">04 · Key design decision</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">A key decision of this feature was to ensure that at the moment of popagation of the decision on the master requirement to ensure that there is clarity around the propagation. My focus on User Experience enabled me to switch into different user roles for the questioning. I didn't need to know what an engineer needs to do in detail, I had to ask what an engineer who gets the notification of the propagation might want to know or decide at that moment. Perspective taking : Considering different types of users and asking about frustrations, edge cases and needs helped us design the feature in a way that wouldn't be aimed at satisfying one user but frustrating another. </p>
-    <div style="display:flex;gap:20px;flex-wrap:wrap;background:#E7EEF3;border:1px solid #CBD8E0;padding:20px;">
-      <div style="flex:1;min-width:180px;">
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">Before</span>
-        <p style="font-size:13px;color:#46586A;margin:0;">[state]</p>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">03 · Key design decision</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">A Follower never updates silently.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;margin:0 0 20px;">The key decision was clarity at the moment of propagation: what does the engineer receiving a change want to know or decide right then? Propagation is unidirectional, the change is flagged on the Follower, and its owner applies or rejects it.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;background:#E7EEF3;border:1px solid #CBD8E0;padding:24px;">
+      <div style="flex:1;min-width:220px;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:12px;">Before</span>
+        <svg viewBox="0 0 220 150" style="display:block;width:100%;max-width:260px;height:auto" fill="none">
+          <text x="0" y="14" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">DECISION IN A MEETING</text>
+          <line x1="8" y1="22" x2="8" y2="40" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="56" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">NOTED IN A DOCUMENT</text>
+          <line x1="8" y1="64" x2="8" y2="82" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="98" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">SENT BY EMAIL</text>
+          <line x1="8" y1="106" x2="8" y2="124" stroke="#6E7F8D" stroke-width="1.4" stroke-dasharray="3 3"></line>
+          <text x="0" y="140" font-family="JetBrains Mono" font-size="10.5" fill="#6E7F8D">UPDATED BY HAND, OR MISSED</text>
+        </svg>
       </div>
-      <div style="flex:1;min-width:180px;">
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">After</span>
-        <p style="font-size:13px;color:#46586A;margin:0;">[state]</p>
+      <div style="flex:1;min-width:220px;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:12px;">After</span>
+        <svg viewBox="0 0 220 150" style="display:block;width:100%;max-width:260px;height:auto" fill="none">
+          <circle cx="8" cy="10" r="6" fill="#1B2A38"></circle>
+          <text x="22" y="14" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">MASTER EDITED</text>
+          <line x1="8" y1="20" x2="8" y2="40" stroke="#1B2A38" stroke-width="1.4"></line>
+          <circle cx="8" cy="52" r="6" fill="none" stroke="#1B2A38" stroke-width="1.6"></circle>
+          <text x="22" y="56" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">FOLLOWER FLAGGED</text>
+          <line x1="8" y1="62" x2="8" y2="82" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="98" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">OWNER REVIEWS</text>
+          <line x1="8" y1="106" x2="8" y2="124" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="140" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">APPLIES</text>
+          <text x="62" y="140" font-family="JetBrains Mono" font-size="10.5" fill="#6E7F8D">OR REJECTS, LOGGED</text>
+        </svg>
       </div>
     </div>
   </div>
 
-  <!-- 05 ALIGNMENT: bridge users ↔ dev ↔ leadership (Schnittstellenfunktion / Soft Skills) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">05 · Alignment across roles</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">The alignment happened with weekly meetings, feedback-sessions, presentations adn e-mails that were partially planned and partially self-initiated to keep everyone aligned and integrate feedback. CPO, CTO, Solution management, Subject Matter Experts where involved in the main decision making. I was responsible for getting the information I needed, designing, iterating and updating everyone. I wasn't in charge of timelines and decising who else was involved in the project. The main challange was to make the feature complex enough to be useful in the highly specialized work context and simple enough to make it feasible. This was and is a specific and ongoing challenge for complex B2B software.</p>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">04 · Alignment across roles</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Complex enough to be useful in highly specialized work, simple enough to be feasible.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;">Weekly meetings, feedback sessions and presentations kept CPO, CTO and Subject Matter Experts aligned. I was responsible for getting the information I needed, designing, iterating and updating everyone.</p>
   </div>
 
-  
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">06 · Lessons Learned</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">Since I designed this complex systems-in-systems feature in my first product design jobs only a few months in, I was still learning while having to create designs. My modesty caused me to design a feature that was too complex thinking that it must be me who can hardly handle the complexity of a systems engineering logic in a an interactive Figma prototype. It was feasible, but less feasible as anticipated. But at the same time, a more feasible and less complex feature may not have been as useful to complex engineering projects. Learning from this project, I asked for user story collaboration and offical agreement on most crucial user requirements fromt he beginning, pushed more confidently and created a more limited yet complex feature where we spend significantly less time for development and design. -> See Case Study 2: Verification Assignment Feature</p>
-
-  <p>Disclaimer: This work description explains my individual learnings and not the companies process. Client names and specific information is not mentioned. The features are released and publically documented in detail. This use case was created for Portfolio purposes only and is not distributed outside of my job application process.</p>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">05 · Lessons learned</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">My modesty led me to design a feature that was too complex.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;">Only a few months into my first product design job, I thought it must be me who could hardly handle the complexity of systems engineering logic. It was feasible, but less feasible than anticipated. On the next feature I asked for user story collaboration and agreement on the most crucial requirements from the beginning: see <a href="verification-matrix.html">Use Case: Verification Assignment Matrix</a>.</p>
   </div>
 
-
-  <!-- 06 OUTCOME -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 48px;">
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">06 · Outcome</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 14px;">Shipped at Valispace 2021; migrated and still live in Altium 365 (2026). Plus feature-specific result — e.g. designs signed off by users, funding secured.</p>
-    <a href="[altium docs url]" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Docs ↗</a>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;margin:0 0 14px;">Shipped at Valispace in 2021. Migrated and still live in Altium 365 in 2026.</p>
+    <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Docs ↗</a>
   </div>
+
+  <p style="font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 48px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
 
   <div style="display:flex;justify-content:space-between;border-top:1px solid #1B2A38;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
     <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
