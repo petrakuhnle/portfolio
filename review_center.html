@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use Case Template · Valispace</title>
+<title>Use Case · Review Center · Petra Kühnle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,86 +18,106 @@
 
 <div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;font-size:16px;line-height:1.6;">
 
-  <!-- BREADCRUMB -->
   <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 24px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case · Valispace, 2021</p>
 
-  <!-- HEADER: feature name + one-line value -->
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 8px;">Review Center</p>
-  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">Making Review Assignments easier</h1>
-  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:38em;">Getting an overview for Review Assignment and Completion with more assignment, view and filter options with an interconnected Review Center.</p>
-  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:48px;">
-    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#F4F7FA;padding:4px 10px;border-radius:3px;background:#12181F;">Review Center</span>
-    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Valispace → Altium 365</span>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;margin:0 0 8px;">01 Shipped Work · Example 3</p>
+  <h1 style="font-weight:700;font-size:36px;letter-spacing:-.02em;line-height:1.1;margin:0 0 12px;max-width:20em;">Making review assignments easier</h1>
+  <p style="font-size:16px;color:#46586A;margin:0 0 20px;max-width:36em;">A formal review is common practice in engineering work. The Review Center gives an overview of review assignment and completion, with more assignment, view and filter options, interconnected with the rest of the engineering project.</p>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:32px;">
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#F4F7FA;padding:4px 10px;border-radius:3px;background:#1B2A38;">Feature: Review Center</span>
+    <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#8DA9C4;">Valispace → Altium 365</span>
     <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:#1B2A38;padding:4px 10px;border-radius:3px;background:#FFFFFF;border:1px solid #1B2A38;">Designed 2021 · Live 2026</span>
   </div>
 
-  <!-- 01 CONTEXT: regulated industry + roles (Branchenerfahrung / users) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+  <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:36px 36px 28px;margin:0 0 48px;">
+    <svg viewBox="0 0 500 138" style="display:block;width:100%;height:auto" fill="none" font-family="JetBrains Mono">
+      <text x="0" y="14" font-size="10.5" fill="#46586A">MODERATOR</text>
+      <text x="150" y="14" font-size="10.5" fill="#46586A">REVIEWER</text>
+      <text x="300" y="14" font-size="10.5" fill="#46586A">APPROVER</text>
+      <path d="M96 10 L142 10" stroke="#1B2A38" stroke-width="1.2" marker-end="url(#rcu1)"></path>
+      <path d="M226 10 L292 10" stroke="#1B2A38" stroke-width="1.2" marker-end="url(#rcu1)"></path>
+      <defs><marker id="rcu1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 1 L6 4 L0 7" fill="none" stroke="#1B2A38" stroke-width="1.2"></path></marker></defs>
+      <g stroke="#CBD8E0" stroke-width="1.3">
+        <rect x="0" y="26" width="450" height="30"></rect><rect x="0" y="62" width="450" height="30"></rect><rect x="0" y="98" width="450" height="30"></rect>
+      </g>
+      <text x="12" y="45" font-size="11" fill="#1B2A38">REQ-01</text>
+      <text x="12" y="81" font-size="11" fill="#1B2A38">REQ-02</text>
+      <text x="12" y="117" font-size="11" fill="#1B2A38">REQ-03</text>
+      <path d="M330 42 l6 6 l12 -14" stroke="#1B2A38" stroke-width="1.8"></path>
+      <text x="356" y="45" font-size="10" fill="#6E7F8D">APPROVED</text>
+      <circle cx="337" cy="77" r="7" stroke="#1B2A38" stroke-width="1.4" fill="none"></circle>
+      <path d="M337 70 a7 7 0 0 1 0 14 z" fill="#1B2A38"></path>
+      <text x="356" y="81" font-size="10" fill="#6E7F8D">NEEDS WORK</text>
+      <path d="M330 110 l14 14 M344 110 l-14 14" stroke="#1B2A38" stroke-width="1.8"></path>
+      <text x="356" y="117" font-size="10" fill="#6E7F8D">REJECTED</text>
+    </svg>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:20px 0 0;">The moderator sets up the review, reviewers rate each object, the approver closes it with a timestamp. Every rating is logged.</p>
+  </div>
+
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">01 · Context</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">Assigning reviews to specific employees or groups of employees can be time consuming. The integrated Review Center allows for better overview, faster assignments and stayd interconnected with the rest of the engineering project.</p>
-    <div style="background:#E7EEF3;border:1px solid #CBD8E0;padding:24px;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6E7F8D;margin:0 0 12px;"></p>
-      <div style="height:120px;display:flex;align-items:center;justify-content:center;border:1px dashed #8DA9C4;color:#6E7F8D;font-size:13px;"></div>
-    </div>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Assigning reviews to specific employees or groups can be time consuming.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;">Who needs to review what by what time? Are the reviews done, or lagging behind the timeline of the project? A project can involve 1000s of requirements and 100s of people, similar people are assigned to similar requirements over and over, reviews may need to be redone, and the communication about them is often tracked in another software, in meetings or per email. The integrated Review Center gives a better overview and faster assignments, directly on the data that already exists in the project.</p>
   </div>
 
-  <!-- 02 REQUIREMENTS → DESIGN (Anforderungs- & Workflow-Management) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">02 · From requirements to design</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">Review Center Requirements were writen based on input from experts and expert user input and my task was to co-write, edit and further specify high level feature requirements to specific design requriemnts and designs. What exactly does the person who assigns need to be able to select to the exact different selection options down to details of specific wording, UI behaviour, icons and colors. Therefore I was the main driver for discovery, mapping out the logic concrete enough to define and refine requirements and draft high fidelity and interactive Figma designs. Breaking down somewhat vague verbal descriptions of what is frustrating or what the user would need to be able to do or decide to concrete user stories and UI elements is a process that helps in discovery since the concrete and detailed level of a Figma prototypes will bring up questions that can be fed back to the user and expert interviews - this way we could iterate and refine to ensure enough use cases are covered for the feature to be useful.</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Breaking down vague verbal descriptions into concrete user stories and UI elements.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;">Requirements were written from expert and expert user input. My task was to co-write, edit and further specify high level feature requirements into specific design requirements and designs: exactly what the person who assigns needs to be able to select, down to wording, UI behaviour, icons and colors. The concrete, detailed level of a Figma prototype brings up questions that feed back into user and expert interviews, so we could iterate and refine until enough use cases were covered for the feature to be useful.</p>
   </div>
 
-  <!-- 03 PROCESS: journey → wireframe → prototype → test (Konzeption & Prototyping / UX-Expertise) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 14px;">03 · Process</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
-      <div>
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">01 · User journeys</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">The manager or employee responsible to assigning reviews may need to manage a lot of reviews. Who needs to review what by what time? Are the reviews done? Do the reviews lag behind too much to keep up with the timeline of the project? The user may need to assign similar people to similar requirements over and over again or not get a new overview considering that hardware engineering projects can easily involve 100s or 1000s of requirements and 100s of people. On top of it, reviews may need to be redone or changes can trickle down to the planning of reviews. In addition, the reviews or the communication about it may be tracked separate from other work - in another software and reviewed in meetings or asked about per e-mail.</p>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">03 · Key design decision</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Assign groups of reviewers, not only individuals.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;margin:0 0 20px;">Reviews repeat. The feature aims at reducing repetition, to reduce the time a task costs over a month or over a project, not only the time to complete one specific task in the software.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;background:#E7EEF3;border:1px solid #CBD8E0;padding:24px;">
+      <div style="flex:1;min-width:220px;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:12px;">Before</span>
+        <svg viewBox="0 0 220 150" style="display:block;width:100%;max-width:260px;height:auto" fill="none">
+          <text x="0" y="14" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">REVIEWERS PICKED ONE BY ONE</text>
+          <line x1="8" y1="22" x2="8" y2="40" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="56" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">SAME PEOPLE, EVERY REVIEW</text>
+          <line x1="8" y1="64" x2="8" y2="82" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="98" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">STATUS ASKED PER EMAIL</text>
+          <line x1="8" y1="106" x2="8" y2="124" stroke="#6E7F8D" stroke-width="1.4" stroke-dasharray="3 3"></line>
+          <text x="0" y="140" font-family="JetBrains Mono" font-size="10.5" fill="#6E7F8D">TRACKED OUTSIDE THE PROJECT</text>
+        </svg>
       </div>
-      <div>
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">02 · Wireframes &amp; user flows</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">[Concept flow broken into realistic mini-interactions.]</p>
-      </div>
-      <div>
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">03 · Interactive prototype - no interactive prototype</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">[Hi-fidelity Figma prototype, functional per sub-feature.]</p>
-      </div>
-      <div>
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8DA9C4;font-weight:700;margin-bottom:6px;">04 · Test &amp; iterate</span>
-        <p style="font-size:13.5px;color:#46586A;margin:0;">Testing with expert users; iterations from their feedback.</p>
+      <div style="flex:1;min-width:220px;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:12px;">After</span>
+        <svg viewBox="0 0 220 150" style="display:block;width:100%;max-width:260px;height:auto" fill="none">
+          <text x="0" y="14" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">MODERATOR SETS UP THE REVIEW</text>
+          <line x1="8" y1="22" x2="8" y2="40" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="56" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">GROUPS ASSIGNED AT ONCE</text>
+          <line x1="8" y1="64" x2="8" y2="82" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="98" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">RATING PER OBJECT</text>
+          <line x1="8" y1="106" x2="8" y2="124" stroke="#1B2A38" stroke-width="1.4"></line>
+          <text x="0" y="140" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">APPROVED, CLOSED</text>
+          <text x="122" y="140" font-family="JetBrains Mono" font-size="10.5" fill="#6E7F8D">WITH TIMESTAMP</text>
+        </svg>
       </div>
     </div>
   </div>
 
-  <!-- 04 KEY DECISION incl. accessibility (Barrierefreie Bedienkonzepte) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">04 · Key design decision</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 20px;">A key decision was to not only consider individual reviewers a user may want to assign but also groups of reviewers. Reviews repeat itself and were possible, the feature aims at reducing repeptition to reduce the time it costs to complete a tasks seen over a month time or in the context of one project, not only the time to complete one specific task in the software.</p>
-    <div style="display:flex;gap:20px;flex-wrap:wrap;background:#E7EEF3;border:1px solid #CBD8E0;padding:20px;">
-      <div style="flex:1;min-width:180px;">
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">Before</span>
-        <p style="font-size:13px;color:#46586A;margin:0;">[state]</p>
-      </div>
-      <div style="flex:1;min-width:180px;">
-        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin-bottom:8px;">After</span>
-        <p style="font-size:13px;color:#46586A;margin:0;">[state]</p>
-      </div>
-    </div>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">04 · Working with development</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">The questions had to be asked from the logic of the user, not yet the logic of the code.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;">Experts and I mapped out the logic; development took over the user stories and designs as a starting point. A backend developer later fed back that the logic was solid, since new feedback was easy to integrate into it. The work was highly logical and systems based rather than visual polish. A complex design with the user logic as reference, combined with development's flexibility to find the best backend and frontend solution, worked well. Interviewing and testing several expert users was what allowed us to generalize enough to know what to build.</p>
   </div>
 
-  <!-- 05 ALIGNMENT: bridge users ↔ dev ↔ leadership (Schnittstellenfunktion / Soft Skills) -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 40px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">05 · Alignment across roles</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0;">The feature was aligned with experts and CPO in close collaboration with SME who stood in for user testing and clients who provided expert users for interviews and testing. The logic was mapped out by experts and me as designer and development took over the user stories and designs as a starting point to build the feature. One backend developer would provide the feedback to me as designer, that the logic was solid since it was easy to later integrate feedback into the existing logic. While it could have been beneficial to have a developer join the design and discovery, for this expert knowledge feature, the time it required would have been extensive and this was an ongoing consideration since it remained the main challagne to balance a feature where even the minimal version needs to be complex enough to be useful while also reducing the complexity enough to first build a feasible and small system-in-system's feature that works to later expand it. For me as designer, the work was highly logical and system's based rather than UI or visual polish, but I discovered that the questions I needed to ask in order to design the feature needed to be asked from the logic of the user and not yet considering the logic of the code. Therefore the combination of a complex design with the user logic as reference, with flexibiility of the development to find the best backend and frontend solution for it worked well. The process of interviewing, testing and designing the design logic was crucial in capturing the complexity before starting to code. Only testing and interviewing several expert users allowed as to generalize enough to know what to build later. Find priorities and agree on shortterm (MVP) and longterm version of the feature was crucial for development know how to write the code. This type of work on complex workflow designs does constantly bring up the question what is most crucial, what is too complex and who should be involved how early for discover, design and development. As lessons learned based on my experience, involving experts and experts user early in discovery and design was crucial. Also design being involved very early with first interviews, drafts of user stories and first sketches was the best approach to achieve a realistic and user friendly version. What we could have done better is to add in a middle part and adjust and feedback with the existing designs but consider development and build first code prototypes and not go straight to just code. All mentioned participants need to be involved and for a software for experts, like aerospace engineering, all roles need to acknowledge dependency on true collaboration between the roles to be succesful with the development of these types of features - which we proofed by not only releasing the features but the features living still today in Altium 365 after they acquired Valispace. Another question would be whether to design for an existing workflow, invent completely new ways of working etc. which is more a C-level or PM-level decision to make and depends on position of the company and where money flows and these can heavily impact the type of user a designer needs to speak to and / or how to collaborate with, how and when</p>
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">05 · Lessons learned</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Involve experts and expert users early, and design earlier still.</p>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;">Design being involved from the first interviews, drafts of user stories and first sketches was the best approach to a realistic and user friendly version. What we could have done better: a middle step of first code prototypes, feeding development constraints back into the existing designs instead of going straight to code. For expert software, all roles need to acknowledge their dependency on true collaboration, which we proved by the features still living in Altium 365 today.</p>
   </div>
 
-  <!-- 06 OUTCOME -->
-  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 48px;">
+  <div style="border-top:2px solid #1B2A38;padding-top:14px;margin:0 0 44px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 10px;">06 · Outcome</p>
-    <p style="font-size:15px;color:#46586A;max-width:44em;margin:0 0 14px;">Shipped at Valispace 2021; migrated and still live in Altium 365 (2026).</p>
-    <a href="[altium docs url]" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Docs ↗</a>
+    <p style="font-size:14px;color:#46586A;max-width:44em;margin:0;margin:0 0 14px;">Shipped at Valispace in 2021. Migrated and still live in Altium 365 in 2026.</p>
+    <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Docs ↗</a>
   </div>
+
+  <p style="font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 48px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
 
   <div style="display:flex;justify-content:space-between;border-top:1px solid #1B2A38;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
     <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
