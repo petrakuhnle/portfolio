@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Case · Review Center · Petra Kühnle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
+  a:hover{color:#1B2A38;}
+  ::selection{background:#1B2A38;color:#F4F7FA;}
+</style>
+</head>
+<body>
+
+<div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;font-size:16px;line-height:1.6;">
+
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 28px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case 3 of 3 · Valispace, 2021</p>
+
+  <nav style="position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:12px 0;margin:0 0 32px;"><a href="#c01" style="text-decoration:none;color:#6E7F8D;">01 Context</a>
+    <a href="#c02" style="text-decoration:none;color:#6E7F8D;">02 Shipped</a>
+    <a href="#c03" style="text-decoration:none;color:#6E7F8D;">03 Discovery</a>
+    <a href="#c04" style="text-decoration:none;color:#6E7F8D;">04 Constraints</a>
+    <a href="#c05" style="text-decoration:none;color:#6E7F8D;">05 Approach</a>
+    <a href="#c06" style="text-decoration:none;color:#6E7F8D;">06 Decisions</a>
+    <a href="#c07" style="text-decoration:none;color:#6E7F8D;">07 Impact</a>
+    <a href="#c08" style="text-decoration:none;color:#6E7F8D;">08 Lessons</a>
+    <a href="#c09" style="text-decoration:none;color:#6E7F8D;">09 Post AI</a></nav>
+
+  <h1 style="font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1.15;margin:0 0 14px;max-width:22em;">How I designed review workflows within domain standards and business constraints</h1>
+  <p style="font-size:16px;color:#46586A;margin:0 0 36px;max-width:38em;">My work: mapping industry conventions and user needs per role into views and filters, directly with engineers, within business constraints. The feature: review assignment and completion at a glance.</p>
+
+  <!-- 01 CONTEXT -->
+  <div id="c01" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">01 · Context</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#CBD8E0;">
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Company</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Valispace GmbH, engineering platform startup · acquired by Altium in 2023</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Year</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">2021 · pre AI · before a PM was hired</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Feature</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Review Center</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Team</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">CPO · Solution Management, Subject Matter Experts · CTO · me as the only designer</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">My role</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Discovery through review of industry conventions · co writing requirements with experts · design and testing</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Users</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Moderators setting up reviews · reviewers rating objects · approvers closing with a timestamp</span></div>
+    </div>
+  </div>
+
+  <!-- SHIPPED RESULT -->
+  <div id="c02" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">02 · The shipped feature</p>
+    <div style="background:#FFFFFF;padding:12px 12px 8px;">
+      <img src="verification_matrix_dashboard.png" alt="Requirements insights dashboard: state and V&V status charts" style="display:block;width:100%;height:auto;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:12px 4px 4px;">Requirement state and V&amp;V status at a glance</p>
+    </div>
+  </div>
+
+  <!-- 03 DISCOVERY -->
+  <div id="c03" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">03 · Domain standards first</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Discovery here meant learning the conventions before drawing anything.</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;margin:0 0 24px;">Review software already existed in the industry, so I reviewed <span style="text-decoration:underline;text-underline-offset:3px;text-decoration-style:dotted;color:#46586A;cursor:help;">similar tools engineers used</span> to understand the conventions they expect, then interviewed users on where those tools fail their day to day. The feature had to fit the existing platform, not be a product of its own.</p>
+    <div style="background:#E7EEF3;padding:24px 28px;width:fit-content;max-width:100%;">
+      <svg viewBox="0 0 300 78" style="display:block;width:300px;max-width:100%;height:auto" fill="none" font-family="JetBrains Mono">
+  <text x="0" y="12" font-size="9" fill="#1B2A38">INDUSTRY CONVENTIONS</text>
+  <text x="0" y="44" font-size="9" fill="#1B2A38">USER NEEDS PER ROLE</text>
+  <text x="0" y="76" font-size="9" fill="#1B2A38">BUSINESS CONSTRAINTS</text>
+  <line x1="180" y1="8" x2="230" y2="36" stroke="#1B2A38" stroke-width="1.4"></line>
+  <line x1="164" y1="40" x2="230" y2="40" stroke="#1B2A38" stroke-width="1.4"></line>
+  <line x1="176" y1="72" x2="230" y2="44" stroke="#1B2A38" stroke-width="1.4"></line>
+  <text x="240" y="44" font-size="9" fill="#1B2A38">VIEWS</text>
+</svg>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:14px 0 0;">Views resolve conventions, user needs and constraints</p>
+    </div>
+  </div>
+
+  <!-- 04 CONSTRAINTS -->
+  <div id="c04" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">04 · Constraints</p>
+    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Industry standards define what a review must record · no freedom to reinvent the vocabulary</li><li style="margin-bottom:8px;">Business constraints: integrate into the existing platform and data model</li><li style="margin-bottom:8px;">A project can involve 1000s of requirements and 100s of people</li></ul>
+  </div>
+
+  <!-- 05 APPROACH -->
+  <div id="c05" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">05 · Approach</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Working directly with engineers, mapping logic from the user side.</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">Experts and I mapped the logic in the language of the user, not yet the logic of the code. Development took the user stories and designs as the starting point and kept the flexibility to find the best backend and frontend solution. Views and filters per role, and a <span style="text-decoration:underline;text-underline-offset:3px;text-decoration-style:dotted;color:#46586A;cursor:help;">dashboard</span> for status at a glance, came from that mapping.</p>
+  </div>
+
+  <!-- 06 KEY DECISIONS -->
+  <div id="c06" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">06 · Key decisions</p>
+    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Assign groups of reviewers, not only individuals · reviews repeat, so reduce the cost over a project, not over one task</li><li style="margin-bottom:8px;">Rating per object with the assignment logged · approver closes with a timestamp</li><li style="margin-bottom:8px;">Views per role: filter per method for specialists, per requirement set and status for decision makers</li></ul>
+  </div>
+
+  <!-- 07 IMPACT -->
+  <div id="c07" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">07 · Impact</p>
+    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Backend feedback: the logic was solid, new feedback was easy to integrate</li><li style="margin-bottom:8px;">Shipped 2021 · live in Altium 365 in 2026</li><li style="margin-bottom:8px;">Third of the three features that won the contract and led to my promotion</li></ul>
+  </div>
+
+  <!-- 08 LESSONS LEARNED -->
+  <div id="c08" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">08 · Lessons learned</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">Involve experts and expert users early, design earlier still. What I'd add: a middle step of first code prototypes, feeding development constraints back into the designs before full implementation.</p>
+  </div>
+
+  <!-- 09 POST-AI -->
+  <div id="c09" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">09 · Relevant post AI in UX design</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">Testing changes with a human in the loop is not the same as testing alone: focus shifts when another human guides attention or asks for edge cases in anticipation. AI is not yet good at that mirroring. And a structure that doesn't need rework still requires a 360 degree overview of different users' needs, which is discovery work, not generation work.</p>
+  </div>
+
+  <div style="display:flex;gap:24px;flex-wrap:wrap;margin:0 0 48px;">
+    <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Official docs ↗</a>
+    <a href="https://petrakuhnle.github.io/portfolio/master_follower" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 1 · Master-Follower →</a>
+  </div>
+
+  <p style="font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 40px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+
+  <div style="display:flex;justify-content:space-between;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
+    <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
+  </div>
+
+</div>
+</body>
+</html>
