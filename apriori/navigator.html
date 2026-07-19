@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Navigator: a decision tree that turns a creator's use case into concrete AI compliance steps, backed by a source checked guide.">
+<title>Navigator · Petra Kühnle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sheet:#F4F7FA;--ink:#1B2A38;--graphite:#6E7F8D;--hairline:#CBD8E0;--grid:#E7EEF3;--accent:#1B2A38;
+    --display:"IBM Plex Sans",system-ui,sans-serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--sheet);
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:30px 30px;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--ink);color:var(--sheet);}
+  a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .15s;}
+  a:hover{color:var(--ink);}
+
+  .sheet{max-width:880px;margin:0 auto;padding:clamp(20px,4vw,40px);position:relative;}
+  .frame{position:relative;border:1px solid var(--ink);padding:clamp(26px,5vw,56px) clamp(22px,5vw,56px) clamp(34px,5vw,56px);background:rgba(244,247,250,.72);}
+  .tick{position:absolute;width:13px;height:13px;pointer-events:none;opacity:0;animation:tk .5s ease forwards;}
+  .tick-tl{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
+  .tick-tr{top:-1px;right:-1px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);}
+  .tick-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--ink);border-left:2px solid var(--ink);}
+  .tick-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink);}
+  @keyframes tk{to{opacity:1;}}
+
+  .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);}
+  .strip{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:18px;margin-bottom:clamp(24px,4vw,38px);border-bottom:1px solid var(--hairline);}
+
+  header h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,8.5vw,78px);line-height:.96;letter-spacing:-.025em;margin:0 0 16px;}
+  .role{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--ink);margin:0 0 20px;}
+  .thesis{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.5vw,23px);line-height:1.42;max-width:26em;margin:0;color:var(--ink);}
+
+  .titleblock{margin:clamp(30px,5vw,44px) 0 18px;border:1px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr);}
+  .tb{padding:13px 15px;border-right:1px solid var(--hairline);border-top:1px solid var(--hairline);}
+  .tb:nth-child(-n+4){border-top:none;}
+  .tb:nth-child(4n){border-right:none;}
+  .tb .k{display:block;margin-bottom:5px;}
+  .tb .v{font-family:var(--display);font-size:14px;font-weight:500;letter-spacing:-.01em;line-height:1.3;}
+
+  .impact{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;border:1px solid var(--ink);border-left:3px solid var(--accent);padding:13px 16px;background:#fff;}
+  .impact .k{white-space:nowrap;}
+  .impact .v{font-family:var(--display);font-size:15px;font-weight:500;letter-spacing:-.01em;color:var(--ink);}
+
+  section{margin-top:clamp(40px,6vw,60px);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;margin-bottom:22px;border-bottom:1px solid var(--ink);}
+  .sec-head .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:var(--accent);}
+  .sec-head h2{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;margin:0;color:var(--ink);}
+  .lede{max-width:42em;margin:0;color:var(--ink);}
+
+  .graph{border:1px solid var(--ink);background:#fff;padding:24px 18px;margin:16px 0 6px;}
+  .graph svg{display:block;width:100%;height:auto;margin:0 auto;max-width:860px;}
+  .graph svg text{font-family:var(--body);}
+  .graph svg .mono{font-family:var(--mono);}
+  .graph-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--graphite);text-transform:uppercase;text-align:center;margin:14px auto 0;}
+
+  .shot{border:1px solid var(--ink);background:#fff;margin:6px 0;}
+  .shot img{display:block;width:100%;height:auto;}
+  .shot .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);background:var(--sheet);border-top:1px solid var(--hairline);padding:11px 14px;}
+
+  .tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:6px 0;}
+  .phase{background:var(--sheet);padding:13px 14px;}
+  .phase.now{background:var(--ink);}
+  .phase .n{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--graphite);display:block;margin-bottom:6px;}
+  .phase.now .n{color:#CBD8E0;}
+  .phase b{display:block;font-family:var(--display);font-size:14px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin-bottom:2px;}
+  .phase.now b{color:#fff;}
+  .phase span{font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--graphite);text-transform:none;line-height:1.4;}
+  .phase.now span{color:#CBD8E0;}
+
+  .delivs{display:grid;grid-template-columns:1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:6px 0;}
+  .deliv{background:var(--sheet);padding:18px 18px 16px;}
+  .deliv .t{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px;}
+  .deliv b{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--ink);display:block;margin-bottom:6px;}
+  .deliv p{margin:0 0 14px;font-size:14px;line-height:1.45;color:var(--graphite);}
+  .deliv .links{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:6px 0;}
+  .col{background:var(--sheet);padding:18px;}
+  .col .t{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;color:var(--graphite);}
+  .col.human .t{color:var(--accent);}
+  .col h4{font-family:var(--display);font-size:15px;font-weight:500;letter-spacing:-.01em;margin:0 0 8px;color:var(--ink);}
+  .col ul{margin:0;padding-left:16px;font-size:13.5px;line-height:1.5;color:var(--ink);}
+  .col li{margin-bottom:4px;}
+
+  .note{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:14px 0;font-size:14.5px;line-height:1.5;color:var(--ink);}
+  .note b{font-family:var(--display);font-weight:500;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);border:1px solid var(--hairline);padding:5px 10px;background:rgba(244,247,250,.6);}
+
+  .ledger{list-style:none;margin:6px 0;padding:0;border:1px solid var(--hairline);background:#fff;}
+  .ledger li{position:relative;padding:15px 18px 15px 40px;border-top:1px solid var(--hairline);}
+  .ledger li:first-child{border-top:none;}
+  .ledger li::before{content:"";position:absolute;left:18px;top:21px;width:8px;height:8px;background:var(--accent);}
+  .ledger.future li::before{background:none;border:1.5px solid var(--accent);}
+  .ledger p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink);}
+
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:clamp(40px,6vw,60px);padding-top:16px;border-top:1px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;}
+  footer{margin-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+
+  @media (max-width:620px){
+    body{font-size:16px;background-size:24px 24px;}
+    .titleblock{grid-template-columns:repeat(2,1fr);}
+    .tb:nth-child(-n+2){border-top:none;}
+    .tb:nth-child(n+3){border-top:1px solid var(--hairline);}
+    .tb:nth-child(2n){border-right:none;}
+    .tb:nth-child(3){border-right:1px solid var(--hairline);}
+    .tiles{grid-template-columns:repeat(2,1fr);}
+    .delivs,.split{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="frame">
+    <span class="tick tick-tl" style="animation-delay:.05s"></span>
+    <span class="tick tick-tr" style="animation-delay:.15s"></span>
+    <span class="tick tick-bl" style="animation-delay:.25s"></span>
+    <span class="tick tick-br" style="animation-delay:.35s"></span>
+
+    <div class="strip mono">
+      <span>Case Study · Product / AI</span>
+      <span>2025–26</span>
+    </div>
+
+    <header>
+      <h1>Navigator</h1>
+      <p class="role">Sound AI Regulations App</p>
+      <p class="thesis">Turning dense AI law into steps a working musician can actually follow.</p>
+    </header>
+
+    <div class="titleblock" aria-label="Summary">
+      <div class="tb"><span class="k mono">Role</span><span class="v">Designer · prototyper</span></div>
+      <div class="tb"><span class="k mono">Duration</span><span class="v">2025–26 · ongoing</span></div>
+      <div class="tb"><span class="k mono">Scope</span><span class="v">EU AI Act · GDPR · EAA</span></div>
+      <div class="tb"><span class="k mono">Status</span><span class="v">V1 live · V2 in dev</span></div>
+    </div>
+
+    <div class="impact">
+      <span class="k mono">Impact</span>
+      <span class="v">V1 live on GitHub Pages · Mozilla Fellowship nominee, passed round 1 · 2 engineers joined for V2</span>
+    </div>
+
+    <section>
+      <div class="sec-head"><span class="no">01</span><h2>Problem</h2></div>
+      <p class="lede">Musicians and labels have to comply with the EU AI Act and GDPR. The rules are dense and written for lawyers, not creators.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">02</span><h2>How it works</h2></div>
+      <div class="graph">
+        <svg viewBox="0 0 860 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A use case is entered, the app asks about AI involvement, personal data and distribution, then returns tailored requirements and action steps.">
+          <text x="120" y="28" text-anchor="middle" font-size="9" fill="#6E7F8D" class="mono" letter-spacing="1.5">INPUT</text>
+          <text x="430" y="28" text-anchor="middle" font-size="9" fill="#6E7F8D" class="mono" letter-spacing="1.5">DECISION TREE</text>
+          <text x="740" y="28" text-anchor="middle" font-size="9" fill="#6E7F8D" class="mono" letter-spacing="1.5">OUTPUT</text>
+
+          <rect x="20" y="90" width="200" height="60" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="120" y="116" text-anchor="middle" font-size="12" font-weight="500" fill="#1B2A38">Select your use case</text>
+          <text x="120" y="134" text-anchor="middle" font-size="10" fill="#6E7F8D" font-style="italic">or one you want to know about</text>
+
+          <line x1="222" y1="120" x2="252" y2="120" stroke="#1B2A38" stroke-width="1.2"/><polygon points="252,115 262,120 252,125" fill="#1B2A38"/>
+
+          <rect x="270" y="50" width="140" height="46" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="340" y="70" text-anchor="middle" font-size="11" fill="#1B2A38">AI involved?</text>
+          <text x="340" y="86" text-anchor="middle" font-size="9" fill="#6E7F8D">training / generation</text>
+
+          <rect x="270" y="105" width="140" height="46" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="340" y="125" text-anchor="middle" font-size="11" fill="#1B2A38">Personal data?</text>
+          <text x="340" y="141" text-anchor="middle" font-size="9" fill="#6E7F8D">voices / listeners</text>
+
+          <rect x="270" y="160" width="140" height="46" fill="#fff" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="340" y="180" text-anchor="middle" font-size="11" fill="#1B2A38">Distribution?</text>
+          <text x="340" y="196" text-anchor="middle" font-size="9" fill="#6E7F8D">EU market reach</text>
+
+          <line x1="412" y1="73" x2="450" y2="100" stroke="#CBD8E0" stroke-width="1"/>
+          <line x1="412" y1="128" x2="450" y2="120" stroke="#CBD8E0" stroke-width="1"/>
+          <line x1="412" y1="183" x2="450" y2="140" stroke="#CBD8E0" stroke-width="1"/>
+
+          <rect x="452" y="95" width="150" height="50" fill="#E7EEF3" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="527" y="118" text-anchor="middle" font-size="11" font-weight="500" fill="#1B2A38">Match to rules</text>
+          <text x="527" y="134" text-anchor="middle" font-size="9" fill="#6E7F8D">AI Act · GDPR · EAA</text>
+
+          <line x1="604" y1="120" x2="634" y2="120" stroke="#1B2A38" stroke-width="1.2"/><polygon points="634,115 644,120 634,125" fill="#1B2A38"/>
+
+          <rect x="650" y="80" width="190" height="80" fill="#1B2A38" stroke="#1B2A38" stroke-width="1.2"/>
+          <text x="745" y="106" text-anchor="middle" font-size="12" font-weight="500" fill="#fff">Your requirements</text>
+          <text x="745" y="124" text-anchor="middle" font-size="10" fill="#CBD8E0">Risks and obligations</text>
+          <text x="745" y="142" text-anchor="middle" font-size="10" fill="#CBD8E0">Next action steps</text>
+        </svg>
+        <p class="graph-cap">One use case in. The obligations and steps that apply come out.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">03</span><h2>Interface</h2></div>
+      <div class="shot">
+        <img src="navigator_screenshot.png" alt="Navigator app: a selected use case with the matched requirements and next steps">
+        <div class="cap">The live app. Try it via the Launch link below.</div>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">04</span><h2>Pipeline</h2></div>
+      <div class="tiles">
+        <div class="phase"><span class="n">01</span><b>Research</b><span>Primary regulations</span></div>
+        <div class="phase"><span class="n">02</span><b>Structure</b><span>Rules to cases</span></div>
+        <div class="phase"><span class="n">03</span><b>Verify</b><span>Check sources</span></div>
+        <div class="phase"><span class="n">04</span><b>Build</b><span>Prototype with design tools &amp; code</span></div>
+        <div class="phase now"><span class="n">05</span><b>Publish</b><span>Share online</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">05</span><h2>Deliverables</h2></div>
+      <div class="delivs">
+        <div class="deliv">
+          <div class="t">Product · Live V1</div>
+          <b>Navigator App</b>
+          <p>Enter a use case. Get the requirements, risks and steps that apply.</p>
+          <div class="links">
+            <a href="https://petrakuhnle.github.io/Music-ai-compliance-navigator/" target="_blank" rel="noopener">Launch ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">06</span><h2>AI and human</h2></div>
+      <p class="lede" style="margin-bottom:16px;">This is a first draft and working concept, not a finished product, so the split below reflects where AI sped things up and where the thinking and direction were mine.</p>
+      <div class="split">
+        <div class="col ai">
+          <div class="t">AI assisted</div>
+          <h4>Speed and first drafts</h4>
+          <ul>
+            <li>First summaries of long regulatory text</li>
+            <li>React scaffolding and stubs</li>
+            <li>Rewording dense clauses</li>
+            <li>Suggesting edge cases</li>
+          </ul>
+        </div>
+        <div class="col human">
+          <div class="t">Human led</div>
+          <h4>Concept and direction</h4>
+          <ul>
+            <li>Deciding the topic and scope</li>
+            <li>The design and the decision tree logic: which rules map to which cases</li>
+            <li>UX and accessibility choices</li>
+            <li>Prompting the AI and deciding what to consider</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">07</span><h2>Reflection &amp; tools</h2></div>
+      <p class="note"><b>One limit:</b> regulations change. V2 aims to auto update from official sources, so the tool stops ageing between releases.</p>
+      <div class="chips">
+        <span class="chip">React 18</span><span class="chip">Vanilla CSS</span><span class="chip">GitHub Pages</span><span class="chip">JSON</span><span class="chip">Markdown</span><span class="chip">Obsidian</span><span class="chip">Apple Pages</span><span class="chip">Claude</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">08</span><h2>Addressed</h2></div>
+      <ul class="ledger">
+        <li><p>Saves non-legal people the time and confusion of searching the open web. The decision tree gives a first orientation on what might apply, so you are not left wondering whether protection is needed for cases that do not need it.</p></li>
+        <li><p>Puts UX and accessibility first, so getting to the information feels lighter from the start: the aim is to ease friction, not stack more legal and technical hurdles on top of an already dense topic.</p></li>
+        <li><p>Does not make the decision for you. It lays out the relevant information transparently and accurately, and leaves the call in your hands.</p></li>
+        <li><p>Covers the main use cases, so anyone, facing a specific situation or just curious, can build a sense of how the law, the technology, and AI fit together.</p></li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="no">09</span><h2>Opportunities</h2></div>
+      <ul class="ledger future">
+        <li><p>Use an LLM to translate legal language into something plainer while keeping it transparent, for example always linking back to the original source.</p></li>
+        <li><p>Build in auto updating, since AI law changes often and the guidance needs to keep pace with frequent updates.</p></li>
+        <li><p>Keep that updating honest about its limits: clear on the line between information and legal advice, and between a plain language representation and something a legal professional has actually validated.</p></li>
+      </ul>
+    </section>
+
+    <div class="pager">
+      <a href="index.html">← Back</a>
+    </div>
+    <footer class="mono">
+      <span>Petra Kühnle · Product &amp; UX Design</span>
+      <span>Berlin</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
