@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Case · Verification Assignment Matrix · Petra Kühnle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
+  a:hover{color:#1B2A38;}
+  ::selection{background:#1B2A38;color:#F4F7FA;}
+</style>
+</head>
+<body>
+
+<div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;font-size:16px;line-height:1.6;">
+
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 28px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case 2 of 3 · Valispace, 2021</p>
+
+  <nav style="position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:12px 0;margin:0 0 32px;"><a href="#c01" style="text-decoration:none;color:#6E7F8D;">01 Context</a>
+    <a href="#c02" style="text-decoration:none;color:#6E7F8D;">02 Shipped</a>
+    <a href="#c03" style="text-decoration:none;color:#6E7F8D;">03 Discovery</a>
+    <a href="#c04" style="text-decoration:none;color:#6E7F8D;">04 Constraints</a>
+    <a href="#c05" style="text-decoration:none;color:#6E7F8D;">05 Approach</a>
+    <a href="#c06" style="text-decoration:none;color:#6E7F8D;">06 Decisions</a>
+    <a href="#c07" style="text-decoration:none;color:#6E7F8D;">07 Impact</a>
+    <a href="#c08" style="text-decoration:none;color:#6E7F8D;">08 Lessons</a>
+    <a href="#c09" style="text-decoration:none;color:#6E7F8D;">09 Post AI</a></nav>
+
+  <h1 style="font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1.15;margin:0 0 14px;max-width:22em;">How I found the MVP of a complex feature with user stories and hi fi prototypes</h1>
+  <p style="font-size:16px;color:#46586A;margin:0 0 36px;max-width:38em;">My work: translating expert requirements into user stories, flows and a hi fi prototype that defined the MVP. The feature: one matrix to assign, track and communicate verification methods per requirement.</p>
+
+  <!-- 01 CONTEXT -->
+  <div id="c01" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">01 · Context</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#CBD8E0;">
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Company</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Valispace GmbH, engineering platform startup · acquired by Altium in 2023</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Year</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">2021 · pre AI · before a PM was hired</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Feature</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Verification Assignment Matrix</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Team</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">CPO · Solution Management, Subject Matter Experts · CTO · me as the only designer</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">My role</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Translation of requirements into design requirements and designs · feedback sessions · iterations</span></div>
+      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Users</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Verification engineers per method · managers reviewing status per requirement set</span></div>
+    </div>
+  </div>
+
+  <!-- SHIPPED RESULT -->
+  <div id="c02" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">02 · The shipped feature</p>
+    <div style="background:#FFFFFF;padding:12px 12px 8px;">
+      <img src="verification_matrix.png" alt="Verification methods assigned per requirement, with who assigned and when on hover" style="display:block;width:100%;height:auto;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:12px 4px 4px;">Methods per requirement · who assigned and when on hover</p>
+    </div>
+  </div>
+
+  <!-- 03 DISCOVERY -->
+  <div id="c03" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">03 · From workflow to user flow</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">Users already worked in a matrix, just outside the product.</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;margin:0 0 24px;">Decisions lived in Excel, docs, meetings and emails, disconnected from the requirements they were about. I asked each role how they work now, which parts are worth integrating and which choices had to be added. Applying the lesson from <a href="https://petrakuhnle.github.io/portfolio/master_follower">Use Case 1</a>, the CPO owned the requirements and I owned the translation into design, so expert accuracy and design came from two people.</p>
+    <div style="background:#E7EEF3;padding:24px 28px;width:fit-content;max-width:100%;">
+      <svg viewBox="0 0 300 60" style="display:block;width:300px;max-width:100%;height:auto" fill="none" font-family="JetBrains Mono">
+  <text x="0" y="14" font-size="9" fill="#1B2A38">WORKFLOW</text>
+  <text x="0" y="30" font-size="8" fill="#6E7F8D">sheets, meetings</text>
+  <line x1="78" y1="10" x2="112" y2="10" stroke="#1B2A38" stroke-width="1.4"></line>
+  <text x="120" y="14" font-size="9" fill="#1B2A38">USER FLOW</text>
+  <text x="120" y="30" font-size="8" fill="#6E7F8D">per role</text>
+  <line x1="196" y1="10" x2="218" y2="10" stroke="#1B2A38" stroke-width="1.4"></line>
+  <text x="226" y="14" font-size="9" fill="#1B2A38">INTEGRATED</text>
+  <text x="226" y="30" font-size="8" fill="#6E7F8D">in the platform</text>
+  <text x="0" y="54" font-size="8" fill="#6E7F8D">MVP CORE FIRST · EXTENDABLE LATER</text>
+</svg>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:14px 0 0;">Digital to integrated digital · the workflow becomes a user flow</p>
+    </div>
+  </div>
+
+  <!-- 04 CONSTRAINTS -->
+  <div id="c04" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">04 · Constraints</p>
+    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Regulated work environment · decisions must be traceable and reliable</li><li style="margin-bottom:8px;">Many roles with opposite needs: overview for managers, focus for specialists</li><li style="margin-bottom:8px;">Complex enough to be useful, small enough to build · cognitive load against information need</li></ul>
+  </div>
+
+  <!-- 05 APPROACH -->
+  <div id="c05" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">05 · Approach</p>
+    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">User stories first, then journey, wireframes, interactive prototype.</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">I pushed for decisions based on user stories, not only designs. Requirements and the hi fi prototype both separated the MVP from the future version, which turned out crucial for planning the backend. The concrete detail level of the prototype raised questions that fed back into <span style="text-decoration:underline;text-underline-offset:3px;text-decoration-style:dotted;color:#46586A;cursor:help;">expert interviews</span>, making every design decision transparent and concrete.</p>
+  </div>
+
+  <!-- 06 KEY DECISIONS -->
+  <div id="c06" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">06 · Key decisions</p>
+    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">MVP boundary: design a small system that works and is extendable, not a big one that needs rework</li><li style="margin-bottom:8px;">Filters per method, per requirement set and per status · one matrix serving opposite roles</li><li style="margin-bottom:8px;">Assignments logged with who and when, replacing status meetings and email chains</li></ul>
+  </div>
+
+  <!-- 07 IMPACT -->
+  <div id="c07" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">07 · Impact</p>
+    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Designed and built in significantly less time than the first feature</li><li style="margin-bottom:8px;">Users told Solution Management we integrated their real workflow in a useful way</li><li style="margin-bottom:8px;">Shipped 2021 · live in Altium 365 in 2026</li></ul>
+  </div>
+
+  <!-- 08 LESSONS LEARNED -->
+  <div id="c08" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">08 · Lessons learned</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">A hi fi prototype is a discovery tool, not just a deliverable: its detail level surfaces the questions that define the MVP. Designing the small system that works beats designing the complete system that doesn't ship.</p>
+  </div>
+
+  <!-- 09 POST-AI -->
+  <div id="c09" style="scroll-margin-top:64px;margin:0 0 52px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">09 · Relevant post AI in UX design</p>
+    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">I haven't yet fed 100s of requirements to AI to generate a prototype, and in this field data security would constrain it. What I know from continuous iteration cycles: without human oversight and alignment between humans, scope creep and inconsistencies grow, and an AI generated prototype still needs testing with individual users.</p>
+  </div>
+
+  <div style="display:flex;gap:24px;flex-wrap:wrap;margin:0 0 48px;">
+    <a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Official docs ↗</a>
+    <a href="https://petrakuhnle.github.io/portfolio/review_center" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 3 · Review Center →</a>
+  </div>
+
+  <p style="font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 40px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+
+  <div style="display:flex;justify-content:space-between;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
+    <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
+  </div>
+
+</div>
+</body>
+</html>
