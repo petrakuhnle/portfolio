@@ -1,119 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use Case · Master-Follower · Petra Kühnle</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
-  body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
   a:hover{color:#1B2A38;}
   ::selection{background:#1B2A38;color:#F4F7FA;}
 </style>
-</head>
-<body>
+</helmet>
 
-<div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;font-size:16px;line-height:1.6;">
+<div style="max-width:1240px;margin:0 auto;padding:0 20vw 72px;font-size:16px;line-height:1.6;box-sizing:border-box;">
 
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E7F8D;margin:0 0 28px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case 1 of 3 · Valispace, 2021</p>
-
-  <nav style="position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:12px 0;margin:0 0 32px;"><a href="#c01" style="text-decoration:none;color:#6E7F8D;">01 Context</a>
+  <nav style="position:sticky;top:0;z-index:10;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:14px 24px;margin:0 -20vw 56px;box-sizing:border-box;width:calc(100% + 40vw);">
+    <a href="#c01" style="text-decoration:none;color:#6E7F8D;">01 Impact</a>
     <a href="#c02" style="text-decoration:none;color:#6E7F8D;">02 Shipped</a>
-    <a href="#c03" style="text-decoration:none;color:#6E7F8D;">03 Discovery</a>
-    <a href="#c04" style="text-decoration:none;color:#6E7F8D;">04 Constraints</a>
-    <a href="#c05" style="text-decoration:none;color:#6E7F8D;">05 Approach</a>
-    <a href="#c06" style="text-decoration:none;color:#6E7F8D;">06 Decisions</a>
-    <a href="#c07" style="text-decoration:none;color:#6E7F8D;">07 Impact</a>
-    <a href="#c08" style="text-decoration:none;color:#6E7F8D;">08 Lessons</a>
-    <a href="#c09" style="text-decoration:none;color:#6E7F8D;">09 Post AI</a></nav>
+    <a href="#c03" style="text-decoration:none;color:#6E7F8D;">03 How it works</a>
+    <a href="#c04" style="text-decoration:none;color:#6E7F8D;">04 Process</a>
+    <a href="#c05" style="text-decoration:none;color:#6E7F8D;">05 Lessons</a>
+  </nav>
 
-  <h1 style="font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1.15;margin:0 0 14px;max-width:22em;">How I designed traceability from first draft to shipped UI, in a domain new to me</h1>
-  <p style="font-size:16px;color:#46586A;margin:0 0 36px;max-width:38em;">My work: discovery, interviews, user stories, logic mapping and hi fi Figma prototypes, as the only designer in a domain new to me. The feature: linked requirements stay in sync, nothing updates silently.</p>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E7F8D;margin:0 0 18px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case 1 of 3 · Valispace, 2021</p>
 
-  <!-- 01 CONTEXT -->
-  <div id="c01" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">01 · Context</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#CBD8E0;">
-      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Company</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Valispace GmbH, engineering platform startup · acquired by Altium in 2023</span></div>
-      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Year</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">2021 · pre AI · before a PM was hired</span></div>
-      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Feature</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Master-Follower · complex system in systems feature</span></div>
-      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Team</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">CPO · Solution Management, Subject Matter Experts · CTO · me as the only designer</span></div>
-      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">My role</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Discovery to hi fi Figma prototype · user stories · logic mapping from expert and user interviews · user testing</span></div>
-      <div style="padding:20px 22px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Users</span><span style="font-size:14.5px;line-height:1.55;color:#1B2A38;">Requirements, verification and systems engineers · managers signing off</span></div>
+  <h1 data-screen-label="Title" style="font-weight:700;font-size:40px;letter-spacing:-.02em;line-height:1.08;margin:0 0 16px;max-width:20em;">How I designed traceability from first draft to shipped UI, in a domain new to me</h1>
+  <p style="font-size:17px;color:#46586A;margin:0 0 40px;max-width:34em;"><strong style="color:#1B2A38;font-weight:600;">The only designer</strong>, discovery to shipped UI. Linked requirements stay in sync — <strong style="color:#1B2A38;font-weight:600;">nothing updates silently</strong>.</p>
+
+  <div style="background:#E7EEF3;padding:28px 32px;margin:0 0 96px;width:fit-content;max-width:100%;box-sizing:border-box;">
+    <svg viewBox="0 0 500 96" style="display:block;width:100%;max-width:420px;height:auto;" fill="none">
+      <circle cx="20" cy="46" r="8" fill="#1B2A38"></circle>
+      <text x="40" y="42" font-family="IBM Plex Sans" font-size="14" fill="#1B2A38">Master</text>
+      <text x="40" y="59" font-family="JetBrains Mono" font-size="10.5" fill="#1B2A38">edited</text>
+      <line x1="150" y1="46" x2="264.1" y2="21.3" stroke="#1B2A38" stroke-width="1.8"></line>
+      <line x1="150" y1="46" x2="264.1" y2="70.7" stroke="#1B2A38" stroke-width="1.8"></line>
+      <circle cx="270" cy="20" r="6" fill="none" stroke="#1B2A38" stroke-width="1.8"></circle>
+      <text x="286" y="24" font-family="IBM Plex Sans" font-size="13" fill="#1B2A38">Follower</text>
+      <text x="286" y="38" font-family="JetBrains Mono" font-size="10" fill="#6E7F8D">needs review</text>
+      <circle cx="270" cy="72" r="6" fill="none" stroke="#1B2A38" stroke-width="1.8"></circle>
+      <text x="286" y="76" font-family="IBM Plex Sans" font-size="13" fill="#1B2A38">Follower</text>
+      <text x="286" y="90" font-family="JetBrains Mono" font-size="10" fill="#6E7F8D">needs review</text>
+    </svg>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:18px 0 0;">One change on the Master · every Follower flagged</p>
+  </div>
+
+  <!-- 01 IMPACT -->
+  <div id="c01" data-screen-label="01 Impact" style="scroll-margin-top:64px;margin:0 0 96px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 20px;">01 · Impact</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:0 0 24px;">
+      <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Six figure contract</span><span style="font-size:14px;color:#46586A;line-height:1.55;">one of three features that won the deal</span></div>
+      <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14px;color:#46586A;line-height:1.55;">kept after the Altium acquisition</span></div>
+      <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Promoted to Product</span><span style="font-size:14px;color:#46586A;line-height:1.55;">the approach became company practice</span></div>
+    </div>
+    <p style="font-size:15px;color:#46586A;max-width:40em;margin:0;line-height:1.6;">I later advocated for, drafted the job description and interviewed <strong style="color:#1B2A38;">the next designer — still at Altium 3.5 years later</strong>.</p>
+  </div>
+
+  <!-- 02 SHIPPED -->
+  <div id="c02" data-screen-label="02 Shipped" style="scroll-margin-top:64px;margin:0 0 96px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 20px;">02 · The shipped feature</p>
+    <sc-if value="{{ showShippedImage }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#FFFFFF;padding:24px 24px 16px;margin:0 0 24px;">
+        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365" style="display:block;width:100%;height:auto;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:16px 0 4px;">Master and follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="color:#6E7F8D;">Altium 365 documentation</a></p>
+      </div>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
+      <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><svg viewBox="0 0 16 13" style="width:17px;height:14px;flex:none;" aria-hidden="true"><path d="M1 12 L1 4 L4.8 7.2 L8 1.5 L11.2 7.2 L15 4 L15 12 Z" fill="#1B2A38"></path></svg><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Master</strong><br>the source</span></div>
+      <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#4C8A5F;flex:none;"></span><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Up to date</strong><br>in sync</span></div>
+      <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#C9A227;flex:none;"></span><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Change pending</strong><br>needs review</span></div>
+      <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#4A7FB5;flex:none;"></span><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Rejected or edited</strong><br>diverged</span></div>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:16px 0 0;">Every state readable at a glance, by every role</p>
+  </div>
+
+  <!-- 03 HOW IT WORKS -->
+  <div id="c03" data-screen-label="03 How it works" style="scroll-margin-top:64px;margin:0 0 96px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">03 · How it works</p>
+    <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 32px;">One change on the Master. Every Follower flagged. <strong style="font-weight:600;">The owner applies or rejects — logged.</strong></p>
+    <div style="background:#E7EEF3;padding:32px;margin:0 0 24px;width:fit-content;max-width:100%;box-sizing:border-box;">
+      <svg viewBox="0 0 360 132" style="display:block;width:100%;max-width:440px;height:auto;" font-family="JetBrains Mono">
+        <line x1="104" y1="66" x2="228" y2="24" stroke="#4C8A5F" stroke-width="1.8"></line>
+        <line x1="104" y1="66" x2="228" y2="66" stroke="#C9A227" stroke-width="1.8"></line>
+        <line x1="104" y1="66" x2="228" y2="108" stroke="#4A7FB5" stroke-width="1.8"></line>
+        <rect x="2" y="49" width="102" height="34" fill="#FFFFFF"></rect>
+        <path d="M12 72 L12 61 L16.5 64.8 L20 58 L23.5 64.8 L28 61 L28 72 Z" fill="#1B2A38"></path>
+        <text x="36" y="70" font-size="10.5" font-weight="700" fill="#1B2A38">MASTER</text>
+        <rect x="228" y="8" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="27" font-size="9.5" fill="#1B2A38">FOLLOWER · SYNCED</text>
+        <rect x="228" y="51" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="70" font-size="9.5" fill="#1B2A38">FOLLOWER · PENDING</text>
+        <rect x="228" y="94" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="113" font-size="9.5" fill="#1B2A38">FOLLOWER · REJECTED</text>
+      </svg>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:18px 0 0;">One Master, many projects · propagation is unidirectional</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:0 0 32px;">
+      <div style="padding:32px;background:#FFFFFF;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:16px;">Before</span>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#6E7F8D;line-height:1.5;">
+          <span>Decision in a meeting</span><span style="color:#8DA9C4;">↓</span>
+          <span>Noted in a document</span><span style="color:#8DA9C4;">↓</span>
+          <span>Sent by email</span><span style="color:#8DA9C4;">↓</span>
+          <span>Updated by hand, <strong style="color:#1B2A38;">or missed</strong></span>
+        </div>
+      </div>
+      <div style="padding:32px;background:#FFFFFF;">
+        <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:16px;">After</span>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#1B2A38;line-height:1.5;">
+          <span>Master edited</span><span style="color:#8DA9C4;">↓</span>
+          <span>Follower flagged</span><span style="color:#8DA9C4;">↓</span>
+          <span>Owner reviews</span><span style="color:#8DA9C4;">↓</span>
+          <span style="font-weight:700;">Applies or rejects · logged</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:42em;">
+      <p style="font-size:15px;color:#46586A;margin:0;line-height:1.6;"><strong style="color:#1B2A38;">Propagate as flags, not silent updates</strong> · the owner decides</p>
+      <p style="font-size:15px;color:#46586A;margin:0;line-height:1.6;"><strong style="color:#1B2A38;">Status readable by every role</strong>, not only engineers</p>
+      <p style="font-size:15px;color:#46586A;margin:0;line-height:1.6;"><strong style="color:#1B2A38;">Hi fi prototype as the alignment object</strong> between experts, users and decision makers</p>
     </div>
   </div>
 
-  <!-- SHIPPED RESULT -->
-  <div id="c02" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">02 · The shipped feature</p>
-    <div style="background:#FFFFFF;padding:12px 12px 8px;">
-      <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365" style="display:block;width:100%;height:auto;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:12px 4px 4px;">Master and follower connections per requirement. Source: <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="color:#6E7F8D;">Altium 365 documentation</a></p>
+  <!-- 04 PROCESS -->
+  <div id="c04" data-screen-label="04 Process" style="scroll-margin-top:64px;margin:0 0 96px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">04 · Process · 0→1 in a new domain</p>
+    <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 16px;">I came into systems engineering as a non expert, <strong style="font-weight:600;">and used that</strong>.</p>
+    <p style="font-size:15px;color:#46586A;max-width:40em;line-height:1.6;margin:0 0 32px;">I could <strong style="color:#1B2A38;">ask the questions a fellow engineer might assume instead of validate</strong> — so I built the feature logic from <strong style="color:#1B2A38;">expert and user interviews, not documentation</strong>.</p>
+    <div style="background:#E7EEF3;padding:32px;margin:0 0 24px;">
+      <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;">
+        <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">01</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Interviews per role</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
+        <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">02</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">User stories</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
+        <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">03</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Hi fi prototype</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
+        <div style="flex:1 1 140px;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">04</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Test with experts</span></div>
+      </div>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:18px 0 0;">↺ Weekly loop back to 01 · fast prototyping, frequent testing</p>
     </div>
-  </div>
-
-  <!-- 03 DISCOVERY -->
-  <div id="c03" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">03 · 0→1 · New domain and user discovery</p>
-    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">I came into systems engineering as a non expert, and used that.</p>
-    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;margin:0 0 24px;">The translation of the spoken word into user stories and design was solely my job. My non expert status let me ask the questions a fellow engineer might assume instead of validate, or be embarrassed to ask. Experts often can't explain their assumptions without the right prompts, so I built the feature logic from <span style="text-decoration:underline;text-underline-offset:3px;text-decoration-style:dotted;color:#46586A;cursor:help;">expert and user interviews</span> instead of documentation.</p>
-    <div style="background:#E7EEF3;padding:24px 28px;width:fit-content;max-width:100%;">
-      <svg viewBox="0 0 300 96" style="display:block;width:300px;max-width:100%;height:auto" fill="none" font-family="JetBrains Mono">
-  <text x="0" y="12" font-size="9" fill="#1B2A38">INTERVIEWS</text>
-  <text x="0" y="50" font-size="9" fill="#1B2A38">USER STORIES</text>
-  <text x="0" y="88" font-size="9" fill="#1B2A38">HI-FI PROTOTYPE</text>
-  <line x1="8" y1="18" x2="8" y2="38" stroke="#1B2A38" stroke-width="1.4"></line>
-  <line x1="8" y1="56" x2="8" y2="76" stroke="#1B2A38" stroke-width="1.4"></line>
-  <text x="170" y="50" font-size="9" fill="#1B2A38">TEST WITH EXPERTS</text>
-  <path d="M120 85 H286 V47" stroke="#1B2A38" stroke-width="1.4"></path>
-  <path d="M286 47 V12 H95" stroke="#1B2A38" stroke-width="1.4" stroke-dasharray="3 3"></path>
-  <path d="M101 8 L91 12 L101 16" fill="none" stroke="#1B2A38" stroke-width="1.4"></path>
-</svg>
-      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:14px 0 0;">Fast prototyping, frequent testing · startup pace</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin:0 0 20px;">
+      <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Company</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Valispace GmbH</strong> · acquired by Altium 2023</span></div>
+      <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Team</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;">CPO · SMEs · CTO · <strong style="color:#1B2A38;">me as the only designer</strong></span></div>
+      <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">My role</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Discovery to hi fi prototype</strong> · user stories · logic mapping · testing</span></div>
+      <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Users</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">4 engineer roles</strong> · managers signing off</span></div>
     </div>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:0;">Constraints · 2021, pre AI · no PM yet · no UX practice in the company · users across time zones, partly in Covid lockdown</p>
   </div>
 
-  <!-- 04 CONSTRAINTS -->
-  <div id="c04" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">04 · Constraints</p>
-    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">New domain for me and no PM yet · direct collaboration with clients, users, SMEs, CPO and CTO</li><li style="margin-bottom:8px;">No UX practice in the company · I introduced Figma, interviews and prototype testing while designing</li><li style="margin-bottom:8px;">Expert users spread across companies and time zones, partly in Covid lockdown</li></ul>
+  <!-- 05 LESSONS -->
+  <div id="c05" data-screen-label="05 Lessons" style="scroll-margin-top:64px;margin:0 0 96px;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">05 · Lessons learned</p>
+    <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 16px;"><strong style="font-weight:600;">Requirements and designs should not come from the same person.</strong></p>
+    <p style="font-size:15px;color:#46586A;max-width:40em;margin:0 0 24px;line-height:1.6;">In the next feature I asked the CPO to take over the requirements while I translated them into design. See <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2, Verification Assignment Matrix</a>.</p>
+    <sc-if value="{{ showPostAi }}" hint-placeholder-val="{{ true }}">
+      <p style="font-size:15px;color:#46586A;max-width:40em;margin:0;line-height:1.6;">Designed pre AI. Today AI would speed up first drafts, but <strong style="color:#1B2A38;">new domain discovery still needs a human asking the non expert questions</strong>: AI knows job roles generally, not how a specific company operates.</p>
+    </sc-if>
   </div>
 
-  <!-- 05 APPROACH -->
-  <div id="c05" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">05 · Approach</p>
-    <p style="font-size:19px;font-weight:600;color:#1B2A38;line-height:1.45;max-width:32em;margin:0 0 10px;">UX methodology to put user needs at the centre, from scratch.</p>
-    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">Interviews per role, user journeys, wireframes, then a hi fi Figma prototype tested with expert users and iterated. Alongside the designs I drafted the knowledge in notes and <span style="text-decoration:underline;text-underline-offset:3px;text-decoration-style:dotted;color:#46586A;cursor:help;">user stories</span>, so decisions were traceable to what users said, not to opinions in a meeting.</p>
-  </div>
-
-  <!-- 06 KEY DECISIONS -->
-  <div id="c06" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">06 · Key decisions</p>
-    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Propagate as flags, not silent updates · the owner of each Follower applies or rejects the change</li><li style="margin-bottom:8px;">Accessible status indicators readable by every role, not only engineers</li><li style="margin-bottom:8px;">Hi fi prototype as the alignment object between internal experts, external users and decision makers</li></ul>
-  </div>
-
-  <!-- 07 IMPACT -->
-  <div id="c07" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">07 · Impact</p>
-    <ul style="margin:0;padding-left:18px;font-size:14px;color:#46586A;line-height:1.6;max-width:42em;"><li style="margin-bottom:8px;">Contract signed · one of three systems in systems features that won a six figure contract</li><li style="margin-bottom:8px;">Shipped 2021 · kept after the acquisition · live in Altium 365 in 2026</li><li style="margin-bottom:8px;">The approach was integrated in the company, and I was promoted to the newly founded Product team</li><li style="margin-bottom:8px;">I later advocated for, drafted the job description and interviewed the next designer, still at Altium 3.5 years later</li></ul>
-  </div>
-
-  <!-- 08 LESSONS LEARNED -->
-  <div id="c08" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">08 · Lessons learned</p>
-    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">Requirements and designs should not come from the same person. In the next feature I asked the CPO to take over the requirements while I translated them into design. See <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2, Verification Assignment Matrix</a>.</p>
-  </div>
-
-  <!-- 09 POST-AI -->
-  <div id="c09" style="scroll-margin-top:64px;margin:0 0 52px;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 12px;">09 · Relevant post AI in UX design</p>
-    <p style="font-size:14px;color:#46586A;max-width:42em;margin:0;line-height:1.6;">This was designed pre AI. Today AI would speed up first drafts, but new domain discovery still needs a human asking the non expert questions: AI knows job roles generally, not how a specific company operates, and experts still need the right prompts to surface what they assume.</p>
-  </div>
-
-  <div style="display:flex;gap:24px;flex-wrap:wrap;margin:0 0 48px;">
+  <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 48px;">
     <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Official docs ↗</a>
     <a href="https://petrakuhnle.github.io/portfolio/verification_matrix" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 2 · Verification Assignment Matrix →</a>
   </div>
@@ -125,5 +170,16 @@
   </div>
 
 </div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showShippedImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPostAi&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showShippedImage: this.props.showShippedImage ?? true,
+      showPostAi: this.props.showPostAi ?? true,
+    };
+  }
+}
+</script>
 </body>
 </html>
