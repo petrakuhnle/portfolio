@@ -18,6 +18,9 @@
   a:hover{color:#2C4576;}
   ::selection{background:#24395C;color:#F4F7FA;}
   .tile-visual:hover{box-shadow:0 8px 24px rgba(34,52,76,.12);transform:translateY(-2px);}
+  .card-grid{display:grid;gap:28px;grid-template-columns:repeat(2,minmax(0,1fr));}
+  @media(min-width:700px){.card-grid{gap:36px;}}
+  @media(min-width:1300px){.card-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;}}
 </style>
 </helmet>
 
@@ -38,6 +41,10 @@
   <p style="font-size:19px;color:#24395C;margin:0 0 64px;max-width:32em;font-weight:600;">Senior product designer <span style="font-weight:400;color:#4A5E79;">for real human–software interaction, bridging users and engineering in complex, highly regulated products.</span></p>
   </div>
 
+  <div style="background:#EDF1F6;padding:40px 44px;margin:0 0 96px;width:fit-content;max-width:100%;box-sizing:border-box;">
+    <img src="grid.svg" alt="Requirements verification matrix" style="display:block;width:100%;max-width:420px;height:auto;">
+  </div>
+
   <!-- SECTION 00: SUMMARY -->
   <div id="s00" data-screen-label="00 Summary" style="scroll-margin-top:96px;margin-bottom:104px;">
     <p style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#24395C;margin:0 0 16px;padding-top:14px;border-top:1px solid #DFE5EC;">00 · Summary</p>
@@ -51,7 +58,7 @@
     <h2 style="font-size:30px;font-weight:700;margin:0 0 10px;max-width:22em;">Designing for Complex Systems and real human–software interaction</h2>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px;">
+  <div class="card-grid" style="margin-bottom:40px;">
 
   <div style="background:#EDF1F6;padding:36px;">
     <p style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#24395C;background:#DCE8F4;padding:5px 11px;border-radius:3px;margin:0 0 20px;">Example 1 · Valispace · 2021</p>
@@ -110,7 +117,7 @@
     <h2 style="font-size:26px;font-weight:700;margin:0 0 8px;max-width:24em;">How I integrated UX in an engineering led startup</h2>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-bottom:104px;">
+  <div class="card-grid" style="margin-bottom:104px;">
 
   <div style="background:#F1F6F3;padding:32px 34px;">
     <p style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#24395C;background:#DCE8F4;padding:5px 11px;border-radius:3px;margin:0 0 18px;">Initiative 01 · UX practice · Valispace 2021–2022</p>
