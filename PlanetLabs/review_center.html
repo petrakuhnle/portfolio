@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+ body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+ a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
+ a:hover{color:#1B2A38;}
+ ::selection{background:#1B2A38;color:#F4F7FA;}
+</style>
+</helmet>
+
+<div style="max-width:1240px;margin:0 auto;padding:0 20vw 72px;font-size:16px;line-height:1.65;box-sizing:border-box;">
+
+ <nav style="position:sticky;top:0;z-index:10;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:14px 24px;margin:0 -20vw 56px;box-sizing:border-box;width:calc(100% + 40vw);">
+  <a href="#c01" style="text-decoration:none;color:#6E7F8D;">01 Impact</a>
+  <a href="#c02" style="text-decoration:none;color:#6E7F8D;">02 Shipped</a>
+  <a href="#c03" style="text-decoration:none;color:#6E7F8D;">03 How it works</a>
+  <a href="#c04" style="text-decoration:none;color:#6E7F8D;">04 Process</a>
+  <a href="#c05" style="text-decoration:none;color:#6E7F8D;">05 Decisions</a>
+  <a href="#c06" style="text-decoration:none;color:#6E7F8D;">06 Lessons</a>
+ </nav>
+
+ <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E7F8D;margin:0 0 18px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case 3 of 3 · Valispace, 2021 · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener" style="color:#4C72B0;">Altium 365 docs →</a></p>
+
+ <h1 data-screen-label="Title" style="font-weight:700;font-size:40px;letter-spacing:-.02em;line-height:1.08;margin:0 0 16px;max-width:20em;">How I designed review workflows around the user journey, within domain and business constraints</h1>
+ <p style="font-size:17px;color:#46586A;margin:0 0 28px;max-width:36em;"><strong style="color:#1B2A38;font-weight:600;">Mapping industry conventions and user needs per role</strong> into views and filters, directly with engineers. The feature: <strong style="color:#1B2A38;font-weight:600;">review assignment and completion at a glance</strong>.</p>
+ <p style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#1B2A38;margin:0 0 40px;"><strong style="font-weight:700;">Feature · Review Center</strong> <span style="color:#6E7F8D;">, Valispace → Altium 365 · designed 2021 · live 2026</span></p>
+
+ <div style="background:#E7EEF3;padding:28px 32px;margin:0 0 128px;width:fit-content;max-width:100%;box-sizing:border-box;">
+  <svg viewBox="0 0 500 138" style="display:block;width:100%;max-width:440px;height:auto;" fill="none" font-family="JetBrains Mono">
+   <text x="0" y="14" font-size="10.5" fill="#46586A">Moderator</text>
+   <text x="150" y="14" font-size="10.5" fill="#46586A">Reviewer</text>
+   <text x="300" y="14" font-size="10.5" fill="#46586A">Approver</text>
+   <path d="M96 10 L142 10" stroke="#1B2A38" stroke-width="1.2" marker-end="url(#rcv1)"></path>
+   <path d="M226 10 L292 10" stroke="#1B2A38" stroke-width="1.2" marker-end="url(#rcv1)"></path>
+   <defs><marker id="rcv1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 1 L6 4 L0 7" fill="none" stroke="#1B2A38" stroke-width="1.2"></path></marker></defs>
+   <g stroke="#CBD8E0" stroke-width="1.3">
+    <rect x="0" y="26" width="450" height="30"></rect><rect x="0" y="62" width="450" height="30"></rect><rect x="0" y="98" width="450" height="30"></rect>
+   </g>
+   <text x="12" y="45" font-size="11" fill="#1B2A38">REQ-01</text>
+   <text x="12" y="81" font-size="11" fill="#1B2A38">REQ-02</text>
+   <text x="12" y="117" font-size="11" fill="#1B2A38">REQ-03</text>
+   <path d="M330 42 l6 6 l12 -14" stroke="#1B2A38" stroke-width="1.8"></path>
+   <text x="356" y="45" font-size="10" fill="#6E7F8D">Approved</text>
+   <circle cx="337" cy="77" r="7" stroke="#1B2A38" stroke-width="1.4" fill="none"></circle>
+   <path d="M337 70 a7 7 0 0 1 0 14 z" fill="#1B2A38"></path>
+   <text x="356" y="81" font-size="10" fill="#6E7F8D">Needs work</text>
+   <path d="M330 110 l14 14 M344 110 l-14 14" stroke="#1B2A38" stroke-width="1.8"></path>
+   <text x="356" y="117" font-size="10" fill="#6E7F8D">Rejected</text>
+  </svg>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:18px 0 0;">The moderator sets up the review, reviewers rate each object, the approver closes it with a timestamp</p>
+ </div>
+
+ <!-- 01 IMPACT -->
+ <div id="c01" data-screen-label="01 Impact" style="scroll-margin-top:64px;margin:0 0 128px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 28px;">01 · Impact</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+   <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Third winning feature</span><span style="font-size:14px;color:#46586A;line-height:1.55;">of the three that won the six-figure contract and led to my promotion</span></div>
+   <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14px;color:#46586A;line-height:1.55;">kept after the Altium acquisition</span></div>
+   <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">The logic held up</span><span style="font-size:14px;color:#46586A;line-height:1.55;">backend feedback: the logic was solid, new feedback was easy to integrate</span></div>
+  </div>
+ </div>
+
+ <!-- 02 SHIPPED -->
+ <div id="c02" data-screen-label="02 Shipped" style="scroll-margin-top:64px;margin:0 0 128px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 28px;">02 · The shipped feature</p>
+  <sc-if value="{{ showShippedImage }}" hint-placeholder-val="{{ true }}">
+   <div style="background:#FFFFFF;padding:24px 24px 16px;margin:0 0 34px;">
+    <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/324031/image-20240411-115306.webp" alt="Review column in the requirements table indicating past and present reviews and their outcome, Altium 365" style="display:block;width:100%;height:auto;">
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:16px 0 4px;">Reviews and their outcome per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener" style="color:#6E7F8D;">Altium 365 documentation</a></p>
+   </div>
+  </sc-if>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
+   <div style="padding:22px 24px;background:#E7EEF3;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;margin-bottom:6px;">Moderator</span><span style="font-size:13.5px;color:#46586A;line-height:1.45;">sets up the review · assigns reviewers and approvers</span></div>
+   <div style="padding:22px 24px;background:#E7EEF3;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;margin-bottom:6px;">Reviewer</span><span style="font-size:13.5px;color:#46586A;line-height:1.45;">rates each object · approved, needs work or rejected</span></div>
+   <div style="padding:22px 24px;background:#E7EEF3;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;margin-bottom:6px;">Approver</span><span style="font-size:13.5px;color:#46586A;line-height:1.45;">closes the review · timestamp and who closed it</span></div>
+  </div>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:16px 0 0;">Every rating logged · full traceability of the process</p>
+ </div>
+
+ <!-- 03 HOW IT WORKS -->
+ <div id="c03" data-screen-label="03 How it works" style="scroll-margin-top:64px;margin:0 0 128px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">03 · How it works</p>
+  <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 40px;">A formal review that stays <strong style="font-weight:600;">traceable, run on the data already in the project.</strong></p>
+  <div style="background:#E7EEF3;padding:32px;margin:0 0 40px;width:fit-content;max-width:100%;box-sizing:border-box;">
+   <svg viewBox="0 0 460 140" style="display:block;width:100%;max-width:460px;height:auto;" fill="none" font-family="JetBrains Mono">
+    <text x="0" y="14" font-size="11" font-weight="700" fill="#1B2A38" font-family="IBM Plex Sans">Reviewer · my items</text>
+    <rect x="0" y="26" width="200" height="30" fill="#1B2A38" opacity="0.12"></rect>
+    <rect x="0" y="62" width="200" height="30" fill="#1B2A38" opacity="0.12"></rect>
+    <g stroke="#CBD8E0" stroke-width="1.2">
+     <rect x="0" y="26" width="200" height="30"></rect>
+     <rect x="0" y="62" width="200" height="30"></rect>
+     <rect x="0" y="98" width="200" height="30"></rect>
+    </g>
+    <text x="12" y="45" font-size="10" fill="#1B2A38">REQ-01</text>
+    <text x="12" y="81" font-size="10" fill="#1B2A38">REQ-02</text>
+    <text x="12" y="117" font-size="10" fill="#8DA9C4">REQ-03</text>
+    <path d="M166 38 l5 5 l11 -12" stroke="#1B2A38" stroke-width="1.8"></path>
+    <circle cx="176" cy="77" r="7" stroke="#1B2A38" stroke-width="1.4" fill="none"></circle>
+    <path d="M176 70 a7 7 0 0 1 0 14 z" fill="#1B2A38"></path>
+    <path d="M170 110 l12 12 M182 110 l-12 12" stroke="#8DA9C4" stroke-width="1.6"></path>
+    <text x="260" y="14" font-size="11" font-weight="700" fill="#1B2A38" font-family="IBM Plex Sans">Approver · overview</text>
+    <rect x="260" y="26" width="200" height="60" stroke="#CBD8E0" stroke-width="1.2"></rect>
+    <text x="272" y="45" font-size="9.5" fill="#6E7F8D">Requirement set A</text>
+    <rect x="272" y="54" width="120" height="12" fill="#1B2A38"></rect>
+    <rect x="392" y="54" width="40" height="12" fill="#1B2A38" opacity="0.28"></rect>
+    <text x="272" y="80" font-size="8.5" fill="#6E7F8D">2 approved · 1 needs work · 0 rejected</text>
+    <rect x="260" y="98" width="200" height="30" stroke="#CBD8E0" stroke-width="1.2"></rect>
+    <text x="272" y="117" font-size="9.5" fill="#6E7F8D">Requirement set B · in review</text>
+   </svg>
+   <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#6E7F8D;margin:18px 0 0;">Left: a reviewer filters to the objects assigned to them. Right: an approver sees status rolled up per requirement set. Same review data, two levels.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 40px;">
+   <div style="padding:32px;background:#FFFFFF;">
+    <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:16px;">Before</span>
+    <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#6E7F8D;line-height:1.5;">
+     <span>Reviewers picked one by one</span><span style="color:#8DA9C4;">↓</span>
+     <span>Same people, every review</span><span style="color:#8DA9C4;">↓</span>
+     <span>Status asked per email</span><span style="color:#8DA9C4;">↓</span>
+     <span><strong style="color:#1B2A38;">Tracked outside the project</strong></span>
+    </div>
+   </div>
+   <div style="padding:32px;background:#FFFFFF;">
+    <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:16px;">After</span>
+    <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#1B2A38;line-height:1.5;">
+     <span>Moderator sets up the review</span><span style="color:#8DA9C4;">↓</span>
+     <span>Groups assigned at once</span><span style="color:#8DA9C4;">↓</span>
+     <span>Rating per object</span><span style="color:#8DA9C4;">↓</span>
+     <span style="font-weight:700;">Approved, closed with timestamp</span>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <!-- 04 PROCESS -->
+ <div id="c04" data-screen-label="04 Process" style="scroll-margin-top:64px;margin:0 0 128px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">04 · Process · domain standards first</p>
+  <div style="background:#E7EEF3;padding:32px;margin:0 0 34px;">
+   <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;">
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">01</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Interviews per role</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">02</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Notes · stories · journey</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">03</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Wireframes → hi-fi</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
+    <div style="flex:1 1 140px;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">04</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Testing · experts &amp; users</span></div>
+   </div>
+   <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:18px 0 0;">↺ Iterative process · fast prototyping, frequent testing</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin:0 0 28px;">
+   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Company</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Valispace GmbH</strong> · acquired by Altium 2023</span></div>
+   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Team</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;">CPO · SMEs · CTO · <strong style="color:#1B2A38;">Designer</strong> (owning end-to-end design process)</span></div>
+   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">My role</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Review of industry conventions</strong> · co writing requirements with experts · design and testing</span></div>
+   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Users</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Moderators · reviewers · approvers</strong>, from engineers to managers</span></div>
+  </div>
+  <p style="font-size:15px;color:#46586A;max-width:44em;line-height:1.65;margin:16px 0 24px;">Discovery meant <strong style="color:#1B2A38;">learning the conventions before drawing</strong>: I reviewed the tools engineers already use, then ran interviews per role on where they fail. Experts and I mapped the logic in the user's language, not the code's, the same interviews-before-documentation approach as <a href="https://petrakuhnle.github.io/portfolio/master_follower">Use Case 1</a>. User journeys and wireframes built up to tested Figma prototypes. The resulting <strong style="color:#1B2A38;">views</strong> balance three things: <strong style="color:#1B2A38;">industry conventions</strong>, <strong style="color:#1B2A38;">user needs per role</strong> and <strong style="color:#1B2A38;">business constraints</strong>.</p>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:0;">Constraints · industry standards define what a review must record · integrate into the existing platform and data model · 1000s of requirements, 100s of people</p>
+ </div>
+
+ <!-- 05 KEY DESIGN DECISIONS -->
+ <div id="c05" data-screen-label="05 Decisions" style="scroll-margin-top:64px;margin:0 0 128px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">05 · Key design decisions</p>
+  <p style="max-width:40em;font-size:15px;color:#46586A;line-height:1.65;margin:0 0 40px;">The recurring question: <strong style="color:#1B2A38;">how do formal-review conventions map onto data that already lives in the project?</strong> I designed the roles, states and views so a review is traceable without leaving the requirements.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
+   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Assign groups, not individuals</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">reviews repeat across a project</span></div>
+   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Rating per object, logged</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">approver closes with a timestamp</span></div>
+   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Views per role</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">filters for specialists and deciders</span></div>
+  </div>
+ </div>
+
+ <!-- 06 LESSONS -->
+ <div id="c06" data-screen-label="06 Lessons" style="scroll-margin-top:64px;margin:0 0 128px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">06 · Lessons learned</p>
+  <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 16px;"><strong style="font-weight:600;">Bring expert users in early, and get to design sooner.</strong></p>
+  <div style="display:flex;gap:18px;max-width:44em;margin:0 0 22px;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#8DA9C4;flex:none;padding-top:2px;">01</span><div><span style="display:block;font-size:15px;font-weight:700;color:#1B2A38;margin-bottom:4px;">Design even earlier</span><span style="font-size:15px;color:#46586A;line-height:1.65;">What I'd add: <strong style="color:#1B2A38;">a middle step of first code prototypes</strong>, feeding development constraints back into the designs before full implementation.</span></div></div>
+  <div style="display:flex;gap:18px;max-width:44em;margin:0;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#8DA9C4;flex:none;padding-top:2px;">02</span><div><span style="display:block;font-size:15px;font-weight:700;color:#1B2A38;margin-bottom:4px;">Views and filters per role</span><span style="font-size:15px;color:#46586A;line-height:1.65;">Crucial were the <strong style="color:#1B2A38;">different views and filters per role</strong>, the same thread I carried through <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2</a>. Improving the discovery would mean testing with <strong style="color:#1B2A38;">different companies and different roles</strong>, hard in B2B, but crucial to avoid optimising within a narrow space. Not necessary for this MVP, but an important next step before adjusting to individual users' wishes.</span></div></div>
+ </div>
+
+ <div style="margin:0 0 28px;">
+  <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Official docs ↗</a>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6E7F8D;line-height:1.5;max-width:44em;margin:12px 0 0;">Official docs open <strong style="color:#1B2A38;">Altium 365</strong>'s documentation, <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so this feature is now documented under Altium.</p>
+ </div>
+ <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 48px;padding-top:24px;border-top:1px solid #DBE3EB;">
+  <a href="https://petrakuhnle.github.io/portfolio/master_follower" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 1 · Master–Follower →</a>
+  <a href="https://petrakuhnle.github.io/portfolio/verification_matrix" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 2 · Verification Assignment Matrix →</a>
+ </div>
+
+ <p style="font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 40px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+
+ <div style="display:flex;justify-content:space-between;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
+  <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
+ </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showShippedImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPostAi&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+ renderVals() {
+  return {
+   showShippedImage: this.props.showShippedImage ?? true,
+   showPostAi: this.props.showPostAi ?? true,
+  };
+ }
+}
+</script>
+</body>
+</html>
