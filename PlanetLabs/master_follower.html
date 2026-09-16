@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petra Kühnle, Senior Product Designer</title>
+<meta name="description" content="Portfolio of Petra Kühnle, senior product designer. Research, discovery and prototyping for complex B2B software. First designer at Valispace, acquired by Altium; the features ship in Altium 365 today.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Petra Kühnle, Senior Product Designer">
+<meta property="og:description" content="First designer at Valispace, acquired by Altium. The features ship in Altium 365 today.">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -10,173 +16,380 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
- body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
- a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
- a:hover{color:#1B2A38;}
- ::selection{background:#1B2A38;color:#F4F7FA;}
+ :root{
+  --gutter: clamp(20px, 6vw, 80px);
+  --maxw: 1080px;
+ }
+ @media(min-width:1024px){
+  :root{--gutter: clamp(150px, 17vw, 360px);}
+ }
+ html{scroll-behavior:smooth;}
+ body{margin:0;background:#F4F7FA;color:#24395C;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+ a{color:#3A5C99;text-decoration:underline;text-underline-offset:2px;}
+ a:focus-visible,button:focus-visible{outline:2px solid #24395C;outline-offset:2px;border-radius:2px;}
+ a:hover{color:#2C4576;}
+ ::selection{background:#24395C;color:#F4F7FA;}
+ .skip{position:absolute;left:-9999px;top:0;}
+ .skip:focus{position:fixed;left:12px;top:12px;z-index:100;background:#24395C;color:#F4F7FA;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:13px;text-decoration:none;}
+ .card-grid{display:grid;gap:24px;grid-template-columns:1fr;}
+ @media(min-width:800px){.card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;}}
+ @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 </style>
 </helmet>
 
-<div style="max-width:1240px;margin:0 auto;padding:0 20vw 72px;font-size:16px;line-height:1.65;box-sizing:border-box;">
+<div style="max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter) 112px;font-size:17px;line-height:1.6;box-sizing:border-box;">
 
- <nav style="position:sticky;top:0;z-index:10;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:14px 24px;margin:0 -20vw 56px;box-sizing:border-box;width:calc(100% + 40vw);">
-  <a href="#c01" style="text-decoration:none;color:#6E7F8D;">01 Impact</a>
-  <a href="#c02" style="text-decoration:none;color:#6E7F8D;">02 Shipped</a>
-  <a href="#c03" style="text-decoration:none;color:#6E7F8D;">03 How it works</a>
-  <a href="#c04" style="text-decoration:none;color:#6E7F8D;">04 Process</a>
-  <a href="#c05" style="text-decoration:none;color:#6E7F8D;">05 Decisions</a>
-  <a href="#c06" style="text-decoration:none;color:#6E7F8D;">06 Lessons</a>
+ <a class="skip" href="#s00">Skip to content</a>
+
+ <nav aria-label="Sections" style="position:sticky;top:0;z-index:10;background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border-bottom:1px solid #D6E2F0;margin:0 calc(50% - 50vw) 60px;box-sizing:border-box;width:100vw;">
+  <div style="display:flex;justify-content:flex-start;flex-wrap:wrap;gap:8px 28px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;max-width:var(--maxw);margin:0 auto;padding:16px var(--gutter);box-sizing:border-box;">
+   <a href="#s00" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="s00">Summary</a>
+   <a href="#s01" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="s01">01 Shipped Work</a>
+   <a href="#s02" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="s02">02 UX Founding Work</a>
+   <a href="#s04" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="s04">03 References</a>
+   <a href="#s05" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="s05">04 Background</a>
+   <a href="#s06" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="s06">05 Contact</a>
+  </div>
  </nav>
 
- <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E7F8D;margin:0 0 18px;"><a href="index.html" style="color:#6E7F8D;">← Portfolio</a> · Use Case 1 of 3 · Valispace, 2021 · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="color:#4C72B0;">Altium 365 docs →</a></p>
+ <main>
 
- <h1 data-screen-label="Title" style="font-weight:700;font-size:40px;letter-spacing:-.02em;line-height:1.08;margin:0 0 16px;max-width:20em;">Master–Follower</h1>
- <p style="font-size:17px;color:#46586A;margin:0 0 16px;max-width:36em;"><strong style="color:#1B2A38;font-weight:600;">Requirements reused across projects, traceable when they change.</strong> Valispace 2021, live in Altium 365 today.</p>
- <p style="font-size:15px;color:#46586A;margin:0 0 40px;max-width:40em;line-height:1.65;">First designer in an engineering-led hardware startup, six years in, domain new to me. Discovery to tested hi-fi prototype, owned end to end.<br>Users: four engineer roles plus managers signing off. Validated with internal experts and external users.<br>One of three features behind a six-figure contract. Shipped 2021, kept through the Altium acquisition, publicly documented.</p>
-
- <div style="background:#E7EEF3;padding:28px 32px;margin:0 0 128px;width:fit-content;max-width:100%;box-sizing:border-box;">
-  <img src="example1.svg" alt="Master and Follower propagation diagram" style="display:block;width:100%;max-width:420px;height:auto;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#6E7F8D;margin:18px 0 0;">A change on one Master requirement flags each dependent Follower for review, in its own state.</p>
+ <div id="s00" data-screen-label="Summary" style="padding-top:72px;scroll-margin-top:96px;margin-bottom:112px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;line-height:1.9;color:#46648C;margin:0 0 28px;">Senior Product Designer · Berlin</p>
+  <h1 style="font-weight:700;font-size:clamp(38px,6.5vw,52px);letter-spacing:-.02em;line-height:1.02;margin:0 0 30px;">Petra Kühnle</h1>
+  <p style="max-width:36em;font-size:18px;font-weight:400;line-height:1.7;color:#24395C;margin:0;">First and sole designer at <strong style="font-weight:600;">Valispace</strong>, a requirements and systems engineering platform for satellite, aircraft and launch vehicle teams.<br><br>The <a href="#s01">features</a> are in Altium 365 <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal" target="_blank" rel="noopener">today</a>. I built the practice <a href="#s02">from zero</a> and hired my successor. What <a href="#s04">colleagues</a> say. Before that, four years at Apple, in daily contact with users and deciding whether a problem was a bug or the interface.</p>
  </div>
 
- <!-- 01 IMPACT -->
- <div id="c01" data-screen-label="01 Impact" style="scroll-margin-top:64px;margin:0 0 128px;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 28px;">01 · Impact</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:0 0 34px;">
-   <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Six-figure contract</span><span style="font-size:14px;color:#46586A;line-height:1.55;">one of three features that won the deal</span></div>
-   <div style="padding:32px;background:#FFFFFF;"><span style="display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14px;color:#46586A;line-height:1.55;">kept after the Altium acquisition</span></div>
-  </div>
-  <p style="font-size:15px;color:#46586A;max-width:40em;margin:0 0 16px;line-height:1.65;">After I started the company's first UX practice, discovery through <strong style="color:#1B2A38;">interviews, journeys and prototypes</strong> became a normal way of working. The company moved toward <strong style="color:#1B2A38;">product-led</strong> decisions.</p>
-  <p style="font-size:15px;color:#46586A;max-width:40em;margin:0;line-height:1.65;">Because I <strong style="color:#1B2A38;">had to design what I was told and show it back to the same experts a week later</strong>, I paid closer attention than listening alone allows. Later I caught a detail that <strong style="color:#1B2A38;">prevented a development refactor</strong>.</p>
+ <!-- SECTION 01: SHIPPED -->
+ <div style="background:#FFFFFF;margin:0 calc(50% - 50vw) 104px;padding:64px calc(50vw - 50%) 64px;">
 
- </div>
-
- <!-- 02 SHIPPED -->
- <div id="c02" data-screen-label="02 Shipped" style="scroll-margin-top:64px;margin:0 0 128px;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 28px;">02 · The shipped feature</p>
-  <p style="font-size:15px;color:#46586A;max-width:42em;margin:0 0 34px;line-height:1.65;">Engineers building hardware like aeroplanes work with <strong style="color:#1B2A38;">requirements</strong>, above all requirements and systems engineers. To manage the <strong style="color:#1B2A38;">impact of one changing requirement on others</strong> across projects, we built the Master–Follower feature. One Master, many Followers. The shipped design works in essence as I designed it in 2021. Later iterations added functionality and improved usability. A backend developer who updated the feature later told me improvements were easy to implement because the design logic was mapped out well.</p>
-  <sc-if value="{{ showShippedImage }}" hint-placeholder-val="{{ true }}">
-   <div style="background:#FFFFFF;padding:24px 24px 16px;margin:0 0 34px;">
-    <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365" style="display:block;width:100%;height:auto;">
-    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:16px 0 4px;">Master and follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="color:#6E7F8D;">Altium 365 documentation</a></p>
-   </div>
-  </sc-if>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
-   <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><svg viewBox="0 0 16 13" style="width:17px;height:14px;flex:none;" aria-hidden="true"><path d="M1 12 L1 4 L4.8 7.2 L8 1.5 L11.2 7.2 L15 4 L15 12 Z" fill="#1B2A38"></path></svg><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Master</strong><br>the source</span></div>
-   <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#4C8A5F;flex:none;"></span><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Up to date</strong><br>in sync</span></div>
-   <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#C9A227;flex:none;"></span><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Change pending</strong><br>needs review</span></div>
-   <div style="padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#4A7FB5;flex:none;"></span><span style="font-size:14.5px;color:#46586A;line-height:1.45;"><strong style="color:#1B2A38;">Rejected or edited</strong><br>diverged</span></div>
+  <div id="s01" data-screen-label="01 Shipped work" style="margin:0 0 48px;scroll-margin-top:96px;">
+   <p style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#24395C;margin:0 0 24px;padding-top:14px;border-top:1px solid #E4EBF2;">01 · Shipped work</p>
+   <h2 style="font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin:0 0 16px;max-width:22em;">How I discovered, validated and designed with a focus on user needs:</h2>
+   <p style="max-width:40em;font-size:16px;color:#4A5E79;margin:0;line-height:1.7;">I ran the design process end to end: discovery, user research, usability testing, prototypes, high-fidelity design, then iteration once features were live. Testing with aerospace clients decided which use cases got built. Design culture is in <a href="#s02">UX Founding Work</a>.</p>
   </div>
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#6E7F8D;margin:16px 0 0;">The states used to manage and track interdependent changes</p>
- </div>
 
- <!-- 03 HOW IT WORKS -->
- <div id="c03" data-screen-label="03 How it works" style="scroll-margin-top:64px;margin:0 0 128px;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">03 · How it works</p>
-  <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 40px;">A change on the Master flags every Follower for its owner to <strong style="font-weight:600;">apply or reject, with the decision logged.</strong></p>
-  <div style="background:#E7EEF3;padding:32px;margin:0 0 34px;width:fit-content;max-width:100%;box-sizing:border-box;">
-   <svg viewBox="0 0 360 132" style="display:block;width:100%;max-width:440px;height:auto;" font-family="JetBrains Mono">
-    <line x1="104" y1="66" x2="228" y2="24" stroke="#4C8A5F" stroke-width="1.8"></line>
-    <line x1="104" y1="66" x2="228" y2="66" stroke="#C9A227" stroke-width="1.8"></line>
-    <line x1="104" y1="66" x2="228" y2="108" stroke="#4A7FB5" stroke-width="1.8"></line>
-    <rect x="2" y="49" width="102" height="34" fill="#FFFFFF"></rect>
-    <path d="M12 72 L12 61 L16.5 64.8 L20 58 L23.5 64.8 L28 61 L28 72 Z" fill="#1B2A38"></path>
-    <text x="36" y="70" font-size="10.5" font-weight="700" fill="#1B2A38">Master</text>
-    <rect x="228" y="8" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="27" font-size="9.5" fill="#1B2A38">Follower · synced</text>
-    <rect x="228" y="51" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="70" font-size="9.5" fill="#1B2A38">Follower · pending</text>
-    <rect x="228" y="94" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="113" font-size="9.5" fill="#1B2A38">Follower · rejected</text>
-   </svg>
-  </div>
-  <p style="font-size:15px;color:#46586A;max-width:42em;margin:0 0 40px;line-height:1.65;">A change on the Master reaches every Follower automatically, as a flag to review, not as a silent update. A key decision was to allow <strong style="color:#1B2A38;">different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong style="color:#1B2A38;">discuss changes and decisions in place</strong>.</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 40px;">
-   <div style="padding:32px;background:#FFFFFF;">
-    <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:16px;">Before · one possibility</span>
-    <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#6E7F8D;line-height:1.5;">
-     <span>Decision in a meeting</span><span style="color:#8DA9C4;">↓</span>
-     <span>Noted in a document</span><span style="color:#8DA9C4;">↓</span>
-     <span>Sent by email</span><span style="color:#8DA9C4;">↓</span>
-     <span>Updated by hand, <strong style="color:#1B2A38;">or missed</strong></span>
+  <div class="card-grid" style="margin-bottom:44px;">
+
+   <div style="background:#FFFFFF;border:1px solid #DDE5EE;padding:clamp(22px,4vw,32px);display:flex;flex-direction:column;">
+    <p style="font-size:13px;color:#556674;margin:0 0 14px;">Valispace, 2021</p>
+    <h3 style="font-size:21px;font-weight:700;line-height:1.25;letter-spacing:-.01em;margin:0 0 12px;"><a href="https://petrakuhnle.github.io/portfolio/master_follower" style="text-decoration:none;color:#24395C;">Master–Follower</a></h3>
+    <p style="font-size:14.5px;color:#4A5E79;line-height:1.65;margin:0 0 24px;max-width:30em;">A reusable pattern for requirements shared across projects, keeping traceability as changes propagate. Validated with internal and external experts. Altium documents it on satellite subsystems.</p>
+    <a href="https://petrakuhnle.github.io/portfolio/master_follower" style="display:block;text-decoration:none;background:#F2F6FB;border:1px solid #D6E2F0;padding:20px;margin:auto 0 22px;">
+     <img src="example1.svg" alt="Diagram of Master–Follower propagation: one master requirement with changes flowing to follower copies in separate projects" style="display:block;width:100%;height:auto;">
+    </a>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:14px;">
+     <a href="https://petrakuhnle.github.io/portfolio/master_follower" aria-label="Master–Follower use case">Use case</a>
+     <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" aria-label="Master–Follower in the Altium documentation">Altium documentation</a>
     </div>
    </div>
-   <div style="padding:32px;background:#FFFFFF;">
-    <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:16px;">After</span>
-    <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#1B2A38;line-height:1.5;">
-     <span>Master edited</span><span style="color:#8DA9C4;">↓</span>
-     <span>Follower flagged</span><span style="color:#8DA9C4;">↓</span>
-     <span>Owner reviews</span><span style="color:#8DA9C4;">↓</span>
-     <span style="font-weight:700;">Applies or rejects · logged</span>
+
+   <div style="background:#FFFFFF;border:1px solid #DDE5EE;padding:clamp(22px,4vw,32px);display:flex;flex-direction:column;">
+    <p style="font-size:13px;color:#556674;margin:0 0 14px;">Valispace, 2021</p>
+    <h3 style="font-size:21px;font-weight:700;line-height:1.25;letter-spacing:-.01em;margin:0 0 12px;"><a href="https://petrakuhnle.github.io/portfolio/verification_matrix" style="text-decoration:none;color:#24395C;">Verification Matrix</a></h3>
+    <p style="font-size:14.5px;color:#4A5E79;line-height:1.65;margin:0 0 24px;max-width:30em;">I set clear objectives with the team, then ran months of research and prototype testing with systems engineers to find where traceability breaks down. The matrix shows in one view what is verified and what is missing.</p>
+    <a href="https://petrakuhnle.github.io/portfolio/verification_matrix" style="display:block;text-decoration:none;background:#F2F6FB;border:1px solid #D6E2F0;padding:20px;margin:auto 0 22px;">
+     <img src="example2.svg" alt="Verification assignment matrix showing requirements against verification methods, with unassigned cells visible" style="display:block;width:100%;height:auto;">
+    </a>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:14px;">
+     <a href="https://petrakuhnle.github.io/portfolio/verification_matrix" aria-label="Verification Matrix use case">Use case</a>
+     <a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener" aria-label="Verification Matrix in the Altium documentation">Altium documentation</a>
     </div>
    </div>
-  </div>
- </div>
 
- <!-- 04 PROCESS -->
- <div id="c04" data-screen-label="04 Process" style="scroll-margin-top:64px;margin:0 0 128px;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">04 · Process · first designer in a new domain</p>
-  <div style="background:#E7EEF3;padding:32px;margin:0 0 34px;">
-   <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;">
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">01</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Interviews · pro users</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">02</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Notes · stories · journey</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">03</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Wireframes → hi-fi</span></div><span style="align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;">→</span></div>
-    <div style="flex:1 1 140px;background:#FFFFFF;padding:18px 16px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;">04</span><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;">Testing · experts &amp; users</span></div>
+   <div style="background:#FFFFFF;border:1px solid #DDE5EE;padding:clamp(22px,4vw,32px);display:flex;flex-direction:column;">
+    <p style="font-size:13px;color:#556674;margin:0 0 14px;">Valispace, 2021</p>
+    <h3 style="font-size:21px;font-weight:700;line-height:1.25;letter-spacing:-.01em;margin:0 0 12px;"><a href="https://petrakuhnle.github.io/portfolio/review_center" style="text-decoration:none;color:#24395C;">Review Center</a></h3>
+    <p style="font-size:14.5px;color:#4A5E79;line-height:1.65;margin:0 0 24px;max-width:30em;">Three user profiles with different jobs: moderator, reviewer, approver. I designed the flow from setup through rating to sign-off, reusable across requirements and system values, and kept regulatory traceability without slowing the review down.</p>
+    <a href="https://petrakuhnle.github.io/portfolio/review_center" style="display:block;text-decoration:none;background:#F2F6FB;border:1px solid #D6E2F0;padding:20px;margin:auto 0 22px;">
+     <img src="example3.svg" alt="Diagram of the three Review Center roles and how a review moves from setup through rating to approval" style="display:block;width:100%;height:auto;">
+    </a>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:14px;">
+     <a href="https://petrakuhnle.github.io/portfolio/review_center" aria-label="Review Center use case">Use case</a>
+     <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener" aria-label="Review Center in the Altium documentation">Altium documentation</a>
+    </div>
    </div>
-   <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:18px 0 0;">↺ Iterative process · fast prototyping, frequent testing</p>
+
+   <div style="background:#FFFFFF;border:1px solid #DDE5EE;padding:clamp(22px,4vw,32px);display:flex;flex-direction:column;">
+    <p style="font-size:13px;color:#556674;margin:0 0 14px;">Independent, 2026</p>
+    <h3 style="font-size:21px;font-weight:700;line-height:1.25;letter-spacing:-.01em;margin:0 0 12px;"><a href="https://petrakuhnle.github.io/portfolio/navigator.html" style="text-decoration:none;color:#24395C;">Navigator</a></h3>
+    <p style="font-size:14.5px;color:#4A5E79;line-height:1.65;margin:0 0 24px;max-width:30em;">EU AI Act rules turned into a clear answer on what applies. Discovery, prototype and live app, tested with musicians and AI users. Built with AI tools for ideation, design and prototype generation.</p>
+    <a href="https://petrakuhnle.github.io/portfolio/navigator.html" style="display:block;text-decoration:none;background:#F2F6FB;border:1px solid #D6E2F0;padding:20px;margin:auto 0 22px;">
+     <img src="navigator_screenshot.png" alt="Navigator interface showing an EU AI Act rule translated into a music and AI use case" style="display:block;width:100%;height:auto;">
+    </a>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:14px;">
+     <a href="https://petrakuhnle.github.io/portfolio/navigator.html" aria-label="Navigator case study">Case study</a>
+     <a href="https://petrakuhnle.github.io/Music-ai-compliance-navigator/" target="_blank" rel="noopener" aria-label="Navigator live app">Live app</a>
+    </div>
+   </div>
+
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;margin:0 0 34px;">
-   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Company</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Valispace GmbH</strong> · acquired by Altium 2023</span></div>
-   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Team</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;">CPO · SMEs · CTO · <strong style="color:#1B2A38;">Designer</strong> (owning end-to-end design process)</span></div>
-   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">My role</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">Discovery to hi-fi prototype</strong> · user stories · logic mapping · testing</span></div>
-   <div style="padding:22px 24px;background:#FFFFFF;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;">Users</span><span style="font-size:14.5px;line-height:1.5;color:#46586A;"><strong style="color:#1B2A38;">4 engineer roles</strong> · managers signing off</span></div>
+
+  <p style="max-width:40em;font-size:13px;color:#556674;margin:8px 0 0;line-height:1.65;">The documentation links open the official Altium 365 docs, where these features are maintained today.</p>
+
+ </div>
+
+ <!-- SECTION 02: UX FOUNDING WORK -->
+ <div id="s02" data-screen-label="02 UX Founding Work" style="margin:0 0 48px;scroll-margin-top:96px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#24395C;margin:0 0 24px;padding-top:14px;border-top:1px solid #E4EBF2;">02 · UX Founding Work</p>
+  <h2 style="font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 14px;max-width:24em;">How I introduced UX to an engineering-led startup</h2>
+  <p style="max-width:40em;font-size:16px;color:#4A5E79;margin:0;line-height:1.7;">Valispace, 2021–2022, through the company's growth phase from 20 to 50 people. I built the practice while designing the <a href="#s01">shipped features</a>.</p>
+ </div>
+
+ <div class="card-grid" style="margin-bottom:104px;">
+
+  <div style="background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border:1px solid #D6E2F0;padding:clamp(24px,4.5vw,34px);">
+   <h3 style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px;color:#24395C;">Show, don't tell</h3>
+   <p style="font-size:15px;color:#4A5E79;line-height:1.7;margin:0;">Founded the <strong style="color:#24395C;">UX Guild</strong> for designers and developers, and introduced <strong style="color:#24395C;">user research and prototype testing</strong> by starting with the people who were open to it. I took every contribution seriously and kept findings specific, so the method did the arguing for me.</p>
   </div>
-  <p style="font-size:15px;color:#46586A;max-width:44em;line-height:1.65;margin:16px 0 0;">The constraint: the Master's editor, the Follower's owner and the manager signing off need different things from one table, each without extra cognitive load. We solved this by showing the options to assign, review and comment where they are needed. → <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2</a></p>
+
+  <div style="background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border:1px solid #D6E2F0;padding:clamp(24px,4.5vw,34px);">
+   <h3 style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px;color:#24395C;">One look and feel</h3>
+   <p style="font-size:15px;color:#4A5E79;line-height:1.7;margin:0;">As the only designer, consistency across surfaces was mine by default. I set the <strong style="color:#24395C;">design principles</strong> and carried one <strong style="color:#24395C;">look and feel</strong> across <strong style="color:#24395C;">product, API documentation and marketing</strong>, with marketing, solution management and development: input on the website, colour combinations for marketing resources, consistency in the API design, feedback on visuals in the docs. Priorities shifted weekly, so deciding what mattered most was part of the job. The core stayed on <strong style="color:#24395C;">system of systems features</strong>, the design culture, and getting a second designer hired.</p>
+  </div>
+
+  <div style="background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border:1px solid #D6E2F0;padding:clamp(24px,4.5vw,34px);">
+   <h3 style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px;color:#24395C;">From UX to Product</h3>
+   <p style="font-size:15px;color:#4A5E79;line-height:1.7;margin:0;">As the company moved to a product led approach, engineering, product and design started owning the experience together. I was <strong style="color:#24395C;">promoted onto the new product team</strong>, working with PMs, dev leads, the CTO and the CPO. I defined the senior role for the second hire and <strong style="color:#24395C;">hired my successor</strong>, who still shapes the design culture at Altium today.</p>
+  </div>
+
+  <div style="background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border:1px solid #D6E2F0;padding:clamp(24px,4.5vw,34px);">
+   <h3 style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px;color:#24395C;">Accessibility as a requirement</h3>
+   <p style="font-size:15px;color:#4A5E79;line-height:1.7;margin:0;">I made the case for <strong style="color:#24395C;">improving the colour palette of a pie chart</strong> on contrast grounds. Months later, users reported exactly the contrast problem I had flagged. Meeting accessibility guidelines keeps expert users working instead of reporting UI they cannot read or operate.</p>
+  </div>
+
+  <div style="background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border:1px solid #D6E2F0;padding:clamp(24px,4.5vw,34px);">
+   <h3 style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px;color:#24395C;">Owning systemic problems</h3>
+   <p style="font-size:15px;color:#4A5E79;line-height:1.7;margin:0;">I took ownership of <strong style="color:#24395C;">systemic problems no one had framed yet</strong>, in a product where every feature touches a system of systems. I brought engineers, developers and end users into the same conversation and translated between what was technically possible and what customers would pay for, holding usability and business needs together rather than trading one for the other.</p>
+  </div>
+
+  <div style="background:#F2F6FB;background-image:linear-gradient(#DDE7F2 1px,transparent 1px),linear-gradient(90deg,#DDE7F2 1px,transparent 1px);background-size:22px 22px;border:1px solid #D6E2F0;padding:clamp(24px,4.5vw,34px);">
+   <h3 style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px;color:#24395C;">Learning the domain</h3>
+   <p style="font-size:15px;color:#4A5E79;line-height:1.7;margin:0;">I came to aerospace from four years at Apple, in daily contact with professional audio and video users. I diagnosed problems in live production, stayed with the person until I understood their situation, and wrote up <strong style="color:#24395C;">reproducible cases</strong> for engineering, deciding case by case what was a bug and what was a UX problem. That is how I learned systems engineering: isolate the variable, reproduce it with the person who has it, and separate what is broken from what is badly designed.</p>
+  </div>
+
  </div>
 
- <!-- 05 KEY DESIGN DECISIONS -->
- <div id="c05" data-screen-label="05 Decisions" style="scroll-margin-top:64px;margin:0 0 128px;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">05 · Key design decisions</p>
-  <p style="max-width:40em;font-size:15px;color:#46586A;line-height:1.65;margin:0 0 40px;">My job was to ask the specific questions: what does the engineer working on a Follower need to see, what would frustrate them, what does the Master's editor need versus the Follower's owner? Same user focus, but for <strong style="color:#1B2A38;">different people in different situations</strong>. I build from the user and visual side so developers can focus on the technical side, and we meet in the middle. This role-and-view thinking is taken furthest in <a href="https://petrakuhnle.github.io/portfolio/review_center">Use Case 3, Review Center</a>.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
-   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Flags, not silent updates</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">only the owner applies, rejects or edits, nothing lands unreviewed</span></div>
-   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Discussion in place</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">decided where the work is, not lost in email</span></div>
-   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Readable by every role</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">managers signing off, not only engineers</span></div>
-   <div style="padding:18px 20px;background:#1B2A38;"><span style="display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;">Prototype as alignment</span><span style="font-size:12.5px;color:#CBD8E0;line-height:1.45;">experts, users and deciders aligned before build</span></div>
+ <!-- SECTION 03: REFERENCES -->
+ <div style="background:#FFFFFF;margin:0 calc(50% - 50vw) 104px;padding:64px calc(50vw - 50%) 64px;">
+  <div id="s04" data-screen-label="03 References" style="margin:0 0 36px;scroll-margin-top:96px;">
+   <h2 style="font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#24395C;margin:0;padding-top:14px;border-top:1px solid #E4EBF2;">03 · References</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+   <figure style="margin:0;background:#F2F6FB;border:1px solid #D6E2F0;padding:32px;">
+    <blockquote style="font-size:15.5px;line-height:1.7;margin:0 0 20px;color:#24395C;font-weight:500;font-style:italic;">"She took the initiative to <strong style="font-weight:700;">start a cross-functional UX guild that brought designers and developers together</strong> to improve the overall user experience."</blockquote>
+    <figcaption>
+     <div style="font-size:13.5px;font-weight:600;">Louise Lindblad</div>
+     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;line-height:1.7;color:#556674;margin-top:4px;">Cofounder · Valispace (now Altium)</div>
+    </figcaption>
+   </figure>
+   <figure style="margin:0;background:#F2F6FB;border:1px solid #D6E2F0;padding:32px;">
+    <blockquote style="font-size:15.5px;line-height:1.7;margin:0 0 20px;color:#24395C;font-weight:500;font-style:italic;">"In a very short time she <strong style="font-weight:700;">learned a previously unknown field</strong> by talking to users and <strong style="font-weight:700;">iterating fast with them on mockups and prototypes</strong>."</blockquote>
+    <figcaption>
+     <div style="font-size:13.5px;font-weight:600;">Florian Reger</div>
+     <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;line-height:1.7;color:#556674;margin-top:4px;">Solution Management · Valispace (now Altium)</div>
+    </figcaption>
+   </figure>
   </div>
  </div>
 
- <!-- 06 LESSONS -->
- <div id="c06" data-screen-label="06 Lessons" style="scroll-margin-top:64px;margin:0 0 128px;">
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 16px;">06 · Lessons learned</p>
-  <p style="max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 16px;"><strong style="font-weight:600;">What the first big feature taught me.</strong></p>
-  <div style="display:flex;gap:18px;max-width:44em;margin:0 0 22px;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#8DA9C4;flex:none;padding-top:2px;">01</span><div><span style="display:block;font-size:15px;font-weight:700;color:#1B2A38;margin-bottom:4px;">Design filled the gap</span><span style="font-size:15px;color:#46586A;line-height:1.65;">I built the logic from interviews and user stories. Design let us <strong style="color:#1B2A38;">align earlier</strong> on detail developers couldn't guess. It filled the <strong style="color:#1B2A38;">gap between high-level feature decisions and development</strong>.</span></div></div>
-  <div style="display:flex;gap:18px;max-width:44em;margin:0 0 22px;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#8DA9C4;flex:none;padding-top:2px;">02</span><div><span style="display:block;font-size:15px;font-weight:700;color:#1B2A38;margin-bottom:4px;">A missing middle step</span><span style="font-size:15px;color:#46586A;line-height:1.65;">Ideally there would have been a <strong style="color:#1B2A38;">middle step</strong>, more user testing and detailed feasibility alignment, rather than going prototype → contract → build. Part startup reality, part outside my influence at the time.</span></div></div>
-  <div style="display:flex;gap:18px;max-width:44em;margin:0;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#8DA9C4;flex:none;padding-top:2px;">03</span><div><span style="display:block;font-size:15px;font-weight:700;color:#1B2A38;margin-bottom:4px;">Carried into the next feature</span><span style="font-size:15px;color:#46586A;line-height:1.65;">On the next feature I asked for <strong style="color:#1B2A38;">user-story collaboration and agreement on the most crucial requirements from the start</strong>. See <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2, Verification Assignment Matrix</a>.</span></div></div>
+ <!-- SECTION 04: BACKGROUND -->
+ <div id="s05" data-screen-label="04 Background" style="margin:0 0 36px;scroll-margin-top:96px;">
+  <h2 style="font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#24395C;margin:0;padding-top:14px;border-top:1px solid #E4EBF2;">04 · Background</h2>
  </div>
 
- <div style="margin:0 0 28px;">
-  <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Official docs ↗</a>
-  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:#6E7F8D;line-height:1.5;max-width:44em;margin:12px 0 0;">Official docs open <strong style="color:#1B2A38;">Altium 365</strong>'s documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so the feature is now documented there. Altium documents it on CubeSat subsystems and a wing anti-ice system.</p>
- </div>
- <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 48px;padding-top:24px;border-top:1px solid #DBE3EB;">
-  <a href="https://petrakuhnle.github.io/portfolio/verification_matrix" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 2 · Verification Assignment Matrix →</a>
-  <a href="https://petrakuhnle.github.io/portfolio/review_center" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Use Case 3 · Review Center →</a>
+ <div style="background:#FFFFFF;border:1px solid #DDE5EE;padding:clamp(26px,6vw,44px) clamp(22px,5vw,52px) 60px;margin:0 0 104px;">
+
+  <div>
+   <h3 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#46648C;margin:0 0 8px;">Experience</h3>
+   <div style="padding:22px 0;border-bottom:1px solid #E4EBF2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">Product Designer · Independent Practice</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2025–now</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">Navigator, an EU AI Act compliance tool · design evaluation of a SysML v2 modeling tool · Berlin, Germany</p>
+   </div>
+   <div style="padding:22px 0;border-bottom:1px solid #E4EBF2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">Accessibility Facilitator · Autismus Leben Berlin gGmbH</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2024–25</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">Enabling autistic adults to use mobile, tablet and desktop tools independently · Berlin, Germany</p>
+   </div>
+   <div style="padding:22px 0;border-bottom:1px solid #E4EBF2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">User Experience Researcher · EIGENSONNE</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2023</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">User research on the website and customer upload funnel · role ended with the company's insolvency in the 2023 German solar downturn · Berlin, Germany</p>
+   </div>
+   <div style="padding:22px 0;border-bottom:1px solid #E4EBF2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">Product Designer · Valispace (acquired by Altium)</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2022–23</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">Promoted into the new product team, working with PMs, dev leads, CTO and CPO · Bremen, Germany</p>
+   </div>
+   <div style="padding:22px 0;border-bottom:1px solid #E4EBF2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">UX Designer · Valispace (acquired by Altium)</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2021–22</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">First designer, hired six years into the company · sole designer through the 20 to 50 headcount phase · Bremen, Germany</p>
+   </div>
+   <div style="padding:22px 0;border-bottom:1px solid #E4EBF2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">Creative Media &amp; Pro Apps, Specialized Programs Support · Apple</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2019–20</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">Senior technical tier for Logic Pro and Final Cut Pro · European headquarters, Cork, Ireland</p>
+   </div>
+   <div style="padding:22px 0 0;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+     <span style="font-weight:700;font-size:15.5px;line-height:1.4;color:#24395C;">Apple Media Products, Advisor then Senior Advisor · Apple</span>
+     <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;white-space:nowrap;">2016–19</span>
+    </div>
+    <p style="font-size:13px;color:#556674;line-height:1.65;margin:6px 0 0;">Escalation tier · reproducing reported issues and documenting findings for engineering · Cork, Ireland</p>
+   </div>
+  </div>
+
+  <h3 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#46648C;margin:40px 0 16px;">Education</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px 40px;">
+   <span style="display:block;font-size:15px;font-weight:600;line-height:1.5;color:#24395C;">BFA · Multimedia &amp; Interactive Installations <span style="font-weight:400;">(experience, flow)</span><span style="display:block;font-size:12px;font-weight:400;color:#556674;margin-top:4px;">Art Academy Minerva, Groningen, NL</span></span>
+   <span style="display:block;font-size:15px;font-weight:600;line-height:1.5;color:#24395C;">BA · Psychology of Creativity &amp; Perception <span style="font-weight:400;">(art therapy)</span><span style="display:block;font-size:12px;font-weight:400;color:#556674;margin-top:4px;">HAN University, Nijmegen, NL</span></span>
+  </div>
+
+  <h3 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#46648C;margin:40px 0 16px;">Languages</h3>
+  <span style="display:block;font-size:15px;color:#24395C;"><strong style="font-weight:600;">German</strong> (native) · <strong style="font-weight:600;">English</strong> (fluent) · <strong style="font-weight:600;">Dutch</strong> (fluent)</span>
+
+  <h3 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#46648C;margin:40px 0 16px;">Recognition</h3>
+  <div style="display:flex;flex-direction:column;gap:14px;">
+   <p style="font-size:14.5px;color:#4A5E79;line-height:1.6;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#24395C;font-weight:500;">2026</span>, Concept &amp; Prototype, "Navigator" <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:#24395C;background:#DCE8F4;padding:4px 9px;border-radius:3px;">Mozilla Fellowship (shortlisted)</span></p>
+   <p style="font-size:14.5px;color:#4A5E79;line-height:1.6;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#24395C;font-weight:500;">2022</span>, National Health Insurance Hackathon Germany <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:#24395C;background:#DCE8F4;padding:4px 9px;border-radius:3px;">Hack&amp;Con Most Innovative App Concept (won)</span></p>
+   <p style="font-size:14.5px;color:#4A5E79;line-height:1.6;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#24395C;font-weight:500;">2018</span>, Teamwork, Results, Innovation <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:#24395C;background:#DCE8F4;padding:4px 9px;border-radius:3px;">AppleCare Excellence Award, Apple (won)</span></p>
+   <p style="font-size:14.5px;color:#4A5E79;line-height:1.6;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#24395C;font-weight:500;">2015</span>, Original Concept, Interactive Multimedia Installation <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:#24395C;background:#DCE8F4;padding:4px 9px;border-radius:3px;">George Verberg grant (nominated)</span></p>
+  </div>
+
+  <h3 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#46648C;margin:40px 0 16px;">Certifications</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;">
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">UX / UI Design</span>
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Product</span>
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">UX Research</span>
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Media Design &amp; Development, CIT</span>
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Data Analysis</span>
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Python</span>
+   <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Web Accessibility, W3Cx</span>
+  </div>
+
+  <h3 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#46648C;margin:40px 0 16px;">Skills</h3>
+  <div style="display:flex;flex-direction:column;gap:20px;">
+
+   <div>
+    <h4 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#46648C;margin:0 0 12px;">Research &amp; synthesis</h4>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">User research</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">User interviews</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Usability testing</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">IA &amp; card sorting</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Research synthesis</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Data analysis &amp; visualisation</span>
+    </div>
+   </div>
+
+   <div>
+    <h4 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#46648C;margin:0 0 12px;">Discovery &amp; definition</h4>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Discovery &amp; validation</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Problem framing</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">User profiles</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Jobs to be done</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">User journeys</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">End-to-end user flows</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">User stories</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Product team collaboration</span>
+    </div>
+   </div>
+
+   <div>
+    <h4 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#46648C;margin:0 0 12px;">Design &amp; prototyping</h4>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">UX / UI design</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Interaction design</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Visual design principles</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Rapid prototyping</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Design systems</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Reusable components &amp; patterns</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Wireframes</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Low-fi &amp; hi-fi prototyping</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Interactive prototyping</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Accessibility</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Figma (advanced)</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Sketch</span>
+    </div>
+   </div>
+
+   <div>
+    <h4 style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#46648C;margin:0 0 12px;">AI &amp; code · expanding</h4>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">Figma Make &amp; Claude Design, opportunities &amp; limits</span>
+     <span style="display:inline-block;font-size:13px;color:#24395C;padding:5px 10px;border-radius:3px;background:#EAF1F8;">HTML · CSS · JS · Python, learning the core concepts to bring AI into design</span>
+    </div>
+   </div>
+
+  </div>
+
  </div>
 
- <p style="font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 40px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+ <!-- SECTION 05: CONTACT -->
+ <div id="s06" data-screen-label="05 Contact" style="margin:0 0 28px;scroll-margin-top:96px;">
+  <h2 style="font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#24395C;margin:0;padding-top:14px;border-top:1px solid #E4EBF2;">05 · Contact</h2>
+ </div>
+ <p style="font-size:16px;color:#24395C;margin:20px 0 28px;font-weight:700;">Open to roles in Berlin or remote.</p>
+ <div style="display:flex;flex-wrap:wrap;gap:10px 32px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;margin-bottom:22px;">
+  <a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a>
+  <a href="https://www.linkedin.com/in/petrakuhnle" target="_blank" rel="noopener">LinkedIn ↗</a>
+ </div>
 
- <div style="display:flex;justify-content:space-between;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;">
-  <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#46586A;">← Portfolio</a></span>
+ </main>
+
+ <div style="display:flex;justify-content:space-between;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#556674;">
+  <span>Petra Kühnle · Senior Product Designer</span><span>Berlin</span>
  </div>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showShippedImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPostAi&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;roleTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Senior product designer&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;roleDetail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;for real human–software interaction, improving workflows in complex, highly regulated fields through software.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;navColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#7E9AA6&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#7E9AA6&quot;,&quot;#6E8E9C&quot;,&quot;#5B84B1&quot;,&quot;#4E8C7D&quot;,&quot;#24395C&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#46648C&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#46648C&quot;,&quot;#5B84B1&quot;,&quot;#4E8C7D&quot;,&quot;#46648C&quot;,&quot;#55A868&quot;],&quot;section&quot;:&quot;Theme&quot;}}">
 class Component extends DCLogic {
+ componentDidMount() {
+  var ids = ['s00','s01','s02','s04','s05','s06'];
+  var nav = document.querySelector('nav');
+  this._onScroll = function() {
+   var active = ids[0];
+   for (var i = 0; i < ids.length; i++) {
+    var el = document.getElementById(ids[i]);
+    if (el && el.getBoundingClientRect().top <= 120) active = ids[i];
+   }
+   ids.forEach(function(id) {
+    var a = document.querySelector('[data-navlink="' + id + '"]');
+    if (!a) return;
+    var on = id === active;
+    a.style.color = on ? '#24395C' : '#4A5E79';
+    a.style.fontWeight = on ? '500' : '400';
+    if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
+   });
+   if (nav) nav.style.boxShadow = window.scrollY > 40 ? '0 4px 12px rgba(0,0,0,.06)' : 'none';
+  };
+  window.addEventListener('scroll', this._onScroll, { passive: true });
+  this._onScroll();
+ }
+ componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
  renderVals() {
   return {
-   showShippedImage: this.props.showShippedImage ?? true,
-   showPostAi: this.props.showPostAi ?? true,
+   roleTitle: this.props.roleTitle ?? 'Senior product designer',
+   roleDetail: this.props.roleDetail ?? 'for real human–software interaction, improving workflows in complex, highly regulated fields through software.',
+   navColor: this.props.navColor ?? '#7E9AA6'
   };
  }
 }
