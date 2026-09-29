@@ -21,14 +21,14 @@
  :root{--gutter: clamp(20px, 6vw, 80px);--maxw: 1080px;}
  @media(min-width:1024px){:root{--gutter: clamp(150px, 17vw, 360px);}}
  html{scroll-behavior:smooth;}
- body{margin:0;background:#F5F6F4;color:#24395C;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:tabular-nums;}
+ body{margin:0;background:#FFFFFF;color:#24395C;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:tabular-nums;}
  h1,h2,p{text-wrap:pretty;}
  a{color:#3A5C99;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:rgba(58,92,153,.4);transition:color .15s,text-decoration-color .15s;}
  a:hover{color:#24395C;text-decoration-color:currentColor;}
  a:focus-visible,button:focus-visible{outline:2px solid #24395C;outline-offset:2px;border-radius:2px;}
- ::selection{background:#24395C;color:#F5F6F4;}
+ ::selection{background:#24395C;color:#FFFFFF;}
  .skip{position:absolute;left:-9999px;top:0;}
- .skip:focus{position:fixed;left:12px;top:12px;z-index:100;background:#24395C;color:#F5F6F4;padding:10px 16px;font-size:13px;text-decoration:none;}
+ .skip:focus{position:fixed;left:12px;top:12px;z-index:100;background:#24395C;color:#FFFFFF;padding:10px 16px;font-size:13px;text-decoration:none;}
  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}a{transition:none;}}
 </style>
 </helmet>
@@ -37,7 +37,7 @@
 
  <a class="skip" href="#s00">Skip to content</a>
 
- <nav aria-label="Sections" style="position:sticky;top:0;z-index:10;background:rgba(245,246,244,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 0;box-sizing:border-box;width:100vw;">
+ <nav aria-label="Sections" style="position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 0;box-sizing:border-box;width:100vw;">
   <div style="display:flex;justify-content:flex-start;flex-wrap:wrap;gap:8px 28px;font-size:13.5px;max-width:var(--maxw);margin:0 auto;padding:16px var(--gutter);box-sizing:border-box;">
    <a href="#c01" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c01">01 Impact</a>
    <a href="#c02" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c02">02 Shipped</a>
@@ -87,12 +87,12 @@
 
  </div>
 
- <div style="background:#FFFFFF;border-top:1px solid #DCDFDD;border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 96px;padding:64px calc(50vw - 50%);">
+ <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
   <div id="c01" data-screen-label="01 Impact" style="scroll-margin-top:96px;">
    <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">01</span>Impact</p>
    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin:0 0 40px;">
-    <div style="padding:28px;background:#F5F6F4;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Six-figure contract</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">one of three features that won the deal</span></div>
-    <div style="padding:28px;background:#F5F6F4;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">kept after the Altium acquisition</span></div>
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Six-figure contract</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">one of three features that won the deal</span></div>
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">kept after the Altium acquisition</span></div>
    </div>
    <p style="font-size:16px;color:#4A5E79;max-width:40em;margin:0 0 18px;line-height:1.7;">After I started the company's first UX practice, discovery through <strong style="color:#24395C;font-weight:600;">interviews, journeys and prototypes</strong> became a normal way of working. The company moved toward <strong style="color:#24395C;font-weight:600;">product-led</strong> decisions.</p>
    <p style="font-size:16px;color:#4A5E79;max-width:40em;margin:0;line-height:1.7;">Because I <strong style="color:#24395C;font-weight:600;">had to design what I was told and show it back to the same experts a week later</strong>, I paid closer attention than listening alone allows. Later I caught a detail that <strong style="color:#24395C;font-weight:600;">prevented a development refactor</strong>.</p>
@@ -117,11 +117,11 @@
   <p style="font-size:13px;line-height:1.6;color:#556674;margin:16px 0 0;">The states used to manage and track interdependent changes</p>
  </div>
 
- <div style="background:#FFFFFF;border-top:1px solid #DCDFDD;border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 96px;padding:64px calc(50vw - 50%);">
+ <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
   <div id="c03" data-screen-label="03 How it works" style="scroll-margin-top:96px;">
    <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">03</span>How it works</p>
-   <p style="max-width:26em;font-size:26px;font-weight:400;line-height:1.35;letter-spacing:-.01em;color:#24395C;margin:0 0 40px;">A change on the Master flags every Follower for its owner to <strong style="font-weight:700;">apply or reject, with the decision logged.</strong></p>
-   <div style="background:#F5F6F4;padding:32px;margin:0 0 40px;width:fit-content;max-width:100%;box-sizing:border-box;">
+   <p style="max-width:26em;font-size:26px;font-weight:400;line-height:1.35;letter-spacing:-.01em;color:#24395C;margin:0 0 40px;">A change on the Master flags every Follower. Its owner <strong style="font-weight:700;">applies or rejects it, and the decision is logged.</strong></p>
+   <div style="background:#FFFFFF;padding:32px;margin:0 0 40px;width:fit-content;max-width:100%;box-sizing:border-box;">
     <svg viewBox="0 0 360 132" style="display:block;width:100%;max-width:440px;height:auto;" font-family="JetBrains Mono">
      <line x1="104" y1="66" x2="228" y2="24" stroke="#4C8A5F" stroke-width="1.8"></line>
      <line x1="104" y1="66" x2="228" y2="66" stroke="#C9A227" stroke-width="1.8"></line>
@@ -134,9 +134,9 @@
      <rect x="228" y="94" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="113" font-size="9.5" fill="#24395C">Follower · rejected</text>
     </svg>
    </div>
-   <p style="font-size:16px;color:#4A5E79;max-width:42em;margin:0 0 40px;line-height:1.7;">A change on the Master reaches every Follower automatically, as a flag to review, not as a silent update. A key decision was to allow <strong style="color:#24395C;font-weight:600;">different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong style="color:#24395C;font-weight:600;">discuss changes and decisions in place</strong>.</p>
+   <p style="font-size:16px;color:#4A5E79;max-width:42em;margin:0 0 40px;line-height:1.7;">A change on the Master reaches every Follower automatically, as a flag to review. A key decision was to allow <strong style="color:#24395C;font-weight:600;">different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong style="color:#24395C;font-weight:600;">discuss changes and decisions in place</strong>.</p>
    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
-    <div style="padding:28px;background:#F5F6F4;">
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;">
      <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:16px;">Before · one possibility</span>
      <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:#556674;line-height:1.5;">
       <span>Decision in a meeting</span><span style="color:#A9B0B6;">↓</span>
@@ -145,7 +145,7 @@
       <span>Updated by hand, <strong style="color:#24395C;font-weight:600;">or missed</strong></span>
      </div>
     </div>
-    <div style="padding:28px;background:#F5F6F4;">
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;">
      <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:16px;">After</span>
      <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:#24395C;line-height:1.5;">
       <span>Master edited</span><span style="color:#A9B0B6;">↓</span>
@@ -162,10 +162,10 @@
   <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">04</span>Process · first designer in a new domain</p>
   <div style="background:#FFFFFF;border:1px solid #DCDFDD;padding:28px;margin:0 0 40px;">
    <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;">
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">01</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Interviews · pro users</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">02</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Notes · stories · journey</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">03</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Wireframes → hi-fi</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">04</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Testing · experts &amp; users</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">01</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Interviews · pro users</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">02</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Notes · stories · journey</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">03</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Wireframes → hi-fi</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
+    <div style="flex:1 1 140px;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">04</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Testing · experts &amp; users</span></div>
    </div>
    <p style="font-size:13px;line-height:1.6;color:#556674;margin:18px 0 0;">↺ Iterative process · fast prototyping, frequent testing</p>
   </div>
@@ -178,15 +178,15 @@
   <p style="font-size:16px;color:#4A5E79;max-width:42em;line-height:1.7;margin:0;">The constraint: the Master's editor, the Follower's owner and the manager signing off need different things from one table, each without extra cognitive load. We solved this by showing the options to assign, review and comment where they are needed. → <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2</a></p>
  </div>
 
- <div style="background:#FFFFFF;border-top:1px solid #DCDFDD;border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 96px;padding:64px calc(50vw - 50%);">
+ <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
   <div id="c05" data-screen-label="05 Decisions" style="scroll-margin-top:96px;">
    <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">05</span>Key design decisions</p>
    <p style="max-width:40em;font-size:16px;color:#4A5E79;line-height:1.7;margin:0 0 40px;">My job was to ask the specific questions: what does the engineer working on a Follower need to see, what would frustrate them, what does the Master's editor need versus the Follower's owner? Same user focus, but for <strong style="color:#24395C;font-weight:600;">different people in different situations</strong>. I build from the user and visual side so developers can focus on the technical side, and we meet in the middle. This role-and-view thinking is taken furthest in <a href="https://petrakuhnle.github.io/portfolio/review_center">Use Case 3, Review Center</a>.</p>
    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Flags, not silent updates</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">only the owner applies, rejects or edits, nothing lands unreviewed</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Discussion in place</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">decided where the work is, not lost in email</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Readable by every role</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">managers signing off, not only engineers</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Prototype as alignment</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">experts, users and deciders aligned before build</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Flags, not silent updates</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">only the owner applies, rejects or edits, nothing lands unreviewed</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Discussion in place</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">decided where the work is</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Readable by every role</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">engineers and managers signing off</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Prototype as alignment</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">experts, users and deciders aligned before build</span></div>
    </div>
   </div>
  </div>
