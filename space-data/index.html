@@ -12,175 +12,34 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#1F1F1F;
-  --body:#3C4043;
-  --label:#C79E80;
-  --link:#1A73E8;
-  --rule:#E6E6E6;
-  --gutter:clamp(24px,6vw,72px);
-}
-
-*{box-sizing:border-box;}
-
-html{scroll-behavior:smooth;}
-
-body{
-  margin:0;
-  background:#fff;
-  color:var(--ink);
-  font-family:'Roboto',Arial,sans-serif;
-  font-size:20px;
-  line-height:1.72;
-  -webkit-font-smoothing:antialiased;
-}
-
-.page{max-width:1240px;margin:0 auto;padding:0 var(--gutter) 120px;}
-
-p{margin:0 0 1.35em;max-width:34em;color:var(--body);}
-p:last-child{margin-bottom:0;}
-
-a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;}
-a:hover{text-decoration-thickness:2px;}
-a:focus-visible{outline:2px solid var(--link);outline-offset:3px;}
-
-.skip{position:absolute;left:-9999px;}
-.skip:focus{position:fixed;left:14px;top:14px;z-index:50;background:var(--ink);color:#fff;padding:10px 18px;font-size:15px;text-decoration:none;}
-
-/* two-column spread: metadata left, content right */
-.spread{display:grid;grid-template-columns:1fr;gap:32px;}
-@media(min-width:900px){
-  .spread{grid-template-columns:270px minmax(0,1fr);gap:0 80px;align-items:start;}
-}
-
-.meta{margin:0;}
-.meta dt{
-  font-size:13px;
-  line-height:1.4;
-  letter-spacing:.075em;
-  text-transform:uppercase;
-  color:var(--label);
-  margin:0 0 6px;
-}
-.meta dd{
-  margin:0 0 30px;
-  font-size:17px;
-  line-height:1.5;
-  color:var(--ink);
-}
-.meta dd:last-child{margin-bottom:0;}
-.meta dd a{font-size:17px;}
-
-.label{
-  font-size:13px;
-  line-height:1.4;
-  letter-spacing:.075em;
-  text-transform:uppercase;
-  color:var(--label);
-  margin:0 0 6px;
-}
-
-/* masthead */
-.masthead{padding:76px 0 0;}
-.wordmark{
-  font-size:clamp(34px,5vw,46px);
-  font-weight:700;
-  letter-spacing:-.01em;
-  line-height:1.1;
-  margin:0 0 56px;
-}
-.masthead .lead p{font-size:22px;line-height:1.68;max-width:32em;}
-
-/* sections */
-.section{padding:104px 0 0;}
-h2{
-  font-size:clamp(23px,2.6vw,28px);
-  font-weight:700;
-  line-height:1.3;
-  letter-spacing:-.005em;
-  margin:0 0 20px;
-  max-width:24em;
-}
-.intro p{font-size:20px;}
-
-/* work records */
-.record{padding:64px 0 0;}
-.record + .record{margin-top:64px;border-top:1px solid var(--rule);}
-.record h3{
-  font-size:24px;
-  font-weight:700;
-  line-height:1.3;
-  margin:0 0 14px;
-}
-.record h3 a{color:var(--ink);text-decoration:none;}
-.record h3 a:hover{color:var(--link);}
-.record .links{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:17px;margin-top:6px;}
-.record .links a{font-size:17px;}
-
-figure{margin:36px 0 0;}
-figure img{display:block;width:100%;height:auto;max-width:760px;}
-
-/* practice */
-.practice-item{padding:36px 0 0;}
-.practice-item + .practice-item{margin-top:36px;border-top:1px solid var(--rule);}
-.practice-item h3{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 10px;}
-
-/* quotes */
-.quote{margin:0;}
-.quote + .quote{margin-top:48px;padding-top:48px;border-top:1px solid var(--rule);}
-.quote blockquote{margin:0 0 18px;font-size:23px;line-height:1.55;font-weight:400;max-width:26em;color:var(--ink);}
-.quote figcaption{font-size:16px;line-height:1.5;color:var(--body);}
-.quote figcaption b{display:block;font-weight:500;color:var(--ink);}
-
-/* background */
-.entry{padding:30px 0;border-top:1px solid var(--rule);}
-.entry:first-of-type{border-top:none;padding-top:0;}
-.entry h4{font-size:19px;font-weight:700;line-height:1.4;margin:0 0 6px;}
-.entry p{font-size:17px;line-height:1.6;margin:0;max-width:40em;}
-.entry .label{margin-bottom:8px;}
-@media(min-width:900px){
-  .entry .label{margin:0;padding-top:.45em;}
-}
-
-.block{padding-top:52px;}
-.block .value{font-size:17px;line-height:1.75;max-width:44em;color:var(--ink);margin:0;}
-.stack{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.7;}
-.stack li{padding:3px 0;}
-.stack li i{font-style:normal;color:var(--body);margin-right:14px;}
-
-/* contact */
-.contact{padding:104px 0 0;}
-.contact p{font-size:26px;line-height:1.45;color:var(--ink);margin:0 0 26px;}
-.contact .links{display:flex;flex-wrap:wrap;gap:10px 32px;font-size:18px;}
-
-.colophon{margin-top:104px;padding-top:22px;border-top:1px solid var(--rule);font-size:14px;color:#80868B;}
-
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="nav.js" defer></script>
 </head>
 <body>
-
 <a class="skip" href="#work">Skip to the work</a>
-
 <div class="page">
+
+<nav class="nav" aria-label="Sections">
+ <ul>
+  <li><a href="#work">Shipped work</a></li>
+  <li><a href="#practice">UX founding work</a></li>
+  <li><a href="#references">References</a></li>
+  <li><a href="#background">Background</a></li>
+  <li><a href="#contact">Contact</a></li>
+ </ul>
+</nav>
 
 <header class="masthead">
   <h1 class="wordmark">Petra Kühnle</h1>
   <div class="spread">
     <dl class="meta">
-      <dt>Role</dt>
-      <dd>Senior Product Designer</dd>
-      <dt>Location</dt>
-      <dd>Berlin</dd>
-      <dt>Open to</dt>
-      <dd>Roles in Berlin or remote</dd>
-      <dt>Contact</dt>
-      <dd><a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a></dd>
+      <dt>Role</dt><dd>Senior Product Designer</dd>
+      <dt>Location</dt><dd>Berlin</dd>
+      <dt>Contact</dt><dd><a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a></dd>
     </dl>
     <div class="lead">
       <p>First and sole designer at Valispace, a data-rich requirements and systems engineering platform for satellite, aircraft and launch vehicle teams.</p>
-      <p>The features are in the Requirements &amp; Systems Portal of Altium 365 <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal" target="_blank" rel="noopener">today</a>. I built the practice from zero and hired my successor.</p>
+      <p>The features are in the Requirements &amp; Systems Portal of Altium 365 <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal" target="_blank" rel="noopener">today</a> after acquisition of Valispace end 2023. I built the practice from zero and hired my successor.</p>
       <p>Before that, four years at Apple, in daily contact with users and deciding whether a problem was a bug or the interface.</p>
     </div>
   </div>
@@ -200,20 +59,15 @@ figure img{display:block;width:100%;height:auto;max-width:760px;}
   <article class="record">
     <div class="spread">
       <dl class="meta">
-        <dt>Context</dt>
-        <dd>Valispace, 2021</dd>
-        <dt>Status</dt>
-        <dd>Shipped, Altium 365</dd>
-        <dt>Documentation</dt>
-        <dd><a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Master–Follower feature</a></dd>
+        <dt>Context</dt><dd>Valispace, 2021</dd>
+        <dt>Status</dt><dd>Shipped, Altium 365</dd>
+        <dt>Documentation</dt><dd><a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Master–Follower feature</a></dd>
       </dl>
       <div>
-        <h3><a href="https://petrakuhnle.github.io/portfolio/master_follower">Master–Follower</a></h3>
+        <h3><a href="master_follower.html">Master–Follower</a></h3>
         <p>Requirements shared across projects, traceable as changes propagate. Validated with internal and external experts.</p>
-        <div class="links"><a href="https://petrakuhnle.github.io/portfolio/master_follower">Read the use case</a></div>
-        <figure>
-          <a href="https://petrakuhnle.github.io/portfolio/master_follower"><img src="example1.svg" alt="Diagram of Master–Follower propagation: one master requirement with changes flowing to follower copies in separate projects"></a>
-        </figure>
+        <div class="links"><a href="master_follower.html">Read the use case</a></div>
+        <figure><a href="master_follower.html"><img src="example1.svg" alt="Diagram of Master–Follower propagation: one master requirement with changes flowing to follower copies in separate projects"></a></figure>
       </div>
     </div>
   </article>
@@ -221,208 +75,12 @@ figure img{display:block;width:100%;height:auto;max-width:760px;}
   <article class="record">
     <div class="spread">
       <dl class="meta">
-        <dt>Context</dt>
-        <dd>Valispace, 2021</dd>
-        <dt>Status</dt>
-        <dd>Shipped, Altium 365</dd>
-        <dt>Documentation</dt>
-        <dd><a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Verification assignment</a></dd>
+        <dt>Context</dt><dd>Valispace, 2021</dd>
+        <dt>Status</dt><dd>Shipped, Altium 365</dd>
+        <dt>Documentation</dt><dd><a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Verification assignment</a></dd>
       </dl>
       <div>
-        <h3><a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Assignment Verification Matrix</a></h3>
+        <h3><a href="verification_matrix.html">Assignment Verification Matrix</a></h3>
         <p>Months of research and prototype testing with systems engineers. One view of what is verified and what is missing.</p>
-        <div class="links"><a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Read the use case</a></div>
-        <figure>
-          <a href="https://petrakuhnle.github.io/portfolio/verification_matrix"><img src="example2.svg" alt="Verification assignment matrix showing requirements against verification methods, with unassigned cells visible"></a>
-        </figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="record">
-    <div class="spread">
-      <dl class="meta">
-        <dt>Context</dt>
-        <dd>Valispace, 2021</dd>
-        <dt>Status</dt>
-        <dd>Shipped, Altium 365</dd>
-        <dt>Documentation</dt>
-        <dd><a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Review Center</a></dd>
-      </dl>
-      <div>
-        <h3><a href="https://petrakuhnle.github.io/portfolio/review_center">Review Center</a></h3>
-        <p>Moderator, reviewer, approver: one flow from setup through rating to sign-off, with regulatory traceability.</p>
-        <div class="links"><a href="https://petrakuhnle.github.io/portfolio/review_center">Read the use case</a></div>
-        <figure>
-          <a href="https://petrakuhnle.github.io/portfolio/review_center"><img src="example3.svg" alt="Diagram of the three Review Center roles and how a review moves from setup through rating to approval"></a>
-        </figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="record">
-    <div class="spread">
-      <dl class="meta">
-        <dt>Context</dt>
-        <dd>Independent, 2025–26</dd>
-        <dt>Status</dt>
-        <dd>Live</dd>
-        <dt>Application</dt>
-        <dd><a href="https://petrakuhnle.github.io/Music-ai-compliance-navigator/" target="_blank" rel="noopener">Open Navigator</a></dd>
-      </dl>
-      <div>
-        <h3><a href="https://petrakuhnle.github.io/portfolio/navigator.html">Navigator</a></h3>
-        <p>EU AI Act rules turned into a clear answer on what applies. Discovery, prototype and live app, built with AI tools.</p>
-        <div class="links"><a href="https://petrakuhnle.github.io/portfolio/navigator.html">Read the case study</a></div>
-        <figure>
-          <a href="https://petrakuhnle.github.io/portfolio/navigator.html"><img src="navigator_screenshot.png" alt="Navigator interface showing an EU AI Act rule translated into a music and AI use case"></a>
-        </figure>
-      </div>
-    </div>
-  </article>
-</section>
-
-<section class="section" id="practice">
-  <div class="spread">
-    <p class="label">UX founding work</p>
-    <div class="intro">
-      <h2>How I introduced UX to an engineering-led startup</h2>
-      <p>Valispace, 2021–2023, as the company grew from 20 to 50 people.</p>
-
-      <div class="practice-item">
-        <h3>Show, don't tell</h3>
-        <p>Introduced user interviews and Figma prototyping in a company that had neither. Founded a cross-functional UX Guild for designers and developers.</p>
-      </div>
-      <div class="practice-item">
-        <h3>Design system foundations</h3>
-        <p>Set the design principles across product, API docs and marketing. Used tracked CPO/PM feedback in Jira to make the business case for design system foundations.</p>
-      </div>
-      <div class="practice-item">
-        <h3>From UX to Product</h3>
-        <p>Promoted onto the new product team with the CTO, CPO, PMs and dev leads. Mentored a UX intern and led the hire of a senior designer, still at Altium today.</p>
-      </div>
-      <div class="practice-item">
-        <h3>Owning systemic problems</h3>
-        <p>Took ownership of systemic problems no one had framed yet, bringing engineers, developers and end users into one conversation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="references">
-  <div class="spread">
-    <p class="label">References</p>
-    <div>
-      <figure class="quote">
-        <blockquote>She took the initiative to start a cross-functional UX guild that brought designers and developers together to improve the overall user experience.</blockquote>
-        <figcaption><b>Louise Lindblad</b>Cofounder, Valispace (now Altium)</figcaption>
-      </figure>
-      <figure class="quote">
-        <blockquote>In a very short time she learned a previously unknown field by talking to users and iterating fast with them on mockups and prototypes.</blockquote>
-        <figcaption><b>Florian Reger</b>Solution Management, Valispace (now Altium)</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="background">
-  <div class="spread">
-    <p class="label">Background</p>
-    <div>
-
-      <div class="entry spread">
-        <p class="label">2025–now</p>
-        <div>
-          <h4>Product Designer, Independent Practice</h4>
-          <p>Navigator, EU AI Act requirements for non-lawyers · System Forge, onboarding for a SysML v2 modeling tool · Berlin (remote)</p>
-        </div>
-      </div>
-
-      <div class="entry spread">
-        <p class="label">2021–23</p>
-        <div>
-          <h4>UX/Product Designer, Valispace GmbH (acquired by Altium)</h4>
-          <p>Sole designer, 20 to 50 employees · three shipped features · Lisbon and Bremen</p>
-        </div>
-      </div>
-
-      <div class="entry spread">
-        <p class="label">2024–25</p>
-        <div>
-          <h4>Accessibility Facilitator, ALB gGmbH</h4>
-          <p>Coaching autistic adults on technology and digital access · Berlin</p>
-        </div>
-      </div>
-
-      <div class="entry spread">
-        <p class="label">2023</p>
-        <div>
-          <h4>UX Researcher, EIGENSONNE GmbH</h4>
-          <p>Usability and accessibility of a solar-sales website · Berlin</p>
-        </div>
-      </div>
-
-      <div class="entry spread">
-        <p class="label">2016–20</p>
-        <div>
-          <h4>Apple Media &amp; Pro Apps Advisor, Apple EMEA HQ</h4>
-          <p>Promoted twice, Tier 1 to Tier 4 · separating UX issues from bugs · Cork</p>
-        </div>
-      </div>
-
-      <div class="block spread">
-        <p class="label">Skills</p>
-        <p class="value">Data-rich applications · End-to-end product design · UX research &amp; usability testing · Jobs-to-be-done · Hi-fi prototyping (Figma) · Design system foundations · Stakeholder alignment · Accessibility (WCAG) · Python</p>
-      </div>
-
-      <div class="block spread">
-        <p class="label">Recognition</p>
-        <ul class="stack">
-          <li><i>2026</i>Navigator · Mozilla Fellowship, nominated (through round 1)</li>
-          <li><i>2022</i>Hack&amp;Con · Most Innovative App Concept (won)</li>
-          <li><i>2018</i>Apple · AppleCare Excellence Award (won)</li>
-        </ul>
-      </div>
-
-      <div class="block spread">
-        <p class="label">Education</p>
-        <ul class="stack">
-          <li>BFA · Multimedia (Fine Art) — Art Academy Minerva, Groningen, NL</li>
-          <li>BA · Psychology of Creativity and Perception (Art Therapy) — HAN University, Nijmegen, NL</li>
-        </ul>
-      </div>
-
-      <div class="block spread">
-        <p class="label">Certificates</p>
-        <p class="value">Designing Complex Apps for Specialized Domains (NN/g) · UX/UI Design · UX Research · Digital Media Design &amp; Development (CIT) · Data Analysis &amp; Visualization (StackFuel) · Python (Stanford Code in Place &amp; StackFuel) · Introduction to Web Accessibility (W3Cx)</p>
-      </div>
-
-      <div class="block spread">
-        <p class="label">Languages</p>
-        <p class="value">German (native) · English (fluent) · Dutch (fluent)</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="spread">
-    <p class="label">Contact</p>
-    <div>
-      <p>Open to roles in Berlin or remote.</p>
-      <div class="links">
-        <a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a>
-        <a href="https://www.linkedin.com/in/petrakuhnle" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<p class="colophon">Documentation links open the official Altium 365 docs.</p>
-
-</div>
-</body>
-</html>
+        <div class="links"><a href="verification_matrix.html">Read the use case</a></div>
+        <figure><a href="verification_matrix.html"><img src="example2.svg" alt="Verification assignment matrix showing requirements
