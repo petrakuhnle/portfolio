@@ -21,14 +21,14 @@
  :root{--gutter: clamp(20px, 6vw, 80px);--maxw: 1080px;}
  @media(min-width:1024px){:root{--gutter: clamp(150px, 17vw, 360px);}}
  html{scroll-behavior:smooth;}
- body{margin:0;background:#F5F6F4;color:#24395C;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:tabular-nums;}
+ body{margin:0;background:#FFFFFF;color:#24395C;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:tabular-nums;}
  h1,h2,p{text-wrap:pretty;}
  a{color:#3A5C99;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:rgba(58,92,153,.4);transition:color .15s,text-decoration-color .15s;}
  a:hover{color:#24395C;text-decoration-color:currentColor;}
  a:focus-visible,button:focus-visible{outline:2px solid #24395C;outline-offset:2px;border-radius:2px;}
- ::selection{background:#24395C;color:#F5F6F4;}
+ ::selection{background:#24395C;color:#FFFFFF;}
  .skip{position:absolute;left:-9999px;top:0;}
- .skip:focus{position:fixed;left:12px;top:12px;z-index:100;background:#24395C;color:#F5F6F4;padding:10px 16px;font-size:13px;text-decoration:none;}
+ .skip:focus{position:fixed;left:12px;top:12px;z-index:100;background:#24395C;color:#FFFFFF;padding:10px 16px;font-size:13px;text-decoration:none;}
  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}a{transition:none;}}
 </style>
 </helmet>
@@ -37,7 +37,7 @@
 
  <a class="skip" href="#s00">Skip to content</a>
 
- <nav aria-label="Sections" style="position:sticky;top:0;z-index:10;background:rgba(245,246,244,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 0;box-sizing:border-box;width:100vw;">
+ <nav aria-label="Sections" style="position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 0;box-sizing:border-box;width:100vw;">
   <div style="display:flex;justify-content:flex-start;flex-wrap:wrap;gap:8px 28px;font-size:13.5px;max-width:var(--maxw);margin:0 auto;padding:16px var(--gutter);box-sizing:border-box;">
    <a href="#c01" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c01">01 Impact</a>
    <a href="#c02" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c02">02 Shipped</a>
@@ -105,13 +105,13 @@
 
  </div>
 
- <div style="background:#FFFFFF;border-top:1px solid #DCDFDD;border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 96px;padding:64px calc(50vw - 50%);">
+ <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
   <div id="c01" data-screen-label="01 Impact" style="scroll-margin-top:96px;">
    <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">01</span>Impact</p>
    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
-    <div style="padding:28px;background:#F5F6F4;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Built in far less time</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">than the first feature, with requirements agreed in writing</span></div>
-    <div style="padding:28px;background:#F5F6F4;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">kept after the Altium acquisition</span></div>
-    <div style="padding:28px;background:#F5F6F4;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Users confirmed the fit</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">they told Solution Management we integrated their real workflow in a useful way</span></div>
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Built in far less time</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">than the first feature, with requirements agreed in writing</span></div>
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">kept after the Altium acquisition</span></div>
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Users confirmed the fit</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">they told Solution Management we integrated their real workflow in a useful way</span></div>
    </div>
   </div>
  </div>
@@ -135,11 +135,11 @@
   <p style="font-size:13px;line-height:1.6;color:#556674;margin:16px 0 0;">Several methods can apply to one requirement</p>
  </div>
 
- <div style="background:#FFFFFF;border-top:1px solid #DCDFDD;border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 96px;padding:64px calc(50vw - 50%);">
+ <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
   <div id="c03" data-screen-label="03 How it works" style="scroll-margin-top:96px;">
    <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">03</span>How it works</p>
    <p style="max-width:26em;font-size:26px;font-weight:400;line-height:1.35;letter-spacing:-.01em;color:#24395C;margin:0 0 40px;">The same matrix does two jobs: <strong style="font-weight:700;">a specialist focuses on one method, a manager sees the whole set.</strong></p>
-   <figure style="margin:0 0 40px;background:#F5F6F4;padding:32px;width:fit-content;max-width:100%;box-sizing:border-box;">
+   <figure style="margin:0 0 40px;background:#FFFFFF;border:1px solid #DCDFDD;padding:32px;width:fit-content;max-width:100%;box-sizing:border-box;">
     <svg viewBox="0 0 460 128" style="display:block;width:100%;max-width:460px;height:auto;" fill="none">
      <text x="0" y="14" font-size="11" font-weight="700" fill="#24395C" font-family="IBM Plex Sans">Engineer view</text>
      <g stroke="#DCDFDD" stroke-width="1.2">
@@ -167,7 +167,7 @@
     <figcaption style="font-size:13px;line-height:1.6;color:#556674;margin:18px 0 0;">Left: an engineer filters one method down a column. Right: a manager sees all methods across one requirement set. Same matrix, two views.</figcaption>
    </figure>
    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
-    <div style="padding:28px;background:#F5F6F4;">
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;">
      <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:16px;">Before</span>
      <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:#556674;line-height:1.5;">
       <span>Matrix in Excel</span><span style="color:#A9B0B6;">↓</span>
@@ -176,7 +176,7 @@
       <span><strong style="color:#24395C;font-weight:600;">Disconnected from requirements</strong></span>
      </div>
     </div>
-    <div style="padding:28px;background:#F5F6F4;">
+    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;">
      <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:16px;">After</span>
      <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:#24395C;line-height:1.5;">
       <span>Matrix in the software</span><span style="color:#A9B0B6;">↓</span>
@@ -193,14 +193,14 @@
   <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">04</span>Process · from workflow to MVP</p>
   <div style="background:#FFFFFF;border:1px solid #DCDFDD;padding:28px;margin:0 0 40px;">
    <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;">
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">01</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Interviews per role</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">02</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Notes · stories · journey</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">03</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Wireframes → hi-fi</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;background:#F5F6F4;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">04</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Testing · experts &amp; users</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">01</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Interviews per role</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">02</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Notes · stories · journey</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
+    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">03</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Wireframes → hi-fi</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
+    <div style="flex:1 1 140px;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">04</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Testing · experts &amp; users</span></div>
    </div>
    <p style="font-size:13px;line-height:1.6;color:#556674;margin:18px 0 0;">↺ Iterative process · fast prototyping, frequent testing</p>
   </div>
-  <div style="background:#F5F6F4;border-left:2px solid #24395C;padding:22px 26px;margin:0 0 40px;max-width:44em;box-sizing:border-box;">
+  <div style="background:#FFFFFF;border:1px solid #DCDFDD;border-left:2px solid #24395C;padding:22px 26px;margin:0 0 40px;max-width:44em;box-sizing:border-box;">
    <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:8px;">What was different here</span>
    <span style="font-size:15px;color:#4A5E79;line-height:1.65;">Must-have requirements were <strong style="color:#24395C;font-weight:600;">agreed in writing with the client before build</strong>, and I gradually pushed for others to write them too, so alignment rested on requirements, not designs alone. That set a tight <strong style="color:#24395C;font-weight:600;">MVP boundary</strong> and prevented refactoring.</span>
   </div>
@@ -211,26 +211,26 @@
    <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;"><span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Users</span><span style="flex:1 1 20em;font-size:15px;line-height:1.6;color:#4A5E79;"><strong style="color:#24395C;font-weight:600;">Verification engineers per method</strong> · managers reviewing status per set</span></div>
    <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;"><span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Constraints</span><span style="flex:1 1 20em;font-size:15px;line-height:1.6;color:#4A5E79;">regulated environment, decisions traceable · opposite needs, overview vs focus · complex enough to be useful, small enough to build</span></div>
   </div>
-  <p style="font-size:16px;color:#4A5E79;max-width:42em;line-height:1.7;margin:0;">The hard part wasn't the matrix, it was <strong style="color:#24395C;font-weight:600;">getting everyone to agree on what was Must-have</strong>. Applying the lesson from <a href="https://petrakuhnle.github.io/portfolio/master_follower">Use Case 1</a>, we decided, wrote and reviewed the Must-haves first, with design and requirements agreed with the client, from user journeys and wireframes to a hi-fi prototype that set the MVP and prevented development refactoring.</p>
+  <p style="font-size:16px;color:#4A5E79;max-width:42em;line-height:1.7;margin:0;">The hard part was <strong style="color:#24395C;font-weight:600;">getting everyone to agree on what was Must-have</strong>. Applying the lesson from <a href="https://petrakuhnle.github.io/portfolio/master_follower">Use Case 1</a>, we decided, wrote and reviewed the Must-haves first, with design and requirements agreed with the client, from user journeys and wireframes to a hi-fi prototype that set the MVP and prevented development refactoring.</p>
  </div>
 
- <div style="background:#FFFFFF;border-top:1px solid #DCDFDD;border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 96px;padding:64px calc(50vw - 50%);">
+ <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
   <div id="c05" data-screen-label="05 Decisions" style="scroll-margin-top:96px;">
    <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">05</span>Key design decisions</p>
    <p style="max-width:40em;font-size:16px;color:#4A5E79;line-height:1.7;margin:0 0 40px;">The central question I kept asking: <strong style="color:#24395C;font-weight:600;">which job role needs which view and filter?</strong> An engineer working on one verification method filters per method; a decision maker reviewing a requirement set filters for its status. Same matrix, different scenarios. The role-and-view thread continues in <a href="https://petrakuhnle.github.io/portfolio/review_center">Use Case 3, Review Center</a>.</p>
    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Views and filters per role</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">engineers vs decision makers</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Linked to the requirements</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">beats a separate Excel matrix</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">MVP boundary</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">small and extendable, not big and reworked</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Assignment logged</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">who and when, no status meetings</span></div>
-    <div style="padding:22px 24px;background:#F5F6F4;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Manual and automatic</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">rules and test update with the data</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Views and filters per role</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">engineers vs decision makers</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Linked to the requirements</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">beats a separate Excel matrix</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">MVP boundary</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">small and extendable</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Assignment logged</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">who and when</span></div>
+    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Manual and automatic</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">rules and test update with the data</span></div>
    </div>
   </div>
  </div>
 
  <div id="c06" data-screen-label="06 Lessons" style="scroll-margin-top:96px;margin:0 0 96px;">
   <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">06</span>Lessons learned</p>
-  <h2 style="max-width:26em;font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-.015em;color:#24395C;margin:0 0 36px;">The prototype did more than show the design. It drove the discovery.</h2>
+  <h2 style="max-width:26em;font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-.015em;color:#24395C;margin:0 0 36px;">The prototype drove the discovery.</h2>
   <div style="display:flex;gap:20px;max-width:44em;margin:0 0 28px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#556674;flex:none;padding-top:2px;">01</span><div><span style="display:block;font-size:15.5px;font-weight:700;color:#24395C;margin-bottom:6px;">Prototype as discovery tool</span><span style="font-size:15.5px;color:#4A5E79;line-height:1.7;">Its detail level surfaces the questions that define the MVP, what if one method isn't done yet, do you need to know who was assigned and reach them? <strong style="color:#24395C;font-weight:600;">A small system that ships is worth more than a complete one that never does.</strong></span></div></div>
   <div style="display:flex;gap:20px;max-width:44em;margin:0 0 28px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#556674;flex:none;padding-top:2px;">02</span><div><span style="display:block;font-size:15.5px;font-weight:700;color:#24395C;margin-bottom:6px;">Non-expert as an advantage</span><span style="font-size:15.5px;color:#4A5E79;line-height:1.7;">I used my <strong style="color:#24395C;font-weight:600;">non-expert status to ask instead of assume</strong>. An expert-as-designer risks leaving their own bias undetected, or hesitating to question a senior engineer or client.</span></div></div>
   <sc-if value="{{ showPostAi }}" hint-placeholder-val="{{ true }}">
