@@ -78,11 +78,11 @@
         <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365">
         <figcaption>Master and follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation</a></figcaption>
       </figure>
-      <ul class="keyed" style="margin-top:56px">
+      <ul class="keyed" style="margin-top:52px">
         <li><b>Master</b>the source</li>
-        <li><b><span class="swatch" style="background:var(--ok)"></span>Up to date</b>in sync</li>
-        <li><b><span class="swatch" style="background:var(--pending)"></span>Change pending</b>needs review</li>
-        <li><b><span class="swatch" style="background:var(--diverged)"></span>Rejected or edited</b>diverged</li>
+        <li><b><span class="swatch" style="background:#4C8A5F"></span>Up to date</b>in sync</li>
+        <li><b><span class="swatch" style="background:#C9A227"></span>Change pending</b>needs review</li>
+        <li><b><span class="swatch" style="background:#4A7FB5"></span>Rejected or edited</b>diverged</li>
       </ul>
       <p class="caption">The states used to manage and track interdependent changes</p>
     </div>
@@ -107,7 +107,7 @@
           <rect x="228" y="94" width="130" height="30" fill="#FFFFFF"/><text x="238" y="113" font-size="9.5" fill="#1F1F1F">Follower · rejected</text>
         </svg>
       </figure>
-      <p style="margin-top:40px">A change on the Master reaches every Follower automatically, as a flag to review. A key decision was to allow <strong>different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong>discuss changes and decisions in place</strong>.</p>
+      <p style="margin-top:36px">A change on the Master reaches every Follower automatically, as a flag to review. A key decision was to allow <strong>different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong>discuss changes and decisions in place</strong>.</p>
       <div class="compare">
         <div>
           <p class="label">Before · one possibility</p>
@@ -143,13 +143,13 @@
         <li>Testing · experts &amp; users</li>
       </ol>
       <p class="loop">↺ Iterative process · fast prototyping, frequent testing</p>
-      <dl class="meta" style="margin-top:56px">
+      <dl class="meta" style="margin-top:52px">
         <dt>Company</dt><dd>Valispace GmbH · acquired by Altium 2023</dd>
         <dt>Team</dt><dd>CPO · SMEs · CTO · Designer (owning end-to-end design process)</dd>
         <dt>My role</dt><dd>Discovery to hi-fi prototype · user stories · logic mapping · testing</dd>
         <dt>Users</dt><dd>4 engineer roles · managers signing off</dd>
       </dl>
-      <p style="margin-top:40px">The constraint: the Master's editor, the Follower's owner and the manager signing off need different things from one table, each without extra cognitive load. We solved this by showing the options to assign, review and comment where they are needed. <a href="verification_matrix.html">Use Case 2</a></p>
+      <p style="margin-top:36px">The constraint: the Master's editor, the Follower's owner and the manager signing off need different things from one table, each without extra cognitive load. We solved this by showing the options to assign, review and comment where they are needed. <a href="verification_matrix.html">Use Case 2</a></p>
     </div>
   </div>
 </section>
@@ -159,7 +159,7 @@
     <p class="label">Key design decisions</p>
     <div>
       <p>My job was to ask the specific questions: what does the engineer working on a Follower need to see, what would frustrate them, what does the Master's editor need versus the Follower's owner? Same user focus, but for <strong>different people in different situations</strong>. I build from the user and visual side so developers can focus on the technical side, and we meet in the middle. This role-and-view thinking is taken furthest in <a href="review_center.html">Use Case 3, Review Center</a>.</p>
-      <ul class="decisions" style="margin-top:40px">
+      <ul class="decisions" style="margin-top:36px">
         <li><b>Flags, not silent updates</b><span>only the owner applies, rejects or edits, nothing lands unreviewed</span></li>
         <li><b>Discussion in place</b><span>decided where the work is</span></li>
         <li><b>Readable by every role</b><span>engineers and managers signing off</span></li>
@@ -174,7 +174,7 @@
     <p class="label">Lessons learned</p>
     <div>
       <h2>What the first big feature taught me.</h2>
-      <ol class="lessons" style="margin-top:40px">
+      <ol class="lessons" style="margin-top:36px">
         <li><b>Design filled the gap</b><p>I built the logic from interviews and user stories. Design let us <strong>align earlier</strong> on detail developers couldn't guess. It filled the <strong>gap between high-level feature decisions and development</strong>.</p></li>
         <li><b>A missing middle step</b><p>Ideally there would have been a <strong>middle step</strong>, more user testing and detailed feasibility alignment, rather than going prototype → contract → build. Part startup reality, part outside my influence at the time.</p></li>
         <li><b>Carried into the next feature</b><p>On the next feature I asked for <strong>user-story collaboration and agreement on the most crucial requirements from the start</strong>. See <a href="verification_matrix.html">Use Case 2, Verification Assignment Matrix</a>.</p></li>
@@ -185,16 +185,16 @@
 
 </main>
 
-<p class="docsnote">Official docs open <strong>Altium 365</strong>'s documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so the feature is now documented there. Altium documents it on CubeSat subsystems and a wing anti-ice system.</p>
-
-<div class="nextup">
+<nav class="nextup" aria-label="More use cases">
   <a href="verification_matrix.html">Use Case 2 · Verification Assignment Matrix →</a>
   <a href="review_center.html">Use Case 3 · Review Center →</a>
-</div>
+</nav>
 
-<p class="disclosure">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
-
-<div class="colophon"><span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html">← Portfolio</a></span></div>
+<footer class="pagefoot">
+  <p class="footnote">Official docs open Altium 365's documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so the feature is now documented there. Altium documents it on CubeSat subsystems and a wing anti-ice system.</p>
+  <p class="footnote">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+  <p class="byline">Petra Kühnle · Senior Product Designer · <a href="index.html">Portfolio</a></p>
+</footer>
 
 </div>
 </body>
