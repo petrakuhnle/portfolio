@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <title>Master–Follower · Petra Kühnle, Senior Product Designer</title>
 <meta name="description" content="Master–Follower: requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <meta property="og:type" content="website">
@@ -15,240 +10,192 @@
 <meta property="og:description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/master_follower">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<style>
- :root{--gutter: clamp(20px, 6vw, 80px);--maxw: 1080px;}
- @media(min-width:1024px){:root{--gutter: clamp(150px, 17vw, 360px);}}
- html{scroll-behavior:smooth;}
- body{margin:0;background:#FFFFFF;color:#24395C;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:tabular-nums;}
- h1,h2,p{text-wrap:pretty;}
- a{color:#3A5C99;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:rgba(58,92,153,.4);transition:color .15s,text-decoration-color .15s;}
- a:hover{color:#24395C;text-decoration-color:currentColor;}
- a:focus-visible,button:focus-visible{outline:2px solid #24395C;outline-offset:2px;border-radius:2px;}
- ::selection{background:#24395C;color:#FFFFFF;}
- .skip{position:absolute;left:-9999px;top:0;}
- .skip:focus{position:fixed;left:12px;top:12px;z-index:100;background:#24395C;color:#FFFFFF;padding:10px 16px;font-size:13px;text-decoration:none;}
- @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}a{transition:none;}}
-</style>
-</helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#impact">Skip to content</a>
+<div class="page">
 
-<div style="max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter) 96px;font-size:17px;line-height:1.6;box-sizing:border-box;">
+<nav class="nav" aria-label="Sections">
+ <ul>
+  <li><a href="#impact">Impact</a></li>
+  <li><a href="#shipped">Shipped</a></li>
+  <li><a href="#how">How it works</a></li>
+  <li><a href="#process">Process</a></li>
+  <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#lessons">Lessons</a></li>
+ </ul>
+</nav>
 
- <a class="skip" href="#s00">Skip to content</a>
+<div class="topbar">
+  <a href="index.html">← Portfolio</a>
+  <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation</a>
+</div>
 
- <nav aria-label="Sections" style="position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCDFDD;margin:0 calc(50% - 50vw) 0;box-sizing:border-box;width:100vw;">
-  <div style="display:flex;justify-content:flex-start;flex-wrap:wrap;gap:8px 28px;font-size:13.5px;max-width:var(--maxw);margin:0 auto;padding:16px var(--gutter);box-sizing:border-box;">
-   <a href="#c01" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c01">01 Impact</a>
-   <a href="#c02" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c02">02 Shipped</a>
-   <a href="#c03" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c03">03 How it works</a>
-   <a href="#c04" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c04">04 Process</a>
-   <a href="#c05" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c05">05 Decisions</a>
-   <a href="#c06" style="text-decoration:none;color:#24395C;font-weight:500;" data-navlink="c06">06 Lessons</a>
+<header class="casehead">
+  <p class="label">Use case 1 of 3</p>
+  <h1>Master–Follower</h1>
+  <p class="standfirst">Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.</p>
+  <div class="spread">
+    <dl class="meta">
+      <dt>Context</dt><dd>First designer in an engineering-led hardware startup, six years in, domain new to me.</dd>
+      <dt>Scope</dt><dd>Discovery to tested hi-fi prototype, owned end to end.</dd>
+      <dt>Users</dt><dd>Four engineer roles plus managers signing off. Validated with internal experts and external users.</dd>
+      <dt>Outcome</dt><dd>One of three features behind a six-figure contract. Shipped 2021, kept through the Altium acquisition, publicly documented.</dd>
+    </dl>
+    <figure style="margin:0">
+      <img class="drawing" src="example1.svg" alt="Master and Follower propagation diagram">
+      <figcaption>A change on one Master requirement flags each dependent Follower for review, in its own state.</figcaption>
+    </figure>
   </div>
- </nav>
+</header>
 
- <main>
+<main>
 
- <div id="s00" data-screen-label="Title" style="padding-top:24px;scroll-margin-top:96px;margin-bottom:96px;">
-
-  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 24px;font-size:13.5px;margin:0 0 64px;">
-   <a href="index.html" style="text-decoration:none;color:#24395C;font-weight:500;">← Portfolio</a>
-   <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 docs ↗</a>
-  </div>
-
-  <p style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#556674;margin:0 0 14px;">Use Case 1 of 3</p>
-  <h1 style="font-weight:700;font-size:clamp(32px,5vw,44px);letter-spacing:-.025em;line-height:1.06;margin:0 0 20px;">Master–Follower</h1>
-  <p style="max-width:32em;font-size:19px;line-height:1.5;color:#24395C;margin:0 0 48px;">Requirements reused across projects, traceable when they change. <span style="color:#4A5E79;">Valispace 2021, live in Altium 365 today.</span></p>
-
-  <div style="border-top:1px solid #24395C;max-width:44em;margin:0 0 48px;">
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;">
-    <span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Context</span>
-    <span style="flex:1 1 20em;font-size:15px;color:#4A5E79;line-height:1.6;">First designer in an engineering-led hardware startup, six years in, domain new to me.</span>
-   </div>
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;">
-    <span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Scope</span>
-    <span style="flex:1 1 20em;font-size:15px;color:#4A5E79;line-height:1.6;">Discovery to tested hi-fi prototype, owned end to end.</span>
-   </div>
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;">
-    <span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Users</span>
-    <span style="flex:1 1 20em;font-size:15px;color:#4A5E79;line-height:1.6;">Four engineer roles plus managers signing off. Validated with internal experts and external users.</span>
-   </div>
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;">
-    <span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Outcome</span>
-    <span style="flex:1 1 20em;font-size:15px;color:#4A5E79;line-height:1.6;">One of three features behind a six-figure contract. Shipped 2021, kept through the Altium acquisition, publicly documented.</span>
-   </div>
-  </div>
-
-  <figure style="margin:0;background:#FFFFFF;border:1px solid #DCDFDD;padding:28px 32px;width:fit-content;max-width:100%;box-sizing:border-box;">
-   <img src="example1.svg" alt="Master and Follower propagation diagram" style="display:block;width:100%;max-width:420px;height:auto;">
-   <figcaption style="font-size:13px;line-height:1.6;color:#556674;margin:18px 0 0;">A change on one Master requirement flags each dependent Follower for review, in its own state.</figcaption>
-  </figure>
-
- </div>
-
- <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
-  <div id="c01" data-screen-label="01 Impact" style="scroll-margin-top:96px;">
-   <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">01</span>Impact</p>
-   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin:0 0 40px;">
-    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Six-figure contract</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">one of three features that won the deal</span></div>
-    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;"><span style="display:block;font-size:21px;font-weight:700;color:#24395C;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;">Shipped 2021 · live 2026</span><span style="font-size:14.5px;color:#4A5E79;line-height:1.55;">kept after the Altium acquisition</span></div>
-   </div>
-   <p style="font-size:16px;color:#4A5E79;max-width:40em;margin:0 0 18px;line-height:1.7;">After I started the company's first UX practice, discovery through <strong style="color:#24395C;font-weight:600;">interviews, journeys and prototypes</strong> became a normal way of working. The company moved toward <strong style="color:#24395C;font-weight:600;">product-led</strong> decisions.</p>
-   <p style="font-size:16px;color:#4A5E79;max-width:40em;margin:0;line-height:1.7;">Because I <strong style="color:#24395C;font-weight:600;">had to design what I was told and show it back to the same experts a week later</strong>, I paid closer attention than listening alone allows. Later I caught a detail that <strong style="color:#24395C;font-weight:600;">prevented a development refactor</strong>.</p>
-  </div>
- </div>
-
- <div id="c02" data-screen-label="02 Shipped" style="scroll-margin-top:96px;margin:0 0 96px;">
-  <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">02</span>The shipped feature</p>
-  <p style="font-size:16px;color:#4A5E79;max-width:42em;margin:0 0 40px;line-height:1.7;">Engineers building hardware like aeroplanes work with <strong style="color:#24395C;font-weight:600;">requirements</strong>, above all requirements and systems engineers. To manage the <strong style="color:#24395C;font-weight:600;">impact of one changing requirement on others</strong> across projects, we built the Master–Follower feature. One Master, many Followers. The shipped design works in essence as I designed it in 2021. Later iterations added functionality and improved usability. A backend developer who updated the feature later told me improvements were easy to implement because the design logic was mapped out well.</p>
-  <sc-if value="{{ showShippedImage }}" hint-placeholder-val="{{ true }}">
-   <figure style="background:#FFFFFF;border:1px solid #DCDFDD;padding:24px 24px 16px;margin:0 0 40px;">
-    <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365" style="display:block;width:100%;height:auto;">
-    <figcaption style="font-size:13px;line-height:1.6;color:#556674;margin:16px 0 4px;">Master and follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="color:#556674;">Altium 365 documentation</a></figcaption>
-   </figure>
-  </sc-if>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
-   <div style="padding:20px 22px;background:#FFFFFF;border:1px solid #DCDFDD;display:flex;align-items:center;gap:12px;"><svg viewBox="0 0 16 13" style="width:17px;height:14px;flex:none;" aria-hidden="true"><path d="M1 12 L1 4 L4.8 7.2 L8 1.5 L11.2 7.2 L15 4 L15 12 Z" fill="#24395C"></path></svg><span style="font-size:14.5px;color:#4A5E79;line-height:1.5;"><strong style="color:#24395C;font-weight:600;">Master</strong><br>the source</span></div>
-   <div style="padding:20px 22px;background:#FFFFFF;border:1px solid #DCDFDD;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#4C8A5F;flex:none;"></span><span style="font-size:14.5px;color:#4A5E79;line-height:1.5;"><strong style="color:#24395C;font-weight:600;">Up to date</strong><br>in sync</span></div>
-   <div style="padding:20px 22px;background:#FFFFFF;border:1px solid #DCDFDD;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#C9A227;flex:none;"></span><span style="font-size:14.5px;color:#4A5E79;line-height:1.5;"><strong style="color:#24395C;font-weight:600;">Change pending</strong><br>needs review</span></div>
-   <div style="padding:20px 22px;background:#FFFFFF;border:1px solid #DCDFDD;display:flex;align-items:center;gap:12px;"><span style="width:11px;height:11px;border-radius:50%;background:#4A7FB5;flex:none;"></span><span style="font-size:14.5px;color:#4A5E79;line-height:1.5;"><strong style="color:#24395C;font-weight:600;">Rejected or edited</strong><br>diverged</span></div>
-  </div>
-  <p style="font-size:13px;line-height:1.6;color:#556674;margin:16px 0 0;">The states used to manage and track interdependent changes</p>
- </div>
-
- <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
-  <div id="c03" data-screen-label="03 How it works" style="scroll-margin-top:96px;">
-   <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">03</span>How it works</p>
-   <p style="max-width:26em;font-size:26px;font-weight:400;line-height:1.35;letter-spacing:-.01em;color:#24395C;margin:0 0 40px;">A change on the Master flags every Follower. Its owner <strong style="font-weight:700;">applies or rejects it, and the decision is logged.</strong></p>
-   <div style="background:#FFFFFF;padding:32px;margin:0 0 40px;width:fit-content;max-width:100%;box-sizing:border-box;">
-    <svg viewBox="0 0 360 132" style="display:block;width:100%;max-width:440px;height:auto;" font-family="JetBrains Mono">
-     <line x1="104" y1="66" x2="228" y2="24" stroke="#4C8A5F" stroke-width="1.8"></line>
-     <line x1="104" y1="66" x2="228" y2="66" stroke="#C9A227" stroke-width="1.8"></line>
-     <line x1="104" y1="66" x2="228" y2="108" stroke="#4A7FB5" stroke-width="1.8"></line>
-     <rect x="2" y="49" width="102" height="34" fill="#FFFFFF"></rect>
-     <path d="M12 72 L12 61 L16.5 64.8 L20 58 L23.5 64.8 L28 61 L28 72 Z" fill="#24395C"></path>
-     <text x="36" y="70" font-size="10.5" font-weight="500" fill="#24395C">Master</text>
-     <rect x="228" y="8" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="27" font-size="9.5" fill="#24395C">Follower · synced</text>
-     <rect x="228" y="51" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="70" font-size="9.5" fill="#24395C">Follower · pending</text>
-     <rect x="228" y="94" width="130" height="30" fill="#FFFFFF"></rect><text x="238" y="113" font-size="9.5" fill="#24395C">Follower · rejected</text>
-    </svg>
-   </div>
-   <p style="font-size:16px;color:#4A5E79;max-width:42em;margin:0 0 40px;line-height:1.7;">A change on the Master reaches every Follower automatically, as a flag to review. A key decision was to allow <strong style="color:#24395C;font-weight:600;">different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong style="color:#24395C;font-weight:600;">discuss changes and decisions in place</strong>.</p>
-   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
-    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;">
-     <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:16px;">Before · one possibility</span>
-     <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:#556674;line-height:1.5;">
-      <span>Decision in a meeting</span><span style="color:#A9B0B6;">↓</span>
-      <span>Noted in a document</span><span style="color:#A9B0B6;">↓</span>
-      <span>Sent by email</span><span style="color:#A9B0B6;">↓</span>
-      <span>Updated by hand, <strong style="color:#24395C;font-weight:600;">or missed</strong></span>
-     </div>
+<section class="section" id="impact">
+  <div class="spread">
+    <p class="label">Impact</p>
+    <div>
+      <ul class="outcomes">
+        <li><b>Six-figure contract</b><span>one of three features that won the deal</span></li>
+        <li><b>Shipped 2021 · live 2026</b><span>kept after the Altium acquisition</span></li>
+      </ul>
+      <p>After I started the company's first UX practice, discovery through <strong>interviews, journeys and prototypes</strong> became a normal way of working. The company moved toward <strong>product-led</strong> decisions.</p>
+      <p>Because I <strong>had to design what I was told and show it back to the same experts a week later</strong>, I paid closer attention than listening alone allows. Later I caught a detail that <strong>prevented a development refactor</strong>.</p>
     </div>
-    <div style="padding:28px;background:#FFFFFF;border:1px solid #DCDFDD;">
-     <span style="display:block;font-size:14px;font-weight:600;color:#24395C;margin-bottom:16px;">After</span>
-     <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:#24395C;line-height:1.5;">
-      <span>Master edited</span><span style="color:#A9B0B6;">↓</span>
-      <span>Follower flagged</span><span style="color:#A9B0B6;">↓</span>
-      <span>Owner reviews</span><span style="color:#A9B0B6;">↓</span>
-      <span style="font-weight:600;">Applies or rejects · logged</span>
-     </div>
+  </div>
+</section>
+
+<section class="section" id="shipped">
+  <div class="spread">
+    <p class="label">The shipped feature</p>
+    <div>
+      <p>Engineers building hardware like aeroplanes work with <strong>requirements</strong>, above all requirements and systems engineers. To manage the <strong>impact of one changing requirement on others</strong> across projects, we built the Master–Follower feature. One Master, many Followers. The shipped design works in essence as I designed it in 2021. Later iterations added functionality and improved usability. A backend developer who updated the feature later told me improvements were easy to implement because the design logic was mapped out well.</p>
+      <figure>
+        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365">
+        <figcaption>Master and follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation</a></figcaption>
+      </figure>
+      <ul class="keyed" style="margin-top:56px">
+        <li><b>Master</b>the source</li>
+        <li><b><span class="swatch" style="background:var(--ok)"></span>Up to date</b>in sync</li>
+        <li><b><span class="swatch" style="background:var(--pending)"></span>Change pending</b>needs review</li>
+        <li><b><span class="swatch" style="background:var(--diverged)"></span>Rejected or edited</b>diverged</li>
+      </ul>
+      <p class="caption">The states used to manage and track interdependent changes</p>
     </div>
-   </div>
   </div>
- </div>
+</section>
 
- <div id="c04" data-screen-label="04 Process" style="scroll-margin-top:96px;margin:0 0 96px;">
-  <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">04</span>Process · first designer in a new domain</p>
-  <div style="background:#FFFFFF;border:1px solid #DCDFDD;padding:28px;margin:0 0 40px;">
-   <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;">
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">01</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Interviews · pro users</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">02</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Notes · stories · journey</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;display:flex;align-items:stretch;gap:14px;"><div style="flex:1;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">03</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Wireframes → hi-fi</span></div><span style="align-self:center;font-size:14px;color:#556674;">→</span></div>
-    <div style="flex:1 1 140px;background:#FFFFFF;border:1px solid #DCDFDD;padding:18px;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:12px;color:#556674;margin-bottom:8px;">04</span><span style="font-size:14.5px;line-height:1.5;color:#24395C;font-weight:500;">Testing · experts &amp; users</span></div>
-   </div>
-   <p style="font-size:13px;line-height:1.6;color:#556674;margin:18px 0 0;">↺ Iterative process · fast prototyping, frequent testing</p>
+<section class="section" id="how">
+  <div class="spread">
+    <p class="label">How it works</p>
+    <div>
+      <p class="statement">A change on the Master flags every Follower. Its owner <strong>applies or rejects it, and the decision is logged.</strong></p>
+      <figure style="margin:0">
+        <svg class="drawing" viewBox="0 0 360 132" xmlns="http://www.w3.org/2000/svg">
+          <line x1="104" y1="66" x2="228" y2="24" stroke="#4C8A5F" stroke-width="1.8"/>
+          <line x1="104" y1="66" x2="228" y2="66" stroke="#C9A227" stroke-width="1.8"/>
+          <line x1="104" y1="66" x2="228" y2="108" stroke="#4A7FB5" stroke-width="1.8"/>
+          <rect x="2" y="49" width="102" height="34" fill="#FFFFFF"/>
+          <path d="M12 72 L12 61 L16.5 64.8 L20 58 L23.5 64.8 L28 61 L28 72 Z" fill="#1F1F1F"/>
+          <text x="36" y="70" font-size="10.5" font-weight="500" fill="#1F1F1F">Master</text>
+          <rect x="228" y="8" width="130" height="30" fill="#FFFFFF"/><text x="238" y="27" font-size="9.5" fill="#1F1F1F">Follower · synced</text>
+          <rect x="228" y="51" width="130" height="30" fill="#FFFFFF"/><text x="238" y="70" font-size="9.5" fill="#1F1F1F">Follower · pending</text>
+          <rect x="228" y="94" width="130" height="30" fill="#FFFFFF"/><text x="238" y="113" font-size="9.5" fill="#1F1F1F">Follower · rejected</text>
+        </svg>
+      </figure>
+      <p style="margin-top:40px">A change on the Master reaches every Follower automatically, as a flag to review. A key decision was to allow <strong>different states, synced, pending, rejected</strong>, so a change left pending too long, or rejected, can still be acted on. Everyone involved can also <strong>discuss changes and decisions in place</strong>.</p>
+      <div class="compare">
+        <div>
+          <p class="label">Before · one possibility</p>
+          <ul class="flow">
+            <li>Decision in a meeting</li>
+            <li>Noted in a document</li>
+            <li>Sent by email</li>
+            <li>Updated by hand, or missed</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">After</p>
+          <ul class="flow">
+            <li>Master edited</li>
+            <li>Follower flagged</li>
+            <li>Owner reviews</li>
+            <li>Applies or rejects · logged</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-  <div style="border-top:1px solid #24395C;margin:0 0 40px;">
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;"><span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Company</span><span style="flex:1 1 20em;font-size:15px;line-height:1.6;color:#4A5E79;"><strong style="color:#24395C;font-weight:600;">Valispace GmbH</strong> · acquired by Altium 2023</span></div>
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;"><span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Team</span><span style="flex:1 1 20em;font-size:15px;line-height:1.6;color:#4A5E79;">CPO · SMEs · CTO · <strong style="color:#24395C;font-weight:600;">Designer</strong> (owning end-to-end design process)</span></div>
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;"><span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">My role</span><span style="flex:1 1 20em;font-size:15px;line-height:1.6;color:#4A5E79;"><strong style="color:#24395C;font-weight:600;">Discovery to hi-fi prototype</strong> · user stories · logic mapping · testing</span></div>
-   <div style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:14px 0;border-bottom:1px solid #DCDFDD;"><span style="flex:0 0 7.5em;font-size:14px;font-weight:600;color:#24395C;">Users</span><span style="flex:1 1 20em;font-size:15px;line-height:1.6;color:#4A5E79;"><strong style="color:#24395C;font-weight:600;">4 engineer roles</strong> · managers signing off</span></div>
+</section>
+
+<section class="section" id="process">
+  <div class="spread">
+    <p class="label">Process · first designer in a new domain</p>
+    <div>
+      <ol class="steps">
+        <li>Interviews · pro users</li>
+        <li>Notes · stories · journey</li>
+        <li>Wireframes → hi-fi</li>
+        <li>Testing · experts &amp; users</li>
+      </ol>
+      <p class="loop">↺ Iterative process · fast prototyping, frequent testing</p>
+      <dl class="meta" style="margin-top:56px">
+        <dt>Company</dt><dd>Valispace GmbH · acquired by Altium 2023</dd>
+        <dt>Team</dt><dd>CPO · SMEs · CTO · Designer (owning end-to-end design process)</dd>
+        <dt>My role</dt><dd>Discovery to hi-fi prototype · user stories · logic mapping · testing</dd>
+        <dt>Users</dt><dd>4 engineer roles · managers signing off</dd>
+      </dl>
+      <p style="margin-top:40px">The constraint: the Master's editor, the Follower's owner and the manager signing off need different things from one table, each without extra cognitive load. We solved this by showing the options to assign, review and comment where they are needed. <a href="verification_matrix.html">Use Case 2</a></p>
+    </div>
   </div>
-  <p style="font-size:16px;color:#4A5E79;max-width:42em;line-height:1.7;margin:0;">The constraint: the Master's editor, the Follower's owner and the manager signing off need different things from one table, each without extra cognitive load. We solved this by showing the options to assign, review and comment where they are needed. → <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2</a></p>
- </div>
+</section>
 
- <div style="border-top:1px solid #DCDFDD;margin:0 0 96px;padding:56px 0 0;">
-  <div id="c05" data-screen-label="05 Decisions" style="scroll-margin-top:96px;">
-   <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">05</span>Key design decisions</p>
-   <p style="max-width:40em;font-size:16px;color:#4A5E79;line-height:1.7;margin:0 0 40px;">My job was to ask the specific questions: what does the engineer working on a Follower need to see, what would frustrate them, what does the Master's editor need versus the Follower's owner? Same user focus, but for <strong style="color:#24395C;font-weight:600;">different people in different situations</strong>. I build from the user and visual side so developers can focus on the technical side, and we meet in the middle. This role-and-view thinking is taken furthest in <a href="https://petrakuhnle.github.io/portfolio/review_center">Use Case 3, Review Center</a>.</p>
-   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Flags, not silent updates</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">only the owner applies, rejects or edits, nothing lands unreviewed</span></div>
-    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Discussion in place</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">decided where the work is</span></div>
-    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Readable by every role</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">engineers and managers signing off</span></div>
-    <div style="padding:22px 24px;background:#FFFFFF;border:1px solid #DCDFDD;border-top:2px solid #24395C;"><span style="display:block;font-size:15px;font-weight:700;color:#24395C;line-height:1.35;margin-bottom:8px;">Prototype as alignment</span><span style="font-size:14px;color:#4A5E79;line-height:1.55;">experts, users and deciders aligned before build</span></div>
-   </div>
+<section class="section" id="decisions">
+  <div class="spread">
+    <p class="label">Key design decisions</p>
+    <div>
+      <p>My job was to ask the specific questions: what does the engineer working on a Follower need to see, what would frustrate them, what does the Master's editor need versus the Follower's owner? Same user focus, but for <strong>different people in different situations</strong>. I build from the user and visual side so developers can focus on the technical side, and we meet in the middle. This role-and-view thinking is taken furthest in <a href="review_center.html">Use Case 3, Review Center</a>.</p>
+      <ul class="decisions" style="margin-top:40px">
+        <li><b>Flags, not silent updates</b><span>only the owner applies, rejects or edits, nothing lands unreviewed</span></li>
+        <li><b>Discussion in place</b><span>decided where the work is</span></li>
+        <li><b>Readable by every role</b><span>engineers and managers signing off</span></li>
+        <li><b>Prototype as alignment</b><span>experts, users and deciders aligned before build</span></li>
+      </ul>
+    </div>
   </div>
- </div>
+</section>
 
- <div id="c06" data-screen-label="06 Lessons" style="scroll-margin-top:96px;margin:0 0 96px;">
-  <p style="font-size:14px;font-weight:600;color:#24395C;padding-bottom:12px;border-bottom:1px solid #DCDFDD;margin:0 0 32px;"><span style="font-family:'JetBrains Mono',monospace;font-weight:400;color:#556674;margin-right:12px;">06</span>Lessons learned</p>
-  <h2 style="max-width:26em;font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-.015em;color:#24395C;margin:0 0 36px;">What the first big feature taught me.</h2>
-  <div style="display:flex;gap:20px;max-width:44em;margin:0 0 28px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#556674;flex:none;padding-top:2px;">01</span><div><span style="display:block;font-size:15.5px;font-weight:700;color:#24395C;margin-bottom:6px;">Design filled the gap</span><span style="font-size:15.5px;color:#4A5E79;line-height:1.7;">I built the logic from interviews and user stories. Design let us <strong style="color:#24395C;font-weight:600;">align earlier</strong> on detail developers couldn't guess. It filled the <strong style="color:#24395C;font-weight:600;">gap between high-level feature decisions and development</strong>.</span></div></div>
-  <div style="display:flex;gap:20px;max-width:44em;margin:0 0 28px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#556674;flex:none;padding-top:2px;">02</span><div><span style="display:block;font-size:15.5px;font-weight:700;color:#24395C;margin-bottom:6px;">A missing middle step</span><span style="font-size:15.5px;color:#4A5E79;line-height:1.7;">Ideally there would have been a <strong style="color:#24395C;font-weight:600;">middle step</strong>, more user testing and detailed feasibility alignment, rather than going prototype → contract → build. Part startup reality, part outside my influence at the time.</span></div></div>
-  <div style="display:flex;gap:20px;max-width:44em;margin:0;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#556674;flex:none;padding-top:2px;">03</span><div><span style="display:block;font-size:15.5px;font-weight:700;color:#24395C;margin-bottom:6px;">Carried into the next feature</span><span style="font-size:15.5px;color:#4A5E79;line-height:1.7;">On the next feature I asked for <strong style="color:#24395C;font-weight:600;">user-story collaboration and agreement on the most crucial requirements from the start</strong>. See <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2, Verification Assignment Matrix</a>.</span></div></div>
- </div>
+<section class="section" id="lessons">
+  <div class="spread">
+    <p class="label">Lessons learned</p>
+    <div>
+      <h2>What the first big feature taught me.</h2>
+      <ol class="lessons" style="margin-top:40px">
+        <li><b>Design filled the gap</b><p>I built the logic from interviews and user stories. Design let us <strong>align earlier</strong> on detail developers couldn't guess. It filled the <strong>gap between high-level feature decisions and development</strong>.</p></li>
+        <li><b>A missing middle step</b><p>Ideally there would have been a <strong>middle step</strong>, more user testing and detailed feasibility alignment, rather than going prototype → contract → build. Part startup reality, part outside my influence at the time.</p></li>
+        <li><b>Carried into the next feature</b><p>On the next feature I asked for <strong>user-story collaboration and agreement on the most crucial requirements from the start</strong>. See <a href="verification_matrix.html">Use Case 2, Verification Assignment Matrix</a>.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
- </main>
+</main>
 
- <div style="margin:0 0 32px;">
-  <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener" style="font-size:14.5px;font-weight:500;">Official docs ↗</a>
-  <p style="max-width:40em;font-size:13px;color:#556674;line-height:1.65;margin:12px 0 0;">Official docs open <strong style="color:#24395C;font-weight:600;">Altium 365</strong>'s documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so the feature is now documented there. Altium documents it on CubeSat subsystems and a wing anti-ice system.</p>
- </div>
+<p class="docsnote">Official docs open <strong>Altium 365</strong>'s documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so the feature is now documented there. Altium documents it on CubeSat subsystems and a wing anti-ice system.</p>
 
- <div style="display:flex;gap:10px 32px;flex-wrap:wrap;margin:0 0 48px;padding-top:24px;border-top:1px solid #DCDFDD;font-size:14.5px;font-weight:500;line-height:1.7;">
-  <a href="https://petrakuhnle.github.io/portfolio/verification_matrix">Use Case 2 · Verification Assignment Matrix →</a>
-  <a href="https://petrakuhnle.github.io/portfolio/review_center">Use Case 3 · Review Center →</a>
- </div>
+<div class="nextup">
+  <a href="verification_matrix.html">Use Case 2 · Verification Assignment Matrix →</a>
+  <a href="review_center.html">Use Case 3 · Review Center →</a>
+</div>
 
- <p style="font-size:13px;color:#556674;line-height:1.65;max-width:44em;margin:0 0 44px;">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+<p class="disclosure">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
 
- <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:16px;border-top:1px solid #DCDFDD;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#556674;">
-  <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html" style="color:#556674;">← Portfolio</a></span>
- </div>
+<div class="colophon"><span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html">← Portfolio</a></span></div>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;showShippedImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPostAi&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
-class Component extends DCLogic {
- componentDidMount() {
-  var ids = ['c01','c02','c03','c04','c05','c06'];
-  this._onScroll = function() {
-   var active = null;
-   for (var i = 0; i < ids.length; i++) {
-    var el = document.getElementById(ids[i]);
-    if (el && el.getBoundingClientRect().top <= 120) active = ids[i];
-   }
-   ids.forEach(function(id) {
-    var a = document.querySelector('[data-navlink="' + id + '"]');
-    if (!a) return;
-    var on = id === active;
-    a.style.color = on ? '#24395C' : '#556674';
-    a.style.fontWeight = on ? '500' : '400';
-    if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
-   });
-  };
-  window.addEventListener('scroll', this._onScroll, { passive: true });
-  this._onScroll();
- }
- componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
- renderVals() {
-  return {
-   showShippedImage: this.props.showShippedImage ?? true,
-   showPostAi: this.props.showPostAi ?? true
-  };
- }
-}
-</script>
 </body>
 </html>
