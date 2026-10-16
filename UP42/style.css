@@ -191,3 +191,17 @@ figcaption{font-size:15px;line-height:1.6;color:var(--quiet);margin:16px 0 0;max
 .pagefoot a{color:var(--quiet)}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* case study head: facts in one row above the figure */
+@media(min-width:900px){
+  .spread--facts{grid-template-columns:1fr}
+  .spread--facts .meta{display:grid;grid-template-rows:auto auto;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0 32px;margin-bottom:36px}
+  .spread--facts .meta dd{margin-bottom:0}
+}
+
+/* case study head: facts in one row above the figure */
+@media(min-width:900px){
+  .spread--facts{grid-template-columns:1fr}
+  .spread--facts .meta{display:grid;grid-template-rows:auto auto;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0 32px;margin-bottom:36px}
+  .spread--facts .meta dd{margin-bottom:0}
+}
