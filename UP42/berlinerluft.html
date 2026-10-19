@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berliner Luft · Berlin Air Quality 2025 · Petra Kühnle</title>
+<meta name="description" content="[ONE SENTENCE: when and where people in Berlin were most exposed to NO₂ and PM2.5 in 2025.]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Berliner Luft · Berlin Air Quality 2025">
+<meta property="og:description" content="[SAME AS META DESCRIPTION, SHORTER]">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/berlinerluft">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#impact">Skip to content</a>
+<div class="page">
 
+<!-- SECTION NAV: one link per section below, same order -->
+<nav class="nav" aria-label="Sections">
+ <ul>
+  <li><a href="#questions">Questions</a></li>
+  <li><a href="#data">Data</a></li>
+  <li><a href="#hypotheses">Hypotheses</a></li>
+  <li><a href="#method">Method</a></li>
+  <li><a href="#findings">Findings</a></li>
+  <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#lessons">Lessons</a></li>
+ </ul>
+</nav>
+
+<div class="topbar">
+  <a href="index.html">← Portfolio</a>
+  <a href="[LINK: public repo or notebook folder]" target="_blank" rel="noopener">Code and notebooks</a>
+</div>
+
+<!-- CASE HEAD -->
+<header class="casehead">
+  <p class="label">Project · Berlin air quality 2025</p>
+  <h1>Berliner Luft</h1>
+  <p class="standfirst">[ONE SENTENCE: Berlin's 2025 air quality data, analysed to show when and where people were most exposed to NO₂ and PM2.5.]</p>
+  <div class="spread spread--facts">
+    <dl class="meta">
+      <dt>Context</dt><dd>[Personal project. Why this question. Ozone excluded, see Decisions.]</dd>
+      <dt>Scope</dt><dd>[Data fetch, cleaning, analysis, interface. Phase 1 done, Phase 2 in progress.]</dd>
+      <dt>Data</dt><dd>[15 active stations, hourly values, 2025, Berliner Luftgütemessnetz.]</dd>
+      <dt>Status</dt><dd>[e.g. Exploration and planning done. Analysis notebooks in progress.]</dd>
+    </dl>
+    <figure style="margin:0">
+      <img class="drawing" src="[FIGURE: station map with traffic, background and suburb markers]" alt="[ALT TEXT: map of Berlin stations by type]">
+      <figcaption>[CAPTION: one sentence on what the map shows.]</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<!-- SECTION 1: QUESTIONS (README Questions 1–3) -->
+<section class="section" id="questions">
+  <div class="spread">
+    <p class="label">Questions</p>
+    <div>
+      <ul class="outcomes">
+        <li><b>Q1 · Hours and stations</b><span>[Which hours of day and stations have the highest values?]</span></li>
+        <li><b>Q2 · Season</b><span>[Which season is most polluted, and does it differ per station?]</span></li>
+        <li><b>Q3 · Reference levels</b><span>[Which stations have the most hours above EU 2030 limits and WHO guidelines?]</span></li>
+      </ul>
+      <p>[PARAGRAPH: Focus is location and time of exposure, not causes. Pollutants: NO₂ and PM2.5, because PM2.5 carries the largest health burden.]</p>
+      <ul>
+        <li>[Bullet: why NO₂, one line]</li>
+        <li>[Bullet: why PM2.5, one line]</li>
+        <li>[Bullet: what is out of scope, e.g. causes, ozone]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: DATA (README Data, station table, sampling height) -->
+<section class="section" id="data">
+  <div class="spread">
+    <p class="label">Data</p>
+    <div>
+      <p class="statement">[ONE SENTENCE: official hourly station data from Berlin's air quality network, retrieved via the public REST API.]</p>
+      <dl class="meta">
+        <dt>Source</dt><dd>[luftdaten.berlin.de, Berliner Luftgütemessnetz, SenMVKU. JSON REST API.]</dd>
+        <dt>License</dt><dd>[dl-de/by-2-0. Cite with retrieval date and "own calculation".]</dd>
+        <dt>Sampling</dt><dd>[About 3.5–4 m above container roof.]</dd>
+      </dl>
+      <p style="margin-top:36px">[PARAGRAPH: station mix. Count of background, suburb and traffic stations. Note which stations measure PM2.5.]</p>
+      <figure>
+        <img src="[FIGURE: table or chart of station coverage]" alt="[ALT TEXT]">
+        <figcaption>[CAPTION: station list with type and PM2.5 flag, or coverage per station.]</figcaption>
+      </figure>
+      <ul class="keyed" style="margin-top:52px">
+        <li><b>Background</b>[count, e.g. 4 stations]</li>
+        <li><b>Suburb</b>[count]</li>
+        <li><b>Traffic</b>[count]</li>
+        <li><b>PM2.5 stations</b>[count of stations with PM2.5]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: HYPOTHESES (README H1–H3) -->
+<section class="section" id="hypotheses">
+  <div class="spread">
+    <p class="label">Hypotheses</p>
+    <div>
+      <ul class="decisions">
+        <li><b>H1 · Concentration</b><span>[Top hours concentrate at a few stations, not spread across Berlin. Result: TBD]</span></li>
+        <li><b>H2 · Season</b><span>[Both pollutants highest in winter and lowest in summer, at all stations. Result: TBD]</span></li>
+        <li><b>H3 · Same stations</b><span>[The same few stations have the most hours above reference levels, for both pollutants. Result: TBD]</span></li>
+      </ul>
+      <p style="margin-top:36px">[PARAGRAPH: how each hypothesis links to a question and an analysis.]</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: METHOD (README Method + reference levels + analyses) -->
+<section class="section" id="method">
+  <div class="spread">
+    <p class="label">Method</p>
+    <div>
+      <p class="statement">[ONE SENTENCE: hourly values in, station-level aggregates out, compared against reference levels.]</p>
+      <ol class="steps">
+        <li>Fetch and cache<span>[hourly values per station]</span></li>
+        <li>Clean<span>[timestamps to Europe/Berlin, drop days with &lt;18 valid hours, sensor errors removed]</span></li>
+        <li>Aggregate<span>[station × hour, station × season, daily means]</span></li>
+        <li>Compare<span>[reference levels, days vs. allowed exceedances]</span></li>
+      </ol>
+      <p class="loop">↺ [Coverage of valid hours reported for every aggregate]</p>
+      <dl class="meta" style="margin-top:52px">
+        <dt>Stack</dt><dd>[Python, pandas, matplotlib, seaborn]</dd>
+        <dt>Outliers</dt><dd>[Sensor errors removed. Real events such as New Year's fireworks kept and flagged.]</dd>
+        <dt>Days</dt><dd>[All days included, weekdays and weekends.]</dd>
+      </dl>
+      <h2 style="margin-top:64px">Reference levels</h2>
+      <p>[PARAGRAPH: EU 2030 and WHO thresholds used as comparison, with the difference between hourly and daily limits.]</p>
+      <ul>
+        <li>[NO₂ 1-hour, EU 2030: 200 µg/m³, 3 allowed per year]</li>
+        <li>[NO₂ 24-hour: EU 50 µg/m³, 18 allowed per year. WHO 25 µg/m³, 3–4 days]</li>
+        <li>[PM2.5 24-hour: EU 25 µg/m³, 18 allowed per year. WHO 15 µg/m³, 3–4 days]</li>
+        <li>[Annual: NO₂ EU 20 / WHO 10. PM2.5 EU 10 / WHO 5 µg/m³]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: FINDINGS (one block per question; results TBD after Phase 2) -->
+<section class="section" id="findings">
+  <div class="spread">
+    <p class="label">Findings</p>
+    <div>
+      <p class="statement">[ONE SENTENCE: the main result, written after the analysis runs.]</p>
+
+      <h2>Q1 · Hours and stations</h2>
+      <figure>
+        <img src="[FIGURE: heatmap of hour of day × station, NO₂ and PM2.5]" alt="[ALT TEXT]">
+        <figcaption>[CAPTION: top 10% station-hours, notebook 02.]</figcaption>
+      </figure>
+      <p>[PARAGRAPH: which stations and hours dominate. Confirm or reject H1.]</p>
+
+      <h2 style="margin-top:64px">Q2 · Season</h2>
+      <figure>
+        <img src="[FIGURE: seasonal means per station]" alt="[ALT TEXT]">
+        <figcaption>[CAPTION: seasons Dec–Feb, Mar–May, Jun–Aug, Sep–Nov. Notebook 03.]</figcaption>
+      </figure>
+      <p>[PARAGRAPH: winter vs. summer pattern per station. Confirm or reject H2.]</p>
+
+      <h2 style="margin-top:64px">Q3 · Reference levels</h2>
+      <figure>
+        <img src="[FIGURE: hours above reference levels per station]" alt="[ALT TEXT]">
+        <figcaption>[CAPTION: hours above reference levels and days vs. allowed. Notebook 04.]</figcaption>
+      </figure>
+      <p>[PARAGRAPH: which stations have the most exceedances. Confirm or reject H3.]</p>
+      <ul>
+        <li>[Bullet: hourly NO₂ 200 is the only true hourly limit. Other hourly counts are an indicator, not an exceedance.]</li>
+        <li>[Bullet: top station-hours as a multiple of the annual level. Scale only.]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: DECISIONS (README design choices and caveats) -->
+<section class="section" id="decisions">
+  <div class="spread">
+    <p class="label">Key decisions</p>
+    <div>
+      <p>[PARAGRAPH: the choices made in the analysis and why. Keep to the README decisions.]</p>
+      <ul class="decisions" style="margin-top:36px">
+        <li><b>Exposure, not causes</b><span>[Focus on where and when people were exposed. Causes out of scope.]</span></li>
+        <li><b>Ozone excluded</b><span>[Forms in sunlight and peaks away from traffic. Outside the question.]</span></li>
+        <li><b>Hourly vs. daily levels</b><span>[Hourly counts use the 24-hour level as an indicator. Only NO₂ 200 is a true hourly limit.]</span></li>
+        <li><b>Real events kept</b><span>[Flagged, not removed. Sensor errors removed.]</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: LESSONS (fill after analysis) -->
+<section class="section" id="lessons">
+  <div class="spread">
+    <p class="label">Lessons learned</p>
+    <div>
+      <h2>[HEADLINE: what the analysis taught, in one line.]</h2>
+      <ol class="lessons" style="margin-top:36px">
+        <li><b>[Data lesson]</b><p>[Sampling height, coverage gaps, or station type limits. One or two sentences.]</p></li>
+        <li><b>[Method lesson]</b><p>[What changed between the plan and the analysis. One or two sentences.]</p></li>
+        <li><b>[Next step]</b><p>[What would make the findings stronger: more stations, longer period, or PM2.5 at more sites.]</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<nav class="nextup" aria-label="More projects">
+  <a href="[LINK: next portfolio page]">[Next project →]</a>
+</nav>
+
+<footer class="pagefoot">
+  <p class="footnote">Data: luftdaten.berlin.de, Berliner Luftgütemessnetz, SenMVKU. License dl-de/by-2-0. [Retrieval date]. Own calculation.</p>
+  <p class="footnote">Reference levels: Directive (EU) 2024/2881, Annex I, Table 1. WHO Air Quality Guidelines 2021.</p>
+  <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
+</footer>
+
+</div>
+</body>
+</html>
