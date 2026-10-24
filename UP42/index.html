@@ -3,415 +3,229 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Petra Kühnle, Product Designer</title>
-<meta name="description" content="Portfolio of Petra Kühnle, product designer. Research, discovery and prototyping for complex B2B software. First designer at Valispace, acquired by Altium; the features ship in Altium 365 today.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Petra Kühnle, Product Designer">
-<meta property="og:description" content="First designer at Valispace, acquired by Altium. The features ship in Altium 365 today.">
-<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/">
+<title>Berliner Luft · Petra Kühnle, Product Designer</title>
+<meta name="description" content="Berliner Luft: interface for hourly air quality data from 15 Berlin measuring stations, 2025.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Berliner Luft · Petra Kühnle, Product Designer">
+<meta property="og:description" content="When and where are people in Berlin most exposed to air pollution?">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-:root{
-  --ink:#1F1F1F; --body:#3C4043; --quiet:#5F6368;
-  --label:#8C5E3C; --link:#A44A15; --rule:#E6E6E6;
-  --gutter:clamp(24px,5vw,64px);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--ink);font-family:'Roboto',Arial,sans-serif;
-  font-size:20px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.page{max-width:1180px;margin:0 auto;padding:0 var(--gutter) 80px}
-p{margin:0 0 1.35em;max-width:34em;color:var(--body)}
-p:last-child{margin-bottom:0}
-strong{font-weight:500;color:var(--ink)}
-a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:2px solid var(--link);outline-offset:3px}
-.skip{position:absolute;left:-9999px}
-.skip:focus{position:fixed;left:14px;top:14px;z-index:60;background:var(--ink);color:#fff;
-  padding:10px 18px;font-size:15px;text-decoration:none}
-
-/* navigation */
-.nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--rule);
-  margin:0 calc(50% - 50vw);width:100vw}
-.nav ul{max-width:1180px;margin:0 auto;padding:15px var(--gutter);
-  display:flex;flex-wrap:wrap;gap:6px 28px;list-style:none;font-size:15px}
-.nav a{color:var(--body);text-decoration:none}
-.nav a:hover{color:var(--ink)}
-.nav a[aria-current]{color:var(--ink);font-weight:500}
-.section,.masthead,[id]{scroll-margin-top:88px}
-
-/* two-column spread; nested spreads use a narrow label column */
-.spread{display:grid;grid-template-columns:1fr;gap:26px}
-@media(min-width:900px){
-  .spread{grid-template-columns:200px minmax(0,1fr);gap:0 60px;align-items:start}
-  .spread .spread{grid-template-columns:110px minmax(0,1fr);gap:0 32px}
-}
-.label{font-size:13px;line-height:1.4;letter-spacing:.075em;text-transform:uppercase;
-  color:var(--label);margin:0 0 8px}
-.meta{margin:0}
-.meta dt{font-size:13px;line-height:1.4;letter-spacing:.075em;text-transform:uppercase;
-  color:var(--label);margin:0 0 6px}
-.meta dd{margin:0 0 26px;font-size:17px;line-height:1.5;color:var(--ink)}
-.meta dd:last-child{margin-bottom:0}
-.meta dd a{font-size:17px}
-
-/* masthead */
-.masthead{background:#F3F5F7;margin:0 calc(50% - 50vw);padding:60px calc(50vw - 50%) 72px}
-.wordmark{font-size:clamp(34px,5vw,46px);font-weight:700;letter-spacing:-.01em;
-  line-height:1.1;margin:0 0 48px}
-.masthead .lead p{font-size:22px;line-height:1.66;max-width:33em}
-.masthead a{color:var(--ink);text-decoration-color:var(--quiet)}
-.masthead a:hover{text-decoration-color:var(--ink)}
-
-/* sections */
-.section{padding:92px 0 0}
-h2{font-size:clamp(23px,2.6vw,28px);font-weight:700;line-height:1.3;
-  letter-spacing:-.005em;margin:0 0 18px;max-width:24em}
-h3{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 10px}
-.intro p{font-size:20px}
-
-/* figures */
-figure{margin:34px 0 0}
-figure img{display:block;width:100%;height:auto;max-width:820px}
-
-/* work records */
-.record{padding:56px 0 0}
-.record + .record{margin-top:56px;border-top:1px solid var(--rule)}
-.record h3{font-size:24px;margin-bottom:12px}
-.record h3 a{color:var(--ink);text-decoration:none}
-.record h3 a:hover{color:var(--link)}
-.record .sub{font-size:20px;line-height:1.5;color:var(--ink);margin-bottom:.9em}
-.record .links{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:17px;margin-top:6px}
-.record .links a{font-size:17px}
-
-/* practice */
-.practice-item{padding:32px 0 0}
-.practice-item + .practice-item{margin-top:32px;border-top:1px solid var(--rule)}
-
-/* quotes */
-.quote{margin:0;padding:32px 36px;background:#F7F2EE;border-radius:4px}
-.quote + .quote{margin-top:20px}
-/* tinted blocks */
-.record--tint{background:#F4F4F2;padding:44px 40px;border-radius:4px;margin-top:40px}
-.record--warm{background:#F7F2EE;padding:44px 40px;border-radius:4px;margin-top:40px}
-.record--warm + .record--warm{margin-top:20px;border-top:none}
-#background{background:#F4F4F2;margin:92px calc(50% - 50vw) 0;
-  padding:72px calc(50vw - 50%) 80px}
-#background .entry{border-top-color:#E2E2DE}
-.quote blockquote{margin:0 0 16px;font-size:22px;line-height:1.55;max-width:27em;color:var(--ink)}
-.quote figcaption{margin:0;font-size:16px;color:var(--body)}
-.quote figcaption b{display:block;font-weight:500;color:var(--ink)}
-
-/* background */
-.entry{padding:26px 0;border-top:1px solid var(--rule)}
-.entry:first-of-type{border-top:none;padding-top:0}
-.entry h4{font-size:19px;font-weight:700;line-height:1.4;margin:0 0 6px}
-.entry p{font-size:17px;line-height:1.6;margin:0;max-width:42em}
-.entry .label{margin-bottom:6px}
-@media(min-width:900px){.entry .label{margin:0;padding-top:.5em}}
-.block{padding-top:44px}
-.block .value{font-size:17px;line-height:1.75;max-width:46em;color:var(--ink);margin:0}
-.stack{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.7}
-.stack li{padding:3px 0}
-.stack li i{font-style:normal;color:var(--body);margin-right:14px}
-
-/* contact */
-.contact{padding:92px 0 0}
-.contact p{font-size:26px;line-height:1.45;color:var(--ink);margin:0 0 22px}
-.contact .links{display:flex;flex-wrap:wrap;gap:10px 30px;font-size:18px}
-
-/* footer */
-.pagefoot{margin-top:56px;padding-top:24px;border-top:1px solid var(--rule)}
-.pagefoot .footnote{font-size:14px;line-height:1.6;color:var(--quiet);max-width:48em;margin:0 0 14px}
-.pagefoot .footnote:last-of-type{margin-bottom:0}
-.pagefoot .byline{font-size:13px;line-height:1.6;color:var(--quiet);margin:22px 0 0;max-width:none}
-.pagefoot a{color:var(--quiet)}
-
-.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.pair--top{align-items:start}
+#process figure + p{margin-top:36px}
+.panel .outcomes{margin-bottom:20px}
+.keyed{margin-top:44px}
+#process h3{font-size:clamp(23px,2.6vw,28px);line-height:1.3;margin:64px 0 18px}
+#process figure + .tiles{margin-top:32px}
+.pair{display:grid;gap:16px}
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+.pair img{max-width:100%}
+.crop img{object-fit:cover;object-position:left top;clip-path:inset(3px)}
+.crop--interface img{aspect-ratio:1.16}
+.crop--iterations img{aspect-ratio:1.35}
+.lead-fig{margin:0 0 32px}
+.lead-fig img{max-width:560px}
+#next figure + .tiles{margin-top:32px}
 </style>
 </head>
 <body>
-<a class="skip" href="#project">Skip to the work</a>
+<a class="skip" href="#main">Skip to content</a>
 <div class="page">
 
 <nav class="nav" aria-label="Sections">
- <ul>
-  <li><a href="#project">Berliner Luft</a></li>
-  <li><a href="#work">Shipped work</a></li>
-  <li><a href="#practice">UX founding work</a></li>
-  <li><a href="#references">References</a></li>
-  <li><a href="#background">Background</a></li>
-  <li><a href="#contact">Contact</a></li>
- </ul>
+  <ul>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#decisions">Decisions</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#next">Next</a></li>
+    <li><a href="#lessons">Lessons</a></li>
+  </ul>
 </nav>
 
-<header class="masthead">
-  <h1 class="wordmark">Petra Kühnle</h1>
-  <div class="spread">
+<header class="casehead">
+  <p class="label">Use case 1 of 4 · Independent project</p>
+  <h1>Berliner Luft</h1>
+  <p class="standfirst">When and where are people in Berlin most exposed to air pollution?</p>
+  <div class="spread spread--facts">
     <dl class="meta">
-      <dt>Role</dt><dd>Product Designer</dd>
-      <dt>Location</dt><dd>Berlin</dd>
-      <dt>Contact</dt><dd><a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a></dd>
+      <dt>Context</dt><dd>Independent project · 2026 · open city data</dd>
+      <dt>Scope</dt><dd>Data exploration · sketch · interface · prototype</dd>
+      <dt>Data</dt><dd>Hourly values · 15 stations · 2025 · NO₂ and PM2.5</dd>
+      <dt>Published</dt><dd>20 October 2026<br><a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Hugging Face<span class="vh"> (opens in a new tab)</span></a></dd>
     </dl>
-    <div class="lead">
-      <p><b style="color:var(--ink)">Product designer for data-rich B2B software.</b> First and only designer at Valispace, a systems engineering platform used by Airbus, ESA and BMW.</p>
-      <p>I designed three complex workflows there, from requirements traceability to engineering reviews. They are still in the <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal" target="_blank" rel="noopener">Requirements &amp; Systems Portal<span class="vh"> (opens in a new tab)</span></a> of Altium 365, after Altium acquired Valispace at the end of 2023. I built the design practice from zero and hired my successor.</p>
-      <p><b style="color:var(--ink)">Latest project:</b> <a href="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft">Berliner Luft</a>, when and where people in Berlin are most exposed to air pollution.</p>
-    </div>
+  </div>
+  <div class="topbar">
+    <a href="index.html">← Portfolio</a>
   </div>
 </header>
+<figure class="hero">
+  <h2 class="hero-title">Interface prototype</h2>
+  <img src="%20interface-berlinerluft.png" width="1432" height="1009" alt="Berliner Luft interface: pollutant cards, time filters, hourly chart for NO₂ and PM2.5, Berlin map with labeled stations, and a bar chart of all stations against WHO, EU 2030 and current EU limits.">
+  <figcaption>Time controls left. Station map right. Both charts follow the selection.</figcaption>
+  <p class="hero-link"><a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Open the interface prototype<span class="vh"> (opens in a new tab)</span></a></p>
+</figure>
 
-<main>
+<main id="main">
 
-<section class="section" id="project">
+<section class="section" id="impact">
   <div class="spread">
-    <p class="label">Independent project</p>
-    <div class="intro">
-      <h2>Interface design for air pollution data</h2>
-    </div>
-  </div>
-
-  <article class="record record--tint">
-    <div class="spread">
-      <dl class="meta">
-        <dt>Context</dt><dd>Independent, 2026</dd>
-        <dt>Status</dt><dd>Prototype online</dd>
-        <dt>Data</dt><dd>luftdaten.berlin.de, 15 stations, 2025</dd>
-      </dl>
-      <div>
-        <h3 id="berliner-luft"><a href="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft">Berliner Luft</a></h3>
-        <p class="sub">When and where are people in Berlin most exposed to air pollution?</p>
-        <figure style="margin:24px 0 0"><a href="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft"><img src="%20interface-berlinerluft.png" alt="Berliner Luft interface with pollutant cards, time filters, an hourly chart, a labeled Berlin station map and every station's annual mean against WHO, EU 2030 and current EU limits"></a></figure>
-        <p style="margin-top:24px">Hourly NO₂ and PM2.5 from 15 stations, 2025. Choose a time and stations, and read all three limits in one chart.</p>
-        <div class="links">
-          <a href="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft" aria-label="Read the Berliner Luft use case">Read the use case</a>
-          <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Interface prototype<span class="vh"> (opens in a new tab)</span></a>
-          <a href="https://github.com/petrakuhnle/Air_Quality_Project" target="_blank" rel="noopener">Code and notebooks<span class="vh"> (opens in a new tab)</span></a>
-        </div>
-      </div>
-    </div>
-  </article>
-</section>
-
-<section class="section" id="work">
-  <div class="spread">
-    <p class="label">Shipped work</p>
-    <div class="intro">
-      <h2>Feature use cases</h2>
-    </div>
-  </div>
-
-  <article class="record record--warm">
-    <div class="spread">
-      <dl class="meta">
-        <dt>Context</dt><dd>Valispace, 2021</dd>
-        <dt>Status</dt><dd>Shipped, Altium 365</dd>
-        <dt>Documentation</dt><dd><a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Master-Follower feature<span class="vh"> (opens in a new tab)</span></a></dd>
-      </dl>
-      <div>
-        <h3><a href="master_follower.html">Master-Follower</a></h3>
-        <p>Requirements shared across projects, traceable as changes propagate. Validated with internal and external experts. A backend developer later told me improvements were easy to implement because the logic was mapped out well.</p>
-        <div class="links"><a href="master_follower.html" aria-label="Read the Master-Follower use case">Read the use case</a></div>
-        <figure><a href="master_follower.html"><img src="example2.svg" alt="Diagram of Master-Follower propagation: one master requirement with changes flowing to follower copies in separate projects"></a></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="record record--warm">
-    <div class="spread">
-      <dl class="meta">
-        <dt>Context</dt><dd>Valispace, 2021</dd>
-        <dt>Status</dt><dd>Shipped, Altium 365</dd>
-        <dt>Documentation</dt><dd><a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Verification Assignment Matrix<span class="vh"> (opens in a new tab)</span></a></dd>
-      </dl>
-      <div>
-        <h3><a href="verification_matrix.html">Verification Assignment Matrix</a></h3>
-        <p>Months of research and prototype testing with systems engineers to find where traceability breaks down, before designing. One view of what is verified and what is missing.</p>
-        <div class="links"><a href="verification_matrix.html" aria-label="Read the Verification Assignment Matrix use case">Read the use case</a></div>
-        <figure><a href="verification_matrix.html"><img src="example1.svg" alt="Verification assignment matrix showing requirements against verification methods, with unassigned cells visible"></a></figure>
-      </div>
-    </div>
-  </article>
-
-  <article class="record record--warm">
-    <div class="spread">
-      <dl class="meta">
-        <dt>Context</dt><dd>Valispace, 2021</dd>
-        <dt>Status</dt><dd>Shipped, Altium 365</dd>
-        <dt>Documentation</dt><dd><a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Review Center<span class="vh"> (opens in a new tab)</span></a></dd>
-      </dl>
-      <div>
-        <h3><a href="review_center.html">Review Center</a></h3>
-        <p>Moderator, reviewer, approver: one flow from setup through rating to sign-off, with regulatory traceability.</p>
-        <div class="links"><a href="review_center.html" aria-label="Read the Review Center use case">Read the use case</a></div>
-        <figure><a href="review_center.html"><img src="example3.svg" alt="Diagram of the three Review Center roles and how a review moves from setup through rating to approval"></a></figure>
-      </div>
-    </div>
-  </article>
-
-</section>
-
-<section class="section" id="practice">
-  <div class="spread">
-    <p class="label">UX founding work</p>
-    <div class="intro">
-      <h2>How I introduced UX to a startup</h2>
-      <p>Valispace, 2021–2023, as the company grew from 20 to 50 people.</p>
-      <div class="practice-item">
-        <h3>Show, don't tell</h3>
-        <p>Introduced user interviews and Figma prototyping, both new to the company. Tested prototypes with systems engineers before development.</p>
-      </div>
-      <div class="practice-item">
-        <h3>Design system foundations</h3>
-        <p>Features shipped faster than the experience stayed consistent. Started a cross-functional UX guild to bring design and engineering together. Set design principles for product, API docs and marketing. Used tracked CPO/PM feedback in Jira to show leadership the rework caused by inconsistency, and got time set aside to fix it.</p>
-      </div>
-      <div class="practice-item">
-        <h3>From UX to Product</h3>
-        <p>Promoted onto the new product team with the CTO, CPO, PMs and dev leads, as the design contact for PMs and engineers. Mentored a UX intern and led the hire of a senior designer, still at Altium today.</p>
-      </div>
-      <div class="practice-item">
-        <h3>Owning systemic problems</h3>
-        <p>Framed systemic problems no one owned yet and brought engineers, developers and end users together on them. Carried design from early idea to delivery and proposed solutions to blockers.</p>
-      </div>
+    <h2 class="label">Impact</h2>
+    <div class="panel">
+      <ul class="outcomes">
+        <li><b>0 of 15</b><span>stations above the EU limit in force</span></li>
+        <li><b>5 of 15</b><span>above the EU 2030 limit</span></li>
+        <li><b>10 of 15</b><span>above the WHO guideline</span></li>
+      </ul>
+      <p>NO₂ annual mean 2025. Public sources usually show one unnamed limit. The interface shows all three.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="references">
+<section class="section" id="interface">
   <div class="spread">
-    <p class="label">References</p>
+    <h2 class="label">Interface</h2>
     <div>
-      <figure class="quote">
-        <blockquote>She took the initiative to start a cross-functional UX guild that brought designers and developers together to improve the overall user experience.</blockquote>
-        <figcaption><b>Louise Lindblad</b>Cofounder, Valispace (now Altium)</figcaption>
+      <p><b>Two inputs:</b> time and stations. Both charts update from them.</p>
+      <figure>
+        <div class="pair pair--top">
+          <img src="graph1.png" width="636" height="564" loading="lazy" alt="By hour of day chart: NO₂ with morning and evening peaks, PM2.5 almost flat, with the lowest and highest hourly values below.">
+          <img src="graph2.png" width="745" height="507" loading="lazy" alt="Against the limits chart: annual mean 2025 per station for NO₂ and PM2.5, sorted by NO₂, with dotted WHO, dashed EU 2030 and solid EU in force lines.">
+        </div>
+        <figcaption>Left: daily curve with lowest and highest hour. Right: all stations against three limits.</figcaption>
       </figure>
-      <figure class="quote">
-        <blockquote>In a very short time she learned a previously unknown field by talking to users and iterating fast with them on mockups and prototypes.</blockquote>
-        <figcaption><b>Florian Reger</b>Solution Management, Valispace (now Altium)</figcaption>
+      <ul class="keyed" aria-label="Legend, the same in all views">
+        <li><b><span class="swatch" style="background:#4C72B0"></span>NO₂</b>gas mainly from traffic</li>
+        <li><b><span class="swatch" style="background:#DD8452"></span>PM2.5</b>fine particles</li>
+        <li><b><span aria-hidden="true">■ ● ◆</span><span class="vh">Square · circle · diamond</span></b>traffic · background · suburb</li>
+        <li><b><svg width="96" height="10" viewBox="0 0 96 10" aria-hidden="true"><path d="M0 5h26" stroke="#1F1F1F" stroke-width="1.6" stroke-dasharray="1.6 3"/><path d="M35 5h26" stroke="#1F1F1F" stroke-width="1.6" stroke-dasharray="6 4"/><path d="M70 5h26" stroke="#1F1F1F" stroke-width="1.6"/></svg><span class="vh">Dotted line · dashed line · solid line</span></b>WHO · EU 2030 · EU in force</li>
+      </ul>
+      <div class="compare">
+        <div>
+          <h3 class="label">Before: city portal</h3>
+          <ol class="flow"><li>Open one station</li><li>Find a report</li><li>Look up the limit</li><li>Compare stations by hand</li></ol>
+        </div>
+        <div>
+          <h3 class="label">After</h3>
+          <ol class="flow"><li>Choose time</li><li>Choose stations</li><li>Read all stations against three limits</li></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="decisions">
+  <div class="spread">
+    <h2 class="label">Key decisions</h2>
+    <div>
+      <figure class="lead-fig">
+        <img src="stations.png" width="772" height="353" loading="lazy" alt="Station selector: labels with leader lines to the Berlin map, filter buttons for all, traffic, background and suburb stations.">
+        <figcaption>Station labels with leader lines. Filter by type.</figcaption>
       </figure>
+      <ul class="tiles">
+        <li><b>Shared selection</b>Map · list · chart share one selection.</li>
+        <li><b>Labeled limits</b>Dotted WHO · dashed EU 2030 · solid EU in force.</li>
+        <li><b>Missing data labeled</b>Stations without a PM2.5 sensor show “not measured here”.</li>
+        <li><b>Extremes with context</b>Lowest and highest hour with date and station. New Year fireworks named as the cause.</li>
+      </ul>
+      <p class="caption">15 stations for 892 km². Values per station only. No values per district.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="background">
+<section class="section" id="process">
   <div class="spread">
-    <p class="label">Background</p>
+    <h2 class="label">Process</h2>
     <div>
-      <div class="entry spread">
-        <p class="label">2025–now</p>
-        <div>
-          <h4>Product Designer, Independent Projects</h4>
-          <p><a href="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft">Berliner Luft</a>, interface for hourly air quality data from 15 Berlin stations, from sketch to prototype · Navigator, EU AI Act requirements for non-lawyers, prototyped with Claude AI · System Forge, onboarding for a SysML v2 modeling tool · Berlin (remote)</p>
-        </div>
-      </div>
-      <div class="entry spread">
-        <p class="label">2024–25</p>
-        <div>
-          <h4>Accessibility Facilitator, ALB gGmbH</h4>
-          <p>Designed and taught a digital technology programme for autistic adults, focused on technology use and digital access · Berlin</p>
-        </div>
-      </div>
-      <div class="entry spread">
-        <p class="label">2023</p>
-        <div>
-          <h4>UX Researcher, EIGENSONNE GmbH</h4>
-          <p>Usability and accessibility of a solar-sales website · Berlin</p>
-        </div>
-      </div>
-      <div class="entry spread">
-        <p class="label">2021–23</p>
-        <div>
-          <h4>UX/Product Designer, Valispace GmbH (acquired by Altium end 2023)</h4>
-          <p>Sole designer, 20 to 50 employees · three shipped features · Lisbon and Bremen</p>
-        </div>
-      </div>
-      <div class="entry spread">
-        <p class="label">2016–20</p>
-        <div>
-          <h4>Pro Apps &amp; Apple Media Advisor, Tier 1 to Tier 4, Apple EMEA HQ</h4>
-          <p>Pro Apps support for Logic Pro and Final Cut Pro users · sorted reports into defects, workflow issues and interface problems for engineering · promoted twice, Tier 1 to Tier 4 · Cork</p>
-        </div>
-      </div>
 
-      <div class="block spread">
-        <p class="label">Skills</p>
-        <p class="value">Data-rich applications · Interaction design · Design systems · UX research &amp; usability testing · Data visualization (Python, pandas) · Figma prototyping · Accessibility (WCAG)</p>
-      </div>
-      <div class="block spread">
-        <p class="label">Recognition</p>
-        <ul class="stack">
-          <li><i>2026</i>Mozilla Fellowship, nominated for an AI-assisted design concept and prototype (Navigator)</li>
-          <li><i>2022</i>Hack&amp;Con · Most Innovative Idea, app concept (won)</li>
-          <li><i>2018</i>Apple · AppleCare Excellence Award (won)</li>
-        </ul>
-      </div>
-      <div class="block spread">
-        <p class="label">Education</p>
-        <ul class="stack">
-          <li><i>2020</i>Ironhack</li>
-          <li><i>2020</i>Digital Media Design &amp; Development, master-qualifying university course · Cork Institute of Technology (now MTU), Ireland</li>
-          <li><i>2014</i>Bachelor of Fine Arts · Multimedia Design, Multimedia Art, Exhibition Design · Art Academy Minerva, Groningen, NL</li>
-        </ul>
-      </div>
-      <div class="block spread">
-        <p class="label">Certificates</p>
-        <p class="value">Data Analysis &amp; Visualization, Python (StackFuel GmbH, 2026) · Introduction to Web Accessibility (W3Cx, 2026) · UX Research (ELVTR, 2024) · Designer-Developer Collaboration (IxDF, 2022) · Continuous Product Discovery (IxDF, 2022) · Systems Thinking for Designers (IxDF, 2022) · Designing Complex Apps for Specialized Domains (NN/g, 2021)</p>
-      </div>
-      <div class="block spread">
-        <p class="label">Languages</p>
-        <p class="value">German (native) · English (fluent) · Dutch (fluent)</p>
-      </div>
+      <h3>Data exploration</h3>
+      <p>NO₂ peaks in the morning and evening rush hours. PM2.5 changes less over the day. A daily curve shows both. No hour selector needed.</p>
+      <figure>
+        <img src="02_daily_cycle_relative.png" width="1350" height="750" loading="lazy" alt="Line chart: hourly values relative to each station's mean. NO₂ rises to about 1.26 at 7 and 1.18 at 21 and drops to about 0.76 at 13. PM2.5 stays between about 0.85 and 1.1. Thin lines show single stations.">
+        <figcaption>Hour of day relative to station mean. Thin lines: single stations.</figcaption>
+      </figure>
+      <p>Winter months have the most hours above the WHO level. PM2.5 is above it in most hours of every month.</p>
+      <figure>
+        <img src="03_hours_above.png" width="1500" height="750" loading="lazy" alt="Line chart: share of hours above the WHO level per month. PM2.5 between about 67 and 98 percent, highest in February. NO₂ between about 38 and 79 percent, lowest in June, highest in February and November.">
+        <figcaption>Share of hours above the WHO level per month.</figcaption>
+      </figure>
+
+      <h3>Sketches</h3>
+      <figure>
+        <div class="pair">
+          <img src="skizze1.png" width="2667" height="1896" loading="lazy" alt="First pen sketch: station checklist, Berlin and 2025 fixed, filters for months, days and hours, a map highlighting the selection, a line chart and a bar chart with limit lines.">
+          <img src="skizze2.png" width="2571" height="1828" loading="lazy" alt="Second pen sketch: rows for days and months, station list on the left, station card with map, hour and weekday filters, a line chart and a bar chart.">
+        </div>
+        <figcaption>Left: station checklist and filters. Right: layout with map and charts.</figcaption>
+      </figure>
+
+      <h3>Iterations</h3>
+      <figure>
+        <div class="pair crop crop--iterations">
+          <img src="design_iteration%20at%2019.53.28.png" width="1712" height="1271" loading="lazy" alt="Iteration: station names on the map, month row below, charts at the bottom.">
+          <img src="design_iteration%20at%2009.58.03.png" width="1473" height="1222" loading="lazy" alt="Later iteration: labeled station list beside the map, time controls on the left, charts below.">
+        </div>
+      </figure>
+      <ul class="tiles">
+        <li><b>Stations</b>Before: names cut off in the sidebar. Now: labeled on the map.</li>
+        <li><b>Map</b>Before: symbols without names. Now: map · list · chart share one selection.</li>
+        <li><b>Time</b>Before: hour range 00:00 to 23:00. Now: year or month · weekday or weekend.</li>
+        <li><b>Limits</b>Before: one limit at a time. Now: all three in the chart.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="section" id="next">
   <div class="spread">
-    <p class="label">Contact</p>
+    <h2 class="label">Next version · planned</h2>
     <div>
-      <p>Open to full-time and contract roles in Berlin or remote.</p>
-      <div class="links">
-        <a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a>
-        <a href="https://www.linkedin.com/in/petrakuhnle" target="_blank" rel="noopener">LinkedIn<span class="vh"> (opens in a new tab)</span></a>
-      </div>
+      <p><b>Planned. Not built.</b> Choose a district and compare three sources: measured stations · Berlin’s modeled grid · Sentinel-5P satellite data. Each layer would state resolution · date · share of valid data.</p>
+      <figure>
+        <img src="next-version-sources.png" width="1030" height="380" loading="lazy" alt="Three panels of the same few square kilometres: measured, three station points with nothing measured in between; modeled, a 50 by 50 metre grid following two streets; observed from space, four coarse Sentinel-5P pixels of about 3.5 by 5.5 kilometres.">
+        <figcaption>Schematic from my plan. Not real data.</figcaption>
+      </figure>
+      <ul class="tiles">
+        <li><b>Area first</b>Pick a district. A summary would list what each source says there.</li>
+        <li><b>One layer at a time</b>The map would show one source. The comparison would happen in the summary.</li>
+        <li><b>Resolution in the legend</b>Each layer would state its cell or pixel size and its year.</li>
+        <li><b>Edge cases to design</b>No station in the area · area smaller than one pixel · too few valid days · model year differs.</li>
+        <li><b>Design system in Figma</b>To build: tokens and components with their states. Map · legend · layer switcher · summary panel.</li>
+        <li><b>Scope</b>About four weeks part time. Checkpoint after week two. Layers misaligned with the stations: continue in Figma only.</li>
+      </ul>
+      <p class="caption">Known: station data and limits. To check first: format and licence of the model grid · Sentinel-5P coverage per month. No part of this version exists yet.</p>
     </div>
+  </div>
+</section>
+
+<section class="section" id="lessons">
+  <div class="spread">
+    <h2 class="label">Lessons</h2>
+    <ol class="lessons">
+      <li><b>Exploration first</b><p>The charts showed which filters were useful.</p></li>
+      <li><b>Charts as a draft</b><p>Colors · line styles · sort order came from the exploration charts.</p></li>
+      <li><b>AI with a narrow scope</b><p>Useful for research and code after the design decisions were fixed.</p></li>
+    </ol>
   </div>
 </section>
 
 </main>
 
+<nav class="nextup" aria-label="More use cases">
+  <a href="master_follower.html">Use case 2 · Master-Follower <span aria-hidden="true">→</span></a>
+  <a href="verification_matrix.html">Use case 3 · Verification Assignment Matrix <span aria-hidden="true">→</span></a>
+  <a href="review_center.html">Use case 4 · Review Center <span aria-hidden="true">→</span></a>
+</nav>
+
 <footer class="pagefoot">
-  <p class="footnote">Documentation links open the official Altium 365 docs.</p>
-  <p class="byline">Petra Kühnle · Product Designer · Berlin</p>
+  <p class="footnote">Data: luftdaten.berlin.de · Berliner Luftgütemessnetz · SenMVKU. License dl-de/by-2-0. Own calculation. Limits: Directive (EU) 2024/2881 · WHO 2021. Map outline © OpenStreetMap contributors.</p>
+  <p class="footnote">Design decisions by me. AI used for research and code. No user tests yet.</p>
+  <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
 </footer>
 
 </div>
-
-<script>
-(function () {
-  var links = [].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
-  if (!links.length) return;
-  var targets = links.map(function (a) {
-    return document.getElementById(a.getAttribute('href').slice(1));
-  });
-  function update() {
-    var active = -1;
-    for (var i = 0; i < targets.length; i++) {
-      if (targets[i] && targets[i].getBoundingClientRect().top <= 140) active = i;
-    }
-    links.forEach(function (a, i) {
-      if (i === active) a.setAttribute('aria-current', 'true');
-      else a.removeAttribute('aria-current');
-    });
-  }
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
-</script>
 </body>
 </html>
