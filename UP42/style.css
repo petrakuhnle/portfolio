@@ -198,3 +198,18 @@ figcaption{font-size:15px;line-height:1.6;color:var(--quiet);margin:16px 0 0;max
   .spread--facts .meta{display:grid;grid-template-rows:auto auto;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0 32px;margin-bottom:36px}
   .spread--facts .meta dd{margin-bottom:0}
 }
+
+/* shared accents: sage header, warm impact panel, grey tiles */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h2.label,h3.label{font-weight:400;max-width:none}
+.title{font-size:clamp(23px,2.6vw,28px);font-weight:700;line-height:1.3;margin:0 0 18px}
+.casehead{background:#F1F3EE;margin:0 calc(50% - 50vw);padding:0 calc(50vw - 50%) 64px}
+.casehead .topbar{padding:28px 0 52px}
+.casehead figure{margin:0}
+.panel{background:#F7F2EE;border-radius:4px;padding:36px 40px}
+.panel .outcomes:last-child{margin-bottom:0}
+.tiles{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+p + .tiles{margin-top:32px}
+@media(min-width:620px){.tiles{grid-template-columns:1fr 1fr}}
+.tiles li{background:#F4F4F2;border-radius:4px;padding:20px 24px;font-size:16px;line-height:1.5;color:var(--body)}
+.tiles b{display:block;font-size:17px;color:var(--ink);margin-bottom:4px}
