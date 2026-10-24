@@ -2,8 +2,8 @@
    One stylesheet for index.html and all four case study pages. */
 
 :root{
-  --ink:#1F1F1F; --body:#3C4043; --quiet:#80868B;
-  --label:#C79E80; --link:#1A73E8; --rule:#E6E6E6;
+  --ink:#1F1F1F; --body:#3C4043; --quiet:#5F6368;
+  --label:#8C5E3C; --link:#1967D2; --rule:#E6E6E6;
   --ok:#4C8A5F; --pending:#C9A227; --diverged:#4A7FB5;
   --gutter:clamp(24px,5vw,64px);
 }
