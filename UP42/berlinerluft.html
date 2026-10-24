@@ -24,6 +24,7 @@
 .pair img{max-width:100%}
 .lead-fig{margin:0 0 32px}
 .lead-fig img{max-width:560px}
+#next figure + .tiles{margin-top:32px}
 </style>
 </head>
 <body>
@@ -36,6 +37,7 @@
     <li><a href="#interface">Interface</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#decisions">Decisions</a></li>
+    <li><a href="#next">Next</a></li>
     <li><a href="#lessons">Lessons</a></li>
   </ul>
 </nav>
@@ -174,13 +176,33 @@
   </div>
 </section>
 
+<section class="section" id="next">
+  <div class="spread">
+    <h2 class="label">Next version</h2>
+    <div>
+      <p><b>One area, three sources.</b> Choose a district and see what was measured, what was modeled and what a satellite saw, each with its resolution, date and certainty.</p>
+      <figure>
+        <img src="next-version-sources.png" width="1030" height="380" loading="lazy" alt="Three panels of the same few square kilometres: measured, three station points with nothing measured in between; modeled, a 50 by 50 metre grid following two streets; observed from space, four coarse Sentinel-5P pixels of about 3.5 by 5.5 kilometres.">
+        <figcaption>Schematic, not real data.</figcaption>
+      </figure>
+      <ul class="tiles">
+        <li><b>Compare before choosing</b>Resolution, date and coverage side by side, as when choosing imagery before an order.</li>
+        <li><b>Gaps over time</b>Months with too few valid satellite days are greyed, with the reason.</li>
+        <li><b>Area summary</b>Stations inside or the nearest one, grid mean and highest cell, covering pixels.</li>
+        <li><b>No value without a source</b>Empty stays empty. Satellite data is regional context, not street air.</li>
+      </ul>
+      <p class="caption">States to design: no station in the area, area smaller than one pixel, too few valid days, model year differs from measurement year. Planned, not built.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="lessons">
   <div class="spread">
     <h2 class="label">Lessons</h2>
     <ol class="lessons">
       <li><b>Exploration first</b><p>The charts showed which filters were useful.</p></li>
       <li><b>Charts as a draft</b><p>Colors, line styles and sort order came from the exploration charts.</p></li>
-      <li><b>Next</b><p>Usability test with residents. Add modeled and satellite data beside the station values.</p></li>
+      <li><b>Next</b><p>Usability test with residents, then the next version.</p></li>
     </ol>
   </div>
 </section>
