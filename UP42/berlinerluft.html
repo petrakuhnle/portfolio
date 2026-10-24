@@ -3,132 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Berliner Luft · Petra Kühnle, Senior Product Designer</title>
-<meta name="description" content="Berliner Luft: interface for hourly air quality data from 15 Berlin measuring stations, 2025. From exploration charts and sketch to a working prototype.">
+<title>Berliner Luft · Petra Kühnle, Product Designer</title>
+<meta name="description" content="Berliner Luft: interface for hourly air quality data from 15 Berlin measuring stations, 2025.">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2026-10-20">
-<meta property="og:title" content="Berliner Luft · Petra Kühnle, Senior Product Designer">
+<meta property="og:title" content="Berliner Luft · Petra Kühnle, Product Designer">
 <meta property="og:description" content="When and where are people in Berlin most exposed to air pollution?">
-<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/berliner_luft">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berliner_luft.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="nav.js" defer></script>
+<style>
+.casehead figure img{max-width:100%}
+.panel .outcomes{margin-bottom:20px}
+.keyed{margin-top:44px}
+#process h3{font-size:clamp(23px,2.6vw,28px);line-height:1.3;margin:64px 0 18px}
+#process .decisions{margin-top:36px}
+.pair{display:grid;gap:16px}
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+.pair img{max-width:100%}
+.lead-fig{margin:0 0 32px}
+.lead-fig img{max-width:560px}
+</style>
 </head>
 <body>
-<a class="skip" href="#impact">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 <div class="page">
 
 <nav class="nav" aria-label="Sections">
- <ul>
-  <li><a href="#impact">Impact</a></li>
-  <li><a href="#interface">Interface</a></li>
-  <li><a href="#how">How it works</a></li>
-  <li><a href="#process">Process</a></li>
-  <li><a href="#decisions">Decisions</a></li>
-  <li><a href="#lessons">Lessons</a></li>
- </ul>
+  <ul>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#decisions">Decisions</a></li>
+    <li><a href="#lessons">Lessons</a></li>
+  </ul>
 </nav>
 
-<div class="topbar">
-  <a href="index.html">← Portfolio</a>
-  <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Interface prototype</a>
-</div>
-
 <header class="casehead">
-  <p class="label">Independent project</p>
+  <div class="topbar">
+    <a href="index.html">← Portfolio</a>
+    <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Interface prototype<span class="vh"> (opens in a new tab)</span></a>
+  </div>
+  <p class="label">Use case 1 of 4 · Independent project</p>
   <h1>Berliner Luft</h1>
   <p class="standfirst">When and where are people in Berlin most exposed to air pollution?</p>
   <div class="spread spread--facts">
     <dl class="meta">
-      <dt>Context</dt><dd>Independent project, 2026. Open city data, each value tied to a location and an hour.</dd>
-      <dt>Scope</dt><dd>Data exploration, sketch, interface design, working prototype.</dd>
-      <dt>Data</dt><dd>Hourly values from 15 Berlin measuring stations, 2025. NO₂ and PM2.5, three limits.</dd>
-      <dt>Published</dt><dd>20 October 2026. Prototype on <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Hugging Face</a>.</dd>
+      <dt>Context</dt><dd>Independent project, 2026. Open city data.</dd>
+      <dt>Scope</dt><dd>Data exploration, sketch, interface, prototype.</dd>
+      <dt>Data</dt><dd>Hourly values, 15 stations, 2025. NO₂ and PM2.5.</dd>
+      <dt>Published</dt><dd>20 October 2026 on <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Hugging Face<span class="vh"> (opens in a new tab)</span></a>.</dd>
     </dl>
-    <figure style="margin:0">
-      <img src="bl_interface.png" alt="Berliner Luft interface: pollutant cards, month and day filters, hourly chart for NO₂ and PM2.5, Berlin map with labeled stations, bar chart of all stations against WHO, EU 2030 and current EU limits.">
-      <figcaption>Time controls on the left, station map on the right. Daily curve and limit chart update with both.</figcaption>
+    <figure>
+      <img src="%20interface-berlinerluft.png" width="1432" height="1009" alt="Berliner Luft interface: pollutant cards, time filters, hourly chart for NO₂ and PM2.5, Berlin map with labeled stations, and a bar chart of all stations against WHO, EU 2030 and current EU limits.">
+      <figcaption>Time controls on the left, station map on the right. Both charts update with them.</figcaption>
     </figure>
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <section class="section" id="impact">
   <div class="spread">
-    <p class="label">Impact</p>
-    <div>
+    <h2 class="label">Impact</h2>
+    <div class="panel">
       <ul class="outcomes">
-        <li><b>One screen</b><span>time, place and three limits in one view</span></li>
-        <li><b>Prototype online</b><span>20 October 2026, full 2025 data</span></li>
+        <li><b>0 of 15</b><span>stations above the EU limit in force</span></li>
+        <li><b>5 of 15</b><span>above the EU 2030 limit</span></li>
+        <li><b>10 of 15</b><span>above the WHO guideline</span></li>
       </ul>
-      <p>The result of a limit check depends on the limit used. For NO₂, 0 of 15 stations are above the EU limit in force, 5 of 15 above the EU 2030 limit and 10 of 15 above the WHO guideline. Public sources usually show one value and do not state the limit.</p>
-      <p>The interface draws all three limits on the station chart and labels each one.</p>
+      <p>NO₂ annual mean, 2025. Public sources usually show one limit and do not name it. The interface shows all three.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="interface">
   <div class="spread">
-    <p class="label">The interface</p>
+    <h2 class="label">Interface</h2>
     <div>
-      <p>Two inputs: time and place. Time controls sit on the left, the station map on the right. Below are the daily curve and the annual mean per station against the limits. A station selected on the map, in the list or in the bar chart is selected in all views.</p>
+      <p><b>Two inputs:</b> time and stations. Both charts update from them.</p>
       <figure>
-        <img src="bl_station_selected.png" alt="Interface with the suburban station Schichauweg selected. The map highlights it, the hourly chart shows its NO₂ curve, the station card lists an annual mean of 8.4 µg/m³ below all three limits and PM2.5 as not measured here.">
-        <figcaption>One station selected · <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">huggingface.co/spaces/petrakuhnle/berliner-luft</a></figcaption>
+        <img src="design_iteration%20at%2010.00.21.png" width="1427" height="1261" loading="lazy" alt="Interface filtered to four background stations, January, weekends: the map highlights them and both charts show only these stations.">
+        <figcaption>Background stations only, January, weekends.</figcaption>
       </figure>
-      <ul class="keyed" style="margin-top:52px">
-        <li><b><span class="swatch" style="background:#4C72B0"></span>NO₂</b>gas, mainly traffic exhaust</li>
+      <figure>
+        <img src="design_iteration%20at%2010.00.29.png" width="1406" height="1211" loading="lazy" alt="Interface with the suburban station Schichauweg selected: map highlight, its NO₂ curve, an annual mean of 8.4 µg/m³ below all three limits, PM2.5 not measured.">
+        <figcaption>Schichauweg selected. No PM2.5 sensor at this station.</figcaption>
+      </figure>
+      <ul class="keyed" aria-label="Legend, the same in all views">
+        <li><b><span class="swatch" style="background:#4C72B0"></span>NO₂</b>gas, mainly traffic</li>
         <li><b><span class="swatch" style="background:#DD8452"></span>PM2.5</b>fine particles</li>
-        <li><b>■ ● ◆</b>traffic, background, suburb</li>
-        <li><b><svg width="96" height="10" viewBox="0 0 96 10" aria-hidden="true" style="vertical-align:middle"><line x1="0" y1="5" x2="26" y2="5" stroke="#1F1F1F" stroke-width="1.6" stroke-dasharray="1.6 3"/><line x1="35" y1="5" x2="61" y2="5" stroke="#1F1F1F" stroke-width="1.6" stroke-dasharray="6 4"/><line x1="70" y1="5" x2="96" y2="5" stroke="#1F1F1F" stroke-width="1.6"/></svg></b>WHO, EU 2030, EU in force</li>
+        <li><b><span aria-hidden="true">■ ● ◆</span><span class="vh">Square, circle, diamond</span></b>traffic, background, suburb</li>
+        <li><b><svg width="96" height="10" viewBox="0 0 96 10" aria-hidden="true"><path d="M0 5h26" stroke="#1F1F1F" stroke-width="1.6" stroke-dasharray="1.6 3"/><path d="M35 5h26" stroke="#1F1F1F" stroke-width="1.6" stroke-dasharray="6 4"/><path d="M70 5h26" stroke="#1F1F1F" stroke-width="1.6"/></svg><span class="vh">Dotted, dashed, solid line</span></b>WHO, EU 2030, EU in force</li>
       </ul>
-      <p class="caption">Encoding is identical in all views: color per pollutant, shape per station type, line style per limit</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="how">
-  <div class="spread">
-    <p class="label">How it works</p>
-    <div>
-      <p class="statement">Time and place are the two inputs. Both charts update from them.</p>
-      <figure style="margin:0">
-        <svg class="drawing" viewBox="0 0 360 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time and place both feed the daily curve and the limit chart. Map and limit chart share one selection.">
-          <line x1="104" y1="29" x2="228" y2="29" stroke="#4C72B0" stroke-width="1.8"/>
-          <line x1="104" y1="29" x2="228" y2="103" stroke="#4C72B0" stroke-width="1.8"/>
-          <line x1="104" y1="103" x2="228" y2="29" stroke="#DD8452" stroke-width="1.8"/>
-          <line x1="104" y1="103" x2="228" y2="103" stroke="#DD8452" stroke-width="1.8"/>
-          <rect x="2" y="12" width="102" height="34" fill="#FFFFFF"/>
-          <text x="12" y="33" font-size="10.5" font-weight="500" fill="#1F1F1F">Time</text>
-          <rect x="2" y="86" width="102" height="34" fill="#FFFFFF"/>
-          <text x="12" y="107" font-size="10.5" font-weight="500" fill="#1F1F1F">Place</text>
-          <rect x="228" y="14" width="130" height="30" fill="#FFFFFF"/><text x="238" y="33" font-size="9.5" fill="#1F1F1F">Daily curve</text>
-          <rect x="228" y="88" width="130" height="30" fill="#FFFFFF"/><text x="238" y="107" font-size="9.5" fill="#1F1F1F">Stations against limits</text>
-          <path d="M60 103 C 60 132, 300 132, 300 118" fill="none" stroke="#80868B" stroke-width="1" stroke-dasharray="2 3"/>
-        </svg>
-      </figure>
-      <p style="margin-top:36px">Time: full year or single months; all days, weekdays or weekends. Place: any set of stations, selected on the map or by station type. Selection works in both directions. A station clicked in the limit chart is also selected on the map.</p>
       <div class="compare">
         <div>
-          <p class="label">Before · city portal</p>
-          <ul class="flow">
-            <li>Open one station</li>
-            <li>Find a monthly or yearly report</li>
-            <li>Look up the limit separately</li>
-            <li>Compare stations manually</li>
-          </ul>
+          <h3 class="label">Before: city portal</h3>
+          <ol class="flow"><li>Open one station</li><li>Find a report</li><li>Look up the limit</li><li>Compare stations by hand</li></ol>
         </div>
         <div>
-          <p class="label">After</p>
-          <ul class="flow">
-            <li>Choose time</li>
-            <li>Choose stations</li>
-            <li>Read the daily curve</li>
-            <li>Read all stations against three labeled limits</li>
-          </ul>
+          <h3 class="label">After</h3>
+          <ol class="flow"><li>Choose time</li><li>Choose stations</li><li>Read all stations against three limits</li></ol>
         </div>
       </div>
     </div>
@@ -137,7 +113,7 @@
 
 <section class="section" id="process">
   <div class="spread">
-    <p class="label">Process</p>
+    <h2 class="label">Process</h2>
     <div>
       <ol class="steps">
         <li>Data exploration</li>
@@ -145,94 +121,82 @@
         <li>First build</li>
         <li>Prototype online</li>
       </ol>
-      <p class="loop">↺ Iterative: charts, screen, check against the data</p>
-      <dl class="meta" style="margin-top:52px">
-        <dt>Project</dt><dd>Independent, 2026</dd>
-        <dt>My role</dt><dd>Exploration · information architecture · interaction design · visual design · prototype</dd>
-        <dt>Tools</dt><dd>Pen and paper · Python (pandas, matplotlib) · HTML prototype · AI for research and code</dd>
-        <dt>Audience</dt><dd>Berlin residents checking where and when exposure is highest. No user tests yet.</dd>
-      </dl>
 
-      <h2 style="margin-top:64px">Data exploration</h2>
-      <p>I charted the data before designing the screen. NO₂ peaks in the morning rush hour. PM2.5 varies little over the day. A daily curve shows this directly, so the interface has no hour selector.</p>
+      <h3>Data exploration</h3>
+      <p>NO₂ peaks in the morning rush hour. PM2.5 changes little during the day. A daily curve shows both, so the interface has no hour selector.</p>
+
+      <h3>Sketches</h3>
       <figure>
-        <img src="bl_fig_hour_of_day.png" alt="Exploration chart: NO₂ and PM2.5 by hour of day for all stations. NO₂ peaks in the morning and again in the evening. PM2.5 stays almost flat.">
-        <figcaption>Exploration chart, mean by hour of day. Basis for the daily curve.</figcaption>
-      </figure>
-      <figure>
-        <img src="bl_fig_stations.png" alt="Exploration chart: annual mean per station for NO₂ and PM2.5, with dotted WHO, dashed EU 2030 and solid current EU lines.">
-        <figcaption>Exploration chart, annual mean per station. Line styles for the three limits reused in the interface.</figcaption>
+        <div class="pair">
+          <img src="skizze1.png" width="2667" height="1896" loading="lazy" alt="First pen sketch: station checklist, Berlin and 2025 fixed, filters for months, days and hours, a map highlighting the selection, a line chart and a bar chart with limit lines.">
+          <img src="skizze2.png" width="2571" height="1828" loading="lazy" alt="Second pen sketch: rows for days and months, station list on the left, station card with map, hour and weekday filters, a line chart and a bar chart.">
+        </div>
+        <figcaption>Station checklist and filters first, then the layout with map and charts.</figcaption>
       </figure>
 
-      <h2 style="margin-top:64px">Sketch</h2>
+      <h3>First build</h3>
       <figure>
-        <img class="drawing-wide" src="bl_sketch.jpg" alt="Pen sketch titled Air Quality: station checklist with All as default, Berlin and 2025 fixed, filters for months, days and hours, lowest and highest hourly values, a map highlighting the selection, a line chart and a bar chart with limit lines.">
-        <figcaption>Station checklist with All as default, Berlin and 2025 fixed, filters for month, day and hour, map highlighting the selection.</figcaption>
+        <img src="design_iteration%20at%2019.22.19.png" width="1447" height="1229" loading="lazy" alt="First build: month buttons, narrow station sidebar with truncated names, hour range, an unlabeled map and two charts.">
       </figure>
-
-      <h2 style="margin-top:64px">First build</h2>
-      <p>First implementation of the sketch. Issues found in use:</p>
       <figure>
-        <img src="bl_first_build.png" alt="First build: twelve month buttons, narrow station sidebar with truncated names, controls for pollutant, limit, view and hour range, a station card, an unlabeled map and two charts.">
-        <figcaption>First build</figcaption>
+        <div class="pair">
+          <img src="design_iteration%20at%2019.53.28.png" width="1712" height="1271" loading="lazy" alt="Second iteration: station names on the map, month row below, charts at the bottom.">
+          <img src="design_iteration%20at%2009.58.03.png" width="1473" height="1222" loading="lazy" alt="Third iteration: labeled station list beside the map, time controls on the left, charts below.">
+        </div>
+        <figcaption>Next iterations: names on the map, then a labeled list beside it.</figcaption>
       </figure>
-      <ul class="decisions" style="margin-top:44px">
-        <li><b>Stations</b><span>Sidebar list with truncated names. Now labeled on the map, filtered by type.</span></li>
-        <li><b>Map</b><span>Symbols without names. Now map, list and limit chart share one selection.</span></li>
-        <li><b>Time</b><span>Hour range 00:00 to 23:00. Now full year or month; all days, weekdays or weekends.</span></li>
-        <li><b>Limits</b><span>One limit at a time in a dropdown. Now all three drawn on the station chart.</span></li>
+      <ul class="decisions">
+        <li><b>Stations</b><span>Names were cut off in the sidebar. They are now labeled on the map.</span></li>
+        <li><b>Map</b><span>Symbols had no names. Map, list and chart now share one selection.</span></li>
+        <li><b>Time</b><span>An hour range from 00:00 to 23:00. Now year or month, weekday or weekend.</span></li>
+        <li><b>Limits</b><span>One limit at a time. Now all three in the chart.</span></li>
       </ul>
-      <p style="margin-top:36px">Constraint: 15 measuring points for 892 km². The interface shows values per station and gives the distance to the nearest other station on selection. It shows no values per district.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="decisions">
   <div class="spread">
-    <p class="label">Key design decisions</p>
+    <h2 class="label">Key decisions</h2>
     <div>
-      <p>Each value has a location and a timestamp. The layout keeps both visible at all times.</p>
-      <ul class="decisions" style="margin-top:36px">
-        <li><b>Single dense screen</b><span>time, place, daily curve and station comparison without navigation</span></li>
-        <li><b>Context next to data</b><span>each pollutant card states source and health effect; details further down</span></li>
-        <li><b>Shared selection</b><span>map, list and limit chart select the same stations</span></li>
-        <li><b>Labeled limits</b><span>dotted WHO, dashed EU 2030, solid EU in force</span></li>
-        <li><b>No hour selector</b><span>the daily curve covers time of day</span></li>
-        <li><b>Missing data labeled</b><span>stations without a PM2.5 sensor show “not measured here”</span></li>
-        <li><b>Station distance</b><span>distance to the nearest station shown on selection</span></li>
+      <figure class="lead-fig">
+        <img src="stations.png" width="772" height="353" loading="lazy" alt="Station selector: labels with leader lines to the Berlin map, filter buttons for all, traffic, background and suburb stations.">
+        <figcaption>Station labels with leader lines, filtered by type.</figcaption>
+      </figure>
+      <ul class="tiles">
+        <li><b>Single screen</b>Time, place and limits without navigation.</li>
+        <li><b>Shared selection</b>Map, list and chart select the same stations.</li>
+        <li><b>Labeled limits</b>Dotted WHO, dashed EU 2030, solid EU in force.</li>
+        <li><b>Gaps labeled</b>No PM2.5 sensor: “not measured here”.</li>
       </ul>
+      <p class="caption">15 stations cover 892 km². The interface shows values per station, not per district.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="lessons">
   <div class="spread">
-    <p class="label">Lessons learned</p>
-    <div>
-      <h2>Data exploration defined the controls.</h2>
-      <ol class="lessons" style="margin-top:36px">
-        <li><b>Exploration before layout</b><p>The charts showed which filters are useful: weekday or weekend, month. Single hours are not.</p></li>
-        <li><b>Charts as first draft</b><p>Colors, line styles and sort order from the exploration charts were reused in the interface.</p></li>
-        <li><b>AI with narrow scope</b><p>AI was useful for quick context research, for example current and future limits per pollutant. Results improved once design decisions were fixed and questions were narrow.</p></li>
-        <li><b>Next</b><p>Compare today's live value with 2025 values for the same hour. Usability test with residents.</p></li>
-      </ol>
-    </div>
+    <h2 class="label">Lessons</h2>
+    <ol class="lessons">
+      <li><b>Exploration first</b><p>The charts showed which filters were useful.</p></li>
+      <li><b>Charts as a draft</b><p>Colors, line styles and sort order came from the exploration charts.</p></li>
+      <li><b>Next</b><p>Usability test with residents. Add modeled and satellite data beside the station values.</p></li>
+    </ol>
   </div>
 </section>
 
 </main>
 
 <nav class="nextup" aria-label="More use cases">
-  <a href="master_follower.html">Use Case 1 · Master–Follower →</a>
-  <a href="verification_matrix.html">Use Case 2 · Verification Assignment Matrix →</a>
-  <a href="review_center.html">Use Case 3 · Review Center →</a>
+  <a href="master_follower.html">Use case 2 · Master–Follower <span aria-hidden="true">→</span></a>
+  <a href="verification_matrix.html">Use case 3 · Verification Assignment Matrix <span aria-hidden="true">→</span></a>
+  <a href="review_center.html">Use case 4 · Review Center <span aria-hidden="true">→</span></a>
 </nav>
 
 <footer class="pagefoot">
-  <p class="footnote">Published 20 October 2026. Interface prototype: <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">huggingface.co/spaces/petrakuhnle/berliner-luft</a></p>
-  <p class="footnote">Data: luftdaten.berlin.de, Berliner Luftgütemessnetz, SenMVKU. License dl-de/by-2-0. Own calculation. Limits: Directive (EU) 2024/2881, WHO Air Quality Guidelines 2021. Map outline © OpenStreetMap contributors.</p>
-  <p class="footnote">Independent project. Design decisions by me; AI used for context research and code. Created for portfolio purposes only.</p>
-  <p class="byline">Petra Kühnle · Senior Product Designer · <a href="index.html">Portfolio</a></p>
+  <p class="footnote">Data: luftdaten.berlin.de, Berliner Luftgütemessnetz, SenMVKU. License dl-de/by-2-0. Own calculation. Limits: Directive (EU) 2024/2881, WHO 2021. Map outline © OpenStreetMap contributors.</p>
+  <p class="footnote">Design decisions by me. AI used for research and code.</p>
+  <p class="byline">Petra Kühnle, Product Designer · <a href="index.html">Portfolio</a></p>
 </footer>
 
 </div>
