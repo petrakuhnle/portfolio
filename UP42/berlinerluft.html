@@ -8,21 +8,27 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Berliner Luft · Petra Kühnle, Product Designer">
 <meta property="og:description" content="When and where are people in Berlin most exposed to air pollution?">
-<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berliner_luft.html">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.casehead{background:#EBF0F7}
-.casehead figure img{max-width:100%}
+.casehead{padding-bottom:56px}
+.casehead .meta{margin-bottom:0}
+.hero{margin:56px 0 0}
+.hero img{max-width:100%}
+figure img.small{max-width:560px}
 .panel .outcomes{margin-bottom:20px}
 .keyed{margin-top:44px}
 #process h3{font-size:clamp(23px,2.6vw,28px);line-height:1.3;margin:64px 0 18px}
-#process .decisions{margin-top:36px}
+#process figure + .tiles{margin-top:32px}
 .pair{display:grid;gap:16px}
 @media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
 .pair img{max-width:100%}
+.crop img{object-fit:cover;object-position:left top;clip-path:inset(3px)}
+.crop--interface img{aspect-ratio:1.16}
+.crop--iterations img{aspect-ratio:1.35}
 .lead-fig{margin:0 0 32px}
 .lead-fig img{max-width:560px}
 #next figure + .tiles{margin-top:32px}
@@ -36,8 +42,8 @@
   <ul>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#interface">Interface</a></li>
-    <li><a href="#process">Process</a></li>
     <li><a href="#decisions">Decisions</a></li>
+    <li><a href="#process">Process</a></li>
     <li><a href="#next">Next</a></li>
     <li><a href="#lessons">Lessons</a></li>
   </ul>
@@ -58,12 +64,12 @@
       <dt>Data</dt><dd>Hourly values · 15 stations · 2025 · NO₂ and PM2.5</dd>
       <dt>Published</dt><dd>20 October 2026 · <a href="https://huggingface.co/spaces/petrakuhnle/berliner-luft" target="_blank" rel="noopener">Hugging Face<span class="vh"> (opens in a new tab)</span></a></dd>
     </dl>
-    <figure>
-      <img src="%20interface-berlinerluft.png" width="1432" height="1009" alt="Berliner Luft interface: pollutant cards, time filters, hourly chart for NO₂ and PM2.5, Berlin map with labeled stations, and a bar chart of all stations against WHO, EU 2030 and current EU limits.">
-      <figcaption>Time controls left. Station map right. Both charts follow the selection.</figcaption>
-    </figure>
   </div>
 </header>
+<figure class="hero">
+  <img src="%20interface-berlinerluft.png" width="1432" height="1009" alt="Berliner Luft interface: pollutant cards, time filters, hourly chart for NO₂ and PM2.5, Berlin map with labeled stations, and a bar chart of all stations against WHO, EU 2030 and current EU limits.">
+  <figcaption>Time controls left. Station map right. Both charts follow the selection.</figcaption>
+</figure>
 
 <main id="main">
 
@@ -77,6 +83,9 @@
         <li><b>10 of 15</b><span>above the WHO guideline</span></li>
       </ul>
       <p>NO₂ annual mean 2025. Public sources usually show one unnamed limit. The interface shows all three.</p>
+      <figure>
+        <img class="small" src="graph2.png" width="745" height="507" loading="lazy" alt="Against the limits chart: annual mean 2025 per station for NO₂ and PM2.5, sorted by NO₂, with dotted WHO, dashed EU 2030 and solid EU in force lines.">
+      </figure>
     </div>
   </div>
 </section>
@@ -87,9 +96,9 @@
     <div>
       <p><b>Two inputs:</b> time and stations. Both charts update from them.</p>
       <figure>
-        <div class="pair">
-          <img src="interface-filtered.png" width="1200" height="1030" loading="lazy" alt="Interface filtered to four background stations, January, weekends: the map highlights them and both charts show only these stations.">
-          <img src="interface-station.png" width="1200" height="1030" loading="lazy" alt="Interface with the suburban station Schichauweg selected: map highlight, its NO₂ curve, an annual mean of 8.4 µg/m³ below all three limits, PM2.5 not measured.">
+        <div class="pair crop crop--interface">
+          <img src="design_iteration%20at%2010.00.21.png" width="1427" height="1261" loading="lazy" alt="Interface filtered to four background stations, January, weekends: the map highlights them and both charts show only these stations.">
+          <img src="design_iteration%20at%2010.00.29.png" width="1406" height="1211" loading="lazy" alt="Interface with the suburban station Schichauweg selected: map highlight, its NO₂ curve, an annual mean of 8.4 µg/m³ below all three limits, PM2.5 not measured.">
         </div>
         <figcaption>Left: background stations · January · weekends. Right: Schichauweg selected. No PM2.5 sensor at this station.</figcaption>
       </figure>
@@ -113,19 +122,35 @@
   </div>
 </section>
 
+<section class="section" id="decisions">
+  <div class="spread">
+    <h2 class="label">Key decisions</h2>
+    <div>
+      <figure class="lead-fig">
+        <img src="stations.png" width="772" height="353" loading="lazy" alt="Station selector: labels with leader lines to the Berlin map, filter buttons for all, traffic, background and suburb stations.">
+        <figcaption>Station labels with leader lines. Filter by type.</figcaption>
+      </figure>
+      <ul class="tiles">
+        <li><b>Shared selection</b>Map · list · chart share one selection.</li>
+        <li><b>Labeled limits</b>Dotted WHO · dashed EU 2030 · solid EU in force.</li>
+        <li><b>Missing data labeled</b>Stations without a PM2.5 sensor show “not measured here”.</li>
+        <li><b>Coverage shown</b>Each view states its share of valid hours.</li>
+      </ul>
+      <p class="caption">15 stations for 892 km². Values per station only. No values per district.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="process">
   <div class="spread">
     <h2 class="label">Process</h2>
     <div>
-      <ol class="steps">
-        <li>Data exploration</li>
-        <li>Sketch</li>
-        <li>Iterations</li>
-        <li>Prototype online</li>
-      </ol>
 
       <h3>Data exploration</h3>
       <p>NO₂ peaks in the morning and evening rush hours. PM2.5 stays almost flat. A daily curve shows both. No hour selector needed.</p>
+      <figure>
+        <img class="small" src="graph1.png" width="636" height="564" loading="lazy" alt="By hour of day chart: NO₂ with morning and evening peaks, PM2.5 almost flat, and the lowest and highest hourly values below.">
+      </figure>
 
       <h3>Sketches</h3>
       <figure>
@@ -138,36 +163,17 @@
 
       <h3>Iterations</h3>
       <figure>
-        <div class="pair">
-          <img src="iteration-2.png" width="1200" height="886" loading="lazy" alt="Iteration: station names on the map, month row below, charts at the bottom.">
-          <img src="iteration-3.png" width="1200" height="886" loading="lazy" alt="Later iteration: labeled station list beside the map, time controls on the left, charts below.">
+        <div class="pair crop crop--iterations">
+          <img src="design_iteration%20at%2019.53.28.png" width="1712" height="1271" loading="lazy" alt="Iteration: station names on the map, month row below, charts at the bottom.">
+          <img src="design_iteration%20at%2009.58.03.png" width="1473" height="1222" loading="lazy" alt="Later iteration: labeled station list beside the map, time controls on the left, charts below.">
         </div>
       </figure>
-      <ul class="decisions">
-        <li><b>Stations</b><span>Before: names cut off in the sidebar. Now: labeled on the map.</span></li>
-        <li><b>Map</b><span>Before: symbols without names. Now: map · list · chart share one selection.</span></li>
-        <li><b>Time</b><span>Before: hour range 00:00 to 23:00. Now: year or month · weekday or weekend.</span></li>
-        <li><b>Limits</b><span>Before: one limit at a time. Now: all three in the chart.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="decisions">
-  <div class="spread">
-    <h2 class="label">Key decisions</h2>
-    <div>
-      <figure class="lead-fig">
-        <img src="stations.png" width="772" height="353" loading="lazy" alt="Station selector: labels with leader lines to the Berlin map, filter buttons for all, traffic, background and suburb stations.">
-        <figcaption>Station labels with leader lines. Filter by type.</figcaption>
-      </figure>
       <ul class="tiles">
-        <li><b>Single screen</b>Time · place · limits without navigation.</li>
-        <li><b>Shared selection</b>Map · list · chart share one selection.</li>
-        <li><b>Labeled limits</b>Dotted WHO · dashed EU 2030 · solid EU in force.</li>
-        <li><b>Missing data labeled</b>Stations without a PM2.5 sensor show “not measured here”.</li>
+        <li><b>Stations</b>Before: names cut off in the sidebar. Now: labeled on the map.</li>
+        <li><b>Map</b>Before: symbols without names. Now: map · list · chart share one selection.</li>
+        <li><b>Time</b>Before: hour range 00:00 to 23:00. Now: year or month · weekday or weekend.</li>
+        <li><b>Limits</b>Before: one limit at a time. Now: all three in the chart.</li>
       </ul>
-      <p class="caption">15 stations for 892 km². Values per station only. No values per district.</p>
     </div>
   </div>
 </section>
