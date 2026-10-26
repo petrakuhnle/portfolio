@@ -8,6 +8,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Berliner Luft · Petra Kühnle, Product Designer">
 <meta property="og:description" content="How can a user understand Berlin's air pollution data in more depth without too much complexity?">
+<meta property="og:image" content="https://petrakuhnle.github.io/portfolio/UP42/og-berlinerluft.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +19,11 @@
 <style>
 .pair{display:grid;gap:16px}
 @media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
-.pair img{max-width:100%;width:100%;height:auto}
-img{height:auto}
+img{height:auto;max-width:100%}
+figure{margin:28px 0 0}
+figure + figure{margin-top:36px}
+figcaption{margin-top:10px}
+.tiles{margin-top:36px}
 .proto{color:#4C72B0;font-weight:500}
 .proto:hover{color:#2F5592}
 .limits-table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.45;margin:0 0 24px}
@@ -60,7 +66,7 @@ img{height:auto}
   </div>
 </header>
 <figure class="hero">
-  <img src="%20interface-berlinerluft.png" width="1432" height="1009" alt="Berliner Luft interface: time filters, hourly chart, station map and bar chart against three limits.">
+  <img src="one-station-selected.png" width="1273" height="1174" alt="Berliner Luft interface with Frankfurter Allee selected: time filters and hour chart on the left, station map, station card and limits table on the right.">
   <figcaption>Choose month, days and stations. Map, charts and station card follow for NO₂ and PM2.5.</figcaption>
 </figure>
 
@@ -91,13 +97,10 @@ img{height:auto}
     <div>
       <p>The user can select stations, months and weekdays or weekends to compare values over the day and year against current and future limits and guide values. Selection works by label or directly in the graph. Graph and map update each other.</p>
       <figure>
-        <div class="pair">
-          <img src="graph1.png" width="636" height="564" loading="lazy" alt="By hour of day chart for NO₂ and PM2.5 with lowest and highest hour.">
-          <img src="graph2.png" width="745" height="507" loading="lazy" alt="Annual mean per station against WHO, EU 2030 and EU in force lines.">
-        </div>
+        <img src="graph2.png" width="745" height="507" loading="lazy" alt="Annual mean per station against WHO, EU 2030 and EU now lines.">
         <figcaption>Two pollutants side by side: NO₂ follows streets and hours, PM2.5 stays high almost everywhere.</figcaption>
       </figure>
-      <ul class="keyed" style="margin-top:52px">
+      <ul class="keyed" style="margin-top:28px">
         <li><b><span class="swatch" style="background:#4C72B0"></span>NO₂</b>gas, mainly traffic</li>
         <li><b><span class="swatch" style="background:#DD8452"></span>PM2.5</b>fine particles</li>
         <li><b>■ ● ◆</b>traffic · background · suburb</li>
@@ -118,8 +121,10 @@ img{height:auto}
     <h2 class="label">How it works</h2>
     <div>
       <p class="statement">Switch from weekday to weekend and the NO₂ rush-hour peaks drop, especially in the morning. Select stations, and central traffic sites stand out from suburb and background stations.</p>
-      <figure><video src="video-month.mov" controls muted playsinline preload="metadata" style="width:100%;max-width:820px;height:auto" aria-label="Choosing a month updates both charts."></video></figure>
-      <figure><video src="video-station.mov" controls muted playsinline preload="metadata" style="width:100%;max-width:820px;height:auto" aria-label="Clicking a station highlights it on the map, in the station card and in the limits table."></video></figure>
+      <figure>
+        <video src="video-station.mp4" autoplay loop muted playsinline preload="auto" style="width:100%;max-width:820px;height:auto;display:block;border-radius:6px" aria-label="Clicking a station highlights it on the map, in the station card and in the limits table."></video>
+        <figcaption>Click a station: map, station card, charts and limits table follow.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -139,18 +144,19 @@ img{height:auto}
       <p style="margin-top:36px">NO₂ peaks in the morning and evening and is much lower on weekend mornings. PM2.5 is highest in February and March. NO₂ varies by street and hour, PM2.5 by month, so the chart switches between hour and month.</p>
       <figure>
         <img src="02_daily_cycle_relative.png" width="1350" height="750" loading="lazy" alt="Hourly values relative to station mean: NO₂ peaks at 7 and 21, PM2.5 nearly flat.">
+        <figcaption>Exploration chart: NO₂ peaks at 7 and 21, PM2.5 stays flat. This decided the hour view.</figcaption>
       </figure>
-      <div class="pair">
-        <img src="skizze2.png" width="2571" height="1828" loading="lazy" alt="Pen sketch of the layout.">
-        <img src="design_iteration%20at%2009.58.03.png" width="1473" height="1222" loading="lazy" alt="HTML draft: labelled station list beside the map, time controls on the left, charts below.">
-      </div>
+      <figure>
+        <img src="skizze2.png" width="2571" height="1828" loading="lazy" style="width:60%" alt="Pen sketch of the layout.">
+        <figcaption>Pen sketch: station list, map, time controls and two charts on one screen.</figcaption>
+      </figure>
       <figure>
         <img src="interface-draft.png" loading="lazy" style="width:60%" alt="Rough layout in grey boxes: selection controls top left, Berlin outline with station dots top right, hour chart bottom left, station bars bottom right.">
         <figcaption>Layout reduced to four blocks, redrawn in Figma: choose, where, when, against the limits.</figcaption>
       </figure>
       <figure>
-        <img src="design-sytstem.png" loading="lazy" style="width:60%" alt="Design system draft in Figma: ten colour tokens, three type styles, dotted, dashed and solid limit lines, and a station label component with traffic, background and suburb types in default and selected states.">
-        <figcaption>Design system draft: tokens from the live interface, and one component built fully. The station label has type and state variants. Shape carries the type, not colour.</figcaption>
+        <img src="design-sytstem-draft.png" loading="lazy" style="width:60%" alt="Design system draft in Figma: ten colour tokens, three type styles, dotted, dashed and solid limit lines, and a station label component with traffic, background and suburb types in default and selected states.">
+        <figcaption>A peek into the design system work: tokens from the interface, limit line styles and the station label with its states.</figcaption>
       </figure>
     </div>
   </div>
@@ -162,16 +168,12 @@ img{height:auto}
     <h2 class="label">Key design decisions</h2>
     <div>
       <figure>
-        <img src="one-station-selected.png" width="1273" height="1174" loading="lazy" alt="Berliner Luft interface with Frankfurter Allee selected: the station is highlighted on the map, in the station card, in the status line and as a coloured row in the limits table, and both charts show only this station.">
-      </figure>
-      <figure>
-        <img src="stations.png" width="772" height="353" loading="lazy" alt="Station labels with leader lines and type filters.">
-      </figure>
-      <figure>
         <img src="screenshot_missing_PM2.5.png" loading="lazy" alt="Station card for Frohnau, a suburb station: NO₂ annual mean 7.6, below all three limits; PM2.5 not measured here; measuring height not published; nearest station 12.7 km.">
+        <figcaption>Station card for Frohnau: what is missing is said out loud. PM2.5 not measured, height not published, nearest station 12.7 km.</figcaption>
       </figure>
       <figure>
-        <img src="extremes_with_context_fireworks.png" loading="lazy" alt="December 2025, all 15 stations: hour-of-day chart for NO₂ and PM2.5, and below it the lowest and highest hour per pollutant with date, time and station; the PM2.5 peak of 122 µg/m³ on 31 December at 23:00 is marked as New Year fireworks.">
+        <img src="extremes_with_context_fireworks.png" loading="lazy" style="width:60%" alt="December 2025, all 15 stations: hour-of-day chart for NO₂ and PM2.5, and below it the lowest and highest hour per pollutant with date, time and station; the PM2.5 peak of 122 µg/m³ on 31 December at 23:00 is marked as New Year fireworks.">
+        <figcaption>December 2025: the highest hour carries date, time, station and the event behind it, New Year fireworks.</figcaption>
       </figure>
       <ul class="tiles">
         <li><b>Station card</b>One click opens a station card: type, distance, height, verdict per limit.</li>
