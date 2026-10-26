@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berliner Luft · Petra Kühnle, Product Designer</title>
+<meta name="description" content="How can a user understand Berlin's air pollution data in more depth without too much complexity? Interface for 15 stations, 2025, NO₂ and PM2.5 against three limits.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Berliner Luft · Petra Kühnle, Product Designer">
+<meta property="og:description" content="How can a user understand Berlin's air pollution data in more depth without too much complexity?">
+<meta property="og:image" content="https://petrakuhnle.github.io/portfolio/UP42/og-berlinerluft.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.pair{display:grid;gap:16px}
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+img{height:auto;max-width:100%}
+figure{margin:28px 0 0}
+figure + figure{margin-top:36px}
+figcaption{margin-top:10px}
+.tiles{margin-top:36px}
+.proto{color:#4C72B0;font-weight:500}
+.proto:hover{color:#2F5592}
+.limits-table td b{font-size:24px;font-weight:700;color:#15212C;margin-right:2px}
+.limits-table .lt-note{font-size:14px;color:#44536A}
+.limits-table thead th{vertical-align:bottom}
+.decisions{margin:32px 0 0;padding-left:1.2em;max-width:36em;list-style:disc}
+.decisions li{font-size:18px;line-height:1.6;color:var(--body);margin:0 0 10px;padding:0;border:0;background:none}
+.decisions li::marker{color:#44536A}
+.decisions b{display:inline;color:var(--ink);font-weight:700}
+.limits-table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.45;margin:0 0 24px}
+.limits-table caption{text-align:left;font-size:15px;color:#5F6368;padding-bottom:10px}
+.limits-table th,.limits-table td{text-align:left;vertical-align:baseline;padding:10px 12px 10px 0;border-bottom:1px solid #E0DCD6}
+.limits-table thead th{font-size:15px;font-weight:500;color:#1F1F1F}
+.limits-table tbody th{font-weight:700}
+</style>
+</head>
+<body>
+<a class="skip" href="#impact">Skip to content</a>
+<div class="page">
+
+<nav class="nav" aria-label="Sections">
+ <ul>
+  <li><a href="#impact">Impact</a></li>
+  <li><a href="#interface">Interface</a></li>
+  <li><a href="#how">How it works</a></li>
+  <li><a href="#process">Process</a></li>
+  <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#lessons">Lessons</a></li>
+ </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="casehead">
+  <p class="label">Use case 1 of 4 · Independent project, 2026</p>
+  <h1>Berliner Luft</h1>
+  <p class="standfirst">How can a user understand Berlin's air pollution data in more depth without too much complexity?</p>
+  <div class="spread spread--facts">
+    <dl class="meta">
+      <dt>Context</dt><dd>I started this project to combine data and user experience.</dd>
+      <dt>Scope</dt><dd>Research · data analysis in Python · sketches · HTML draft · coded prototype · Figma design system draft</dd>
+      <dt>Data</dt><dd>Hourly values · 15 stations · 2025 · NO₂, PM2.5</dd>
+      <dt>Outcome</dt><dd>Started 5 October 2026 · <a class="proto" href="https://petrakuhnle.github.io/Air_Quality_Project/app/" target="_blank" rel="noopener">interface prototype<span class="vh"> (opens in a new tab)</span></a> published 20 October 2026</dd>
+    </dl>
+  </div>
+  <div class="topbar">
+    <a href="index.html">← Portfolio</a>
+  </div>
+</header>
+<figure class="hero">
+  <img src="one-station-selected.png" width="1273" height="1174" alt="Berliner Luft interface with Frankfurter Allee selected: time filters and hour chart on the left, station map, station card and limits table on the right.">
+  <figcaption>Choose month, days and stations. Map, charts and station card follow for NO₂ and PM2.5.</figcaption>
+</figure>
+
+<main>
+
+<!-- IMPACT -->
+<section class="section" id="impact">
+  <div class="spread">
+    <h2 class="label">Impact</h2>
+    <div class="panel">
+      <table class="limits-table">
+        <thead><tr><th scope="col"></th><th scope="col"><svg width="30" height="8" aria-hidden="true" style="display:block;margin-bottom:6px"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="2"/></svg>EU limit now</th><th scope="col"><svg width="30" height="8" aria-hidden="true" style="display:block;margin-bottom:6px"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="2" stroke-dasharray="6 4"/></svg>EU limit 2030</th><th scope="col"><svg width="30" height="8" aria-hidden="true" style="display:block;margin-bottom:6px"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="3" stroke-dasharray="0 6" stroke-linecap="round"/></svg>WHO guideline</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">NO₂</th><td><b>none</b> of 15</td><td><b>5</b> of 15</td><td><b>10</b> of 15<br><span class="lt-note">all but the 5 suburb stations</span></td></tr>
+          <tr><th scope="row">PM2.5</th><td><b>none</b> of 12</td><td><b>9</b> of 12</td><td><b>all</b> 12</td></tr>
+        </tbody>
+      </table>
+      <p>By today’s EU limit, every station is fine. By the 2030 limit and WHO, many are not. Other interfaces show only today’s verdict, although the data are public.</p>
+      <p>Annual means 2025. Short peaks can still harm health, and a station 100 m or several km away cannot show personal exposure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTERFACE -->
+<section class="section" id="interface">
+  <div class="spread">
+    <h2 class="label">The interface</h2>
+    <div>
+      <figure style="margin-top:0">
+        <img src="graph2.png" width="745" height="507" loading="lazy" alt="Annual mean per station for NO₂ and PM2.5 against WHO, EU 2030 and EU now lines.">
+        <figcaption>NO₂ follows streets and hours, PM2.5 stays high almost everywhere.</figcaption>
+      </figure>
+      <p style="margin-top:24px">Choose stations, months and days. Map, charts and station card update each other.</p>
+      <figure>
+        <img src="about-the-data.png" loading="lazy" alt="About the data panel below the interface: limits table with sources, pollutant choice, station types and method notes.">
+        <figcaption>Context below the data: sources, limits, method. Users can verify, not just trust.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="spread">
+    <h2 class="label">How it works</h2>
+    <div>
+      <figure style="margin-top:0">
+        <video src="video-station.mp4" autoplay loop muted playsinline preload="auto" style="width:100%;max-width:820px;height:auto;display:block;border-radius:6px" aria-label="Clicking a station highlights it on the map, in the station card and in the limits table."></video>
+        <figcaption>Click a station: map, station card, charts and limits table follow.</figcaption>
+      </figure>
+      <p style="margin-top:24px">On weekend mornings the NO₂ rush-hour peak drops. Central traffic stations stand out from suburb and background stations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="spread">
+    <h2 class="label">Process</h2>
+    <div>
+      <ol class="steps">
+        <li>Data exploration</li>
+        <li>Pen sketches</li>
+        <li>HTML draft</li>
+        <li>Prototype</li>
+        <li>Design system draft</li>
+      </ol>
+      <figure>
+        <img src="02_daily_cycle_relative.png" width="1350" height="750" loading="lazy" alt="Hourly values relative to station mean: NO₂ peaks at 7 and 21, PM2.5 nearly flat.">
+        <figcaption>NO₂ peaks at rush hour while PM2.5 stays flat, so the chart got an hour view.</figcaption>
+      </figure>
+      <figure>
+        <img src="skizze2.png" width="2571" height="1828" loading="lazy" style="width:60%" alt="Pen sketch of the layout.">
+        <figcaption>Pen sketch: all controls and both charts on one screen.</figcaption>
+      </figure>
+      <figure>
+        <img src="interface-draft.png" loading="lazy" style="width:60%" alt="Rough layout in grey boxes: selection controls top left, Berlin outline with station dots top right, hour chart bottom left, station bars bottom right.">
+        <figcaption>Layout reduced to four blocks: choose, where, when, against the limits.</figcaption>
+      </figure>
+      <figure>
+        <img src="design-system.png" loading="lazy" style="width:60%" alt="Design system draft in Figma: colour tokens, type styles, dotted, dashed and solid limit lines, and the station label component in default and selected states.">
+        <figcaption>A peek into the design system: tokens, limit lines and station label states.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- DECISIONS -->
+<section class="section" id="decisions">
+  <div class="spread">
+    <h2 class="label">Key design decisions</h2>
+    <div>
+      <figure style="margin-top:0">
+        <img src="extremes_with_context_fireworks.png" loading="lazy" style="width:60%" alt="December 2025, all 15 stations: hour-of-day chart for NO₂ and PM2.5, and below it the lowest and highest hour per pollutant with date, time and station; the PM2.5 peak of 122 µg/m³ on 31 December at 23:00 is marked as New Year fireworks.">
+        <figcaption>The highest hour carries date, time, station and the event behind it.</figcaption>
+      </figure>
+      <ul class="decisions">
+        <li><b>Station card.</b> One click opens a station card: type, distance, height, verdict per limit.</li>
+        <li><b>Three labelled limits.</b> Three limits instead of a grade: EU now, EU 2030, WHO. “Good” becomes relative.</li>
+        <li><b>Missing data labelled.</b> Gaps are named, not hidden: “not measured” in the table, “not published” on the card.</li>
+        <li><b>Extremes with context.</b> Extremes show date, time, station and known events like New Year fireworks.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS + NEXT -->
+<section class="section" id="lessons">
+  <div class="spread">
+    <h2 class="label">Lessons learned</h2>
+    <div>
+      <ol class="lessons">
+        <li><b>Data skills for design</b><p>Understanding data, data analysis and data visualization helps me design information and interfaces more broadly, and integrate data work into design.</p></li>
+        <li><b>AI in the design process</b><p>Useful for research, finding data and coding a realistic prototype from a sketch. It struggles with consistency across states: layouts jump, labels overlap, backgrounds change. It clutters with grey explanations and works best with clear instructions or examples.</p></li>
+        <li><b>Transparency and usability</b><p>With more AI and more data everywhere, people want to verify. Balancing transparency and usability matters more than giving more answers.</p></li>
+        <li><b>What I would test next</b><p>Compare Berliner Luft, Apple Weather and Berlin LQI with one defined user group. Ask the same questions on speed and clarity: when is air better or worse, and which limits are changing? The other two answer “good now” fast.</p></li>
+        <li><b>Next version · not built</b><p>One place, several sources: stations, Berlin’s model grid, Sentinel-5P NO₂ and a satellite image of green vs. built-up areas, shown as context, not as a cause. Later, ozone, weather and health context from existing models, making information accessible and usable rather than competing with data modelling.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<nav class="nextup" aria-label="More use cases">
+  <a href="master_follower.html">Use case 2 · Master-Follower <span aria-hidden="true">→</span></a>
+  <a href="verification_matrix.html">Use case 3 · Verification Assignment Matrix <span aria-hidden="true">→</span></a>
+  <a href="review_center.html">Use case 4 · Review Center <span aria-hidden="true">→</span></a>
+</nav>
+
+<footer class="pagefoot">
+  <p class="footnote">Data: hourly values from the <a href="https://luftdaten.berlin.de/api/doc" target="_blank" rel="noopener">luftdaten.berlin.de API<span class="vh"> (opens in a new tab)</span></a> · Berliner Luftgütemessnetz · SenMVKU · licence dl-de/by-2-0 · own calculation. The limits are not part of the raw data. I researched them and checked them against the sources: EU now <a href="https://eur-lex.europa.eu/eli/dir/2008/50/oj" target="_blank" rel="noopener">Directive 2008/50/EC<span class="vh"> (opens in a new tab)</span></a> · EU 2030 <a href="https://eur-lex.europa.eu/eli/dir/2024/2881/oj" target="_blank" rel="noopener">Directive (EU) 2024/2881<span class="vh"> (opens in a new tab)</span></a> · WHO <a href="https://www.who.int/publications/i/item/9789240034228" target="_blank" rel="noopener">guidelines 2021<span class="vh"> (opens in a new tab)</span></a>. Map outline © OpenStreetMap contributors.</p>
+  <p class="footnote">Without AI: topic, user perspective, visual layout and design principles. With AI: context on the topic, locating the limit sources, and data analysis and visualization, after learning the basics without it. Data and code kept separate so AI could not invent values: Python notebooks export one JSON file, and the interface only reads it. Checking the same values in the analysis charts, the interface and this page let me catch inconsistencies AI had introduced.</p>
+  <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
+</footer>
+
+</div>
+</body>
+</html>
