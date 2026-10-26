@@ -2,8 +2,8 @@
    One stylesheet for index.html and all four case study pages. */
 
 :root{
-  --ink:#1F1F1F; --body:#3C4043; --quiet:#5F6368;
-  --label:#8C5E3C; --link:#A44A15; --rule:#E6E6E6;
+  --ink:#15212C; --body:#2E3B4E; --quiet:#44536A;
+  --label:#44536A; --link:#2F5E9E; --rule:#D9DEE3;
   --ok:#4C8A5F; --pending:#C9A227; --diverged:#4A7FB5;
   --gutter:clamp(24px,5vw,64px);
 }
@@ -206,12 +206,12 @@ h2.label,h3.label{font-weight:400;max-width:none}
 .casehead{background:#F3F5F7;margin:0 calc(50% - 50vw);padding:56px calc(50vw - 50%) 56px}
 .casehead .topbar{padding:40px 0 0}
 .casehead figure{margin:0}
-.panel{background:#F7F2EE;border-radius:4px;padding:36px 40px}
+.panel{background:#EEF2F6;border-radius:4px;padding:36px 40px}
 .panel .outcomes:last-child{margin-bottom:0}
 .tiles{display:grid;gap:12px;margin:0;padding:0;list-style:none}
 p + .tiles{margin-top:32px}
 @media(min-width:620px){.tiles{grid-template-columns:1fr 1fr}}
-.tiles li{background:#F4F4F2;border-radius:4px;padding:20px 24px;font-size:16px;line-height:1.5;color:var(--body)}
+.tiles li{background:#F3F5F7;border-radius:4px;padding:20px 24px;font-size:16px;line-height:1.5;color:var(--body)}
 .tiles b{display:block;font-size:17px;color:var(--ink);margin-bottom:4px}
 .casehead .meta{margin-bottom:0}
 .hero{margin:72px 0 0}
