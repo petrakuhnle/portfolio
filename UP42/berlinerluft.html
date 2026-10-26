@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Berliner Luft · Petra Kühnle, Product Designer</title>
-<meta name="description" content="Berliner Luft: interface for hourly air quality data from 15 Berlin measuring stations, 2025.">
+<meta name="description" content="How can a user understand Berlin's air pollution data in more depth without too much complexity? Interface for 15 stations, 2025, NO₂ and PM2.5 against three limits.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Berliner Luft · Petra Kühnle, Product Designer">
+<meta property="og:description" content="How can a user understand Berlin's air pollution data in more depth without too much complexity?">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/berlinerluft.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +25,6 @@ img{height:auto}
 .limits-table th,.limits-table td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid #E0DCD6}
 .limits-table thead th{font-size:15px;font-weight:500;color:#1F1F1F}
 .limits-table tbody th{font-weight:700}
-/* DRAFT ONLY: delete .todo and .slot before publishing */
-.todo{border-left:3px solid #DD8452;padding:6px 12px;color:#555;background:#FFF6EF}
-.slot{border:2px dashed #999;padding:24px;text-align:center;color:#666;margin:16px 0}
 </style>
 </head>
 <body>
@@ -120,8 +118,8 @@ img{height:auto}
     <h2 class="label">How it works</h2>
     <div>
       <p class="statement">Switch from weekday to weekend and the NO₂ rush-hour peaks drop, especially in the morning. Select stations and central traffic sites stand out from suburb and background stations.</p>
-      <div class="slot">VIDEO 1 · choose a month → both charts update (10–15 s)</div>
-      <div class="slot">VIDEO 2 · click a station on the map → list and chart highlight</div>
+      <figure><video src="video-month.mov" controls muted playsinline preload="metadata" style="width:100%;max-width:820px;height:auto" aria-label="Choosing a month updates both charts."></video></figure>
+      <figure><video src="video-station.mov" controls muted playsinline preload="metadata" style="width:100%;max-width:820px;height:auto" aria-label="Clicking a station highlights it on the map, in the station card and in the limits table."></video></figure>
     </div>
   </div>
 </section>
@@ -135,7 +133,6 @@ img{height:auto}
         <li>Data exploration</li>
         <li>Pen sketches</li>
         <li>HTML draft</li>
-        <li>Mini design system</li>
         <li>Prototype</li>
       </ol>
       <p style="margin-top:36px">NO₂ peaks in the morning and evening and is much lower on weekend mornings. PM2.5 is highest in February and March. NO₂ varies by street and hour, PM2.5 by month, so the chart switches between hour and month.</p>
@@ -144,9 +141,8 @@ img{height:auto}
       </figure>
       <div class="pair">
         <img src="skizze2.png" width="2571" height="1828" loading="lazy" alt="Pen sketch of the layout.">
-        <div class="slot">HTML DRAFT · first screen matching the sketch</div>
+        <img src="design_iteration%20at%2009.58.03.png" width="1473" height="1222" loading="lazy" alt="HTML draft: labelled station list beside the map, time controls on the left, charts below.">
       </div>
-      <div class="slot">MINI DESIGN SYSTEM · colours · type · line styles · shapes · components · states</div>
     </div>
   </div>
 </section>
