@@ -50,7 +50,7 @@ img{height:auto}
   <div class="spread spread--facts">
     <dl class="meta">
       <dt>Context</dt><dd>I started this project to combine data and user experience.</dd>
-      <dt>Scope</dt><dd>Research · data analysis in Python · sketches · HTML draft · coded prototype</dd>
+      <dt>Scope</dt><dd>Research · data analysis in Python · sketches · HTML draft · coded prototype · Figma design system draft</dd>
       <dt>Data</dt><dd>Hourly values · 15 stations · 2025 · NO₂, PM2.5</dd>
       <dt>Outcome</dt><dd>Started 5 October 2026 · <a class="proto" href="https://petrakuhnle.github.io/Air_Quality_Project/app/" target="_blank" rel="noopener">interface prototype<span class="vh"> (opens in a new tab)</span></a> published 20 October 2026</dd>
     </dl>
@@ -134,6 +134,7 @@ img{height:auto}
         <li>Pen sketches</li>
         <li>HTML draft</li>
         <li>Prototype</li>
+        <li>Design system draft</li>
       </ol>
       <p style="margin-top:36px">NO₂ peaks in the morning and evening and is much lower on weekend mornings. PM2.5 is highest in February and March. NO₂ varies by street and hour, PM2.5 by month, so the chart switches between hour and month.</p>
       <figure>
@@ -143,6 +144,14 @@ img{height:auto}
         <img src="skizze2.png" width="2571" height="1828" loading="lazy" alt="Pen sketch of the layout.">
         <img src="design_iteration%20at%2009.58.03.png" width="1473" height="1222" loading="lazy" alt="HTML draft: labelled station list beside the map, time controls on the left, charts below.">
       </div>
+      <figure>
+        <img src="interface-draft.png" loading="lazy" style="width:60%" alt="Rough layout in grey boxes: selection controls top left, Berlin outline with station dots top right, hour chart bottom left, station bars bottom right.">
+        <figcaption>Layout reduced to four blocks, redrawn in Figma: choose, where, when, against the limits.</figcaption>
+      </figure>
+      <figure>
+        <img src="design-sytstem.png" loading="lazy" style="width:60%" alt="Design system draft in Figma: ten colour tokens, three type styles, dotted, dashed and solid limit lines, and a station label component with traffic, background and suburb types in default and selected states.">
+        <figcaption>Design system draft: tokens from the live interface, and one component built fully. The station label has type and state variants. Shape carries the type, not colour.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -184,7 +193,7 @@ img{height:auto}
         <li><b>AI in the design process</b><p>Useful for research, finding data and coding a realistic prototype from a sketch. It struggles with consistency across states: layouts jump, labels overlap, backgrounds change. It clutters with grey explanations and works best with clear instructions or examples.</p></li>
         <li><b>Transparency and usability</b><p>With more AI and more data everywhere, people want to verify. Balancing transparency and usability matters more than giving more answers.</p></li>
         <li><b>What I would test next</b><p>Compare Berliner Luft, Apple Weather and Berlin LQI with one defined user group. Ask the same questions on speed and clarity: when is air better or worse, and which limits are changing? The other two answer “good now” fast.</p></li>
-        <li><b>Next version · not built</b><p>One place, several sources: stations, Berlin’s model grid, Sentinel-5P NO₂ and green vs. built-up areas. Later, ozone, weather and health context from existing models, making information accessible and usable rather than competing with data modelling.</p></li>
+        <li><b>Next version · not built</b><p>One place, several sources: stations, Berlin’s model grid, Sentinel-5P NO₂ and a satellite image of green vs. built-up areas, shown as context, not as a cause. Later, ozone, weather and health context from existing models, making information accessible and usable rather than competing with data modelling.</p></li>
       </ol>
     </div>
   </div>
