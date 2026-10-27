@@ -4,38 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Review Center · Petra Kühnle, Product Designer</title>
-<meta name="description" content="Formal reviews from setup to sign-off, traceable in the project. Valispace 2021, live in Altium 365 today.">
+<meta name="description" content="Formal reviews from setup to sign-off, run on the data already in the project. Valispace 2021, live in Altium 365 today.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Review Center · Petra Kühnle, Product Designer">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/product-design/review_center.html">
-<meta property="og:description" content="Formal reviews from setup to sign-off, traceable in the project. Valispace 2021, live in Altium 365 today.">
+<meta property="og:description" content="Formal reviews from setup to sign-off, run on the data already in the project. Valispace 2021, live in Altium 365 today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>.vmodel{margin:56px 0 0}.vmodel svg{display:block;width:100%;max-width:820px;height:auto}.vlegend{list-style:none;margin:24px 0 0;padding:0;font-size:15px;line-height:1.5;color:#15212C}.vlegend li{margin:0 0 8px}.vmodel figcaption{margin-top:16px;max-width:40em}figure+figure{margin-top:40px}figcaption{margin-top:12px}</style>
 </head>
 <body>
-<a class="skip" href="#impact">Skip to content</a>
+<a class="skip" href="#problem">Skip to content</a>
 <div class="page">
 
 <nav class="nav" aria-label="Sections">
  <ul>
   <li><a href="#impact">Impact</a></li>
+  <li><a href="#problem">Problem</a></li>
+  <li><a href="#workflow">Workflow</a></li>
   <li><a href="#shipped">Shipped</a></li>
-  <li><a href="#how">How it works</a></li>
-  <li><a href="#process">Process</a></li>
   <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#process">Process</a></li>
   <li><a href="#lessons">Lessons</a></li>
  </ul>
 </nav>
 
 <header class="casehead">
   <p class="label">Use case 4 of 4 · Valispace, 2021</p>
-  <h1>How I designed review workflows around the user journey and domain conventions</h1>
-  <p class="standfirst">Formal reviews from setup to sign-off, built from industry conventions and the needs of each role. <strong>Who reviews what, and what is done, at a glance.</strong></p>
+  <h1>Review Center</h1>
+  <p class="standfirst">Reviews built into the software where requirements are written, tracked and verified, <strong>instead of a separate review tool</strong>.</p>
   <div class="spread spread--facts">
     <dl class="meta">
-      <dt>Feature</dt><dd>Review Center</dd>
+      <dt>My role</dt><dd>First and only designer</dd>
       <dt>Product</dt><dd>Valispace → Altium 365</dd>
       <dt>Timeline</dt><dd>designed 2021 · live 2026</dd>
     </dl>
@@ -46,6 +48,25 @@
   </div>
 </header>
 
+<figure class="vmodel">
+<svg viewBox="0 0 730 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="V-model of systems engineering: system, subsystem and equipment levels on the left, matching verification levels on the right, build at the bottom." font-family="Roboto, Arial, sans-serif">
+<path d="M80 40 L310 280 L420 280 L650 40" fill="none" stroke="#D9DEE3" stroke-width="2"/>
+<g font-size="13" fill="#15212C">
+<rect x="20" y="22" width="170" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="105" y="44" text-anchor="middle">System requirements</text>
+<rect x="85" y="102" width="170" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="170" y="124" text-anchor="middle">Subsystem design</text>
+<rect x="150" y="182" width="170" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="235" y="204" text-anchor="middle">Equipment design</text>
+<rect x="540" y="22" width="170" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="625" y="44" text-anchor="middle">System verification</text>
+<rect x="475" y="102" width="170" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="560" y="124" text-anchor="middle">Subsystem verification</text>
+<rect x="410" y="182" width="170" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="495" y="204" text-anchor="middle">Equipment verification</text>
+<rect x="305" y="262" width="120" height="34" rx="4" fill="#F3F5F7" stroke="#15212C"/><text x="365" y="284" text-anchor="middle">Build</text></g>
+<g stroke="#9DB3D1" stroke-width="2" stroke-dasharray="6 5"><line x1="190" y1="39" x2="540" y2="39"/><line x1="255" y1="119" x2="475" y2="119"/><line x1="320" y1="199" x2="410" y2="199"/></g>
+<g fill="#C8642E"><circle cx="20" cy="39" r="7"/><circle cx="85" cy="119" r="7"/><circle cx="150" cy="199" r="7"/></g>
+<rect x="8" y="232" width="128" height="26" rx="13" fill="#C8642E"/><text x="72" y="250" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Review Center</text>
+</svg>
+<ul class="vlegend"><li><span style="color:#C8642E">●</span> Formal reviews at each design level: Review Center</li><li><span style="color:#9DB3D1">- - -</span> Which method verifies which requirement: Verification Assignment Matrix</li></ul>
+  <figcaption>The same V-model as in the <a href="verification_matrix.html">Verification Assignment Matrix</a>, here with the focus on reviews.</figcaption>
+</figure>
+
 <main>
 
 <section class="section" id="impact">
@@ -53,10 +74,34 @@
     <h2 class="label">Impact</h2>
     <div>
       <div class="panel"><ul class="outcomes">
-        <li><b>Six-figure contract</b><span>one of three features behind the deal, which led to my promotion</span></li>
+        <li><b>Six-figure contract</b><span>one of three features behind the deal</span></li>
         <li><b>Shipped 2021 · live 2026</b><span>kept after the Altium acquisition</span></li>
         <li><b>The logic held up</b><span>backend developers found later changes easy to add</span></li>
       </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="spread">
+    <h2 class="label">The problem</h2>
+    <div>
+      <p>Requirements engineers write each requirement in a fixed form, like a clause in a standard: <em>“The wave height shall be measured with an accuracy of at least 0.30 m.”</em> Each one is then reviewed and verified.</p>
+      <p>A review checks how mature a set of requirements is before the next step. The industry usually does this in separate software that needs its own training. At Valispace, now Altium, we built it into the software where the requirements already live.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="workflow">
+  <div class="spread">
+    <h2 class="label">Workflow</h2>
+    <div>
+      <ul class="decisions">
+        <li><b>Review.</b> A set of review objects, requirements or values, assessed together</li>
+        <li><b>Moderator.</b> Creates the review, adds the objects, assigns reviewers and approvers, sets a due date</li>
+        <li><b>Reviewer.</b> Rates each object and comments. One object can have several reviewers</li>
+        <li><b>Approver.</b> Decides when the review is final and closes it. A review can have several approvers</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -65,41 +110,14 @@
   <div class="spread">
     <h2 class="label">The shipped feature</h2>
     <div>
-      <figure style="margin:0">
-        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/324031/image-20240411-115306.webp" alt="Review column in the requirements table showing past and present reviews and their outcome, Altium 365">
-        <figcaption>Reviews and their outcome per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
+      <figure>
+        <img src="rc-reviews.webp" alt="Requirements table in Altium 365 with a Reviews column showing the review outcome per requirement." loading="lazy">
+        <figcaption>A Reviews column in the requirements table shows past and current reviews and their outcome. · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
       </figure>
-      <ul class="keyed" style="margin-top:36px">
-        <li><b>Moderator</b>sets up the review and assigns reviewers and approvers</li>
-        <li><b>Reviewer</b>rates each item: approved, needs work or rejected</li>
-        <li><b>Approver</b>closes the review with a timestamp</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="how">
-  <div class="spread">
-    <h2 class="label">How it works</h2>
-    <div>
-      <p class="statement">A formal review that stays <strong>traceable, run on the data already in the project.</strong></p>
-      <p>Reviewers see the items assigned to them. Approvers see status per requirement set. Before, reviewers were picked one by one and status was chased by email outside the project.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="process">
-  <div class="spread">
-    <h2 class="label">Process</h2>
-    <div>
-      <p>Interviews per role, notes and user stories, a user journey, wireframes to hi-fi, and testing with experts and users.</p>
-      <dl class="meta" style="margin-top:36px">
-        <dt>Company</dt><dd>Valispace GmbH · acquired by Altium 2023</dd>
-        <dt>Team</dt><dd>CPO · subject-matter experts · CTO · designer owning the design process</dd>
-        <dt>Users</dt><dd>Moderators, reviewers and approvers, from engineers to managers</dd>
-        <dt>Constraints</dt><dd>Standards define what a review must record · existing platform and data model · thousands of requirements, hundreds of people</dd>
-      </dl>
-      <p style="margin-top:28px">I studied the review tools engineers already used, then interviewed each role about where they fail. Experts and I wrote the logic in the users' words. Wireframes grew into tested Figma prototypes.</p>
+      <figure>
+        <img src="rc-start.webp" alt="Requirements selected in the table, with the Start Review action in the row menu." loading="lazy">
+        <figcaption>A review starts from the table: select requirements, then Start Review.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -108,12 +126,25 @@
   <div class="spread">
     <h2 class="label">Key design decisions</h2>
     <div>
-      <p>The question behind the design: <strong>how do formal review conventions fit the data already in the project?</strong></p>
+      <p>I asked both sides what they need to understand: the manager who plans reviews and the engineer who is assigned one.</p>
       <ul class="decisions">
-        <li><b>Assign groups.</b> Reviews repeat across a project</li>
-        <li><b>Rating per item, logged.</b> The approver closes with a timestamp</li>
-        <li><b>Views per role.</b> Filters for specialists and deciders</li>
+        <li><b>Overview and focus.</b> Managers see progress across reviews; engineers see what is newly assigned and can prioritize</li>
+        <li><b>Repeatable setups.</b> The same type of review or team can be planned again without starting over</li>
+        <li><b>Discussion in place.</b> Questions are settled where the work happens, with fewer meetings, emails and delays</li>
+        <li><b>Redo when needed.</b> Teams can align on whether a review has to be repeated</li>
+        <li><b>Flexible or locked.</b> Managers pick reviewers freely or from a predefined group, and can lock decisions in the interface</li>
+        <li><b>Transparent and traceable.</b> Every rating and sign-off is logged with name and time</li>
       </ul>
+      <p style="margin-top:24px">Companies of different sizes and industries use the software, so it needed enough flexibility. Hardware failures and delays are costly, so every choice also had to stay transparent and controllable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="spread">
+    <h2 class="label">Process</h2>
+    <div>
+      <p>Interviews with managers and assigned engineers, user stories, wireframes and tested Figma prototypes. Experts and I wrote the logic in the users' words.</p>
     </div>
   </div>
 </section>
@@ -125,7 +156,7 @@
       <h3 class="title">Bring expert users in early, and get to design sooner.</h3>
       <ol class="lessons" style="margin-top:28px">
         <li><b>Design even earlier</b><p>Next time I would add early code prototypes, so development constraints reach the design before the build.</p></li>
-        <li><b>Test across companies</b><p>Views per role made the difference. The next step would be testing with several companies and roles, hard in B2B, but it keeps a design from fitting only one customer.</p></li>
+        <li><b>Test across companies</b><p>Views per role made the difference. Testing with several companies and roles would keep the design from fitting only one customer.</p></li>
       </ol>
     </div>
   </div>
@@ -140,7 +171,7 @@
 </nav>
 
 <footer class="pagefoot">
-  <p class="footnote">The documentation links open Altium 365. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
+  <p class="footnote">Screenshots from the Altium 365 documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
   <p class="footnote">This use case describes my own learnings, not the company's process. Client names and specific information are left out. The features are released and publicly documented.</p>
   <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
 </footer>
