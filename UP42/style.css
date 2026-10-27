@@ -121,11 +121,10 @@ figcaption{font-size:15px;line-height:1.6;color:var(--quiet);margin:16px 0 0;max
 .loop{font-size:15px;color:var(--quiet);margin:20px 0 0}
 
 /* ---------------- decisions ---------------- */
-.decisions{margin:0;padding:0;list-style:none}
-.decisions li{padding:20px 0;border-top:1px solid var(--rule)}
-.decisions li:first-child{border-top:none;padding-top:0}
-.decisions b{display:block;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.decisions span{font-size:16px;line-height:1.55;color:var(--body)}
+.decisions{margin:28px 0 0;padding-left:1.2em;max-width:36em;list-style:disc}
+.decisions li{font-size:18px;line-height:1.6;color:var(--body);margin:0 0 10px;padding:0;border:0}
+.decisions li::marker{color:#44536A}
+.decisions b{display:inline;color:var(--ink);font-weight:700}
 
 /* ---------------- lessons ---------------- */
 .lessons{margin:0;padding:0;list-style:none;counter-reset:lesson}

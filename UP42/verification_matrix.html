@@ -4,27 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verification Assignment Matrix · Petra Kühnle, Product Designer</title>
-<meta name="description" content="One compact matrix to assign and communicate verification, instead of tables, meetings, docs and emails. Valispace 2021, live in Altium 365 today.">
+<meta name="description" content="One matrix to assign and track verification per requirement, shared by many engineers. Valispace 2021, live in Altium 365 today.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Verification Assignment Matrix · Petra Kühnle, Product Designer">
-<meta property="og:description" content="Finding the MVP of a complex feature with user stories and hi-fi prototypes. Valispace 2021, live in Altium 365 today.">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/verification_matrix.html">
+<meta property="og:description" content="One matrix to assign and track verification per requirement. Valispace 2021, live in Altium 365 today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>.vmodel svg{display:block;width:100%;max-width:820px;height:auto} figure+figure{margin-top:36px} figcaption{margin-top:10px}</style>
 </head>
 <body>
-<a class="skip" href="#impact">Skip to content</a>
+<a class="skip" href="#problem">Skip to content</a>
 <div class="page">
 
 <nav class="nav" aria-label="Sections">
  <ul>
   <li><a href="#impact">Impact</a></li>
+  <li><a href="#problem">Problem</a></li>
   <li><a href="#shipped">Shipped</a></li>
-  <li><a href="#how">How it works</a></li>
-  <li><a href="#process">Process</a></li>
   <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#process">Process</a></li>
   <li><a href="#lessons">Lessons</a></li>
  </ul>
 </nav>
@@ -32,7 +33,7 @@
 <header class="casehead">
   <p class="label">Use case 3 of 4 · Valispace, 2021</p>
   <h1>How I found the MVP of a complex feature with user stories and hi-fi prototypes</h1>
-  <p class="standfirst">Several verification methods are assigned per requirement, and verification isn't done by one person. <strong>One compact matrix</strong> to assign and communicate, instead of tables, meetings, docs and emails.</p>
+  <p class="standfirst">Many engineers share the verification of hundreds of requirements. <strong>One matrix</strong> shows which method verifies which requirement, who assigned it and when.</p>
   <div class="spread spread--facts">
     <dl class="meta">
       <dt>Feature</dt><dd>Verification Assignment Matrix</dd>
@@ -45,31 +46,29 @@
     <a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a>
   </div>
 </header>
-<figure class="hero">
-    <svg class="drawing-wide" aria-hidden="true" viewBox="0 0 500 132" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <text x="122" y="16" font-size="9" fill="#5F6368">Analysis</text>
-      <text x="192" y="16" font-size="9" fill="#5F6368">Inspect.</text>
-      <text x="262" y="16" font-size="9" fill="#5F6368">Review</text>
-      <text x="332" y="16" font-size="9" fill="#5F6368">Rules</text>
-      <text x="402" y="16" font-size="9" fill="#5F6368">Test</text>
-      <g stroke="#E6E6E6" stroke-width="1.2">
-        <line x1="120" y1="24" x2="470" y2="24"/><line x1="120" y1="58" x2="470" y2="58"/>
-        <line x1="120" y1="92" x2="470" y2="92"/><line x1="120" y1="126" x2="470" y2="126"/>
-        <line x1="120" y1="24" x2="120" y2="126"/><line x1="190" y1="24" x2="190" y2="126"/>
-        <line x1="260" y1="24" x2="260" y2="126"/><line x1="330" y1="24" x2="330" y2="126"/>
-        <line x1="400" y1="24" x2="400" y2="126"/><line x1="470" y1="24" x2="470" y2="126"/>
-      </g>
-      <text x="0" y="45" font-size="11" fill="#1F1F1F">REQ-01</text>
-      <text x="0" y="79" font-size="11" fill="#1F1F1F">REQ-02</text>
-      <text x="0" y="113" font-size="11" fill="#1F1F1F">REQ-03</text>
-      <rect x="146" y="33" width="18" height="18" fill="#1F1F1F"/>
-      <rect x="286" y="33" width="18" height="18" fill="#1F1F1F"/>
-      <rect x="216" y="67" width="18" height="18" fill="#1F1F1F"/>
-      <rect x="426" y="67" width="18" height="18" fill="#1F1F1F"/>
-      <rect x="146" y="101" width="18" height="18" fill="#1F1F1F"/>
-      <rect x="356" y="101" width="18" height="18" fill="#1F1F1F"/>
-    </svg>
-    <figcaption>Requirements as rows, the five default verification methods as columns. Double-click a cell to assign; hover shows who assigned and when.</figcaption>
+
+<figure class="vmodel" style="margin:48px 0 0">
+<svg viewBox="0 0 720 352" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vt vd" font-family="Roboto, Arial, sans-serif">
+<title id="vt">V-model of systems engineering</title>
+<desc id="vd">Left side, top to bottom: requirements, system design, detailed design. Bottom: build. Right side, bottom to top: unit test, integration test, system verification. Dashed lines link each design level to the test level that verifies it; the Verification Assignment Matrix sits on these links. Formal reviews at each design level are where Review Center is used.</desc>
+<g fill="none" stroke="#D9DEE3" stroke-width="2"><path d="M70 40 L300 280 L420 280 L650 40"/></g>
+<g font-size="13" fill="#15212C">
+<rect x="20" y="22" width="160" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="100" y="44" text-anchor="middle">Requirements</text>
+<rect x="85" y="102" width="160" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="165" y="124" text-anchor="middle">System design</text>
+<rect x="150" y="182" width="160" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="230" y="204" text-anchor="middle">Detailed design</text>
+<rect x="300" y="262" width="120" height="34" rx="4" fill="#F3F5F7" stroke="#15212C"/><text x="360" y="284" text-anchor="middle">Build</text>
+<rect x="410" y="182" width="160" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="490" y="204" text-anchor="middle">Unit test</text>
+<rect x="475" y="102" width="160" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="555" y="124" text-anchor="middle">Integration test</text>
+<rect x="540" y="22" width="160" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="620" y="44" text-anchor="middle">System verification</text>
+</g>
+<g stroke="#2F5E9E" stroke-width="2" stroke-dasharray="6 5"><line x1="180" y1="39" x2="540" y2="39"/><line x1="245" y1="119" x2="475" y2="119"/><line x1="310" y1="199" x2="410" y2="199"/></g>
+<rect x="268" y="52" width="184" height="26" rx="13" fill="#2F5E9E"/><text x="360" y="70" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Verification Assignment Matrix</text>
+<g fill="#C8642E"><circle cx="20" cy="39" r="7"/><circle cx="85" cy="119" r="7"/><circle cx="150" cy="199" r="7"/></g>
+<text x="20" y="320" font-size="12.5" fill="#15212C"><tspan fill="#C8642E" font-weight="700">●</tspan> Formal reviews at each design level: Review Center</text>
+<text x="20" y="342" font-size="12.5" fill="#15212C"><tspan fill="#2F5E9E" font-weight="700">- - -</tspan> Which method verifies which requirement: Verification Assignment Matrix</text>
+</svg>
+
+  <figcaption>The V-model of systems engineering. The matrix links each requirement to the methods that verify it. Review Center runs the formal reviews at each design level.</figcaption>
 </figure>
 
 <main>
@@ -77,11 +76,28 @@
 <section class="section" id="impact">
   <div class="spread">
     <h2 class="label">Impact</h2>
-    <div class="panel">
-      <ul class="outcomes">
-        <li><b>Built in far less time</b><span>than the first feature, with requirements agreed in writing</span></li>
-        <li><b>Shipped 2021 · live 2026</b><span>kept after the Altium acquisition</span></li>
-        <li><b>Users confirmed the fit</b><span>they told Solution Management we integrated their real workflow in a useful way</span></li>
+    <div>
+      <div class="panel"><ul class="outcomes">
+        <li><b>Built faster</b><span>than the first feature</span></li>
+        <li><b>Agreed in writing</b><span>user stories and designs signed off together, an approach I started</span></li>
+        <li><b>Users confirmed the fit</b><span>it matched the matrix they already kept in Excel</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="spread">
+    <h2 class="label">The problem</h2>
+    <div>
+      <p>Verification is shared work. Requirements change, reviews are shared, and each verification method has its own specialists. Decisions are long-lasting and costly to undo: hardware compliance, regulation, refactoring.</p>
+      <p>Before, this lived in Excel matrices, decades-old reference documents, meetings, emails and sometimes signatures on paper. Nothing was connected, and decisions were not visible in both directions.</p>
+      <p style="margin-top:28px"><strong>Who needed what</strong></p>
+      <ul class="decisions">
+        <li><b>Verification engineer.</b> Specialized in one method and works down one column</li>
+        <li><b>Engineer on a dependent requirement.</b> Needs to know what is already verified</li>
+        <li><b>Manager.</b> Needs to see if verification progresses as planned and is confirmed</li>
+        <li><b>Everyone.</b> Needs changes early, before they cause rework</li>
       </ul>
     </div>
   </div>
@@ -91,101 +107,15 @@
   <div class="spread">
     <h2 class="label">The shipped feature</h2>
     <div>
-      <figure style="margin:0">
-        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323985/image-20250103-114200.webp" alt="Verification Assignment matrix: requirements as rows, verification methods as columns, Altium 365">
-        <figcaption>The shipped matrix in Altium 365: verification methods assigned per requirement, with who assigned and when shown on hover. <a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
+      <figure>
+        <img src="vm-matrix.webp" alt="Verification Assignment Matrix in Altium 365: requirements as rows, the five verification methods as columns; double-click a cell to assign a method." loading="lazy">
+        <figcaption>Requirements as rows, verification methods as columns. Double-click a cell to assign a method. · <a href="https://www.altium.com/documentation/altium-365/legacy-valispace/verifications#verification-assignment" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
       </figure>
-      <p class="label" style="margin-top:52px">The five default verification methods</p>
-      <ul class="keyed">
-        <li><span class="tag">Manual</span><b>Analysis</b>closeout by report</li>
-        <li><span class="tag">Manual</span><b>Inspection</b>status change</li>
-        <li><span class="tag">Manual</span><b>Review</b>status change</li>
-        <li><span class="tag">Automatic</span><b>Rules</b>updates with the data</li>
-        <li><span class="tag">Automatic</span><b>Test</b>from test runs</li>
-      </ul>
-      <p class="caption">Several methods can apply to one requirement</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="how">
-  <div class="spread">
-    <h2 class="label">How it works</h2>
-    <div>
-      <p class="statement">The same matrix does two jobs: <strong>a specialist focuses on one method, a manager sees the whole set.</strong></p>
-      <figure style="margin:0">
-        <svg class="drawing-wide" aria-hidden="true" viewBox="0 0 460 128" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <text x="0" y="14" font-size="11" font-weight="700" fill="#1F1F1F">Engineer view</text>
-          <g stroke="#E6E6E6" stroke-width="1.2">
-            <line x1="0" y1="30" x2="180" y2="30"/><line x1="0" y1="56" x2="180" y2="56"/>
-            <line x1="0" y1="82" x2="180" y2="82"/><line x1="0" y1="108" x2="180" y2="108"/>
-            <line x1="0" y1="30" x2="0" y2="108"/><line x1="45" y1="30" x2="45" y2="108"/>
-            <line x1="90" y1="30" x2="90" y2="108"/><line x1="135" y1="30" x2="135" y2="108"/>
-            <line x1="180" y1="30" x2="180" y2="108"/>
-          </g>
-          <rect x="45" y="30" width="45" height="78" fill="#1F1F1F" opacity="0.10"/>
-          <rect x="59" y="37" width="16" height="12" fill="#1F1F1F"/>
-          <rect x="59" y="89" width="16" height="12" fill="#1F1F1F"/>
-          <text x="280" y="14" font-size="11" font-weight="700" fill="#1F1F1F">Manager view</text>
-          <g stroke="#E6E6E6" stroke-width="1.2">
-            <line x1="280" y1="30" x2="460" y2="30"/><line x1="280" y1="56" x2="460" y2="56"/>
-            <line x1="280" y1="82" x2="460" y2="82"/><line x1="280" y1="108" x2="460" y2="108"/>
-            <line x1="280" y1="30" x2="280" y2="108"/><line x1="325" y1="30" x2="325" y2="108"/>
-            <line x1="370" y1="30" x2="370" y2="108"/><line x1="415" y1="30" x2="415" y2="108"/>
-            <line x1="460" y1="30" x2="460" y2="108"/>
-          </g>
-          <rect x="280" y="56" width="180" height="26" fill="#1F1F1F" opacity="0.10"/>
-          <rect x="294" y="63" width="16" height="12" fill="#1F1F1F"/>
-          <rect x="384" y="63" width="16" height="12" fill="#1F1F1F"/>
-        </svg>
-        <figcaption>Left: an engineer filters one method down a column. Right: a manager sees all methods across one requirement set. Same matrix, two views.</figcaption>
+      <p style="margin-top:28px"><strong>Five default methods.</strong> Analysis, Inspection and Review are closed by hand with a report or a status change. Rules and Test update automatically from the system data and from test runs.</p>
+      <figure>
+        <img src="vm-flow.webp" alt="Verification flow: add a component to a requirement, add verification methods; automatic methods (rules, test) change status when data updates, manual methods need a closeout reference and a manual status change." loading="lazy">
+        <figcaption>Verification flow: automatic methods update with the data, manual methods need a closeout reference.</figcaption>
       </figure>
-      <div class="compare">
-        <div>
-          <p class="label">Before</p>
-          <ul class="flow">
-            <li>Matrix in Excel</li>
-            <li>Copies in docs and emails</li>
-            <li>Status asked in meetings</li>
-            <li>Disconnected from requirements</li>
-          </ul>
-        </div>
-        <div>
-          <p class="label">After</p>
-          <ul class="flow">
-            <li>Matrix in the software</li>
-            <li>Linked to the requirements</li>
-            <li>Filter per method, set, status</li>
-            <li>Assignment logged · who and when</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="process">
-  <div class="spread">
-    <h2 class="label">Process · from workflow to MVP</h2>
-    <div>
-      <ol class="steps">
-        <li>Interviews per role</li>
-        <li>Notes · stories · journey</li>
-        <li>Wireframes → hi-fi</li>
-        <li>Testing · experts &amp; users</li>
-      </ol>
-      <div class="note">
-        <b>What was different here</b>
-        <p>Must-have requirements were <strong>agreed in writing with the client before build</strong>, and I gradually pushed for others to write them too, so alignment rested on requirements, not designs alone. That set a tight <strong>MVP boundary</strong> and prevented refactoring.</p>
-      </div>
-      <dl class="meta" style="margin-top:52px">
-        <dt>Company</dt><dd>Valispace GmbH · acquired by Altium 2023</dd>
-        <dt>Team</dt><dd>CPO · SMEs · CTO · Designer (owning end-to-end design process)</dd>
-        <dt>My role</dt><dd>Requirements to design · prototypes · feedback sessions · iterations</dd>
-        <dt>Users</dt><dd>Verification engineers per method · managers reviewing status per set</dd>
-        <dt>Constraints</dt><dd>regulated environment, decisions traceable · opposite needs, overview vs focus · complex enough to be useful, small enough to build</dd>
-      </dl>
-      <p style="margin-top:36px">The hard part was <strong>getting everyone to agree on what was Must-have</strong>. Applying the lesson from <a href="master_follower.html">Master-Follower</a>, we decided, wrote and reviewed the Must-haves first, with design and requirements agreed with the client, from user journeys and wireframes to a hi-fi prototype that set the MVP and prevented development refactoring.</p>
     </div>
   </div>
 </section>
@@ -194,14 +124,29 @@
   <div class="spread">
     <h2 class="label">Key design decisions</h2>
     <div>
-      <p>The central question I kept asking: <strong>which job role needs which view and filter?</strong> An engineer working on one verification method filters per method; a decision maker reviewing a requirement set filters for its status. Same matrix, different scenarios. The role-and-view thread continues in <a href="review_center.html">Review Center</a>.</p>
-      <ul class="tiles">
-        <li><b>Views and filters per role</b>engineers vs decision makers.</li>
-        <li><b>Linked to the requirements</b>beats a separate Excel matrix.</li>
-        <li><b>MVP boundary</b>small and extendable.</li>
-        <li><b>Assignment logged</b>who and when.</li>
-        <li><b>Manual and automatic</b>rules and test update with the data.</li>
+      <p>Engineers need control and many options, often more than less, matching Excel and other tools they know. Companies differ in size, roles and responsibilities. The design had to offer that choice without hurting usability.</p>
+      <ul class="decisions">
+        <li><b>Built into the existing table.</b> Tree left, matrix in the middle, column and filter selection right</li>
+        <li><b>Kept the Excel mental model.</b> Requirements as rows and methods as columns, as engineers already worked</li>
+        <li><b>Choice through columns and filters.</b> Each role shows only the methods and fields it needs</li>
+        <li><b>Ownership logged.</b> Name and date on every assignment, the digital form of a signature on paper</li>
+        <li><b>Compliance states.</b> Compliant, partially compliant, non-compliant, not applicable</li>
+        <li><b>One source of truth.</b> Decisions move out of emails and meetings into the system</li>
       </ul>
+      <figure>
+        <img src="vm-hover.webp" alt="Hovering a cell in the matrix shows when the method was selected and by whom." loading="lazy">
+        <figcaption>Hover shows who assigned a method and when.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="spread">
+    <h2 class="label">Process</h2>
+    <div>
+      <p>Interviews per role, user stories, a user journey, wireframes to hi-fi, and testing with experts and users from client companies.</p>
+      <p>The hard part was <strong>agreeing on the Must-haves</strong>. Applying the lesson from <a href="master_follower.html">Master-Follower</a>, we wrote them down and agreed them with the client before the build. The hi-fi prototype set the MVP boundary and prevented a refactor.</p>
     </div>
   </div>
 </section>
@@ -211,10 +156,9 @@
     <h2 class="label">Lessons learned</h2>
     <div>
       <h3 class="title">The prototype drove the discovery.</h3>
-      <ol class="lessons" style="margin-top:36px">
-        <li><b>Prototype as discovery tool</b><p>Its detail level surfaces the questions that define the MVP, what if one method isn't done yet, do you need to know who was assigned and reach them? <strong>A small system that ships is worth more than a complete one that never does.</strong></p></li>
-        <li><b>Non-expert as an advantage</b><p>I used my <strong>non-expert status to ask instead of assume</strong>. An expert-as-designer risks leaving their own bias undetected, or hesitating to question a senior engineer or client.</p></li>
-        <li><b>AI still needs real users</b><p>AI knows job roles generally, not a company's specifics, so AI-generated prototypes still need testing with real users; unsupervised cycles grow scope creep and inconsistencies fastest.</p></li>
+      <ol class="lessons" style="margin-top:28px">
+        <li><b>Prototype as discovery tool</b><p>Its detail raised the questions that defined the MVP: what if one method is still open, and who was assigned? <strong>A small system that ships is worth more than a complete one that never does.</strong></p></li>
+        <li><b>Ask instead of assume</b><p>I was new to the domain, so I asked instead of assumed. Experts designing their own tools can miss their own bias, or hesitate to question a senior engineer or client.</p></li>
       </ol>
     </div>
   </div>
@@ -229,8 +173,8 @@
 </nav>
 
 <footer class="pagefoot">
-  <p class="footnote">Official docs open Altium 365's documentation, <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so this feature is now documented under Altium.</p>
-  <p class="footnote">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
+  <p class="footnote">Screenshots and flow from the Altium 365 documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
+  <p class="footnote">This use case describes my own learnings, not the company's process. Client names and specific information are left out. The features are released and publicly documented.</p>
   <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
 </footer>
 
