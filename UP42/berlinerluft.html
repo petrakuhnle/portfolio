@@ -20,24 +20,24 @@
 .pair{display:grid;gap:16px}
 @media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
 img{height:auto;max-width:100%}
-figure{margin:28px 0 0}
-figure + figure{margin-top:36px}
-figcaption{margin-top:10px}
 .tiles{margin-top:36px}
 .proto{color:#4C72B0;font-weight:500}
 .proto:hover{color:#2F5592}
-.limits-table td b{font-size:24px;font-weight:700;color:#15212C;margin-right:2px}
-.limits-table .lt-note{font-size:14px;color:#44536A}
-.limits-table thead th{vertical-align:bottom}
-.decisions{margin:32px 0 0;padding-left:1.2em;max-width:36em;list-style:disc}
-.decisions li{font-size:18px;line-height:1.6;color:var(--body);margin:0 0 10px;padding:0;border:0;background:none}
 .decisions li::marker{color:#44536A}
 .decisions b{display:inline;color:var(--ink);font-weight:700}
-.limits-table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.45;margin:0 0 24px}
-.limits-table caption{text-align:left;font-size:15px;color:#5F6368;padding-bottom:10px}
-.limits-table th,.limits-table td{text-align:left;vertical-align:baseline;padding:10px 12px 10px 0;border-bottom:1px solid #E0DCD6}
-.limits-table thead th{font-size:15px;font-weight:500;color:#1F1F1F}
-.limits-table tbody th{font-weight:700}
+.limits-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:0 0 32px}
+.limits-table caption{text-align:left;font-size:15px;color:#2E3B4E;padding-bottom:16px}
+.limits-table th,.limits-table td{text-align:left;vertical-align:top;padding:16px 12px 16px 0;border-bottom:1px solid #D9DEE3}
+.limits-table thead th{font-size:14px;font-weight:500;color:#15212C;padding-top:0}
+.limits-table thead svg{display:block;margin-bottom:8px}
+.limits-table th:first-child{width:18%}
+.limits-table tbody th{font-size:17px;font-weight:700;color:#15212C;padding-top:22px}
+.lt-n{font-size:34px;font-weight:700;line-height:1;color:#15212C;margin-right:6px}
+.lt-of{font-size:15px;color:#2E3B4E}
+.lt-note{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:#44536A}
+.impact-panel .limits-table{margin:0}
+.impact-finding{margin:32px 0 0;font-size:20px;line-height:1.6;color:#15212C;max-width:34em}
+.impact-note{margin:16px 0 0;font-size:16px;line-height:1.6;color:#2E3B4E;max-width:38em}
 </style>
 </head>
 <body>
@@ -83,16 +83,19 @@ figcaption{margin-top:10px}
 <section class="section" id="impact">
   <div class="spread">
     <h2 class="label">Impact</h2>
-    <div class="panel">
+    <div>
+      <div class="panel impact-panel">
       <table class="limits-table">
-        <thead><tr><th scope="col"></th><th scope="col"><svg width="30" height="8" aria-hidden="true" style="display:block;margin-bottom:6px"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="2"/></svg>EU limit now</th><th scope="col"><svg width="30" height="8" aria-hidden="true" style="display:block;margin-bottom:6px"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="2" stroke-dasharray="6 4"/></svg>EU limit 2030</th><th scope="col"><svg width="30" height="8" aria-hidden="true" style="display:block;margin-bottom:6px"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="3" stroke-dasharray="0 6" stroke-linecap="round"/></svg>WHO guideline</th></tr></thead>
+        <caption>Stations above each limit, annual mean 2025</caption>
+        <thead><tr><th scope="col"></th><th scope="col"><svg width="30" height="8" aria-hidden="true"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="2"/></svg><span>EU limit now</span></th><th scope="col"><svg width="30" height="8" aria-hidden="true"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="2" stroke-dasharray="6 4"/></svg><span>EU limit 2030</span></th><th scope="col"><svg width="30" height="8" aria-hidden="true"><line x1="1" y1="4" x2="29" y2="4" stroke="#1D3557" stroke-width="3" stroke-dasharray="0 6" stroke-linecap="round"/></svg><span>WHO guideline</span></th></tr></thead>
         <tbody>
-          <tr><th scope="row">NO₂</th><td><b>none</b> of 15</td><td><b>5</b> of 15</td><td><b>10</b> of 15<br><span class="lt-note">all but the 5 suburb stations</span></td></tr>
-          <tr><th scope="row">PM2.5</th><td><b>none</b> of 12</td><td><b>9</b> of 12</td><td><b>all</b> 12</td></tr>
+          <tr><th scope="row">NO₂</th><td><span class="lt-n">0</span><span class="lt-of">of 15</span></td><td><span class="lt-n">5</span><span class="lt-of">of 15</span></td><td><span class="lt-n">10</span><span class="lt-of">of 15</span><span class=lt-note>all but the 5 suburb stations</span></td></tr>
+          <tr><th scope="row">PM2.5</th><td><span class="lt-n">0</span><span class="lt-of">of 12</span></td><td><span class="lt-n">9</span><span class="lt-of">of 12</span></td><td><span class="lt-n">12</span><span class="lt-of">of 12</span></td></tr>
         </tbody>
       </table>
-      <p>By today’s EU limit, every station is fine. By the 2030 limit and WHO, many are not. Other interfaces show only today’s verdict, although the data are public.</p>
-      <p>Annual means 2025. Short peaks can still harm health, and a station 100 m or several km away cannot show personal exposure.</p>
+      </div>
+      <p class="impact-finding">By today’s EU limit, every station is fine. By the 2030 limit and WHO, many are not. Other interfaces show only today’s verdict, although the data are public.</p>
+      <p class="impact-note">Annual means 2025. Short peaks can still harm health, and a station 100 m or several km away cannot show personal exposure.</p>
     </div>
   </div>
 </section>
@@ -107,10 +110,6 @@ figcaption{margin-top:10px}
         <figcaption>NO₂ follows streets and hours, PM2.5 stays high almost everywhere.</figcaption>
       </figure>
       <p style="margin-top:24px">Choose stations, months and days. Map, charts and station card update each other.</p>
-      <figure>
-        <img src="about-the-data.png" loading="lazy" alt="About the data panel below the interface: limits table with sources, pollutant choice, station types and method notes.">
-        <figcaption>Context below the data: sources, limits, method. Users can verify, not just trust.</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -190,7 +189,7 @@ figcaption{margin-top:10px}
         <li><b>AI in the design process</b><p>Useful for research, finding data and coding a realistic prototype from a sketch. It struggles with consistency across states: layouts jump, labels overlap, backgrounds change. It clutters with grey explanations and works best with clear instructions or examples.</p></li>
         <li><b>Transparency and usability</b><p>With more AI and more data everywhere, people want to verify. Balancing transparency and usability matters more than giving more answers.</p></li>
         <li><b>What I would test next</b><p>Compare Berliner Luft, Apple Weather and Berlin LQI with one defined user group. Ask the same questions on speed and clarity: when is air better or worse, and which limits are changing? The other two answer “good now” fast.</p></li>
-        <li><b>Next version · not built</b><p>One place, several sources: stations, Berlin’s model grid, Sentinel-5P NO₂ and a satellite image of green vs. built-up areas, shown as context, not as a cause. Later, ozone, weather and health context from existing models, making information accessible and usable rather than competing with data modelling.</p></li>
+        <li><b>Next version</b><p>One place, several sources: stations, Berlin’s model grid, Sentinel-5P NO₂ and a satellite image of green vs. built-up areas, shown as context, not as a cause. Later, ozone, weather and health context from existing models, making information accessible and usable rather than competing with data modelling.</p></li>
       </ol>
     </div>
   </div>

@@ -222,3 +222,14 @@ p + .tiles{margin-top:32px}
 .hero figcaption{margin:16px auto 0}
 .hero-title{font-size:22px;font-weight:700;line-height:1.3;margin:0 auto 32px;max-width:none}
 .hero-link{margin:20px auto 0;font-size:17px;max-width:none}
+
+/* ---------------- more white space ---------------- */
+.section{padding:128px 0 0}
+figure{margin:48px 0 0}
+figure+figure{margin-top:64px}
+figcaption{margin:18px 0 0}
+figure+p,figure+ul,figure+.decisions,figure+ol{margin-top:56px !important}
+p+figure,ul+figure,.decisions+figure{margin-top:56px}
+.decisions{margin-top:36px}
+.decisions li{margin:0 0 18px;line-height:1.65}
+.lessons li{padding:36px 0}
