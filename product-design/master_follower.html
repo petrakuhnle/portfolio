@@ -13,18 +13,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>figure+figure{margin-top:40px}figcaption{margin-top:12px}</style>
 </head>
 <body>
-<a class="skip" href="#impact">Skip to content</a>
+<a class="skip" href="#problem">Skip to content</a>
 <div class="page">
 
 <nav class="nav" aria-label="Sections">
  <ul>
   <li><a href="#impact">Impact</a></li>
+  <li><a href="#problem">Problem</a></li>
   <li><a href="#shipped">Shipped</a></li>
-  <li><a href="#how">How it works</a></li>
-  <li><a href="#process">Process</a></li>
   <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#process">Process</a></li>
   <li><a href="#lessons">Lessons</a></li>
  </ul>
 </nav>
@@ -32,13 +33,12 @@
 <header class="casehead">
   <p class="label">Use case 2 of 4 · Valispace, 2021</p>
   <h1>Master-Follower</h1>
-  <p class="standfirst">Requirements reused across projects, traceable when they change. Designed in 2021, live in Altium 365 today.</p>
+  <p class="standfirst">Requirements reused across projects, <strong>traceable when they change</strong>. My first feature at Valispace, from the first conversation to shipped UI.</p>
   <div class="spread spread--facts">
     <dl class="meta">
-      <dt>Context</dt><dd>First designer in an engineering-led hardware startup, in a domain new to me</dd>
-      <dt>Scope</dt><dd>Discovery to tested hi-fi prototype</dd>
-      <dt>Users</dt><dd>Four engineer roles and managers signing off</dd>
-      <dt>Outcome</dt><dd>One of three features behind a six-figure development contract</dd>
+      <dt>My role</dt><dd>First and only designer</dd>
+      <dt>Product</dt><dd>Valispace → Altium 365</dd>
+      <dt>Timeline</dt><dd>designed 2021 · live 2026</dd>
     </dl>
   </div>
   <div class="topbar">
@@ -56,8 +56,24 @@
       <div class="panel"><ul class="outcomes">
         <li><b>Six-figure contract</b><span>one of three features behind the deal</span></li>
         <li><b>Shipped 2021 · live 2026</b><span>kept after the Altium acquisition</span></li>
+        <li><b>Rework prevented</b><span>I caught a miscommunication between CPO and backend before it reached the code</span></li>
       </ul></div>
-      <p style="margin-top:28px">With this feature I started the company's first UX practice. Interviews, journeys and prototypes became a normal way of working. Showing designs back to the same experts a week later made me listen closely, and I caught a detail that <strong>prevented a development refactor</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="spread">
+    <h2 class="label">The problem</h2>
+    <div>
+      <p>Requirements engineers write each requirement in a fixed form, like a clause in a standard: <em>“The wave height shall be measured with an accuracy of at least 0.30 m.”</em> The same requirement is often reused across projects.</p>
+      <p>When the original changes, every copy may need to change too. Before, a decision made in a meeting was noted in a document, sent by email and updated by hand, or missed.</p>
+      <p style="margin-top:28px"><strong>Who needed what</strong></p>
+      <ul class="decisions">
+        <li><b>Master editor.</b> Changes the source requirement and needs to know who is affected</li>
+        <li><b>Follower owner.</b> Needs to see a change and decide whether to apply it</li>
+        <li><b>Manager signing off.</b> Needs to see what is in sync and what has diverged</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -66,12 +82,12 @@
   <div class="spread">
     <h2 class="label">The shipped feature</h2>
     <div>
-      <p>Systems engineers work with requirements. When one changes, others across projects may need to change too. Master-Follower links them: <strong>one Master, many Followers</strong>. The shipped feature still works as I designed it in 2021. A backend developer later told me improvements were easy to add because the logic was mapped out well.</p>
-      <figure style="margin:0">
-        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and follower connection columns in the requirements table, Altium 365">
+      <figure style="margin-top:0">
+        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and Follower connection columns in the requirements table, Altium 365" loading="lazy">
         <figcaption>Master and Follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
       </figure>
-      <ul class="keyed" style="margin-top:36px">
+      <p class="statement" style="margin-top:36px">A change on the Master flags every Follower. Its owner <strong>applies or rejects it, and the decision is logged.</strong></p>
+      <ul class="keyed">
         <li><b>Master</b>the source</li>
         <li><b><span class="swatch" style="background:#4C8A5F"></span>Up to date</b>in sync</li>
         <li><b><span class="swatch" style="background:#C9A227"></span>Change pending</b>needs review</li>
@@ -81,12 +97,17 @@
   </div>
 </section>
 
-<section class="section" id="how">
+<section class="section" id="decisions">
   <div class="spread">
-    <h2 class="label">How it works</h2>
+    <h2 class="label">Key design decisions</h2>
     <div>
-      <p class="statement">A change on the Master flags every Follower. Its owner <strong>applies or rejects it, and the decision is logged.</strong></p>
-      <p>Each Follower keeps its own state, so a change left pending or rejected can still be acted on. Discussion happens in place. Before, a decision made in a meeting was noted in a document, sent by email and updated by hand, or missed.</p>
+      <p>My job was to ask what each person needs to see and what would frustrate them.</p>
+      <ul class="decisions">
+        <li><b>Flags, not silent updates.</b> Only the owner applies, rejects or edits a change</li>
+        <li><b>A state per Follower.</b> A change left pending or rejected can still be acted on later</li>
+        <li><b>Discussion in place.</b> Decisions are made where the work is</li>
+        <li><b>Options where each role needs them.</b> Assign, review and comment appear in the same table for every role</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -95,28 +116,8 @@
   <div class="spread">
     <h2 class="label">Process</h2>
     <div>
-      <p>Interviews with pro users, notes and user stories, a user journey, wireframes to hi-fi, and testing with experts and users.</p>
-      <dl class="meta" style="margin-top:36px">
-        <dt>Company</dt><dd>Valispace GmbH · acquired by Altium 2023</dd>
-        <dt>Team</dt><dd>CPO · subject-matter experts · CTO · designer owning the design process</dd>
-        <dt>My role</dt><dd>Discovery to hi-fi prototype · user stories · logic mapping · testing</dd>
-      </dl>
-      <p style="margin-top:28px">The Master's editor, the Follower's owner and the manager signing off need different things from one table. Options to assign, review and comment appear where each role needs them.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="decisions">
-  <div class="spread">
-    <h2 class="label">Key design decisions</h2>
-    <div>
-      <p>My job was to ask what each person needs to see and what would frustrate them. I worked from the user and visual side so developers could focus on the technical side.</p>
-      <ul class="decisions">
-        <li><b>Flags, not silent updates.</b> Only the owner applies, rejects or edits a change</li>
-        <li><b>Discussion in place.</b> Decisions are made where the work is</li>
-        <li><b>Readable by every role.</b> Engineers and managers signing off use the same table</li>
-        <li><b>Prototype as alignment.</b> Experts, users and deciders agreed before the build</li>
-      </ul>
+      <p>The founders had a title and a high-level idea, but no specs, no user stories and no sketch. I started there and built interactive hi-fi prototypes, so clients and internal experts could react to an almost real product instead of imagining one. We iterated several times a week, and I introduced user stories along the way as a second source of truth.</p>
+      <p>Because I was involved from the first conversation to the release, I caught a miscommunication between the CPO and the backend engineers about what the feature should do now and later, and <strong>prevented rework in the code</strong>.</p>
     </div>
   </div>
 </section>
@@ -127,7 +128,7 @@
     <div>
       <h3 class="title">What the first big feature taught me.</h3>
       <ol class="lessons" style="margin-top:28px">
-        <li><b>Design filled the gap</b><p>Interviews and user stories turned high-level feature decisions into logic developers could build.</p></li>
+        <li><b>Design filled the gap</b><p>Engineers could build anything, but couldn't picture the feature in enough detail. The prototypes turned high-level decisions into logic developers could build.</p></li>
         <li><b>A missing middle step</b><p>More user testing and a feasibility check between prototype and build would have helped. That was partly startup reality and partly outside my influence.</p></li>
         <li><b>Carried into the next feature</b><p>On the next feature I asked for user stories and the most important requirements to be agreed from the start. See <a href="verification_matrix.html">Verification Assignment Matrix</a>.</p></li>
       </ol>
@@ -144,7 +145,7 @@
 </nav>
 
 <footer class="pagefoot">
-  <p class="footnote">The documentation links open Altium 365. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
+  <p class="footnote">Screenshot from the Altium 365 documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
   <p class="footnote">This use case describes my own learnings, not the company's process. Client names and specific information are left out. The features are released and publicly documented.</p>
   <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
 </footer>
