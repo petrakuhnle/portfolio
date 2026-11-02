@@ -3,315 +3,145 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Berliner Luft · Petra Kühnle</title>
+<title>Master-Follower · Petra Kühnle, Product Designer</title>
+<meta name="description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Master-Follower · Petra Kühnle, Product Designer">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/product-design/master_follower.html">
+<meta property="og:description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<style>
- body{margin:0;background:#F4F7FA;color:#1B2A38;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
- a{color:#1B2A38;text-decoration:underline;text-underline-offset:2px;}
- a:hover{color:#1B2A38;}
- a:focus-visible{outline:2px solid #4C72B0;outline-offset:3px;}
- ::selection{background:#1B2A38;color:#F4F7FA;}
-
- .page{max-width:1240px;margin:0 auto;padding:0 20vw 72px;font-size:16px;line-height:1.65;box-sizing:border-box;}
- .mono{font-family:'JetBrains Mono',monospace;}
- .topnav{position:sticky;top:0;z-index:10;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#F4F7FA;padding:14px 24px;margin:0 -20vw 56px;box-sizing:border-box;width:calc(100% + 40vw);}
- .topnav a{text-decoration:none;color:#6E7F8D;}
- .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E7F8D;margin:0 0 18px;}
- .eyebrow a{color:#6E7F8D;}
- h1{font-weight:700;font-size:40px;letter-spacing:-.02em;line-height:1.08;margin:0 0 16px;max-width:20em;}
- .lede{font-size:17px;color:#46586A;margin:0 0 40px;max-width:36em;}
- .lede strong{color:#1B2A38;font-weight:600;}
- .featureline{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#1B2A38;margin:0 0 40px;}
- .featureline span{color:#6E7F8D;}
-
- .chapter{scroll-margin-top:64px;margin:0 0 128px;}
- .label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1B2A38;margin:0 0 28px;}
- .label.tight{margin-bottom:16px;}
- .statement{max-width:34em;font-size:22px;font-weight:300;line-height:1.4;color:#1B2A38;margin:0 0 40px;}
- .statement strong{font-weight:600;}
- .body{font-size:15px;color:#46586A;max-width:42em;margin:0 0 34px;line-height:1.65;}
- .body strong{color:#1B2A38;}
- .caption{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#6E7F8D;margin:16px 0 0;}
-
- .grid{display:grid;gap:20px;}
- .g220{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
- .g200{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
- .g210{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));}
- .card{padding:32px;background:#FFFFFF;}
- .card .big{display:block;font-size:22px;font-weight:700;color:#1B2A38;line-height:1.25;margin-bottom:10px;}
- .card .small{font-size:14px;color:#46586A;line-height:1.55;}
- .tile{padding:22px 24px;background:#E7EEF3;display:flex;align-items:center;gap:12px;}
- .tile span.t{font-size:14.5px;color:#46586A;line-height:1.45;}
- .tile strong{color:#1B2A38;}
- .meta{padding:22px 24px;background:#FFFFFF;}
- .meta .k{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;margin-bottom:8px;}
- .meta .v{font-size:14.5px;line-height:1.5;color:#46586A;}
- .meta .v strong{color:#1B2A38;}
-
- .panel{background:#E7EEF3;padding:28px 32px;margin:0 0 34px;box-sizing:border-box;}
- .sheet{background:#FFFFFF;padding:24px 24px 16px;margin:0 0 34px;}
- .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 34px;}
- .pair .sheet{margin:0;}
-
- /* image slots: files live in UP42/; until uploaded, the slot shows the file name */
- .slot img{display:block;width:100%;height:auto;}
- .slot.missing{min-height:200px;border:1px dashed #8DA9C4;display:flex;align-items:center;justify-content:center;box-sizing:border-box;}
- .slot.missing img{display:none;}
- .slot.missing::after{content:attr(data-file);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#6E7F8D;padding:16px;text-align:center;}
- .slotcap{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6E7F8D;margin:16px 0 4px;}
- .slotcap strong{color:#1B2A38;}
-
- .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;}
- .flow .step{flex:1 1 120px;display:flex;align-items:stretch;gap:14px;}
- .flow .box{flex:1;background:#FFFFFF;padding:18px 16px;}
- .flow .n{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8DA9C4;margin-bottom:8px;}
- .flow .w{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#1B2A38;font-weight:700;}
- .flow .s{display:block;font-size:13px;color:#46586A;line-height:1.4;margin-top:6px;}
- .flow .arrow{align-self:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#1B2A38;}
-
- .iter{display:flex;gap:18px;margin:0 0 18px;}
- .iter .n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#8DA9C4;flex:none;padding-top:2px;}
- .iter .h{display:block;font-size:15px;font-weight:700;color:#1B2A38;margin-bottom:4px;}
- .iter .d{font-size:15px;color:#46586A;line-height:1.65;}
- .iter .d strong{color:#1B2A38;}
-
- .dark{padding:18px 20px;background:#1B2A38;}
- .dark .h{display:block;font-size:14px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:6px;}
- .dark .d{font-size:12.5px;color:#CBD8E0;line-height:1.45;}
-
- table.limits{width:100%;border-collapse:collapse;font-size:14.5px;background:#FFFFFF;}
- table.limits th,table.limits td{text-align:left;padding:12px 16px;border-bottom:1px solid #DBE3EB;}
- table.limits th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8DA9C4;font-weight:500;}
- table.limits td{color:#46586A;font-variant-numeric:tabular-nums;}
- .scroll{overflow-x:auto;margin:0 0 34px;}
-
- .footer-links{display:flex;gap:32px;flex-wrap:wrap;margin:0 0 48px;padding-top:24px;border-top:1px solid #DBE3EB;}
- .footer-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
- .fine{font-size:12px;color:#6E7F8D;max-width:44em;margin:0 0 40px;}
- .sign{display:flex;justify-content:space-between;padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#46586A;}
- .sign a{color:#46586A;}
-
- @media (max-width:760px){
-  .page{padding:0 20px 56px;}
-  .topnav{margin:0 -20px 40px;width:calc(100% + 40px);}
-  h1{font-size:32px;}
-  .pair{grid-template-columns:1fr;}
- }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style></style>
 </head>
 <body>
+<a class="skip" href="#problem">Skip to content</a>
 <div class="page">
 
- <nav class="topnav" aria-label="Sections">
-  <a href="#c01">01 Finding</a>
-  <a href="#c02">02 Interface</a>
-  <a href="#c03">03 How it works</a>
-  <a href="#c04">04 Process</a>
-  <a href="#c05">05 Decisions</a>
-  <a href="#c06">06 Lessons</a>
- </nav>
+<nav class="nav" aria-label="Sections">
+ <ul>
+  <li><a href="#impact">Impact</a></li>
+  <li><a href="#problem">Problem</a></li>
+  <li><a href="#shipped">Feature</a></li>
+  <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#process">Process</a></li>
+  <li><a href="#lessons">Lessons</a></li>
+ </ul>
+</nav>
 
- <p class="eyebrow"><a href="index.html">← Portfolio</a> · Data project · Berlin air, 2025 · <a href="https://luftdaten.berlin.de" target="_blank" rel="noopener" style="color:#4C72B0;">luftdaten.berlin.de →</a></p>
-
- <h1>How I turned 236,180 hourly measurements into an interface for the air Berliners breathe</h1>
- <p class="lede"><strong>A self-initiated data project.</strong> I framed the question, pulled and cleaned a full year from Berlin’s 15 air quality stations in Python, and designed the interface from paper sketch to coded version 1.</p>
- <p class="featureline"><strong style="font-weight:700;">Berliner Luft</strong> <span>, NO₂ and PM2.5 · 15 stations · every hour of 2025 · v1 October 2026</span></p>
-
- <div class="panel" style="margin-bottom:128px;">
-  <div class="slot" data-file="UP42/interface_berlinerluft.png">
-   <img src="UP42/interface_berlinerluft.png" alt="Berliner Luft interface, version 1. Left: what is measured, a period and days filter, and the mean by hour of day with the lowest and highest hour of the year. Right: a map of the 15 stations with labels on leader lines and type filters, and each station’s annual mean against WHO, EU 2030 and current EU limits." onerror="this.parentElement.classList.add('missing')">
+<header class="casehead">
+  <p class="label">Use case 2 of 4 · Valispace, 2021</p>
+  <h1>Master-Follower</h1>
+  <p class="standfirst">A traceability feature for systems engineers. I designed it from the first idea to the shipped UI.</p>
+  <div class="spread spread--facts">
+    <dl class="meta">
+      <dt>My role</dt><dd>First and only designer</dd>
+      <dt>Product</dt><dd>Valispace → Altium 365</dd>
+      <dt>Timeline</dt><dd>designed 2021 · live 2026</dd>
+    </dl>
   </div>
-  <p class="caption" style="margin-top:18px;">Choose a time and a place; the two charts answer when and where the air is worst.</p>
- </div>
-
- <!-- 01 FINDING -->
- <div id="c01" class="chapter">
-  <p class="label">01 · Finding</p>
-  <div class="grid g220" style="margin:0 0 34px;">
-   <div class="card"><span class="big">Within EU limits</span><span class="small">all 15 stations stayed below today’s annual limits of 40 µg/m³ NO₂ and 25 µg/m³ PM2.5</span></div>
-   <div class="card"><span class="big">Above WHO, 12 of 12</span><span class="small">every station that measures fine particles sat above the WHO guideline of 5 µg/m³; for NO₂, 10 of 15 were above 10</span></div>
-   <div class="card"><span class="big">5 traffic stations</span><span class="small">would fail the EU 2030 NO₂ limit of 20, led by Mariendorfer Damm at 26.3 µg/m³</span></div>
+  <div class="topbar">
+    <a href="index.html">← Portfolio</a>
+    <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a>
   </div>
-  <p class="body" style="margin:0;">Whether Berlin’s air is <strong>“OK”</strong> depends on the standard you read it against. The interface shows <strong>all three side by side</strong> instead of deciding for the reader. Annual means from provisional, unvalidated hourly data.</p>
- </div>
+</header>
 
- <!-- 02 INTERFACE -->
- <div id="c02" class="chapter">
-  <p class="label">02 · The interface</p>
-  <p class="body">Berlin measures air quality at <strong>15 points across 892 km²</strong>. A phone app shows one number for the city or for where you stand, but between the stations that number is an estimate, and a daily figure hides how much the air changes <strong>between 4 am and the evening rush</strong>.</p>
-  <p class="body">The interface keeps to what was measured: <strong>when in the day</strong> the air is worst, <strong>where</strong> in the city, and <strong>how far</strong> each station is from the limits.</p>
+<main>
 
-  <div class="sheet">
-   <div class="slot" data-file="UP42/stations.png">
-    <img src="UP42/stations.png" alt="Station map. A Berlin outline with 15 markers, square for traffic, circle for background and diamond for suburb, each joined by a leader line to a label at the left or right edge. Filters above: All, Traffic, Background, Suburb, None." onerror="this.parentElement.classList.add('missing')">
-   </div>
-   <p class="slotcap">Station map · labels on leader lines · filter by type in one step</p>
-  </div>
-
-  <div class="grid g200">
-   <div class="tile"><svg viewBox="0 0 12 12" style="width:12px;height:12px;flex:none;" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#1B2A38"></rect></svg><span class="t"><strong>Traffic</strong><br>main roads, 6 stations</span></div>
-   <div class="tile"><svg viewBox="0 0 12 12" style="width:12px;height:12px;flex:none;" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#1B2A38"></circle></svg><span class="t"><strong>Background</strong><br>residential, 4 stations</span></div>
-   <div class="tile"><svg viewBox="0 0 12 12" style="width:12px;height:12px;flex:none;" aria-hidden="true"><path d="M6 0.5 L11.5 6 L6 11.5 L0.5 6 Z" fill="#1B2A38"></path></svg><span class="t"><strong>Suburb</strong><br>city edge, 5 stations</span></div>
-  </div>
-  <p class="caption">Station type carried by shape, so it stays readable without colour</p>
- </div>
-
- <!-- 03 HOW IT WORKS -->
- <div id="c03" class="chapter">
-  <p class="label tight">03 · How it works</p>
-  <p class="statement">Pick a period, days and stations; <strong>every chart and every number follows the selection.</strong></p>
-
-  <div class="scroll">
-   <table class="limits">
-    <thead><tr><th>Pollutant</th><th>EU now</th><th>EU 2030</th><th>WHO</th><th>Measured at</th></tr></thead>
-    <tbody>
-     <tr><td><strong style="color:#4C72B0;">NO₂</strong> · traffic exhaust · airways</td><td>40</td><td>20</td><td>10</td><td>15 of 15</td></tr>
-     <tr><td><strong style="color:#B8612F;">PM2.5</strong> · fine particles · heart and blood vessels</td><td>25</td><td>10</td><td>5</td><td>12 of 15</td></tr>
-    </tbody>
-   </table>
-   <p class="caption">Annual mean limits, µg/m³ · dotted WHO, dashed EU 2030, solid EU now</p>
-  </div>
-
-  <p class="body">The hour-of-day chart shows the <strong>morning peak around 07:00</strong> and a second rise into the evening, with the single lowest and highest hour of the year beneath it. The limits chart ranks every station and marks the selected one. Coverage is restated for exactly what is shown: <strong>99.8 % valid hours</strong> for NO₂ over the year.</p>
-
-  <div class="pair" style="margin-bottom:0;">
-   <div class="card">
-    <span class="meta" style="padding:0;background:none;"><span class="k">Before · a city number</span></span>
-    <div class="mono" style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#6E7F8D;line-height:1.5;">
-     <span>One value for Berlin</span><span style="color:#8DA9C4;">↓</span>
-     <span>Averaged over the day</span><span style="color:#8DA9C4;">↓</span>
-     <span>One colour, one verdict</span><span style="color:#8DA9C4;">↓</span>
-     <span>Street and hour <strong style="color:#1B2A38;">lost</strong></span>
+<section class="section" id="impact">
+  <div class="spread">
+    <h2 class="label">Impact</h2>
+    <div>
+      <div class="panel"><ul class="outcomes">
+        <li><b>Six-figure contract</b><span>signed based on the designs</span></li>
+        <li><b>Shipped 2021, live 2026</b><span>kept after the Altium acquisition</span></li>
+        <li><b>Close developer collaboration</b><span>I caught misunderstandings before they reached the code</span></li>
+      </ul></div>
     </div>
-   </div>
-   <div class="card">
-    <span class="meta" style="padding:0;background:none;"><span class="k">After</span></span>
-    <div class="mono" style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#1B2A38;line-height:1.5;">
-     <span>15 measured places</span><span style="color:#8DA9C4;">↓</span>
-     <span>Hour by hour</span><span style="color:#8DA9C4;">↓</span>
-     <span>Three limits side by side</span><span style="color:#8DA9C4;">↓</span>
-     <span style="font-weight:700;">Coverage shown with every view</span>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="spread">
+    <h2 class="label">The problem</h2>
+    <div>
+      <p>An airplane is built on thousands of requirements. Each one is a written rule the design must meet. They depend on each other, and dozens to hundreds of engineers share the work.</p>
+      <p>When a higher level requirement changes, the ones below it may need to change too. Before, that change lived in meeting notes and emails. Sometimes it got lost.</p>
     </div>
-   </div>
   </div>
- </div>
+</section>
 
- <!-- 04 PROCESS -->
- <div id="c04" class="chapter">
-  <p class="label tight">04 · Process · from paper to version 1</p>
-  <div class="panel">
-   <div class="flow">
-    <div class="step"><div class="box"><span class="n">01</span><span class="w">Question</span><span class="s">When and where is the air worst?</span></div><span class="arrow">→</span></div>
-    <div class="step"><div class="box"><span class="n">02</span><span class="w">Data</span><span class="s">BLUME API · 15 stations · hourly</span></div><span class="arrow">→</span></div>
-    <div class="step"><div class="box"><span class="n">03</span><span class="w">Clean</span><span class="s">18-hour rule · gaps kept as gaps</span></div><span class="arrow">→</span></div>
-    <div class="step"><div class="box"><span class="n">04</span><span class="w">Analyse</span><span class="s">pandas notebooks</span></div><span class="arrow">→</span></div>
-    <div class="step" style="flex:1 1 120px;"><div class="box"><span class="n">05</span><span class="w">Show</span><span class="s">sketch → code → v1</span></div></div>
-   </div>
-   <p class="caption" style="text-transform:uppercase;letter-spacing:.06em;margin-top:18px;">↺ Each design iteration tested against the real data</p>
-  </div>
-
-  <div class="pair">
-   <div class="sheet">
-    <div class="slot" data-file="UP42/skizze1.png">
-     <img src="UP42/skizze1.png" alt="Pencil sketch titled Air Quality: Berlin and 2025 fixed, filters for months, days and hours, a location list with All as default, a line chart marked with today, EU and WHO levels, a bar chart with limit lines, and a map highlighting the selection." onerror="this.parentElement.classList.add('missing')">
+<section class="section" id="shipped">
+  <div class="spread">
+    <h2 class="label">The feature</h2>
+    <div>
+      <p>The name explains it. The Master is the higher level requirement. A Follower depends on it.</p>
+      <p>When the Master changes, every Follower gets a flag. Its owner <strong>applies or rejects the change, and the decision is logged.</strong></p>
+      <ul class="keyed">
+        <li><b><span class="swatch" style="background:#4C8A5F"></span>Up to date</b>in sync</li>
+        <li><b><span class="swatch" style="background:#C9A227"></span>Change pending</b>needs review</li>
+        <li><b><span class="swatch" style="background:#4A7FB5"></span>Rejected or edited</b>diverged</li>
+      </ul>
+      <figure>
+        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and Follower connection columns in the requirements table, Altium 365" loading="lazy">
+        <figcaption>Master and Follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
+      </figure>
     </div>
-    <p class="slotcap"><strong>Sketch 1</strong> · limits drawn into both charts</p>
-   </div>
-   <div class="sheet">
-    <div class="slot" data-file="UP42/skizze2.png">
-     <img src="UP42/skizze2.png" alt="Pencil sketch with day and month buttons along the top, a station list on the left, a selected-station panel with street name, distance to road and label beside a small map, and a line chart and bar chart below." onerror="this.parentElement.classList.add('missing')">
+  </div>
+</section>
+
+<section class="section" id="decisions">
+  <div class="spread">
+    <h2 class="label">Key decisions</h2>
+    <div>
+      <p>Too simple and it is useless to engineers. Too complex and it is unclear and ineffective to use. So I decided who sees what, and when.</p>
+      <ul class="decisions">
+        <li><b>Flags, not silent updates.</b> Only the owner applies a change</li>
+        <li><b>One state per Follower.</b> A pending change can wait</li>
+        <li><b>Discussion where the change is.</b> No separate thread</li>
+        <li><b>Visibility by role, view and task.</b> Overview in the table, details in focus</li>
+      </ul>
     </div>
-    <p class="slotcap"><strong>Sketch 2</strong> · detail panel for one station</p>
-   </div>
   </div>
+</section>
 
-  <div class="iter"><span class="n">01</span><div><span class="h">Everything as a control</span><span class="d">Station list, pollutant toggles, reference dropdown, hour selectors and day buttons all at once. It worked, but <strong>long station names broke</strong> inside the list and the map had no city outline.</span></div></div>
-  <div class="sheet">
-   <div class="slot" data-file="UP42/design_iteration_at_19_22_19.png">
-    <img src="UP42/design_iteration_at_19_22_19.png" alt="Early iteration with a month bar, a scrolling location list with station codes, a row of pollutant, reference, view, hours and days controls, a station card, a map of markers without a city outline, and charts for the typical day and monthly means." onerror="this.parentElement.classList.add('missing')">
-   </div>
-   <p class="slotcap">Iteration 1 · list-driven</p>
+<section class="section" id="process">
+  <div class="spread">
+    <h2 class="label">Process</h2>
+    <div>
+      <p>The founders had a name and an idea, but no specs or sketch. I built clickable prototypes so clients and experts could react to something almost real. We iterated several times a week.</p>
+      <p>I stayed involved until release. That is how I caught a mismatch between the CPO and backend about what users get now and what later.</p>
+    </div>
   </div>
+</section>
 
-  <div class="iter"><span class="n">02</span><div><span class="h">The map becomes the selector</span><span class="d">The list gave way to the map, with a Berlin outline and filters by station type. In the centre <strong>the labels overlapped</strong> and became unreadable.</span></div></div>
-  <div class="sheet">
-   <div class="slot" data-file="UP42/design_iteration_at_19_53_28.png">
-    <img src="UP42/design_iteration_at_19_53_28.png" alt="Iteration with a Berlin outline map and station names next to each marker; in the centre the names overlap. Period and day filters sit in a row below the map." onerror="this.parentElement.classList.add('missing')">
-   </div>
-   <p class="slotcap">Iteration 2 · labels on the map</p>
+<section class="section" id="lessons">
+  <div class="spread">
+    <h2 class="label">Lessons</h2>
+    <div>
+      <ol class="lessons">
+        <li><b>Design filled the gap</b><p>Prototypes turned high level decisions into logic developers could build.</p></li>
+        <li><b>A missing middle step</b><p>A step was missing between prototype and build: more user tests and a feasibility check.</p></li>
+        <li><b>Carried into the next feature</b><p>On the next feature, I asked for user stories and agreed must haves at the start. See <a href="verification_matrix.html">Verification Assignment Matrix</a>.</p></li>
+      </ol>
+    </div>
   </div>
+</section>
 
-  <div class="iter"><span class="n">03</span><div><span class="h">Labels move outside</span><span class="d"><strong>Leader lines</strong> pull every label to the edge, so all 15 stay legible. Selecting a station opens a card with its type, the nearest other station and its annual mean beside each limit.</span></div></div>
-  <div class="sheet">
-   <div class="slot" data-file="UP42/design_iteration_at_09_58_03.png">
-    <img src="UP42/design_iteration_at_09_58_03.png" alt="Iteration with station labels on both sides of the map joined to markers by leader lines. Schichauweg is selected; a card lists its NO₂ annual mean of 8.4 µg/m³ beside WHO, EU 2030 and EU now." onerror="this.parentElement.classList.add('missing')">
-   </div>
-   <p class="slotcap">Iteration 3 · leader lines and station card</p>
-  </div>
+</main>
 
-  <div class="iter"><span class="n">04</span><div><span class="h">Selecting a group</span><span class="d">A filtered state: background stations, January weekends. Only the selection is labelled, both pollutants are <strong>averaged across the group</strong>, and coverage is restated for what is shown.</span></div></div>
-  <div class="sheet">
-   <div class="slot" data-file="UP42/design_iteration_at_10_00_21.png">
-    <img src="UP42/design_iteration_at_10_00_21.png" alt="Iteration filtered to the four background stations for January weekends. Only those four are labelled, the hour-of-day chart shows NO₂ and PM2.5 as the mean of four stations, and the limits chart highlights Amrumer Str." onerror="this.parentElement.classList.add('missing')">
-   </div>
-   <p class="slotcap">Iteration 4 · group selection</p>
-  </div>
+<nav class="nextup" aria-label="More use cases">
+  <a href="berlinerluft.html">Use case 1 · Berliner Luft <span aria-hidden="true">→</span></a>
+  <a href="verification_matrix.html">Use case 3 · Verification Assignment Matrix <span aria-hidden="true">→</span></a>
+  <a href="review_center.html">Use case 4 · Review Center <span aria-hidden="true">→</span></a>
+</nav>
 
-  <div class="iter"><span class="n">05</span><div><span class="h">One station, one story</span><span class="d">The selection as the only filled marker. A suburb station like Schichauweg shows the clean end of the range: a <strong>morning peak just above 11 µg/m³</strong> and a midday low near 5.</span></div></div>
-  <div class="sheet">
-   <div class="slot" data-file="UP42/design_iteration_at_10_00_29.png">
-    <img src="UP42/design_iteration_at_10_00_29.png" alt="Iteration with Schichauweg selected as the only filled marker. Its hour-of-day NO₂ curve peaks in the morning and falls to its lowest around midday." onerror="this.parentElement.classList.add('missing')">
-   </div>
-   <p class="slotcap">Iteration 5 · single station</p>
-  </div>
-
-  <div class="grid g210" style="margin:40px 0 0;">
-   <div class="meta"><span class="k">Project</span><span class="v"><strong>Self-initiated</strong> · open data, Berlin</span></div>
-   <div class="meta"><span class="k">My role</span><span class="v"><strong>Question to v1</strong> · data, analysis, design, code</span></div>
-   <div class="meta"><span class="k">Tools</span><span class="v">Python · pandas · uv · JavaScript · SVG · Figma</span></div>
-   <div class="meta"><span class="k">Users</span><span class="v"><strong>Residents</strong> · public health and city planning readers</span></div>
-  </div>
- </div>
-
- <!-- 05 DECISIONS -->
- <div id="c05" class="chapter">
-  <p class="label tight">05 · Key design decisions</p>
-  <p class="body" style="margin-bottom:40px;max-width:40em;">The question behind every choice: what can this data honestly answer? <strong>The stations are accurate; the space between them is not measured.</strong> The interface shows the first and never paints over the second.</p>
-  <div class="grid g200" style="gap:14px;">
-   <div class="dark"><span class="h">Two pollutants</span><span class="d">NO₂ for the street, PM2.5 for the city</span></div>
-   <div class="dark"><span class="h">All 15 stations</span><span class="d">the spread is the point</span></div>
-   <div class="dark"><span class="h">Hour of day first</span><span class="d">a daily average flattens the rush hour</span></div>
-   <div class="dark"><span class="h">Three limits, not one verdict</span><span class="d">WHO, EU 2030, EU now</span></div>
-   <div class="dark"><span class="h">Nothing by colour alone</span><span class="d">shape for type, line style for limits</span></div>
-   <div class="dark"><span class="h">Gaps stay gaps</span><span class="d">days under 18 valid hours left out</span></div>
-  </div>
- </div>
-
- <!-- 06 LESSONS -->
- <div id="c06" class="chapter">
-  <p class="label tight">06 · Lessons learned</p>
-  <p class="statement" style="margin-bottom:16px;"><strong>What working with real data taught me.</strong></p>
-  <div class="iter" style="max-width:44em;margin-bottom:22px;"><span class="n">01</span><div><span class="h">The data designs the menu</span><span class="d">Which views make sense depends on what the file holds: hourly timestamps unlock hour of day, one station disables comparison. <strong>Designing from the data’s properties</strong> came before drawing screens.</span></div></div>
-  <div class="iter" style="max-width:44em;margin-bottom:22px;"><span class="n">02</span><div><span class="h">Coding the iterations exposed the layout</span><span class="d">Overlapping labels and broken names only showed up with <strong>all 15 real stations</strong> on screen. A static mockup with three tidy dots would have hidden both.</span></div></div>
-  <div class="iter" style="max-width:44em;margin-bottom:22px;"><span class="n">03</span><div><span class="h">Accuracy and coverage are different claims</span><span class="d">Saying “the measurements are inaccurate” would have been wrong. <strong>Fifteen accurate points, nothing between them</strong> is the honest version.</span></div></div>
-  <div class="iter" style="max-width:44em;margin:0;"><span class="n">04</span><div><span class="h">AI + human</span><span class="d">AI found the station API, ruled out satellite NO₂ (a column, not street-level air) and drafted code. <strong>The question, the scope, the sketches and every design iteration were mine.</strong></span></div></div>
- </div>
-
- <div style="margin:0 0 28px;">
-  <a href="https://luftdaten.berlin.de" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.04em;text-transform:uppercase;">Data source ↗</a>
-  <p class="mono" style="font-size:11px;letter-spacing:.03em;color:#6E7F8D;line-height:1.5;max-width:44em;margin:12px 0 0;">Hourly values from the <strong style="color:#1B2A38;">Berlin air quality network (BLUME)</strong>, published by the Senate Department as open data. Values are provisional until validated. Map outline © OpenStreetMap contributors.</p>
- </div>
- <div class="footer-links">
-  <a href="index.html">← All use cases</a>
- </div>
-
- <p class="fine">A personal project for portfolio purposes. One year of data shows a pattern, not a trend, and says nothing about causes or health outcomes.</p>
-
- <div class="sign">
-  <span>Petra Kühnle · Senior Product Designer</span><span><a href="index.html">← Portfolio</a></span>
- </div>
+<footer class="pagefoot">
+  <p class="footnote">Screenshot from the Altium 365 documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
+  <p class="footnote">This use case describes my own learnings, not the company's process. Client names and specific information are left out. The features are released and publicly documented.</p>
+  <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
+</footer>
 
 </div>
 </body>
