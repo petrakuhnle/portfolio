@@ -7,7 +7,7 @@
 <meta name="description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Master-Follower · Petra Kühnle, Product Designer">
-<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/UP42/master_follower.html">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/product-design/master_follower.html">
 <meta property="og:description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
  <ul>
   <li><a href="#impact">Impact</a></li>
   <li><a href="#problem">Problem</a></li>
-  <li><a href="#shipped">Shipped</a></li>
+  <li><a href="#shipped">Feature</a></li>
   <li><a href="#decisions">Decisions</a></li>
   <li><a href="#process">Process</a></li>
   <li><a href="#lessons">Lessons</a></li>
@@ -33,7 +33,7 @@
 <header class="casehead">
   <p class="label">Use case 2 of 4 · Valispace, 2021</p>
   <h1>Master-Follower</h1>
-  <p class="standfirst">Requirements reused across projects, <strong>traceable when they change</strong>. My first feature at Valispace, from the first conversation to shipped UI.</p>
+  <p class="standfirst">A traceability feature for systems engineers. I designed it from the first idea to the shipped UI.</p>
   <div class="spread spread--facts">
     <dl class="meta">
       <dt>My role</dt><dd>First and only designer</dd>
@@ -54,9 +54,9 @@
     <h2 class="label">Impact</h2>
     <div>
       <div class="panel"><ul class="outcomes">
-        <li><b>Six-figure contract</b><span>one of three features behind the deal</span></li>
-        <li><b>Shipped 2021 · live 2026</b><span>kept after the Altium acquisition</span></li>
-        <li><b>Rework prevented</b><span>I caught a miscommunication between CPO and backend before it reached the code</span></li>
+        <li><b>Six-figure contract</b><span>signed based on the designs</span></li>
+        <li><b>Shipped 2021, live 2026</b><span>kept after the Altium acquisition</span></li>
+        <li><b>Close developer collaboration</b><span>I caught misunderstandings before they reached the code</span></li>
       </ul></div>
     </div>
   </div>
@@ -66,47 +66,41 @@
   <div class="spread">
     <h2 class="label">The problem</h2>
     <div>
-      <p>Requirements engineers write each requirement in a fixed form, like a clause in a standard: <em>“The wave height shall be measured with an accuracy of at least 0.30 m.”</em> The same requirement is often reused across projects.</p>
-      <p>When the original changes, every copy may need to change too. Before, a decision made in a meeting was noted in a document, sent by email and updated by hand, or missed.</p>
-      <p style="margin-top:28px"><strong>Who needed what</strong></p>
-      <ul class="decisions">
-        <li><b>Master editor.</b> Changes the source requirement and needs to know who is affected</li>
-        <li><b>Follower owner.</b> Needs to see a change and decide whether to apply it</li>
-        <li><b>Manager signing off.</b> Needs to see what is in sync and what has diverged</li>
-      </ul>
+      <p>An airplane is built on thousands of requirements. Each one is a written rule the design must meet. They depend on each other, and dozens to hundreds of engineers share the work.</p>
+      <p>When a higher level requirement changes, the ones below it may need to change too. Before, that change lived in meeting notes and emails. Sometimes it got lost.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="shipped">
   <div class="spread">
-    <h2 class="label">The shipped feature</h2>
+    <h2 class="label">The feature</h2>
     <div>
-      <figure style="margin-top:0">
-        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and Follower connection columns in the requirements table, Altium 365" loading="lazy">
-        <figcaption>Master and Follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
-      </figure>
-      <p class="statement" style="margin-top:36px">A change on the Master flags every Follower. Its owner <strong>applies or rejects it, and the decision is logged.</strong></p>
+      <p>The name explains it. The Master is the higher level requirement. A Follower depends on it.</p>
+      <p>When the Master changes, every Follower gets a flag. Its owner <strong>applies or rejects the change, and the decision is logged.</strong></p>
       <ul class="keyed">
-        <li><b>Master</b>the source</li>
         <li><b><span class="swatch" style="background:#4C8A5F"></span>Up to date</b>in sync</li>
         <li><b><span class="swatch" style="background:#C9A227"></span>Change pending</b>needs review</li>
         <li><b><span class="swatch" style="background:#4A7FB5"></span>Rejected or edited</b>diverged</li>
       </ul>
+      <figure>
+        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and Follower connection columns in the requirements table, Altium 365" loading="lazy">
+        <figcaption>Master and Follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <section class="section" id="decisions">
   <div class="spread">
-    <h2 class="label">Key design decisions</h2>
+    <h2 class="label">Key decisions</h2>
     <div>
-      <p>My job was to ask what each person needs to see and what would frustrate them.</p>
+      <p>Too simple and it is useless to engineers. Too complex and it is unclear and ineffective to use. So I decided who sees what, and when.</p>
       <ul class="decisions">
-        <li><b>Flags, not silent updates.</b> Only the owner applies, rejects or edits a change</li>
-        <li><b>A state per Follower.</b> A change left pending or rejected can still be acted on later</li>
-        <li><b>Discussion in place.</b> Decisions are made where the work is</li>
-        <li><b>Options where each role needs them.</b> Assign, review and comment appear in the same table for every role</li>
+        <li><b>Flags, not silent updates.</b> Only the owner applies a change</li>
+        <li><b>One state per Follower.</b> A pending change can wait</li>
+        <li><b>Discussion where the change is.</b> No separate thread</li>
+        <li><b>Visibility by role, view and task.</b> Overview in the table, details in focus</li>
       </ul>
     </div>
   </div>
@@ -116,21 +110,20 @@
   <div class="spread">
     <h2 class="label">Process</h2>
     <div>
-      <p>The founders had a title and a high-level idea, but no specs, no user stories and no sketch. I started there and built interactive hi-fi prototypes, so clients and internal experts could react to an almost real product instead of imagining one. We iterated several times a week, and I introduced user stories along the way as a second source of truth.</p>
-      <p>Because I was involved from the first conversation to the release, I caught a miscommunication between the CPO and the backend engineers about what the feature should do now and later, and <strong>prevented rework in the code</strong>.</p>
+      <p>The founders had a name and an idea, but no specs or sketch. I built clickable prototypes so clients and experts could react to something almost real. We iterated several times a week.</p>
+      <p>I stayed involved until release. That is how I caught a mismatch between the CPO and backend about what users get now and what later.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="lessons">
   <div class="spread">
-    <h2 class="label">Lessons learned</h2>
+    <h2 class="label">Lessons</h2>
     <div>
-      <h3 class="title">What the first big feature taught me.</h3>
-      <ol class="lessons" style="margin-top:28px">
-        <li><b>Design filled the gap</b><p>Engineers could build anything, but couldn't picture the feature in enough detail. The prototypes turned high-level decisions into logic developers could build.</p></li>
-        <li><b>A missing middle step</b><p>More user testing and a feasibility check between prototype and build would have helped. That was partly startup reality and partly outside my influence.</p></li>
-        <li><b>Carried into the next feature</b><p>On the next feature I asked for user stories and the most important requirements to be agreed from the start. See <a href="verification_matrix.html">Verification Assignment Matrix</a>.</p></li>
+      <ol class="lessons">
+        <li><b>Design filled the gap</b><p>Prototypes turned high level decisions into logic developers could build.</p></li>
+        <li><b>A missing middle step</b><p>A step was missing between prototype and build: more user tests and a feasibility check.</p></li>
+        <li><b>Carried into the next feature</b><p>On the next feature, I asked for user stories and agreed must haves at the start. See <a href="verification_matrix.html">Verification Assignment Matrix</a>.</p></li>
       </ol>
     </div>
   </div>
