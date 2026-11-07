@@ -3,85 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Review Center · Petra Kühnle, Senior Product Designer</title>
-<meta name="description" content="Review assignment and completion at a glance: industry conventions and user needs per role mapped into views and filters. Valispace 2021, live in Altium 365 today.">
+<title>Review Center · Petra Kühnle, Product Designer</title>
+<meta name="description" content="Formal reviews from setup to sign-off, run on the data already in the project. Valispace 2021, live in Altium 365 today.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Review Center · Petra Kühnle, Senior Product Designer">
-<meta property="og:description" content="Review workflows designed around the user journey, within domain and business constraints. Valispace 2021, live in Altium 365 today.">
-<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/review_center">
+<meta property="og:title" content="Review Center · Petra Kühnle, Product Designer">
+<meta property="og:url" content="https://petrakuhnle.github.io/portfolio/product-design/review_center.html">
+<meta property="og:description" content="Formal reviews from setup to sign-off, run on the data already in the project. Valispace 2021, live in Altium 365 today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="nav.js" defer></script>
+<style>.vmodel{margin:88px 0 40px}.vmodel svg{display:block;width:100%;max-width:820px;height:auto}.vlegend{list-style:none;margin:40px 0 0;padding:0;font-size:15px;line-height:1.5;color:#15212C}.vlegend li{margin:0 0 8px}.vmodel figcaption{margin-top:20px;max-width:40em}</style>
 </head>
 <body>
-<a class="skip" href="#impact">Skip to content</a>
+<a class="skip" href="#problem">Skip to content</a>
 <div class="page">
 
 <nav class="nav" aria-label="Sections">
  <ul>
   <li><a href="#impact">Impact</a></li>
+  <li><a href="#problem">Problem</a></li>
+  <li><a href="#workflow">Workflow</a></li>
   <li><a href="#shipped">Shipped</a></li>
-  <li><a href="#how">How it works</a></li>
-  <li><a href="#process">Process</a></li>
   <li><a href="#decisions">Decisions</a></li>
+  <li><a href="#process">Process</a></li>
   <li><a href="#lessons">Lessons</a></li>
  </ul>
 </nav>
 
-<div class="topbar">
-  <a href="index.html">← Portfolio</a>
-  <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Altium 365 documentation</a>
-</div>
-
 <header class="casehead">
-  <p class="label">Use case 3 of 3 · Valispace, 2021</p>
-  <h1>How I designed review workflows around the user journey, within domain and business constraints</h1>
-  <p class="standfirst"><strong>Mapping industry conventions and user needs per role</strong> into views and filters, directly with engineers. The feature: <strong>review assignment and completion at a glance</strong>.</p>
-  <div class="spread">
+  <p class="label">Use case 4 of 4 · Valispace, 2021</p>
+  <h1>Review Center</h1>
+  <p class="standfirst">Reviews built into the software where requirements are written, tracked and verified, <strong>instead of a separate review tool</strong>.</p>
+  <div class="spread spread--facts">
     <dl class="meta">
-      <dt>Feature</dt><dd>Review Center</dd>
+      <dt>My role</dt><dd>First and only designer</dd>
       <dt>Product</dt><dd>Valispace → Altium 365</dd>
       <dt>Timeline</dt><dd>designed 2021 · live 2026</dd>
     </dl>
-    <figure style="margin:0">
-      <svg class="drawing-wide" viewBox="0 0 500 138" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <defs><marker id="rcv1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 1 L6 4 L0 7" fill="none" stroke="#1F1F1F" stroke-width="1.2"/></marker></defs>
-        <text x="0" y="14" font-size="10.5" fill="#80868B">Moderator</text>
-        <text x="150" y="14" font-size="10.5" fill="#80868B">Reviewer</text>
-        <text x="300" y="14" font-size="10.5" fill="#80868B">Approver</text>
-        <path d="M96 10 L142 10" stroke="#1F1F1F" stroke-width="1.2" marker-end="url(#rcv1)"/>
-        <path d="M226 10 L292 10" stroke="#1F1F1F" stroke-width="1.2" marker-end="url(#rcv1)"/>
-        <g stroke="#E6E6E6" stroke-width="1.3">
-          <rect x="0" y="26" width="450" height="30"/><rect x="0" y="62" width="450" height="30"/><rect x="0" y="98" width="450" height="30"/>
-        </g>
-        <text x="12" y="45" font-size="11" fill="#1F1F1F">REQ-01</text>
-        <text x="12" y="81" font-size="11" fill="#1F1F1F">REQ-02</text>
-        <text x="12" y="117" font-size="11" fill="#1F1F1F">REQ-03</text>
-        <path d="M330 42 l6 6 l12 -14" stroke="#1F1F1F" stroke-width="1.8"/>
-        <text x="356" y="45" font-size="10" fill="#80868B">Approved</text>
-        <circle cx="337" cy="77" r="7" stroke="#1F1F1F" stroke-width="1.4" fill="none"/>
-        <path d="M337 70 a7 7 0 0 1 0 14 z" fill="#1F1F1F"/>
-        <text x="356" y="81" font-size="10" fill="#80868B">Needs work</text>
-        <path d="M330 110 l14 14 M344 110 l-14 14" stroke="#1F1F1F" stroke-width="1.8"/>
-        <text x="356" y="117" font-size="10" fill="#80868B">Rejected</text>
-      </svg>
-      <figcaption>The moderator sets up the review, reviewers rate each object, the approver closes it with a timestamp</figcaption>
-    </figure>
+  </div>
+  <div class="topbar">
+    <a href="index.html">← Portfolio</a>
+    <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a>
   </div>
 </header>
+
+<figure class="vmodel">
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="V-model of systems engineering: stakeholder needs and system, subsystem and equipment requirements on the left, validation and matching verification levels on the right, build at the bottom." font-family="Roboto, Arial, sans-serif">
+<path d="M98.0 50 L340 296 M420 296 L662.0 50" fill="none" stroke="#D9DEE3" stroke-width="2"/>
+<g font-size="12.5" fill="#15212C">
+<rect x="20" y="16" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="98.0" y="38" text-anchor="middle">Stakeholder needs</text>
+<rect x="584" y="16" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="662.0" y="38" text-anchor="middle">Validation</text>
+<rect x="76" y="86" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="154.0" y="108" text-anchor="middle">System requirements</text>
+<rect x="528" y="86" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="606.0" y="108" text-anchor="middle">System verification</text>
+<rect x="132" y="156" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="210.0" y="178" text-anchor="middle">Subsystem requirements</text>
+<rect x="472" y="156" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="550.0" y="178" text-anchor="middle">Subsystem verification</text>
+<rect x="188" y="226" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="266.0" y="248" text-anchor="middle">Equipment requirements</text>
+<rect x="416" y="226" width="156" height="34" rx="4" fill="#fff" stroke="#15212C"/><text x="494.0" y="248" text-anchor="middle">Equipment verification</text>
+<rect x="320" y="296" width="120" height="34" rx="4" fill="#F3F5F7" stroke="#15212C"/><text x="380" y="318" text-anchor="middle">Build</text></g>
+<line x1="176" y1="33" x2="584" y2="33" stroke="#8A96A1" stroke-width="1.5"/>
+<g stroke="#9DB3D1" stroke-width="2" stroke-dasharray="6 5"><line x1="232" y1="103" x2="528" y2="103"/><line x1="288" y1="173" x2="472" y2="173"/><line x1="344" y1="243" x2="416" y2="243"/></g>
+<g fill="#C8642E"><circle cx="76" cy="103" r="7"/><circle cx="132" cy="173" r="7"/><circle cx="188" cy="243" r="7"/></g>
+<rect x="8" y="300" width="128" height="26" rx="13" fill="#C8642E"/><text x="72" y="318" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Review Center</text>
+</svg>
+<ul class="vlegend"><li><span style="color:#C8642E">●</span> Formal reviews of the requirements at each level: Review Center</li><li><span style="color:#9DB3D1">- - -</span> Which method verifies which requirement: Verification Assignment Matrix</li><li><span style="color:#8A96A1">——</span> Validation: does the system meet the stakeholder needs</li></ul>
+  <figcaption>The same V-model as in the <a href="verification_matrix.html">Verification Assignment Matrix</a>, here with the focus on reviews.</figcaption>
+</figure>
 
 <main>
 
 <section class="section" id="impact">
   <div class="spread">
-    <p class="label">Impact</p>
+    <h2 class="label">Impact</h2>
     <div>
-      <ul class="outcomes">
-        <li><b>Third winning feature</b><span>of the three that won the six-figure contract and led to my promotion</span></li>
+      <div class="panel"><ul class="outcomes">
+        <li><b>Six-figure contract</b><span>one of three features behind the deal</span></li>
         <li><b>Shipped 2021 · live 2026</b><span>kept after the Altium acquisition</span></li>
-        <li><b>The logic held up</b><span>backend feedback: the logic was solid, new feedback was easy to integrate</span></li>
+        <li><b>The logic held up</b><span>backend developers found later changes easy to add</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="spread">
+    <h2 class="label">The problem</h2>
+    <div>
+      <p>Requirements engineers write each requirement in a fixed form, like a clause in a standard: <em>“The wave height shall be measured with an accuracy of at least 0.30 m.”</em> Each one is then reviewed and verified.</p>
+      <p>A review checks how mature a set of requirements is before the next step. The industry usually does this in separate software that needs its own training. At Valispace, now Altium, we built it into the software where the requirements already live.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="workflow">
+  <div class="spread">
+    <h2 class="label">Workflow</h2>
+    <div>
+      <ul class="decisions">
+        <li><b>Review.</b> A set of review objects, requirements or values, assessed together</li>
+        <li><b>Moderator.</b> Creates the review, adds the objects, assigns reviewers and approvers, sets a due date</li>
+        <li><b>Reviewer.</b> Rates each object and comments. One object can have several reviewers</li>
+        <li><b>Approver.</b> Decides when the review is final and closes it. A review can have several approvers</li>
       </ul>
     </div>
   </div>
@@ -89,124 +111,56 @@
 
 <section class="section" id="shipped">
   <div class="spread">
-    <p class="label">The shipped feature</p>
+    <h2 class="label">The shipped feature</h2>
     <div>
-      <figure style="margin:0">
-        <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/324031/image-20240411-115306.webp" alt="Review column in the requirements table indicating past and present reviews and their outcome, Altium 365">
-        <figcaption>Reviews and their outcome per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Altium 365 documentation</a></figcaption>
+      <figure>
+        <img src="rc-reviews.webp" alt="Requirements table in Altium 365 with a Reviews column showing the review outcome per requirement." loading="lazy">
+        <figcaption>A Reviews column in the requirements table shows past and current reviews and their outcome. · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/review-center#introduction" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
       </figure>
-      <ul class="keyed" style="margin-top:52px">
-        <li><b>Moderator</b>sets up the review · assigns reviewers and approvers</li>
-        <li><b>Reviewer</b>rates each object · approved, needs work or rejected</li>
-        <li><b>Approver</b>closes the review · timestamp and who closed it</li>
-      </ul>
-      <p class="caption">Every rating logged · full traceability of the process</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="how">
-  <div class="spread">
-    <p class="label">How it works</p>
-    <div>
-      <p class="statement">A formal review that stays <strong>traceable, run on the data already in the project.</strong></p>
-      <figure style="margin:0">
-        <svg class="drawing-wide" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <text x="0" y="14" font-size="11" font-weight="700" fill="#1F1F1F">Reviewer · my items</text>
-          <rect x="0" y="26" width="200" height="30" fill="#1F1F1F" opacity="0.10"/>
-          <rect x="0" y="62" width="200" height="30" fill="#1F1F1F" opacity="0.10"/>
-          <g stroke="#E6E6E6" stroke-width="1.2">
-            <rect x="0" y="26" width="200" height="30"/>
-            <rect x="0" y="62" width="200" height="30"/>
-            <rect x="0" y="98" width="200" height="30"/>
-          </g>
-          <text x="12" y="45" font-size="10" fill="#1F1F1F">REQ-01</text>
-          <text x="12" y="81" font-size="10" fill="#1F1F1F">REQ-02</text>
-          <text x="12" y="117" font-size="10" fill="#9AA0A6">REQ-03</text>
-          <path d="M166 38 l5 5 l11 -12" stroke="#1F1F1F" stroke-width="1.8"/>
-          <circle cx="176" cy="77" r="7" stroke="#1F1F1F" stroke-width="1.4" fill="none"/>
-          <path d="M176 70 a7 7 0 0 1 0 14 z" fill="#1F1F1F"/>
-          <path d="M170 110 l12 12 M182 110 l-12 12" stroke="#C4C7C5" stroke-width="1.6"/>
-          <text x="260" y="14" font-size="11" font-weight="700" fill="#1F1F1F">Approver · overview</text>
-          <rect x="260" y="26" width="200" height="60" stroke="#E6E6E6" stroke-width="1.2"/>
-          <text x="272" y="45" font-size="9.5" fill="#80868B">Requirement set A</text>
-          <rect x="272" y="54" width="120" height="12" fill="#1F1F1F"/>
-          <rect x="392" y="54" width="40" height="12" fill="#1F1F1F" opacity="0.25"/>
-          <text x="272" y="80" font-size="8.5" fill="#80868B">2 approved · 1 needs work · 0 rejected</text>
-          <rect x="260" y="98" width="200" height="30" stroke="#E6E6E6" stroke-width="1.2"/>
-          <text x="272" y="117" font-size="9.5" fill="#80868B">Requirement set B · in review</text>
-        </svg>
-        <figcaption>Left: a reviewer filters to the objects assigned to them. Right: an approver sees status rolled up per requirement set. Same review data, two levels.</figcaption>
+      <figure>
+        <img src="rc-start.webp" alt="Requirements selected in the table, with the Start Review action in the row menu." loading="lazy">
+        <figcaption>A review starts from the table: select requirements, then Start Review.</figcaption>
       </figure>
-      <div class="compare">
-        <div>
-          <p class="label">Before</p>
-          <ul class="flow">
-            <li>Reviewers picked one by one</li>
-            <li>Same people, every review</li>
-            <li>Status asked per email</li>
-            <li>Tracked outside the project</li>
-          </ul>
-        </div>
-        <div>
-          <p class="label">After</p>
-          <ul class="flow">
-            <li>Moderator sets up the review</li>
-            <li>Groups assigned at once</li>
-            <li>Rating per object</li>
-            <li>Approved, closed with timestamp</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="process">
-  <div class="spread">
-    <p class="label">Process · domain standards first</p>
-    <div>
-      <ol class="steps">
-        <li>Interviews per role</li>
-        <li>Notes · stories · journey</li>
-        <li>Wireframes → hi-fi</li>
-        <li>Testing · experts &amp; users</li>
-      </ol>
-      <p class="loop">↺ Iterative process · fast prototyping, frequent testing</p>
-      <dl class="meta" style="margin-top:52px">
-        <dt>Company</dt><dd>Valispace GmbH · acquired by Altium 2023</dd>
-        <dt>Team</dt><dd>CPO · SMEs · CTO · Designer (owning end-to-end design process)</dd>
-        <dt>My role</dt><dd>Review of industry conventions · co writing requirements with experts · design and testing</dd>
-        <dt>Users</dt><dd>Moderators · reviewers · approvers, from engineers to managers</dd>
-        <dt>Constraints</dt><dd>industry standards define what a review must record · integrate into the existing platform and data model · 1000s of requirements, 100s of people</dd>
-      </dl>
-      <p style="margin-top:36px">Discovery meant <strong>learning the conventions before drawing</strong>: I reviewed the tools engineers already use, then ran interviews per role on where they fail. Experts and I mapped the logic in the user's language, the same interviews-before-documentation approach as <a href="master_follower.html">Use Case 1</a>. User journeys and wireframes built up to tested Figma prototypes. The resulting <strong>views</strong> balance three things: <strong>industry conventions</strong>, <strong>user needs per role</strong> and <strong>business constraints</strong>.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="decisions">
   <div class="spread">
-    <p class="label">Key design decisions</p>
+    <h2 class="label">Key design decisions</h2>
     <div>
-      <p>The recurring question: <strong>how do formal-review conventions map onto data that already lives in the project?</strong> I designed the roles, states and views so a review is traceable without leaving the requirements.</p>
-      <ul class="decisions" style="margin-top:36px">
-        <li><b>Assign groups, not individuals</b><span>reviews repeat across a project</span></li>
-        <li><b>Rating per object, logged</b><span>approver closes with a timestamp</span></li>
-        <li><b>Views per role</b><span>filters for specialists and deciders</span></li>
+      <p>I asked both sides what they need to understand: the manager who plans reviews and the engineer who is assigned one.</p>
+      <ul class="decisions">
+        <li><b>Overview and focus.</b> Managers see progress across reviews; engineers see what is newly assigned and can prioritize</li>
+        <li><b>Repeatable setups.</b> The same type of review or team can be planned again without starting over</li>
+        <li><b>Discussion in place.</b> Questions are settled where the work happens, with fewer meetings, emails and delays</li>
+        <li><b>Redo when needed.</b> Teams can align on whether a review has to be repeated</li>
+        <li><b>Flexible or locked.</b> Managers pick reviewers freely or from a predefined group, and can lock decisions in the interface</li>
+        <li><b>Transparent and traceable.</b> Every rating and sign-off is logged with name and time</li>
       </ul>
+      <p style="margin-top:24px">Companies of different sizes and industries use the software, so it needed enough flexibility. Hardware failures and delays are costly, so every choice also had to stay transparent and controllable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="spread">
+    <h2 class="label">Process</h2>
+    <div>
+      <p>Interviews with managers and assigned engineers, user stories, wireframes and tested Figma prototypes. Experts and I wrote the logic in the users' words.</p>
+      <p>To align scope, I suggested two versions: I designed the version the CEO had in mind, and a backend developer outlined a realistic version with a timeline. Putting them side by side made it easier to agree on details and timing across business, development and design.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="lessons">
   <div class="spread">
-    <p class="label">Lessons learned</p>
+    <h2 class="label">Lessons learned</h2>
     <div>
-      <h2>Bring expert users in early, and get to design sooner.</h2>
-      <ol class="lessons" style="margin-top:36px">
-        <li><b>Design even earlier</b><p>What I'd add: <strong>a middle step of first code prototypes</strong>, feeding development constraints back into the designs before full implementation.</p></li>
-        <li><b>Views and filters per role</b><p>Crucial were the <strong>different views and filters per role</strong>, the same thread I carried through <a href="verification_matrix.html">Use Case 2</a>. Improving the discovery would mean testing with <strong>different companies and different roles</strong>, hard in B2B, but crucial to avoid optimising within a narrow space. Not necessary for this MVP, but an important next step before adjusting to individual users' wishes.</p></li>
+      <h3 class="title">Bring expert users in early, and get to design sooner.</h3>
+      <ol class="lessons" style="margin-top:28px">
+        <li><b>Bring development in earlier</b><p>Free up developer time to be more directly involved in the design process. We started doing this later, when the company shifted to a product-led approach. Next time I would also add early code prototypes, so development constraints reach the design before the build.</p></li>
+        <li><b>Different companies, one design</b><p>Views per role made the difference. We took different company sizes and levels of experience into account in the designs. Testing directly with several companies would make that even stronger.</p></li>
       </ol>
     </div>
   </div>
@@ -215,14 +169,15 @@
 </main>
 
 <nav class="nextup" aria-label="More use cases">
-  <a href="master_follower.html">Use Case 1 · Master–Follower →</a>
-  <a href="verification_matrix.html">Use Case 2 · Verification Assignment Matrix →</a>
+  <a href="berlinerluft.html">Use case 1 · Berliner Luft <span aria-hidden="true">→</span></a>
+  <a href="master_follower.html">Use case 2 · Master-Follower <span aria-hidden="true">→</span></a>
+  <a href="verification_matrix.html">Use case 3 · Verification Assignment Matrix <span aria-hidden="true">→</span></a>
 </nav>
 
 <footer class="pagefoot">
-  <p class="footnote">Official docs open Altium 365's documentation, <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023</a>, so this feature is now documented under Altium.</p>
-  <p class="footnote">This use case describes my individual learnings, not the company's process. Client names and specific information are not mentioned. The features are released and publicly documented. Created for portfolio purposes only.</p>
-  <p class="byline">Petra Kühnle · Senior Product Designer · <a href="index.html">Portfolio</a></p>
+  <p class="footnote">Screenshots from the Altium 365 documentation. <a href="https://en.wikipedia.org/wiki/Altium" target="_blank" rel="noopener">Altium acquired Valispace in 2023<span class="vh"> (opens in a new tab)</span></a>, so the feature is now documented there.</p>
+  <p class="footnote">This use case describes my own learnings, not the company's process. Client names and specific information are left out. The features are released and publicly documented.</p>
+  <p class="byline">Petra Kühnle · Product Designer · <a href="index.html">Portfolio</a></p>
 </footer>
 
 </div>
