@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Master-Follower · Petra Kühnle, Product Designer</title>
-<meta name="description" content="Keeping reused requirements in sync across projects. Valispace 2021, live in Altium 365 today.">
+<meta name="description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Master-Follower · Petra Kühnle, Product Designer">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/product-design/master_follower.html">
-<meta property="og:description" content="Keeping reused requirements in sync across projects. Valispace 2021, live in Altium 365 today.">
+<meta property="og:description" content="Requirements reused across projects, traceable when they change. Valispace 2021, live in Altium 365 today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,23 +21,25 @@
 
 <nav class="nav" aria-label="Sections">
  <ul>
+  <li><a href="#impact">Impact</a></li>
   <li><a href="#problem">Problem</a></li>
   <li><a href="#shipped">Feature</a></li>
-  <li><a href="#role">Role</a></li>
   <li><a href="#decisions">Decisions</a></li>
-  <li><a href="#impact">Impact</a></li>
+  <li><a href="#process">Process</a></li>
+  <li><a href="#lessons">Lessons</a></li>
+  <li><a href="#ai-context">AI in context</a></li>
  </ul>
 </nav>
 
 <header class="casehead">
   <p class="label">Use case 2 of 4 · Valispace, 2021</p>
   <h1>Master-Follower</h1>
-  <p class="standfirst">Keeping reused requirements in sync across projects.</p>
+  <p class="standfirst">A traceability feature for systems engineers. I designed it from the first idea to the shipped UI.</p>
   <div class="spread spread--facts">
     <dl class="meta">
-      <dt>Role</dt><dd>Only designer</dd>
-      <dt>Product</dt><dd>Valispace, 2021</dd>
-      <dt>Status</dt><dd>Shipped, live in Altium 365</dd>
+      <dt>My role</dt><dd>First and only designer</dd>
+      <dt>Product</dt><dd>Valispace → Altium 365</dd>
+      <dt>Timeline</dt><dd>designed 2021 · live 2026</dd>
     </dl>
   </div>
   <div class="topbar">
@@ -45,59 +47,8 @@
     <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a>
   </div>
 </header>
-<figure class="hero">
-  <img src="mf-redraw-2026.png" width="1440" height="584" alt="Master-Follower redesign 2026: requirements table with a status column showing Up to date, Master changed, Follower differs and Not linked, and one action per row.">
-  <figcaption>Updated redesign, 2026. The shipped UI was built inside an engineering team in 2021.</figcaption>
-</figure>
 
 <main>
-
-<section class="section" id="problem">
-  <div class="spread">
-    <h2 class="label">Problem</h2>
-    <div>
-      <p>Aerospace teams reuse requirements across projects, like several aircraft models. When the original changed, engineers updated every copy by hand. Changes got lost.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="shipped">
-  <div class="spread">
-    <h2 class="label">What I designed</h2>
-    <div>
-      <p>The Master is the original requirement. A Follower is its linked copy in another project. When the Master changes, the Follower is flagged. Its owner <strong>applies or rejects the change, and the decision is logged.</strong></p>
-      <ul class="keyed">
-        <li><b><span class="swatch" style="background:#2D5E3D"></span>Up to date</b></li>
-        <li><b><span class="swatch" style="background:#6B5410"></span>Master changed</b></li>
-        <li><b><span class="swatch" style="background:#2B4F7A"></span>Follower differs</b></li>
-        <li><b><span class="swatch" style="background:#44536A"></span>Not linked</b></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="role">
-  <div class="spread">
-    <h2 class="label">My role</h2>
-    <div>
-      <p>I translated between hardware experts and software engineers. Each week I iterated designs with experts, drafted the logic and worked with engineers until release.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="decisions">
-  <div class="spread">
-    <h2 class="label">Key decisions</h2>
-    <div>
-      <p>Too simple and it is useless to engineers. Too complex and it is unclear to use.</p>
-      <ul class="decisions">
-        <li><b>Flags, not silent updates.</b></li>
-        <li><b>One status per Follower,</b> in the users' words.</li>
-        <li><b>Visibility by role, view and task.</b></li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <section class="section" id="impact">
   <div class="spread">
@@ -106,12 +57,89 @@
       <div class="panel"><ul class="outcomes">
         <li><b>Six-figure contract</b><span>signed based on the designs</span></li>
         <li><b>Shipped 2021, live 2026</b><span>kept after the Altium acquisition</span></li>
-        <li><b>Rework prevented</b><span>I caught a mismatch between the CPO and backend</span></li>
+        <li><b>Close developer collaboration</b><span>I caught misunderstandings before they reached the code</span></li>
       </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="spread">
+    <h2 class="label">The problem</h2>
+    <div>
+      <p>An airplane is built on thousands of requirements. Each one is a written rule the design must meet. They depend on each other, and dozens to hundreds of engineers share the work.</p>
+      <p>When a higher level requirement changes, the ones below it may need to change too. Before, that change lived in meeting notes and emails. Sometimes it got lost.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shipped">
+  <div class="spread">
+    <h2 class="label">The feature</h2>
+    <div>
+      <p>The name explains it. The Master is the higher level requirement. A Follower depends on it.</p>
+      <p>When the Master changes, every Follower gets a flag. Its owner <strong>applies or rejects the change, and the decision is logged.</strong></p>
+      <ul class="keyed">
+        <li><b><span class="swatch" style="background:#4C8A5F"></span>Up to date</b>in sync</li>
+        <li><b><span class="swatch" style="background:#C9A227"></span>Change pending</b>needs review</li>
+        <li><b><span class="swatch" style="background:#4A7FB5"></span>Rejected or edited</b>diverged</li>
+      </ul>
+      <figure>
+        <img src="mf-2026-concept.png" width="1440" height="584" loading="lazy" alt="Requirements table concept: four Follower requirements, each with its Master ID, a status (Up to date, Master changed, Follower differs, Not linked) and the matching action (None, Review change, Compare, Resync).">
+        <figcaption>Redesigned screen for portfolio purposes.</figcaption>
+      </figure>
       <figure>
         <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and Follower connection columns in the requirements table, Altium 365" loading="lazy">
-        <figcaption>Shipped UI in Altium 365 · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
+        <figcaption>Master and Follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="decisions">
+  <div class="spread">
+    <h2 class="label">Key decisions</h2>
+    <div>
+      <p>Too simple and it is useless to engineers. Too complex and it is unclear and ineffective to use. So I decided who sees what, and when.</p>
+      <ul class="decisions">
+        <li><b>Flags, not silent updates.</b> Only the owner applies a change</li>
+        <li><b>One state per Follower.</b> A pending change can wait</li>
+        <li><b>Discussion where the change is.</b> No separate thread</li>
+        <li><b>Visibility by role, view and task.</b> Overview in the table, details in focus</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="spread">
+    <h2 class="label">Process</h2>
+    <div>
+      <p>The founders had a name and an idea, but no specs or sketch. I built clickable prototypes so clients and experts could react to something almost real. We iterated several times a week.</p>
+      <p>I stayed involved until release. That is how I caught a mismatch between the CPO and backend about what users get now and what later.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lessons">
+  <div class="spread">
+    <h2 class="label">Lessons</h2>
+    <div>
+      <ol class="lessons">
+        <li><b>Design filled the gap</b><p>Prototypes turned high level decisions into logic developers could build.</p></li>
+        <li><b>A missing middle step</b><p>A step was missing between prototype and build: more user tests and a feasibility check.</p></li>
+        <li><b>Carried into the next feature</b><p>On the next feature, I asked for user stories and agreed must haves at the start. See <a href="verification_matrix.html">Verification Assignment Matrix</a>.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ai-context">
+  <div class="spread">
+    <h2 class="label">AI in context</h2>
+    <div>
+      <h3 class="title">2026 Update</h3>
+      <p style="margin-top:28px">During early discussions of AI at Valispace, my first concern as a UX designer was transparency. That view still holds now that the Engineering Assistant has replaced ValiAssistant in Altium’s Requirements Portal: in engineering, people need to see where AI was used, simple fixes like formatting should be treated differently from high-impact changes, and AI’s judgement must never take responsibility away from the engineer.</p>
     </div>
   </div>
 </section>
