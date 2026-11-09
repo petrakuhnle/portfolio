@@ -16,7 +16,7 @@
 <style>
 main figure img{border:0.5px solid var(--rule,#D9DEE3);border-radius:4px;box-shadow:0 1px 2px rgba(21,33,44,.06),0 4px 12px rgba(21,33,44,.06)}
 .mf-table img{max-width:720px}
-.mf-legend{width:100%;max-width:720px;border-collapse:collapse;margin:24px 0 0;font-size:17px;line-height:1.5}
+.mf-legend{width:100%;max-width:720px;border-collapse:collapse;margin:48px 0 0;font-size:17px;line-height:1.5}
 .mf-legend th,.mf-legend td{text-align:left;vertical-align:top;padding:12px 16px 12px 0;border-bottom:1px solid var(--rule,#D9DEE3)}
 .mf-legend thead th{font-size:15px;font-weight:500;color:#44536A}
 .mf-chip{display:inline-block;padding:2px 10px;border-radius:4px;font-size:15px;font-weight:500;white-space:nowrap}
@@ -37,6 +37,7 @@ main figure img{border:0.5px solid var(--rule,#D9DEE3);border-radius:4px;box-sha
   <li><a href="#role">Role</a></li>
   <li><a href="#problem">Problem</a></li>
   <li><a href="#outcome">Outcome</a></li>
+  <li><a href="#feature">Feature</a></li>
   <li><a href="#process">Process</a></li>
   <li><a href="#ai">AI</a></li>
   <li><a href="#lessons">Lessons</a></li>
@@ -61,29 +62,6 @@ main figure img{border:0.5px solid var(--rule,#D9DEE3);border-radius:4px;box-sha
 </header>
 
 <main>
-
-<section class="section" id="screen">
-  <div class="spread">
-    <h2 class="label">The screen</h2>
-    <div>
-      <p>Project’s requirements table. Each row links a Follower to its Master.</p>
-      <figure class="mf-table">
-        <img src="mf-redraw-2026.png" width="1440" height="584" alt="Requirements table concept: four Follower requirements, each with its Master ID, a status (Up to date, Master changed, Follower differs, Not linked) and the matching action (None, Review change, Compare, Resync).">
-        <figcaption>Updated redesign, 2026. The shipped UI was built inside an engineering team in 2021.</figcaption>
-      </figure>
-      <table class="mf-legend">
-        <caption class="vh">Status, meaning and action per Follower</caption>
-        <thead><tr><th scope="col">Status</th><th scope="col">Meaning</th><th scope="col">What the owner can do</th></tr></thead>
-        <tbody>
-          <tr><th scope="row"><span class="mf-chip mf-chip--ok">Up to date</span></th><td>The Follower matches its Master.</td><td><span class="mf-none">None</span>: Nothing to do.</td></tr>
-          <tr><th scope="row"><span class="mf-chip mf-chip--changed">Master changed</span></th><td>Someone edited the Master.</td><td><span class="mf-action">Review change</span>: see old and new text, then apply or reject.</td></tr>
-          <tr><th scope="row"><span class="mf-chip mf-chip--differs">Follower differs</span></th><td>The Follower was edited, or a change was rejected.</td><td><span class="mf-action">Compare</span>: see both versions, then keep the Follower or take the Master.</td></tr>
-          <tr><th scope="row"><span class="mf-chip mf-chip--unlinked">Not linked</span></th><td>The link to the Master was removed.</td><td><span class="mf-action">Resync</span>: link it again.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
 
 <section class="section" id="role">
   <div class="spread">
@@ -112,6 +90,29 @@ main figure img{border:0.5px solid var(--rule,#D9DEE3);border-radius:4px;box-sha
         <li><b>Contract signed</b><span>Six-figure development contract with a client.</span></li>
         <li><b>Shipped</b><span>2021, live in Altium 365.</span></li>
       </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="feature">
+  <div class="spread">
+    <h2 class="label">The feature</h2>
+    <div>
+      <p>Project’s requirements table. Each row links a Follower to its Master.</p>
+      <figure class="mf-table">
+        <img src="mf-redraw-2026.png" width="1440" height="584" alt="Requirements table concept: four Follower requirements, each with its Master ID, a status (Up to date, Master changed, Follower differs, Not linked) and the matching action (None, Review change, Compare, Resync).">
+        <figcaption>Updated redesign, 2026. The shipped UI was built inside an engineering team in 2021.</figcaption>
+      </figure>
+      <table class="mf-legend">
+        <caption class="vh">Status, meaning and action per Follower</caption>
+        <thead><tr><th scope="col">Status</th><th scope="col">Meaning</th><th scope="col">What the owner can do</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span class="mf-chip mf-chip--ok">Up to date</span></th><td>The Follower matches its Master.</td><td><span class="mf-none">None</span>: Nothing to do.</td></tr>
+          <tr><th scope="row"><span class="mf-chip mf-chip--changed">Master changed</span></th><td>Someone edited the Master.</td><td><span class="mf-action">Review change</span>: see old and new text, then apply or reject.</td></tr>
+          <tr><th scope="row"><span class="mf-chip mf-chip--differs">Follower differs</span></th><td>The Follower was edited, or a change was rejected.</td><td><span class="mf-action">Compare</span>: see both versions, then keep the Follower or take the Master.</td></tr>
+          <tr><th scope="row"><span class="mf-chip mf-chip--unlinked">Not linked</span></th><td>The link to the Master was removed.</td><td><span class="mf-action">Resync</span>: link it again.</td></tr>
+        </tbody>
+      </table>
       <figure>
         <img src="https://files.doc.altium.com/sites/default/files/wiki_attachments/323990/Features%20Explained.%20Requirements%20Module.Master%20Follower%20Featuer.a.png" alt="Master and Follower connection columns in the requirements table, Altium 365" loading="lazy">
         <figcaption>Master and Follower connections per requirement · <a href="https://www.altium.com/documentation/altium-365/requirements-systems-portal/requirements-module/master-follower-feature" target="_blank" rel="noopener">Altium 365 documentation<span class="vh"> (opens in a new tab)</span></a></figcaption>
