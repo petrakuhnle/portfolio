@@ -94,7 +94,7 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
 <header class="masthead">
   <h1>Petra Kühnle</h1>
   <p class="kicker">Writing samples. Help, UX writing and documentation for audio software.</p>
-  <p>The interface, the words in it, and the help someone gets when they're stuck are one experience. I learned that at Apple, and from my training at a Dutch art academy. Clear writing is part of how a product feels.</p>
+  <p>The interface, the words in it, and the help someone gets when they're stuck are one experience. I learned that at Apple and at art school in the Netherlands.</p>
   <div class="links">
     <a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a>
     <a class="web" href="Writing_Samples_Petra_Kuehnle.pdf">Download as PDF</a>
@@ -114,7 +114,7 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
 <section id="published" class="gray">
   <span class="eyebrow pub">Published</span><h2>MDN Web Docs: AudioSession introduction</h2>
   <p class="meta">Merged 4 May 2026 · <a href="https://github.com/mdn/content/pull/43992">mdn/content #43992</a></p>
-  <p>I cut a three-sentence introduction to one and named the three behaviours a user actually hears.</p>
+  <p>I shortened the introduction from three sentences to one and added what the user actually hears: other audio pauses, gets quieter, or keeps playing.</p>
   <div class="ba">
     <div class="before"><b>Before</b>
       <p>The AudioSession interface of the Audio Session API allows developers to specify how audio from a web application interacts with other audio playing on a device.</p>
@@ -125,19 +125,19 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
     </div>
   </div>
   <ul>
-    <li>Removed the repetition: the old text said “how audio interacts” twice.</li>
-    <li>Replaced abstract phrases (“aggregated audio output”, “general nature”) with examples a reader recognizes.</li>
-    <li>Added <em>duck</em>, the real audio term, and explained it in brackets.</li>
-    <li>Added other tabs, a case the old text left out.</li>
+    <li>The old text said “how audio interacts” twice.</li>
+    <li>“Aggregated audio output” and “general nature” are now concrete examples.</li>
+    <li>I used the audio term <em>duck</em> and explained it in brackets.</li>
+    <li>Other browser tabs were missing, so I added them.</li>
   </ul>
 
   <span class="eyebrow pub" style="margin-top:48px">Published</span><h3 style="margin-top:0">MDN Web Docs: Web Audio API accuracy fixes</h3>
-  <p>Two one-line fixes on the Web Audio API overview. Small changes, but readers learn the concept from these sentences.</p>
+  <p>Two one-line fixes on the Web Audio API overview.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Fix</th><th>Before</th><th>After</th><th>Why</th></tr></thead>
     <tbody>
       <tr><td><a href="https://github.com/mdn/content/pull/43936">#43936</a><br>27 Apr 2026</td><td class="q">“Sources provide arrays of sound intensities (samples) at very small timeslices”</td><td>“Sources provide arrays of samples — measurements of the audio signal's amplitude at successive moments in time”</td><td>Sound intensity is a different physical quantity. A sample measures amplitude.</td></tr>
-      <tr><td><a href="https://github.com/mdn/content/pull/43935">#43935</a><br>7 May 2026</td><td class="q">“a periodic waveform, such as a sine or triangle wave”</td><td>“a periodic waveform, which can be sine, square, sawtooth, triangle, or custom”</td><td>“Such as” hid three of the five types. A complete list saves a second lookup.</td></tr>
+      <tr><td><a href="https://github.com/mdn/content/pull/43935">#43935</a><br>7 May 2026</td><td class="q">“a periodic waveform, such as a sine or triangle wave”</td><td>“a periodic waveform, which can be sine, square, sawtooth, triangle, or custom”</td><td>The old text named only two of the five types.</td></tr>
     </tbody>
   </table></div>
 
@@ -145,15 +145,15 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <p class="meta">Merged 11 May 2026 · shipped in librosa 1.0 · <a href="https://github.com/librosa/librosa/pull/2009">librosa/librosa #2009</a></p>
   <p>librosa is a widely used Python library for audio and music analysis. Its contributing guide existed only in the code repository, so readers of the documentation site never saw it. The release notes list me as a new contributor.</p>
   <ul>
-    <li><strong>Findability:</strong> added a Contributing page to the docs navigation. It includes <code>CONTRIBUTING.md</code> directly, so there is one source that can't drift.</li>
-    <li><strong>Dead end fixed:</strong> “See the README file in the doc/ directory” pointed to a folder and file that didn't exist. It now links to the real build instructions, <code>docs/BUILD.md</code>.</li>
-    <li><strong>Structured text:</strong> Markdown, reStructuredText and Sphinx configuration, reviewed through Git with the maintainer.</li>
+    <li>Added a Contributing page to the docs navigation. It pulls in <code>CONTRIBUTING.md</code>, so there is only one copy to maintain.</li>
+    <li>The guide sent readers to a README in a <code>doc/</code> folder that doesn't exist. It now links to <code>docs/BUILD.md</code>.</li>
+    <li>Written in Markdown and reStructuredText, with a small Sphinx config change, and reviewed by the maintainer on GitHub.</li>
   </ul>
 </section>
 
 <section id="help">
-  <span class="eyebrow smp">Sample</span><h2>Help topic: one problem, two readers</h2>
-  <p>Recording latency is a typical Pro Apps support case. I wrote it twice: for someone new to recording, and for a professional. The facts are the same; the words, the order and the depth are not.</p>
+  <span class="eyebrow smp">Sample</span><h2>Help topic for beginners and pros</h2>
+  <p>Recording latency is a typical Pro Apps support case. I wrote it once for someone new to recording and once for a professional.</p>
 
   <div class="help">
     <h4>For a new user: If you hear yourself late when you record</h4>
@@ -178,15 +178,15 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
   </div>
 
   <ul>
-    <li>The new user gets one goal, a short numbered path, and the failure sign to watch for. One term is explained, because they'll see it again.</li>
-    <li>The professional already knows the steps. They need the trade-offs and edge cases, so it's a reference list.</li>
-    <li>In Apple support I made this choice live, early in each conversation. Help pages have to make it in advance.</li>
+    <li>The beginner version explains one term and says what to watch out for.</li>
+    <li>The pro version skips the basics and lists the trade-offs.</li>
+    <li>In Apple support I had to pick one of these approaches at the start of every conversation.</li>
   </ul>
 </section>
 
 <section id="strings" class="gray">
   <span class="eyebrow smp">Sample</span><h2>In-app strings in English, German and Dutch</h2>
-  <p>Three engineering-style messages rewritten so a musician can act on them, then localized. The draft column is a typical first draft written for this sample, not existing Apple text.</p>
+  <p>Three technical messages rewritten so a musician knows what to do, then localized. I wrote the drafts myself for this sample; they are not Apple text.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Moment</th><th>Draft</th><th>English</th><th>Deutsch</th><th>Nederlands</th></tr></thead>
     <tbody>
@@ -205,34 +205,33 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
     </tbody>
   </table></div>
   <ul>
-    <li><strong>Say what happened, then what to do.</strong> Every error ends with an action.</li>
-    <li><strong>Name the user's things.</strong> “Space Echo” and “Studio SSD”, not “plug-in” and “disk”.</li>
-    <li><strong>Hide the internals.</strong> “AU validation” becomes “system check”; developers find the code in the log.</li>
-    <li><strong>Localize, don't translate.</strong> German needs „“ quotes and runs longer, so the English stays short. The informal <em>du</em> would follow Apple's current German style guide.</li>
+    <li>Each error says what happened and what to do next.</li>
+    <li>The messages use the names the user knows, like “Space Echo” and “Studio SSD”.</li>
+    <li>“AU validation” became “system check”. Developers can still find the details in the log.</li>
+    <li>German text runs longer and uses „“ quotes. For <em>du</em> or <em>Sie</em> I would follow Apple's German style guide.</li>
   </ul>
 </section>
 
 <section id="llm">
   <h2>How I write with LLMs</h2>
-  <p>I use LLMs to draft and polish, and I treat the result as a draft to check, never as finished text. My portfolio and these samples were written this way.</p>
+  <p>I use LLMs a lot, including for my portfolio and this page. I always check the result against what I meant.</p>
   <ol>
-    <li><strong>I write the first version</strong>, so the facts and the point come from me.</li>
-    <li><strong>An LLM improves it.</strong> I give it the audience, the goal and the style rules, not just “make it better”.</li>
-    <li><strong>I review it with Claude and myself</strong>, line by line against my original.</li>
+    <li>I write the first version myself.</li>
+    <li>An LLM edits it. I tell it who the reader is and which style rules apply.</li>
+    <li>I compare the result with my original, line by line, often with Claude.</li>
   </ol>
-  <h3>What I check for</h3>
+  <h3>Things I often have to fix</h3>
   <ul>
-    <li><strong>Too generic.</strong> Specific words get swapped for safe ones: “duck (lower the volume)” becomes “adjust the audio”.</li>
-    <li><strong>Dropped details.</strong> A condition or exception quietly disappears. In Help, it's often the one the user needed.</li>
-    <li><strong>Changed meaning.</strong> A fact is reworded until it's wrong: “samples” becomes “sound levels”.</li>
-    <li><strong>Invented facts.</strong> Menu paths, settings and version numbers are checked against the app itself.</li>
-    <li><strong>Voice and style.</strong> Terms stay consistent, and the text follows the house style.</li>
+    <li>Specific words turn vague: “duck (lower the volume)” becomes “adjust the audio”.</li>
+    <li>A condition or exception disappears, often the one the user needed.</li>
+    <li>A fact changes meaning, for example “samples” becomes “sound levels”.</li>
+    <li>Menu names and settings are made up, so I check them in the app.</li>
   </ul>
   <div class="ba">
     <div class="before"><b>LLM “improvement”</b><p>Adjust your buffer settings as needed for optimal performance.</p></div>
     <div class="after"><b>My version, kept</b><p>When you start mixing, set the buffer size back to a larger value.</p></div>
   </div>
-  <p class="note">The LLM version sounds smoother but no longer says when, or in which direction. (Example constructed for this page.)</p>
+  <p class="note">The LLM version reads well but no longer says when, or bigger or smaller. I made this example up for the page.</p>
 </section>
 
 </main>
