@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Writing Samples · Petra Kühnle</title>
-<meta name="description" content="Writing samples by Petra Kühnle: published MDN and librosa documentation, a two-level Help topic, in-app strings in English, German and Dutch, and an LLM writing workflow.">
+<meta name="description" content="Writing samples by Petra Kühnle: published MDN and librosa documentation, a two-level Help topic, in-app strings in English, German and Dutch.">
 <meta property="og:title" content="Writing Samples · Petra Kühnle">
 <meta property="og:description" content="Published audio documentation on MDN and librosa, Help and UX writing samples in EN, DE and NL.">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/WritingSamples/">
@@ -88,7 +88,6 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <li><a href="#published">Published docs</a></li>
   <li><a href="#help">Help topic</a></li>
   <li><a href="#strings">UX strings</a></li>
-  <li><a href="#llm">Writing with LLMs</a></li>
 </ul></nav>
 
 <header class="masthead">
@@ -191,13 +190,13 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <thead><tr><th>Moment</th><th>Draft</th><th>English</th><th>Deutsch</th><th>Nederlands</th></tr></thead>
     <tbody>
       <tr><td>Plug-in fails to load</td><td class="q">Error: AU validation failed. Plug-in could not be loaded.</td>
-        <td><strong>“Space Echo” couldn’t be opened.</strong> The plug-in didn’t pass the system check. Ask the developer for an update for this Mac.<br><span class="ui">[Show in Plug-in Manager]</span></td>
-        <td><strong>„Space Echo“ konnte nicht geöffnet werden.</strong> Das Plug-in hat die Systemprüfung nicht bestanden. Frag den Hersteller nach einem Update für diesen Mac.<br><span class="ui">[Im Plug-in-Manager zeigen]</span></td>
-        <td><strong>Kan ‘Space Echo’ niet openen.</strong> De plug-in heeft de systeemcontrole niet doorstaan. Vraag de ontwikkelaar om een update voor deze Mac.<br><span class="ui">[Toon in Plug-in-beheer]</span></td></tr>
+        <td><strong>“{plugin}” couldn’t be opened.</strong> The plug-in didn’t pass the system check. Ask the developer for an update for this Mac.<br><span class="ui">[Show in Plug-in Manager]</span></td>
+        <td><strong>„{plugin}“ konnte nicht geöffnet werden.</strong> Das Plug-in hat die Systemprüfung nicht bestanden. Frag den Hersteller nach einem Update für diesen Mac.<br><span class="ui">[Im Plug-in-Manager zeigen]</span></td>
+        <td><strong>Kan ‘{plugin}’ niet openen.</strong> De plug-in heeft de systeemcontrole niet doorstaan. Vraag de ontwikkelaar om een update voor deze Mac.<br><span class="ui">[Toon in Plug-in-beheer]</span></td></tr>
       <tr><td>Disk full while recording</td><td class="q">Disk too slow or full. Recording stopped.</td>
-        <td><strong>Recording stopped.</strong> There isn’t enough space on “Studio SSD”. Free up space or record to another disk.</td>
-        <td><strong>Aufnahme gestoppt.</strong> Auf „Studio SSD“ ist nicht genug Platz. Gib Speicherplatz frei oder nimm auf einem anderen Laufwerk auf.</td>
-        <td><strong>Opname gestopt.</strong> Er is niet genoeg ruimte op ‘Studio SSD’. Maak ruimte vrij of neem op naar een andere schijf.</td></tr>
+        <td><strong>Recording stopped.</strong> There isn’t enough space on “{disk}”. Free up space or record to another disk.</td>
+        <td><strong>Aufnahme gestoppt.</strong> Auf „{disk}“ ist nicht genug Platz. Gib Speicherplatz frei oder nimm auf einem anderen Laufwerk auf.</td>
+        <td><strong>Opname gestopt.</strong> Er is niet genoeg ruimte op ‘{disk}’. Maak ruimte vrij of neem op naar een andere schijf.</td></tr>
       <tr><td>Empty track area</td><td class="q">No regions.</td>
         <td>Drag an audio file here, or press R to record.</td>
         <td>Zieh eine Audiodatei hierher oder drück R, um aufzunehmen.</td>
@@ -206,33 +205,12 @@ footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-si
   </table></div>
   <ul>
     <li>Each error says what happened and what to do next.</li>
-    <li>The messages use the names the user knows, like “Space Echo” and “Studio SSD”.</li>
+    <li>The app fills in the user's own plug-in and disk names at <code>{plugin}</code> and <code>{disk}</code>, so the user knows which one is meant. The placeholders stay the same in every language.</li>
     <li>“AU validation” became “system check”. Developers can still find the details in the log.</li>
     <li>German text runs longer and uses „“ quotes. For <em>du</em> or <em>Sie</em> I would follow Apple's German style guide.</li>
   </ul>
 </section>
 
-<section id="llm">
-  <h2>How I write with LLMs</h2>
-  <p>I use LLMs a lot, including for my portfolio and this page. I always check the result against what I meant.</p>
-  <ol>
-    <li>I write the first version myself.</li>
-    <li>An LLM edits it. I tell it who the reader is and which style rules apply.</li>
-    <li>I compare the result with my original, line by line, often with Claude.</li>
-  </ol>
-  <h3>Things I often have to fix</h3>
-  <ul>
-    <li>Specific words turn vague: “duck (lower the volume)” becomes “adjust the audio”.</li>
-    <li>A condition or exception disappears, often the one the user needed.</li>
-    <li>A fact changes meaning, for example “samples” becomes “sound levels”.</li>
-    <li>Menu names and settings are made up, so I check them in the app.</li>
-  </ul>
-  <div class="ba">
-    <div class="before"><b>LLM “improvement”</b><p>Adjust your buffer settings as needed for optimal performance.</p></div>
-    <div class="after"><b>My version, kept</b><p>When you start mixing, set the buffer size back to a larger value.</p></div>
-  </div>
-  <p class="note">The LLM version reads well but no longer says when, or bigger or smaller. I made this example up for the page.</p>
-</section>
 
 </main>
 
