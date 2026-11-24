@@ -8,71 +8,74 @@
 <meta property="og:title" content="Writing Samples · Petra Kühnle">
 <meta property="og:description" content="Published audio documentation on MDN and librosa, Help and UX writing samples in EN, DE and NL.">
 <meta property="og:url" content="https://petrakuhnle.github.io/portfolio/WritingSamples/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#15212C;--body:#2E3B4E;--quiet:#44536A;--link:#2F5E9E;--rule:#D9DEE3;--tint:#EDF2F8;--warm:#FDF8F4;--gutter:clamp(24px,5vw,64px)}
+:root{--ink:#1d1d1f;--body:#424245;--quiet:#6e6e73;--link:#0066cc;--rule:#d2d2d7;--gray:#f5f5f7}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--ink);font-family:'Roboto',Arial,sans-serif;font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
-.page{max-width:980px;margin:0 auto;padding:0 var(--gutter) 80px}
-p{margin:0 0 1.1em;max-width:40em;color:var(--body)}
-a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-a:hover{text-decoration-thickness:2px}
-strong{font-weight:500;color:var(--ink)}
-.nav{border-bottom:1px solid var(--rule);margin:0 calc(50% - 50vw);width:100vw}
-.nav ul{max-width:980px;margin:0 auto;padding:14px var(--gutter);display:flex;flex-wrap:wrap;gap:6px 24px;list-style:none;font-size:15px}
-.nav a{color:var(--body);text-decoration:none}.nav a:hover{color:var(--ink)}
-.masthead{background:var(--tint);margin:0 calc(50% - 50vw);padding:52px calc(50vw - 50%) 56px}
-h1{font-size:clamp(32px,4.6vw,42px);font-weight:700;letter-spacing:-.01em;line-height:1.1;margin:0 0 10px}
-.kicker{font-size:13px;letter-spacing:.075em;text-transform:uppercase;color:var(--quiet);margin:0 0 26px}
-.masthead p{font-size:20px;max-width:36em}
-.masthead .links{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:16px;margin-top:18px}
-section{padding:64px 0 0}
-section + section{border-top:1px solid var(--rule);margin-top:64px}
-h2{font-size:clamp(22px,2.5vw,27px);font-weight:700;line-height:1.3;margin:0 0 6px}
-h3{font-size:18px;font-weight:700;margin:28px 0 8px}
-.meta{font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--quiet);margin:0 0 18px}
-.tag{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;padding:2px 9px;border-radius:3px;margin-right:8px;vertical-align:2px}
-.tag.pub{background:#E3EEE6;color:#24563A}.tag.smp{background:#F3ECE3;color:#6B4A24}
-ul,ol{margin:0 0 1.1em;padding-left:1.3em;max-width:42em;color:var(--body)}
-li{margin-bottom:.4em}
-.ba{display:grid;grid-template-columns:1fr;gap:16px;margin:18px 0 22px}
-@media(min-width:820px){.ba{grid-template-columns:1fr 1fr}}
-.ba div{padding:20px 22px;border-radius:4px;font-size:16px;line-height:1.6}
-.ba .before{background:#F3F5F7;color:var(--quiet)}
-.ba .after{background:var(--tint);color:var(--ink)}
-.ba b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--quiet);margin-bottom:8px}
-.ba p{font-size:16px;margin:0 0 .7em;color:inherit}.ba p:last-child{margin:0}
-code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:#F3F5F7;padding:1px 5px;border-radius:3px}
-table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5;margin:14px 0 22px}
-th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
-th{font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:500;color:var(--quiet);background:#F7F9FB}
+body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;line-height:1.47;letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+.page{max-width:980px;margin:0 auto;padding:0 22px 80px}
+p{margin:0 0 .9em;max-width:42em;color:var(--body)}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{font-weight:600;color:var(--ink)}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);margin:0 calc(50% - 50vw);width:100vw}
+.nav ul{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;flex-wrap:wrap;gap:4px 26px;list-style:none;font-size:12px;letter-spacing:-.01em}
+.nav li:first-child a{font-weight:600;color:var(--ink)}
+.nav a{color:var(--body)}
+.masthead{text-align:center;padding:88px 0 72px}
+h1{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:clamp(40px,6vw,56px);font-weight:600;letter-spacing:-.005em;line-height:1.07;margin:0 0 14px}
+.kicker{font-size:21px;line-height:1.38;color:var(--quiet);margin:0 auto 28px;max-width:30em;letter-spacing:.004em}
+.masthead p{margin-left:auto;margin-right:auto;font-size:19px;line-height:1.5;max-width:34em}
+.masthead .links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 28px;font-size:17px;margin-top:26px}
+.masthead .links a::after{content:" ›"}
+section{padding:72px 0 0}
+section.gray{background:var(--gray);margin:72px calc(50% - 50vw) 0;padding:72px calc(50vw - 50%) 72px}
+.eyebrow{display:block;font-size:14px;font-weight:600;color:var(--quiet);letter-spacing:-.01em;margin:0 0 6px}
+.eyebrow.pub{color:#248a3d}.eyebrow.smp{color:#b25000}
+h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:clamp(28px,3.6vw,40px);font-weight:600;line-height:1.1;letter-spacing:0;margin:0 0 12px}
+h3{font-size:24px;font-weight:600;line-height:1.17;margin:48px 0 10px}
+.meta{font-size:14px;color:var(--quiet);margin:0 0 20px}
+.tag{display:none}
+ul,ol{margin:0 0 1em;padding-left:1.2em;max-width:42em;color:var(--body)}
+li{margin-bottom:.45em}
+.ba{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0 26px}
+@media(min-width:760px){.ba{grid-template-columns:1fr 1fr}}
+.ba div{padding:26px 28px;border-radius:18px;font-size:15px;line-height:1.5;background:#fff}
+section:not(.gray) .ba div{background:var(--gray)}
+.ba .before{color:var(--quiet)}
+.ba b{display:block;font-size:12px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--quiet);margin-bottom:10px}
+.ba .after b{color:var(--link)}
+.ba p{font-size:15px;margin:0 0 .7em;color:inherit}.ba p:last-child{margin:0}
+code{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:.86em;background:rgba(0,0,0,.05);padding:1px 6px;border-radius:5px}
+.tablewrap{overflow-x:auto;background:#fff;border-radius:18px;padding:6px 18px;margin:20px 0 26px}
+section:not(.gray) .tablewrap{background:var(--gray)}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:14px 10px;border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;font-weight:600;color:var(--quiet)}
 td.q{color:var(--quiet)}
-.tablewrap{overflow-x:auto}
-.help{background:var(--warm);border-radius:4px;padding:24px 26px;margin:14px 0}
-.help h4{font-size:18px;margin:0 0 10px}
+.help{background:#fff;border-radius:18px;padding:30px 32px;margin:18px 0}
+.help h4{font-size:19px;font-weight:600;margin:0 0 12px}
 .help p,.help li{font-size:16px}
-.ui{font-weight:500;color:var(--ink)}
-.note{font-size:15px;color:var(--quiet)}
-footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-size:14px;color:var(--quiet)}
+.ui{font-weight:600;color:var(--ink)}
+.note{font-size:14px;color:var(--quiet)}
+footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);font-size:12px;color:var(--quiet)}
 @media print{
-  body{font-size:11pt;line-height:1.5}
+  body{font-size:10.5pt;letter-spacing:0}
   .nav,.masthead .links .web{display:none}
-  .masthead{background:none;margin:0;padding:0 0 10px;border-bottom:2px solid var(--ink)}
-  .masthead p{font-size:12pt}
-  h1{font-size:24pt}
-  section{padding:18px 0 0;break-inside:auto}
-  section + section{margin-top:18px}
-  h2{font-size:15pt;break-after:avoid}
-  h3,h4{break-after:avoid}
+  .masthead{padding:0 0 18px;text-align:left}
+  .masthead p,.kicker{margin-left:0;font-size:11.5pt}
+  .masthead .links{justify-content:flex-start}
+  h1{font-size:26pt}
+  section,section.gray{padding:14px 0 0;margin:0;background:none}
+  #help,#strings{break-before:page}
+  .tablewrap{break-inside:avoid}
+  h2{font-size:17pt;break-after:avoid}
+  h3,h4,.meta,.eyebrow{break-after:avoid}
+  h3{margin-top:22px}
   .ba,.help,table,tr{break-inside:avoid}
   .ba{grid-template-columns:1fr 1fr}
-  .ba div,.help{padding:10px 12px}
+  .ba div,.help,.tablewrap{background:#f5f5f7 !important;padding:12px 14px;border-radius:10px}
   .ba p,.help p,.help li,table{font-size:9.5pt}
-  a{color:var(--ink)}
-  #published,#help,#strings{break-before:page;border-top:0;margin-top:0}
-  .meta,h3 + p{break-after:avoid}
   @page{size:A4;margin:16mm 16mm 18mm}
 }
 </style>
@@ -90,8 +93,8 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-si
 
 <header class="masthead">
   <h1>Petra Kühnle</h1>
-  <p class="kicker">Writing samples · Help, UX writing and technical documentation for audio software</p>
-  <p>I see support, product design and UX writing as one job: shaping the experience a person has with a product. The interface, the words in it, and the help someone gets when they're stuck all belong to that experience. At Apple I saw how closely these are connected, and how high the standard is for each of them. I trained as an artist at a Dutch art academy, in the Dutch tradition of art and design. To me, clear writing and good guidance are part of a product's aesthetic, just as much as how it looks.</p>
+  <p class="kicker">Writing samples. Help, UX writing and documentation for audio software.</p>
+  <p>The interface, the words in it, and the help someone gets when they're stuck are one experience. I learned that at Apple, and from my training at a Dutch art academy. Clear writing is part of how a product feels.</p>
   <div class="links">
     <a href="mailto:petra.kuehnle@gmail.com">petra.kuehnle@gmail.com</a>
     <a class="web" href="Writing_Samples_Petra_Kuehnle.pdf">Download as PDF</a>
@@ -104,19 +107,12 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-si
 
 <section id="about">
   <h2>About my writing</h2>
-  <p>For four years at Apple, my job was turning Apple's troubleshooting guides into clear steps for each user. I did it live, in German and English, in chats, emails and calls, for users from first-time GarageBand users to professional Logic Pro and Final Cut Pro users.</p>
-  <ul>
-    <li><strong>Writing for the reader's level.</strong> I worked through Apple's troubleshooting steps with each user, adjusting the wording to their expertise and context while solving the problem.</li>
-    <li><strong>Holding Apple's standard.</strong> I used Apple Help and internal guides every day, gave feedback when a step was outdated, unclear or missing, wrote case notes, and documented reproducible issues for engineering.</li>
-    <li><strong>Recognition.</strong> AppleCare Excellence Award 2018, earned for my chat work in iTunes &amp; App Store support. Colleagues who read my emails, chats and case notes endorsed my writing and sometimes asked me to help with theirs.</li>
-    <li><strong>Languages.</strong> German native. Living and working mainly in English since 2012, in Portugal, Ireland and Berlin. Fluent in Dutch after studying and working in the Netherlands; I translated into Dutch for a VIP project at Apple.</li>
-    <li><strong>Product documentation.</strong> At Valispace I wrote the user stories and specs for three shipped features and reviewed product documentation.</li>
-    <li><strong>Training and tools.</strong> Google Technical Writing, Alison technical writing course, intro to markup languages. Markdown, reStructuredText, HTML, Git.</li>
-  </ul>
+  <p>From 2016 to 2020 I worked at AppleCare, first in iTunes &amp; App Store support and then as a Tier 4 Pro Apps Advisor for Logic Pro and Final Cut Pro. Every day I took users through Apple's troubleshooting guides in German and English, by chat, email and phone, and put each step in words that fit the person. When a guide was unclear or out of date, I reported it. I received the AppleCare Excellence Award in 2018 for my chat work.</p>
+  <p>Since then I've written user stories and specs as a product designer, and contributed audio documentation to MDN and librosa. I'm German native, have lived and worked mainly in English since 2012, and speak Dutch fluently. Training: Google Technical Writing and an Alison technical writing course.</p>
 </section>
 
-<section id="published">
-  <h2><span class="tag pub">Published</span>MDN Web Docs: AudioSession introduction</h2>
+<section id="published" class="gray">
+  <span class="eyebrow pub">Published</span><h2>MDN Web Docs: AudioSession introduction</h2>
   <p class="meta">Merged 4 May 2026 · <a href="https://github.com/mdn/content/pull/43992">mdn/content #43992</a></p>
   <p>I cut a three-sentence introduction to one and named the three behaviours a user actually hears.</p>
   <div class="ba">
@@ -135,7 +131,7 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-si
     <li>Added other tabs, a case the old text left out.</li>
   </ul>
 
-  <h3><span class="tag pub">Published</span>MDN Web Docs: Web Audio API accuracy fixes</h3>
+  <span class="eyebrow pub" style="margin-top:48px">Published</span><h3 style="margin-top:0">MDN Web Docs: Web Audio API accuracy fixes</h3>
   <p>Two one-line fixes on the Web Audio API overview. Small changes, but readers learn the concept from these sentences.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Fix</th><th>Before</th><th>After</th><th>Why</th></tr></thead>
@@ -145,7 +141,7 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-si
     </tbody>
   </table></div>
 
-  <h3><span class="tag pub">Published</span>librosa: contributing guide on the documentation site</h3>
+  <span class="eyebrow pub" style="margin-top:48px">Published</span><h3 style="margin-top:0">librosa: contributing guide on the documentation site</h3>
   <p class="meta">Merged 11 May 2026 · shipped in librosa 1.0 · <a href="https://github.com/librosa/librosa/pull/2009">librosa/librosa #2009</a></p>
   <p>librosa is a widely used Python library for audio and music analysis. Its contributing guide existed only in the code repository, so readers of the documentation site never saw it. The release notes list me as a new contributor.</p>
   <ul>
@@ -156,7 +152,7 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-si
 </section>
 
 <section id="help">
-  <h2><span class="tag smp">Sample</span>Help topic: one problem, two readers</h2>
+  <span class="eyebrow smp">Sample</span><h2>Help topic: one problem, two readers</h2>
   <p>Recording latency is a typical Pro Apps support case. I wrote it twice: for someone new to recording, and for a professional. The facts are the same; the words, the order and the depth are not.</p>
 
   <div class="help">
@@ -188,8 +184,8 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-si
   </ul>
 </section>
 
-<section id="strings">
-  <h2><span class="tag smp">Sample</span>In-app strings in English, German and Dutch</h2>
+<section id="strings" class="gray">
+  <span class="eyebrow smp">Sample</span><h2>In-app strings in English, German and Dutch</h2>
   <p>Three engineering-style messages rewritten so a musician can act on them, then localized. The draft column is a typical first draft written for this sample, not existing Apple text.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Moment</th><th>Draft</th><th>English</th><th>Deutsch</th><th>Nederlands</th></tr></thead>
